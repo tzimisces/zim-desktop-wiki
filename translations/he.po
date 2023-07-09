@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2023-01-12 08:50+0000\n"
+"PO-Revision-Date: 2023-07-10 11:57+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/zim/develop/he/>\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 5.0-dev\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:41+0000\n"
 
 #. Error message when external application could not be found, %s is the command
@@ -1188,10 +1188,8 @@ msgstr "העתקת שורה"
 
 #. menu item to cut current line to clipboard
 #: zim/gui/pageview/__init__.py:7096
-#, fuzzy
-#| msgid "Cut Lin_k"
 msgid "Cut Line"
-msgstr "ג_זירת קישור"
+msgstr "גזירת שורה"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7109
@@ -2853,7 +2851,7 @@ msgstr ""
 #. plugin preference
 #: zim/plugins/diagrameditor.py:38 zim/plugins/sequencediagrameditor.py:38
 msgid "Generate diagrams in SVG format"
-msgstr ""
+msgstr "יצירת תרשימים במבנה SVG"
 
 #. menu item
 #: zim/plugins/diagrameditor.py:52
@@ -3971,7 +3969,7 @@ msgstr "משימות"
 #: zim/plugins/tasklist/gui.py:453
 #, python-format
 msgid "%s shown"
-msgstr ""
+msgstr "%s מופיעים"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:505
