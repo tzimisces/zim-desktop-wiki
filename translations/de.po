@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2022-10-10 18:19+0000\n"
+"PO-Revision-Date: 2023-07-12 09:53+0000\n"
 "Last-Translator: Andreas Klostermaier <andreas.klostermaier@appendx.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/zim/develop/de/>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 5.0-dev\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:41+0000\n"
 
 #. Error message when external application could not be found, %s is the command
@@ -649,7 +649,7 @@ msgstr "schreibgeschützt"
 #. Menu item
 #: zim/gui/mainwindow.py:893
 msgid "_Jump To..."
-msgstr "_Gehe zu..."
+msgstr "_Gehe zu Seite..."
 
 #. Menu item | 
 #. Button label
@@ -1198,10 +1198,8 @@ msgstr "Zeile kopieren"
 
 #. menu item to cut current line to clipboard
 #: zim/gui/pageview/__init__.py:7096
-#, fuzzy
-#| msgid "Cut Lin_k"
 msgid "Cut Line"
-msgstr "Verknüpfung ausschneiden"
+msgstr "Zeile ausschneiden"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7109
@@ -2897,7 +2895,7 @@ msgstr ""
 #. plugin preference
 #: zim/plugins/diagrameditor.py:38 zim/plugins/sequencediagrameditor.py:38
 msgid "Generate diagrams in SVG format"
-msgstr ""
+msgstr "Diagramme im SVG-Format erstellen"
 
 #. menu item
 #: zim/plugins/diagrameditor.py:52
@@ -4027,7 +4025,7 @@ msgstr "Aufgaben"
 #: zim/plugins/tasklist/gui.py:453
 #, python-format
 msgid "%s shown"
-msgstr ""
+msgstr "%s angezeigt"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:505
