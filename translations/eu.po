@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2023-06-09 08:16+0000\n"
+"PO-Revision-Date: 2023-09-11 22:54+0000\n"
 "Last-Translator: Alexander Gabilondo <alexgabi@openmailbox.org>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/zim/develop/eu/>\n"
 "Language: eu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:41+0000\n"
 
 #. Error message when external application could not be found, %s is the command
@@ -708,8 +708,8 @@ msgstr "Joan hasierako orrira"
 #, python-format
 msgid "%i _Backlink"
 msgid_plural "%i _Backlinks"
-msgstr[0] "%i_Bueltako esteka..."
-msgstr[1] "%i_Bueltako estekak..."
+msgstr[0] "%i_Bueltako esteka"
+msgstr[1] "%i_Bueltako estekak"
 
 #. Dialog title
 #: zim/gui/mainwindow.py:1155
@@ -1152,7 +1152,7 @@ msgstr "Ebaki"
 #: zim/gui/pageview/__init__.py:6967 zim/gui/templateeditordialog.py:46
 #: zim/plugins/tasklist/gui.py:1192
 msgid "_Copy"
-msgstr "Kopiatu"
+msgstr "_Kopiatu"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:6972
@@ -1196,10 +1196,8 @@ msgstr "Kopiatu lerroa"
 
 #. menu item to cut current line to clipboard
 #: zim/gui/pageview/__init__.py:7096
-#, fuzzy
-#| msgid "Cut Lin_k"
 msgid "Cut Line"
-msgstr "Moztu esteka"
+msgstr "Ebakitze lerroa"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7109
@@ -2264,7 +2262,7 @@ msgstr "Mahaigaineko wikia"
 msgid "translator-credits"
 msgstr ""
 "Itzultzaile-kredituak:\n"
-"  3ARRANO.com https://launchpad.net/~3arrano-3arrano\n"
+" 3ARRANO.com https://launchpad.net/~3arrano-3arrano\n"
 "  Alexander Gabilondo https://launchpad.net/~alexgabi\n"
 "  Ibai Oihanguren Sala https://launchpad.net/~ibai-oihanguren\n"
 "  Gorka Azkarate https://launchpad.net/~gorkaazkarate"
@@ -2706,8 +2704,8 @@ msgstr "Bueltako estekarik ez"
 #, python-format
 msgid "%i _BackLink"
 msgid_plural "%i _BackLinks"
-msgstr[0] "%i _Bueltako esteka..."
-msgstr[1] "%i _Bueltako estekak..."
+msgstr[0] "%i _Bueltako esteka"
+msgstr[1] "%i _Bueltako estekak"
 
 #. widget label
 #: zim/plugins/backlinkpane.py:128
@@ -2870,7 +2868,7 @@ msgstr ""
 #. plugin preference
 #: zim/plugins/diagrameditor.py:38 zim/plugins/sequencediagrameditor.py:38
 msgid "Generate diagrams in SVG format"
-msgstr ""
+msgstr "Sortu diagramak SVG formatuan"
 
 #. menu item
 #: zim/plugins/diagrameditor.py:52
@@ -3124,7 +3122,7 @@ msgstr "Erabili orri bana bakoitzarentzat"
 #. menu item
 #: zim/plugins/journal.py:271
 msgid "To_day"
-msgstr "Gaur"
+msgstr "_Gaur"
 
 #. side pane title
 #: zim/plugins/journal.py:335
@@ -3741,7 +3739,7 @@ msgstr "Kendu lerroa"
 #. menu item
 #: zim/plugins/tableeditor.py:461 zim/plugins/tableeditor.py:617
 msgid "Clone row"
-msgstr "Kopiatu lerroa"
+msgstr "Klonatu lerroa"
 
 #. tooltip on mouse hover | 
 #. menu item
@@ -4001,7 +3999,7 @@ msgstr "Zereginak"
 #: zim/plugins/tasklist/gui.py:453
 #, python-format
 msgid "%s shown"
-msgstr ""
+msgstr "%s erakusten da"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:505
