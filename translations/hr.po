@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2023-09-09 22:17+0000\n"
+"PO-Revision-Date: 2023-09-17 22:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/zim/develop/hr/>"
 "\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.0.1-dev\n"
+"X-Generator: Weblate 5.0.2\n"
 
 #. Error message when external application could not be found, %s is the command
 #: zim/applications.py:133
@@ -1199,10 +1199,8 @@ msgstr "Kopiraj redak"
 
 #. menu item to cut current line to clipboard
 #: zim/gui/pageview/__init__.py:7096
-#, fuzzy
-#| msgid "Cut Lin_k"
 msgid "Cut Line"
-msgstr "_Izreži poveznicu"
+msgstr "Izreži redak"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7109
