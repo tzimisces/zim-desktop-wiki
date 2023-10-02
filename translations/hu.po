@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Zim 0.48\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2023-07-29 12:07+0000\n"
+"PO-Revision-Date: 2023-10-03 08:13+0000\n"
 "Last-Translator: Mukli Krisztián <weblate@rejtettmail.eu.org>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/zim/develop/hu/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.1-dev\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:41+0000\n"
 "X-Poedit-Bookmarks: 566,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 
@@ -3840,7 +3840,7 @@ msgstr "A táblázatnak legalább egy oszlopot tartalmaznia kell."
 #. plugin name
 #: zim/plugins/tableofcontents.py:101
 msgid "Table of Contents"
-msgstr "Tartalom"
+msgstr "Tartalomjegyzék"
 
 #. plugin description
 #: zim/plugins/tableofcontents.py:102
@@ -4309,7 +4309,7 @@ msgstr "Automatikus mentés megadott percenként"
 #. default version comment for auto-saved versions
 #: zim/plugins/versioncontrol/__init__.py:201
 msgid "Automatically saved version from zim"
-msgstr "Automatikusan mentve"
+msgstr "Automatikusan mentett változat a zimből"
 
 #. menu item
 #: zim/plugins/versioncontrol/__init__.py:209
@@ -4384,7 +4384,7 @@ msgstr "Írj be egy megjegyzést ehhez a változathoz"
 #. default version comment in the "save version" dialog
 #: zim/plugins/versioncontrol/__init__.py:764
 msgid "Saved version from zim"
-msgstr "Automatikusan mentve"
+msgstr "Automatikusan mentve a zimből"
 
 #. dialog title
 #: zim/plugins/versioncontrol/__init__.py:798
