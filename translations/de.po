@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2023-07-12 09:53+0000\n"
-"Last-Translator: Andreas Klostermaier <andreas.klostermaier@appendx.de>\n"
+"PO-Revision-Date: 2024-01-10 15:45+0000\n"
+"Last-Translator: Robert Riebisch <rr@bttr-software.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/zim/develop/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.4-dev\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:41+0000\n"
 
 #. Error message when external application could not be found, %s is the command
@@ -454,13 +454,13 @@ msgstr ""
 #: zim/gui/exportdialog.py:418
 #, python-format
 msgid "%i errors occurred, see log"
-msgstr "%i Fehler aufgetreten, siehe Log"
+msgstr "%i Fehler aufgetreten, siehe Protokoll"
 
 #. label in export dialog
 #: zim/gui/exportdialog.py:421
 #, python-format
 msgid "%i warnings occurred, see log"
-msgstr "%i Warnungen aufgetreten, siehe Log"
+msgstr "%i Warnungen aufgetreten, siehe Protokoll"
 
 #. label in export dialog
 #: zim/gui/exportdialog.py:426
@@ -762,7 +762,7 @@ msgstr "Notizbuch hinzufügen"
 #. Label in Add Notebook dialog
 #: zim/gui/notebookdialog.py:407
 msgid "Please select a name and a folder for the notebook."
-msgstr "Bitte wählen sie einen Namen und Ort für das Notizbuch."
+msgstr "Bitte wählen Sie einen Namen und einen Ordner für das Notizbuch."
 
 #. input field in 'Add Notebook' dialog
 #: zim/gui/notebookdialog.py:423
@@ -1204,7 +1204,7 @@ msgstr "Zeile ausschneiden"
 #. Menu item
 #: zim/gui/pageview/__init__.py:7109
 msgid "Date and Time..."
-msgstr "Datum und Zeit..."
+msgstr "Datum und Uhrzeit..."
 
 #. Menu item for Insert menu
 #: zim/gui/pageview/__init__.py:7124
@@ -1329,7 +1329,7 @@ msgstr "Datum"
 #. check box in InsertDate dialog
 #: zim/gui/pageview/__init__.py:7732
 msgid "_Link to date"
-msgstr "Ver_linke datum"
+msgstr "Ver_linke Datum"
 
 #. Dialog title
 #: zim/gui/pageview/__init__.py:7825
@@ -1361,7 +1361,7 @@ msgstr "Seite \"%s\" hat kein Verzeichnis für Anhänge"
 #. Dialog title
 #: zim/gui/pageview/__init__.py:7948
 msgid "File Exists"
-msgstr "Datei exisiert"
+msgstr "Datei existiert"
 
 #. Dialog text in 'new filename' dialog
 #: zim/gui/pageview/__init__.py:7949
@@ -3909,7 +3909,7 @@ msgstr "Trennlinien im Inhaltsverzeichnis anzeigen"
 #. option for plugin preferences
 #: zim/plugins/tableofcontents.py:123
 msgid "Set ToC fontsize"
-msgstr "Schriftgrösse"
+msgstr "Schriftgröße"
 
 #. action to lower level of heading in the text
 #: zim/plugins/tableofcontents.py:411
@@ -4183,7 +4183,7 @@ msgstr "Abschnitt(e) indizieren"
 #. Notebook sections to exclude when searching for tasks - default is none
 #: zim/plugins/tasklist/__init__.py:78
 msgid "Section(s) to ignore"
-msgstr "Abschnitte ignorieren"
+msgstr "Abschnitt(e) ignorieren"
 
 #. label for plugin preferences dialog
 #: zim/plugins/tasklist/__init__.py:83
@@ -4240,17 +4240,17 @@ msgstr "Werkzeugleiste anzeigen"
 #. option for plugin preferences
 #: zim/plugins/toolbar.py:53
 msgid "Include formatting tools in toolbar"
-msgstr "Formatierungs-Befehle in der Werkzeugleiste anzeigen"
+msgstr "Formatierungsbefehle in Werkzeugleiste anzeigen"
 
 #. option for plugin preferences
 #: zim/plugins/toolbar.py:57
 msgid "Toolbar style"
-msgstr "Werkzeugleisten-Stil"
+msgstr "Werkzeugleistenstil"
 
 #. option for plugin preferences
 #: zim/plugins/toolbar.py:59
 msgid "Toolbar size"
-msgstr "Werkzeugleisten-Grösse"
+msgstr "Werkzeugleistengröße"
 
 #. plugin name
 #: zim/plugins/trayicon.py:71
