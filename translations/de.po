@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2024-01-10 15:45+0000\n"
-"Last-Translator: Robert Riebisch <rr@bttr-software.de>\n"
+"PO-Revision-Date: 2024-01-15 11:06+0000\n"
+"Last-Translator: Andreas Klostermaier <andreas.klostermaier@appendx.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/zim/develop/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -142,7 +142,7 @@ msgstr ""
 #: zim/gui/applications.py:827
 #, python-format
 msgid "Cound not find terminal emulator to run application: %s"
-msgstr "Konnte kein Terminal-Programm finden um %s zu starten"
+msgstr "Konnte kein Terminal-Programm finden, um %s zu starten"
 
 #. label to customize 'open with' menu
 #: zim/gui/applications.py:1081
@@ -237,7 +237,7 @@ msgid ""
 "in the tool menu and in the tool bar or context menus."
 msgstr ""
 "Sie können benutzerdefinierte Werkzeuge erstellen, die im Werkzeugmenü,\n"
-"der Werkzeugleiste und in Kontextmenüs erscheinen."
+"in der Werkzeugleiste und in Kontextmenüs erscheinen."
 
 #. Dialog title
 #: zim/gui/customtools.py:654
@@ -3064,7 +3064,7 @@ msgstr ""
 #. error message
 #: zim/plugins/inlinecalculator.py:271
 msgid "Could not parse expression"
-msgstr "Kann Ausdruck nichtz auswerten"
+msgstr "Konnte Ausdruck nicht auswerten"
 
 #. menu item
 #: zim/plugins/inlinecalculator.py:293
