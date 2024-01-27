@@ -3,30 +3,29 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2022-08-21 15:17+0000\n"
-"Last-Translator: Marvin Elsen | 柳博慎 <development@marvin-elsen.com>\n"
+"PO-Revision-Date: 2024-01-27 17:01+0000\n"
+"Last-Translator: 麋悟BigELK176 <bigelk176@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
-"zim/master/zh_Hant/>\n"
+"zim/develop/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 5.4-dev\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:40+0000\n"
 
 #. Error message when external application could not be found, %s is the command
 #: zim/applications.py:133
-#, fuzzy, python-format
-#| msgid "Could not find template \"%s\""
+#, python-format
 msgid "Cound not find application: %s"
-msgstr "無法找到「%s」範本"
+msgstr "無法找到應用程式： %s"
 
 #. Error message when external application failed, %s is the command
 #: zim/applications.py:150
 #, python-format
 msgid "Failed to run application: %s"
-msgstr "程式執行錯誤: %s"
+msgstr "執行應用程式失敗： %s"
 
 #. Error message when external application failed, %(cmd)s is the command, %(code)i the exit code
 #: zim/applications.py:153
@@ -36,13 +35,13 @@ msgid ""
 "returned non-zero exit status %(code)i"
 msgstr ""
 "%(cmd)s\n"
-"返回碼非零 %(code)i"
+"返回到非零的退出狀態 %(code)i"
 
 #. error when application failed to start
 #: zim/applications.py:431
 #, python-format
 msgid "Failed running: %s"
-msgstr "執行錯誤: %s"
+msgstr "執行失敗: %s"
 
 #. label for default webbrowser | 
 #. label for default application
@@ -53,7 +52,7 @@ msgstr "預設"
 #. Translate to "calendar:week_start:0" if you want Sunday to be the first day of the week or to "calendar:week_start:1" if you want Monday to be the first day of the week
 #: zim/datetimetz.py:98
 msgid "calendar:week_start:0"
-msgstr "calendar:week_start:1"
+msgstr "calendar:week_start:0"
 
 #. generic error dialog
 #: zim/errors.py:46
@@ -76,7 +75,7 @@ msgstr "通常指此檔案包含了無效的特殊字元"
 #: zim/fs.py:279 zim/newfs/base.py:68
 #: zim/plugins/versioncontrol/__init__.py:772
 msgid "Details"
-msgstr "細節"
+msgstr "詳細資訊"
 
 #. Error message
 #: zim/fs.py:1171
@@ -96,21 +95,23 @@ msgid ""
 "Create missing directories automatically\n"
 "(If disabled you will be prompted)"
 msgstr ""
+"自動建立遺失的目錄\n"
+"（如果停用，系統會發出提出）"
 
 #. Heading in a question dialog for creating a folder
 #: zim/gui/applications.py:595
 msgid "Create folder?"
-msgstr "要建立文件夾？"
+msgstr "要建立資料夾？"
 
 #. Text in a question dialog for creating a folder, %s will be the folder base name
 #: zim/gui/applications.py:597
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The folder \"%s\" does not yet exist.\n"
 "Do you want to create it now?"
 msgstr ""
-"資料夾「%s」不存在\n"
-"你想新增它嗎？"
+"資料夾「%s」尚不存在\n"
+"現在要建立它嗎？"
 
 #. error when external application fails
 #: zim/gui/applications.py:664 zim/gui/applications.py:738
@@ -122,21 +123,20 @@ msgstr "無法開啟: %s"
 #: zim/gui/applications.py:729
 #, python-format
 msgid "Editing file: %s"
-msgstr "正在編輯的文件:%s"
+msgstr "正在編輯檔案: %s"
 
 #. description for dialog for editing external files
 #: zim/gui/applications.py:731
 msgid ""
 "You are editing a file in an external application. You can close this dialog "
 "when you are done"
-msgstr "你正使用外部程式編輯檔案，當你完成編輯後再關閉對話視窗"
+msgstr "現正使用外部程式編輯檔案，完成之後再關閉此對話窗"
 
 #. Error message when external application could not be run in terminal, %s is the command
 #: zim/gui/applications.py:827
-#, fuzzy, python-format
-#| msgid "Failed to run application: %s"
+#, python-format
 msgid "Cound not find terminal emulator to run application: %s"
-msgstr "程式執行錯誤: %s"
+msgstr "無法找到終端器來執行應用程式: %s"
 
 #. label to customize 'open with' menu
 #: zim/gui/applications.py:1081
@@ -158,7 +158,7 @@ msgstr "以 \"%s\" 開啟"
 #: zim/gui/applications.py:1146
 #, python-format
 msgid "Configure an application to open \"%s\" links"
-msgstr "設定用于打開“%s”連結的程式"
+msgstr "設定可用於開啟 “%s” 連結的應用程式"
 
 #. Text in the 'custom command' dialog, "%s" will be mimetype like "text/plain"
 #: zim/gui/applications.py:1149
@@ -167,8 +167,8 @@ msgid ""
 "Configure an application to open files\n"
 "of type \"%s\""
 msgstr ""
-"設定用於打開「%s」\n"
-"類型檔案的程式"
+"設定應用程式\n"
+"用於開啟 \"%s\" 類型檔案"
 
 #. Dialog title
 #: zim/gui/applications.py:1161
@@ -232,7 +232,7 @@ msgid ""
 "in the tool menu and in the tool bar or context menus."
 msgstr ""
 "您可以自訂工具使其顯示於\n"
-"工具選單、工具列、和滑鼠右鍵選單中。"
+"工具選單、工具列、及滑鼠右鍵選單中。"
 
 #. Dialog title
 #: zim/gui/customtools.py:654
@@ -243,7 +243,7 @@ msgstr "編輯自訂工具"
 #. Heading in plugins tab of preferences dialog
 #: zim/gui/customtools.py:675 zim/gui/preferencesdialog.py:337
 msgid "Description"
-msgstr "說明"
+msgstr "描述"
 
 #. Input in "Edit Custom Tool" dialog | 
 #. label for properties dialog
@@ -259,7 +259,7 @@ msgstr "指令不會更動資料"
 #. Input in "Edit Custom Tool" dialog
 #: zim/gui/customtools.py:700
 msgid "Output should replace current selection"
-msgstr "其輸出會替換當前所選"
+msgstr "其輸出會取代目前所選"
 
 #. Input in "Edit Custom Tool" dialog
 #: zim/gui/customtools.py:701
@@ -282,6 +282,18 @@ msgid ""
 "<b>%T</b> the selected text including wiki formatting\n"
 "</tt>\n"
 msgstr ""
+"執行指令時，\n"
+"下列參數將會被置換：\n"
+"<tt>\n"
+"<b>%f</b> 頁面來源為作轉存檔案\n"
+"<b>%d</b> 目前頁面附件的路徑\n"
+"<b>%s</b> 實際頁面來源檔案 (如果有 ）\n"
+"<b>%p</b> 頁面名稱\n"
+"<b>%n</b> 筆記本位置 (檔案或資料夾)\n"
+"<b>%D</b> 文件根目錄 (如果有）\n"
+"<b>%t</b> 游標所選的文字內文\n"
+"<b>%T</b> 包含維基格式之所選的文字\n"
+"</tt>\n"
 
 #. dialog title
 #: zim/gui/exportdialog.py:32
@@ -297,14 +309,14 @@ msgstr "匯出筆記本"
 #: zim/gui/exportdialog.py:141
 #, python-format
 msgid "Folder exists: %s"
-msgstr "目錄已存在: %s"
+msgstr "資料夾已存在: %s"
 
 #. detailed message, answers are Yes and No
 #: zim/gui/exportdialog.py:142
 msgid ""
 "Folder already exists and has content, exporting to this folder may "
 "overwrite existing files. Do you want to continue?"
-msgstr "此為已存在並有檔案之文件夾。若匯入此文件夾將覆蓋現存檔案。要這麼做嗎？"
+msgstr "此資料夾已存在並含有內容。若匯出至此資料夾將會覆蓋現有檔案。要繼續嗎？"
 
 #. message heading
 #: zim/gui/exportdialog.py:155
@@ -317,24 +329,24 @@ msgid ""
 "This file already exists.\n"
 "Do you want to overwrite it?"
 msgstr ""
-"已有此檔案\n"
-"是否覆蓋？"
+"已有此檔案。\n"
+"是否要覆蓋？"
 
 #. title of step in export dialog
 #: zim/gui/exportdialog.py:167
 msgid "Select the pages to export"
-msgstr "選擇欲匯出之頁面"
+msgstr "選擇要匯出的頁面"
 
 #. Option in export dialog to export complete notebook | 
 #. Option in versions dialog to show version for complete notebook
 #: zim/gui/exportdialog.py:173 zim/plugins/versioncontrol/__init__.py:820
 msgid "Complete _notebook"
-msgstr "整部筆記本(_n)"
+msgstr "完整筆記本(_n)"
 
 #. Option in export dialog to export selection
 #: zim/gui/exportdialog.py:178
 msgid "Single _page"
-msgstr "單頁(_p)"
+msgstr "單一頁面(_p)"
 
 #. Input field in export dialog | 
 #. label in word count dialog | 
@@ -353,7 +365,7 @@ msgstr "頁面"
 #. Input field in export dialog
 #: zim/gui/exportdialog.py:182
 msgid "Include subpages"
-msgstr "包括子頁面"
+msgstr "包括下層頁面"
 
 #. title of step in export dialog
 #: zim/gui/exportdialog.py:209
@@ -375,12 +387,12 @@ msgstr "格式"
 #. Field in web server gui for webpage template
 #: zim/gui/exportdialog.py:224 zim/gui/server.py:106
 msgid "Template"
-msgstr "模板"
+msgstr "範本"
 
 #. radio option in export dialog
 #: zim/gui/exportdialog.py:227
 msgid "Link files under document root with full file path"
-msgstr "以完整路徑鏈結文件根目錄下之文件"
+msgstr "以完整路徑連結檔案根目錄下的檔案"
 
 #. radio option in export dialog
 #: zim/gui/exportdialog.py:228
@@ -390,32 +402,32 @@ msgstr "對應根目錄文件為URL"
 #. label for button with URL
 #: zim/gui/exportdialog.py:237 zim/gui/templateeditordialog.py:70
 msgid "Get more templates online"
-msgstr "連線獲取更多模板"
+msgstr "線上取得更多範本"
 
 #. title of step in export dialog
 #: zim/gui/exportdialog.py:310
 msgid "Select the output file or folder"
-msgstr "選擇匯出檔案或文件夾"
+msgstr "選擇匯出檔案或資料夾"
 
 #. Label for option in export dialog
 #: zim/gui/exportdialog.py:316
 msgid "Export each page to a separate file"
-msgstr ""
+msgstr "匯出每個頁面至各別檔案"
 
 #. Label for option in export dialog
 #: zim/gui/exportdialog.py:318
 msgid "Export all pages to a single file"
-msgstr ""
+msgstr "匯出全部頁面至單一檔案"
 
 #. Label for folder selection in export dialog
 #: zim/gui/exportdialog.py:321
 msgid "Output folder"
-msgstr "匯出文件夾"
+msgstr "匯出資料夾"
 
 #. Label for setting a name for the index of exported pages
 #: zim/gui/exportdialog.py:323
 msgid "Index page"
-msgstr "索引頁"
+msgstr "索引頁面"
 
 #. Label for file selection in export dialog
 #: zim/gui/exportdialog.py:326
@@ -426,19 +438,19 @@ msgstr "匯出檔案"
 #: zim/gui/exportdialog.py:415
 #, python-format
 msgid "%(n_error)i errors and %(n_warning)i warnings occurred, see log"
-msgstr "出現了%(n_error)i個錯誤和%(n_warning)i個警告，請查看日誌"
+msgstr "出現了 %(n_error)i 個錯誤和 %(n_warning)i 個警告，查看紀錄"
 
 #. label in export dialog
 #: zim/gui/exportdialog.py:418
 #, python-format
 msgid "%i errors occurred, see log"
-msgstr "遇到了 %i 個錯誤，請查看日誌"
+msgstr "發生 %i 個錯誤，請查看紀錄"
 
 #. label in export dialog
 #: zim/gui/exportdialog.py:421
 #, python-format
 msgid "%i warnings occurred, see log"
-msgstr "出現了%i個警告，請查看日誌"
+msgstr "發生 %i 個警示，查看紀錄"
 
 #. label in export dialog
 #: zim/gui/exportdialog.py:426
@@ -449,39 +461,39 @@ msgstr "匯出已完成"
 #. button in e.g. equation editor dialog
 #: zim/gui/exportdialog.py:429 zim/plugins/base/imagegenerator.py:424
 msgid "View _Log"
-msgstr "觀看日誌(_L)"
+msgstr "查看紀錄(_L)"
 
 #. Label for object manager
 #: zim/gui/insertedobjects.py:268
 #, python-format
 msgid "No plugin available to display objects of type: %s"
-msgstr ""
+msgstr "沒有外掛可用於顯示此物件類型： %s"
 
 #. Label for object manager - "%s" is the plugin name
 #: zim/gui/insertedobjects.py:276
 #, python-format
 msgid "Plugin \"%s\" is required to display this object"
-msgstr ""
+msgstr "顯示此物件需要外掛 \"%s\""
 
 #. Label for object manager
 #: zim/gui/insertedobjects.py:280
 msgid "Enable plugin"
-msgstr ""
+msgstr "啟用外掛"
 
 #. label for inserted object
 #: zim/gui/insertedobjects.py:313
 msgid "Unkown Object"
-msgstr "未知物件"
+msgstr "不明物件"
 
 #. label for inserted object
 #: zim/gui/insertedobjects.py:354
 msgid "Unkown Image type"
-msgstr ""
+msgstr "不明圖片類型"
 
 #. Menu title
 #: zim/gui/mainwindow.py:49
 msgid "_File"
-msgstr "文件(_F)"
+msgstr "檔案(_F)"
 
 #. Menu title | 
 #. Button label
@@ -514,7 +526,7 @@ msgstr "搜尋(_S)"
 #. Menu title
 #: zim/gui/mainwindow.py:54
 msgid "For_mat"
-msgstr "格式(_M)"
+msgstr "格式(_m)"
 
 #. Menu title
 #: zim/gui/mainwindow.py:55
@@ -530,40 +542,38 @@ msgstr "前往(_G)"
 #. Button label
 #: zim/gui/mainwindow.py:57 zim/gui/widgets.py:2960
 msgid "_Help"
-msgstr "幫助(_H)"
+msgstr "說明(_H)"
 
 #. Menu title
 #: zim/gui/mainwindow.py:58
 msgid "_Checkbox"
-msgstr ""
+msgstr "勾選框(_C)"
 
 #. option for plugin preferences
 #: zim/gui/mainwindow.py:68
 msgid "Show controls in the window decoration"
-msgstr ""
+msgstr "在視窗裝飾中顯示控制項目"
 
 #. option for plugin preferences
 #: zim/gui/mainwindow.py:68
 msgid "This option requires restart of the application"
-msgstr ""
+msgstr "這個選項需要重新啟動應用挰式"
 
 #. Option in the preferences dialog - %s will map to either <Control><Space> or <Command><Space> key binding
 #: zim/gui/mainwindow.py:70
 #, python-format
 msgid "Use %s to switch to the side pane"
-msgstr ""
+msgstr "使用 %s 切換側邊面板"
 
 #. Option in the preferences dialog
 #: zim/gui/mainwindow.py:74
 msgid "Always use last cursor position when opening a page"
-msgstr "打開頁面時指標永遠位于上次位置"
+msgstr "開啟頁面時，游標總是處於上次位置"
 
 #. button label for fullscreen window header
 #: zim/gui/mainwindow.py:149 zim/gui/mainwindow.py:270
-#, fuzzy
-#| msgid "_Fullscreen"
 msgid "Leave Fullscreen"
-msgstr "全螢幕(_F)"
+msgstr "離開全螢幕"
 
 #. Menu item
 #: zim/gui/mainwindow.py:292
@@ -572,38 +582,34 @@ msgstr "全螢幕(_F)"
 
 #. menu item
 #: zim/gui/mainwindow.py:300
-#, fuzzy
-#| msgid "Notebook _Editable"
 msgid "Toggle _Editable"
-msgstr "允許編輯筆記本(_E)"
+msgstr "切換允許編輯(_E)"
 
 #. menu item
 #: zim/gui/mainwindow.py:300
-#, fuzzy
-#| msgid "Notebook _Editable"
 msgid "Toggle editable"
-msgstr "允許編輯筆記本(_E)"
+msgstr "切換允許編輯"
 
 #. message in toggle editable tooltip
 #: zim/gui/mainwindow.py:329
 msgid "Page is read-only and cannot be edited"
-msgstr ""
+msgstr "本頁面唯讀，不允許編輯"
 
 #. Menu item
 #: zim/gui/mainwindow.py:363
 msgid "_Side Panes"
-msgstr "側窗格(_S)"
+msgstr "側邊面板(_S)"
 
 #. menu item
 #: zim/gui/mainwindow.py:388
 msgid "Focus Sidepane"
-msgstr ""
+msgstr "專注於側邊面板"
 
 #. Menu item | 
 #. Button label
 #: zim/gui/mainwindow.py:631 zim/gui/widgets.py:2921
 msgid "_Close"
-msgstr "關閉視窗"
+msgstr "關閉(_C)"
 
 #. label for View->Menubar menu item
 #: zim/gui/mainwindow.py:690
@@ -613,20 +619,17 @@ msgstr "選單列"
 #. short question on open-page if file exists
 #: zim/gui/mainwindow.py:809 zim/gui/uiactions.py:506
 msgid "File exists, do you want to import?"
-msgstr "已有此檔案，是否匯入？"
+msgstr "檔案已存在，是否要匯入？"
 
 #. longer question on open-page if file exists
 #: zim/gui/mainwindow.py:810 zim/gui/uiactions.py:507
-#, fuzzy, python-format
-#| msgid ""
-#| "The folder \"%s\" does not yet exist.\n"
-#| "Do you want to create it now?"
+#, python-format
 msgid ""
 "The file \"%s\" exists but is not a wiki page.\n"
 "Do you want to import it?"
 msgstr ""
-"文件夾\"%s\"不存在\\n\n"
-"你想新增它嗎?"
+"檔案 \"%s\" 已存在，但非維基頁面。\n"
+"要匯入它嗎?"
 
 #. page status for title bar
 #: zim/gui/mainwindow.py:865 zim/gui/mainwindow.py:1040
@@ -636,13 +639,13 @@ msgstr "唯讀"
 #. Menu item
 #: zim/gui/mainwindow.py:893
 msgid "_Jump To..."
-msgstr "前往(_J)..."
+msgstr "跳往(_J)..."
 
 #. Menu item | 
 #. Button label
 #: zim/gui/mainwindow.py:898 zim/gui/widgets.py:3836
 msgid "_Back"
-msgstr "回返(_B)"
+msgstr "返回(_B)"
 
 #. tooltip for navigation button
 #: zim/gui/mainwindow.py:900
@@ -665,26 +668,22 @@ msgstr "向前(_F)"
 #. Menu item
 #: zim/gui/mainwindow.py:923
 msgid "_Parent"
-msgstr "父頁面(_P)"
+msgstr "上層(_P)"
 
 #. Menu item
 #: zim/gui/mainwindow.py:932
 msgid "_Child"
-msgstr "子頁面(_C)"
+msgstr "下層頁面(_C)"
 
 #. Menu item
 #: zim/gui/mainwindow.py:948
-#, fuzzy
-#| msgid "_Previous in index"
 msgid "_Previous in Index"
-msgstr "上一則索引(_P)"
+msgstr "索引中的前一項(_P)"
 
 #. Menu item
 #: zim/gui/mainwindow.py:957
-#, fuzzy
-#| msgid "_Next in index"
 msgid "_Next in Index"
-msgstr "下一則索引(_N)"
+msgstr "索引中的下一項(_N)"
 
 #. Menu item
 #: zim/gui/mainwindow.py:966
@@ -694,7 +693,7 @@ msgstr "主頁面(_H)"
 #. Menu item
 #: zim/gui/mainwindow.py:966
 msgid "Go to home page"
-msgstr ""
+msgstr "前往主頁面"
 
 #. Label for button with backlinks in statusbar
 #: zim/gui/mainwindow.py:988
@@ -706,17 +705,17 @@ msgstr[0] "%i 個反向連結(_B)"
 #. Dialog title
 #: zim/gui/mainwindow.py:1155
 msgid "Jump to"
-msgstr "前往"
+msgstr "跳往"
 
 #. Button label
 #: zim/gui/mainwindow.py:1156
 msgid "_Jump"
-msgstr ""
+msgstr "跳往(_J)"
 
 #. Label for page input
 #: zim/gui/mainwindow.py:1161
 msgid "Jump to Page"
-msgstr "前往頁面"
+msgstr "跳往頁面"
 
 #. Column heading in 'open notebook' dialog | 
 #. Field in web server gui | 
@@ -734,12 +733,12 @@ msgstr "開啟筆記本"
 #. Button label
 #: zim/gui/notebookdialog.py:328
 msgid "_Add"
-msgstr ""
+msgstr "新增(_A)"
 
 #. Button label
 #: zim/gui/notebookdialog.py:332 zim/gui/templateeditordialog.py:52
 msgid "_Remove"
-msgstr ""
+msgstr "移除(_R)"
 
 #. Input label in 'open notebook' dialog
 #: zim/gui/notebookdialog.py:348
@@ -754,12 +753,12 @@ msgstr "新增筆記本"
 #. Label in Add Notebook dialog
 #: zim/gui/notebookdialog.py:407
 msgid "Please select a name and a folder for the notebook."
-msgstr "請為您的筆記本選擇名字和資料夾。"
+msgstr "請為筆記本選擇名稱和資料夾。"
 
 #. input field in 'Add Notebook' dialog
 #: zim/gui/notebookdialog.py:423
 msgid "Folder"
-msgstr "文件夾"
+msgstr "資料夾"
 
 #. help text in the 'Add Notebook' dialog
 #: zim/gui/notebookdialog.py:429
@@ -767,18 +766,18 @@ msgid ""
 "To create a new notebook you need to select an empty folder.\n"
 "Of course you can also select an existing zim notebook folder.\n"
 msgstr ""
-"請選擇一個空資料夾來創建新筆記本.\n"
-"當然你可以選擇已有筆記本的資料夾.\n"
+"請選擇一個空的資料夾用來新建筆記本。\n"
+"當然也可以選擇現有 zim 筆記本資料夾。\n"
 
 #. Menu title
 #: zim/gui/pageview/__init__.py:166
 msgid "New _Attachment"
-msgstr "新附件(_A)"
+msgstr "新建附件(_A)"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:174
 msgid "Show edit bar along bottom of editor"
-msgstr ""
+msgstr "在編輯器下方顯示編輯列"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:177
@@ -786,44 +785,38 @@ msgid ""
 "Use the <Enter> key to follow links\n"
 "(If disabled you can still use <Alt><Enter>)"
 msgstr ""
-"以 <Enter> 鍵追蹤鏈結\n"
-"(若不勾選，仍可用 <Alt><Enter> 來執行)"
+"以 <Enter> 鍵來跟隨連結\n"
+"(若不勾選，仍可使用 <Alt><Enter> 鍵來執行)"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:180
 msgid "Show the cursor also for pages that can not be edited"
-msgstr "於「不允許編輯」之頁面上，仍然顯示游標"
+msgstr "在「不允許編輯」的頁面上，仍然顯示游標"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:183
 msgid "Automatically turn \"CamelCase\" words into links"
-msgstr "自動將 \"CamelCase\" 文字轉換為鏈結"
+msgstr "自動將 \"CamelCase\" 文字轉換為連結"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:186
-#, fuzzy
-#| msgid "Automatically turn file paths into links"
 msgid "Automatically turn wiki page names into links"
-msgstr "自動將檔案路徑轉換為鏈結"
+msgstr "自動將維基頁面名稱換為連結"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:189
-#, fuzzy
-#| msgid "Automatically turn file paths into links"
 msgid "Automatically turn identifiers starting with \"#\" into links"
-msgstr "自動將檔案路徑轉換為鏈結"
+msgstr "自動將 \"#\" 開頭標示轉換為連結"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:192
-#, fuzzy
-#| msgid "Automatically turn file paths into links"
 msgid "Automatically turn interwiki names into links"
-msgstr "自動將檔案路徑轉換為鏈結"
+msgstr "自動將跨維基名稱轉換為連結"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:195
 msgid "Automatically turn file paths into links"
-msgstr "自動將檔案路徑轉換為鏈結"
+msgstr "自動將檔案路徑轉換為連結"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:198
