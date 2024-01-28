@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2024-01-27 17:01+0000\n"
+"PO-Revision-Date: 2024-01-29 05:01+0000\n"
 "Last-Translator: 麋悟BigELK176 <bigelk176@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
 "zim/develop/zh_Hant/>\n"
@@ -835,55 +835,49 @@ msgstr ""
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:204
 msgid "Repeated clicking a checkbox cycles through the checkbox states"
-msgstr ""
+msgstr "重覆點按勾選框將會循環變換狀態"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:207
-#, fuzzy
-#| msgid "(Un-)Indenting a list item also change any sub-items"
 msgid "(Un-)indenting a list item also changes any sub-items"
-msgstr "縮排或去除縮排任一條列項，將順勢更動所有子項"
+msgstr "縮排(或取消縮排)任一條列項目，將會同時變更下層項目"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:210
-#, fuzzy
-#| msgid "Checking a checkbox also change any sub-items"
 msgid "Checking a checkbox also changes any sub-items"
-msgstr "勾選任一勾選框，將順勢更動所有子項"
+msgstr "勾選任一勾選框，將同時變更下層項目"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:213
 msgid "Reformat wiki markup on the fly"
-msgstr "即時重新格式化wiki之標示語法"
+msgstr "瞬即重新格式化 wiki 標示語法"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:216
 msgid "Default format for copying text to the clipboard"
-msgstr "復制到剪貼板文本的預設格式"
+msgstr "以預設格式來複製文字到剪貼簿"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:219
 msgid "Folder with templates for attachment files"
-msgstr "包含附件文件模板的文件夾"
+msgstr "包含附件檔案範本的資料夾"
 
 #. tooltip for button in anchor popover
 #: zim/gui/pageview/__init__.py:4817
 msgid "Copy link to clipboard"
-msgstr "複製連結"
+msgstr "將連結複製到剪貼簿"
 
 #. tooltip label for image with href
 #: zim/gui/pageview/__init__.py:5072
-#, fuzzy
-#| msgid "_Link"
 msgid "Link"
-msgstr "鏈結(_L)"
+msgstr "連結"
 
 #. tooltip label for image with anchor id | 
 #. input label for object ID
 #: zim/gui/pageview/__init__.py:5074 zim/gui/pageview/__init__.py:8040
 #: zim/plugins/sourceview.py:402
 msgid "Id"
-msgstr ""
+msgstr "ID"
 
 #. Heading of error dialog
 #: zim/gui/pageview/__init__.py:5625
@@ -898,20 +892,19 @@ msgid ""
 "any changes. If you save a copy changes will be also\n"
 "discarded, but you can restore the copy later."
 msgstr ""
-"欲繼續作業，您可儲存本頁面之副本，或捨棄任何更動\n"
-"若儲存副本，仍會捨棄更動\n"
-"但可於稍後回復副本"
+"若要繼續作業，您可以儲存本頁面的副本，或捨棄任何變更。\n"
+"若是儲存了副本，變更部分仍會捨棄，但稍後可以回復副本。"
 
 #. Button label
 #: zim/gui/pageview/__init__.py:5648 zim/gui/pageview/__init__.py:7976
 #: zim/gui/searchdialog.py:46 zim/gui/widgets.py:91
 msgid "_Cancel"
-msgstr ""
+msgstr "取消(_C)"
 
 #. Button in error dialog
 #: zim/gui/pageview/__init__.py:5653
 msgid "_Discard Changes"
-msgstr "捨棄更動(_D)"
+msgstr "捨棄變更(_D)"
 
 #. Button in error dialog
 #: zim/gui/pageview/__init__.py:5658
@@ -921,45 +914,45 @@ msgstr "儲存副本(_S)"
 #. Menu item
 #: zim/gui/pageview/__init__.py:5867
 msgid "Heading _1"
-msgstr "一級標題(_1)"
+msgstr "標題 _1"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:5868
 msgid "Heading _2"
-msgstr "二級標題(_2)"
+msgstr "標題 _2"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:5869
 msgid "Heading _3"
-msgstr "三級標題(_3)"
+msgstr "標題 _3"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:5870
 msgid "Heading _4"
-msgstr "四級標題(_3)"
+msgstr "標題 _4"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:5871
 msgid "Heading _5"
-msgstr "五級標題(_5)"
+msgstr "標題 _5"
 
 #. Menu item | 
 #. menu item for formatting
 #: zim/gui/pageview/__init__.py:5872 zim/gui/pageview/__init__.py:5887
 msgid "_Strong"
-msgstr "粗體字(_S)"
+msgstr "粗體(_S)"
 
 #. Menu item | 
 #. menu item for formatting
 #: zim/gui/pageview/__init__.py:5873 zim/gui/pageview/__init__.py:5888
 msgid "_Emphasis"
-msgstr "斜體字(_E)"
+msgstr "斜體(_E)"
 
 #. Menu item | 
 #. menu item for formatting
 #: zim/gui/pageview/__init__.py:5874 zim/gui/pageview/__init__.py:5889
 msgid "_Mark"
-msgstr "底線字(_M)"
+msgstr "底線(_M)"
 
 #. Menu item | 
 #. menu item for formatting
@@ -981,33 +974,29 @@ msgstr "上標體(_S)"
 #. menu item for formatting
 #: zim/gui/pageview/__init__.py:5878 zim/gui/pageview/__init__.py:5891
 msgid "_Verbatim"
-msgstr "去格式字(_V)"
+msgstr "原始(_V)"
 
 #. menu item for formatting
 #: zim/gui/pageview/__init__.py:5892
-#, fuzzy
-#| msgid "_Superscript"
 msgid "Su_perscript"
-msgstr "上標體(_S)"
+msgstr "上標(_p)"
 
 #. menu item for formatting
 #: zim/gui/pageview/__init__.py:5893
-#, fuzzy
-#| msgid "_Subscript"
 msgid "Su_bscript"
-msgstr "下標體(_S)"
+msgstr "下標(_b)"
 
 #. error when unknown interwiki link is clicked
 #: zim/gui/pageview/__init__.py:6609
 #, python-format
 msgid "No such wiki defined: %s"
-msgstr "內部鏈結 %s 無效"
+msgstr "無此 wiki 定義: %s"
 
 #. error when anchor location in page not found
 #: zim/gui/pageview/__init__.py:6664
 #, python-format
 msgid "Id \"%s\" not found on the current page"
-msgstr ""
+msgstr "在目前頁面找不到 ID \"%s\""
 
 #. menu item for context menu of editor
 #: zim/gui/pageview/__init__.py:6723
@@ -1016,68 +1005,62 @@ msgstr "複製為(_A)..."
 
 #. menu item for context menu of editor
 #: zim/gui/pageview/__init__.py:6729
-#, fuzzy
-#| msgid "_Verbatim"
 msgid "Paste As _Verbatim"
-msgstr "去格式字(_V)"
+msgstr "以原始文字貼上(_V)"
 
 #. Context menu item for pageview to move selected text to new/other page | 
 #. Menu item
 #: zim/gui/pageview/__init__.py:6737 zim/gui/pageview/__init__.py:7502
 msgid "Move Selected Text..."
-msgstr "移動已選文字..."
+msgstr "移動已選取的文字..."
 
 #. menu item to copy link to achor location in page | 
 #. menu item
 #: zim/gui/pageview/__init__.py:6760 zim/plugins/tableofcontents.py:425
-#, fuzzy
-#| msgid "Copy _Location"
 msgid "Copy _link to this location"
-msgstr "複製位置(_L)"
+msgstr "複製連結至此位置(_l)"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:6797 zim/gui/pageview/__init__.py:7062
 msgid "_Remove Link"
-msgstr "移除鏈結(_R)"
+msgstr "移除連結(_R)"
 
 #. menu item in context menu for image
 #: zim/gui/pageview/__init__.py:6804
 msgid "_Edit Properties"
-msgstr "(_E)編輯屬性"
+msgstr "編輯屬性(_E)"
 
 #. menu item in context menu
 #: zim/gui/pageview/__init__.py:6806
 msgid "_Edit Link"
-msgstr "編輯鏈結(_E)"
+msgstr "編輯連結(_E)"
 
 #. context menu item
 #: zim/gui/pageview/__init__.py:6831
 msgid "Copy _Link"
-msgstr "複製鏈結(_L)"
+msgstr "複製連結(_L)"
 
 #. context menu item
 #: zim/gui/pageview/__init__.py:6832
-#, fuzzy
-#| msgid "Edit Link"
 msgid "Cut Lin_k"
-msgstr "編輯鏈結"
+msgstr "剪下連結(_k)"
 
 #. context menu item
 #: zim/gui/pageview/__init__.py:6845
 msgid "Copy Email Address"
-msgstr "複製電子郵址"
+msgstr "複製電子信箱"
 
 #. menu item to open containing folder of files
 #: zim/gui/pageview/__init__.py:6860
 msgid "Open Folder"
-msgstr "打開文件夾"
+msgstr "開啟資料夾"
 
 #. menu item for sub menu with applications | 
 #. menu item
 #: zim/gui/pageview/__init__.py:6869 zim/gui/pageview/__init__.py:6880
 #: zim/plugins/attachmentbrowser/filebrowser.py:369
 msgid "Open With..."
-msgstr "以...開啟"
+msgstr "開啟使用..."
 
 #. menu item to open a link | 
 #. Menu item | 
@@ -1085,7 +1068,7 @@ msgstr "以...開啟"
 #: zim/gui/pageview/__init__.py:6890 zim/gui/uiactions.py:147
 #: zim/plugins/backlinkpane.py:143 zim/plugins/tableofcontents.py:433
 msgid "Open in New _Window"
-msgstr "於新視窗中開啟(_W)"
+msgstr "在新視窗中開啟(_W)"
 
 #. menu item to open a link or file | 
 #. Button label | 
@@ -1093,35 +1076,33 @@ msgstr "於新視窗中開啟(_W)"
 #: zim/gui/pageview/__init__.py:6900 zim/gui/widgets.py:3514
 #: zim/plugins/attachmentbrowser/filebrowser.py:376
 msgid "_Open"
-msgstr "開啟檔案或鏈結(_O)"
+msgstr "開啟(_O)"
 
 #. popup menu menuitem
 #: zim/gui/pageview/__init__.py:6915
-#, fuzzy
-#| msgid "Toggle Checkbox 'V'"
 msgid "Check Checkbox '<'"
-msgstr "切換成打勾之勾選框'V'"
+msgstr "設定勾選框 '←'"
 
 #. popup menu menuitem
 #: zim/gui/pageview/__init__.py:6916
 msgid "Check Checkbox '>'"
-msgstr ""
+msgstr "設定勾選框 '→'"
 
 #. popup menu menuitem
 #: zim/gui/pageview/__init__.py:6917
 msgid "Check Checkbox 'X'"
-msgstr ""
+msgstr "設定勾選框 '×'"
 
 #. popup menu menuitem
 #: zim/gui/pageview/__init__.py:6918
 msgid "Check Checkbox 'V'"
-msgstr ""
+msgstr "設定勾選框 '✓'"
 
 #. popup menu menuitem | 
 #. Menu item
 #: zim/gui/pageview/__init__.py:6919 zim/gui/pageview/__init__.py:6982
 msgid "Un-check Checkbox"
-msgstr ""
+msgstr "取消勾選框 '□'"
 
 #. Menu item | 
 #. Button label | 
@@ -1139,17 +1120,17 @@ msgstr "重新載入(_R)"
 #. Menu item
 #: zim/gui/pageview/__init__.py:6948
 msgid "_Undo"
-msgstr "還原(_U)"
+msgstr "取消動作(_U)"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:6955
 msgid "_Redo"
-msgstr "取消還原(_R)"
+msgstr "重做動作(_R)"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:6962
 msgid "Cu_t"
-msgstr "剪下(_T)"
+msgstr "剪下(_t)"
 
 #. Menu item | 
 #. Button label | 
@@ -1172,55 +1153,47 @@ msgstr "刪除(_D)"
 #. Menu item
 #: zim/gui/pageview/__init__.py:6988
 msgid "Toggle Checkbox 'V'"
-msgstr "切換成打勾之勾選框'V'"
+msgstr "切換勾選框 '✓'"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:6997
 msgid "Toggle Checkbox 'X'"
-msgstr "切換成打叉之勾選框'X'"
+msgstr "切換勾選框 '×'"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7006
 msgid "Toggle Checkbox '>'"
-msgstr ""
+msgstr "切換勾選框 '→'"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7015
-#, fuzzy
-#| msgid "Toggle Checkbox 'V'"
 msgid "Toggle Checkbox '<'"
-msgstr "切換成打勾之勾選框'V'"
+msgstr "切換勾選框 '←'"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7024
 msgid "_Edit Link or Object..."
-msgstr "編輯鏈結或物件(_E)..."
+msgstr "編輯連結或物件(_E)..."
 
 #. menu item to copy current line to clipboard
 #: zim/gui/pageview/__init__.py:7080
-#, fuzzy
-#| msgid "Copy _Link"
 msgid "Copy Line"
-msgstr "複製鏈結(_L)"
+msgstr "複製全行文字"
 
 #. menu item to cut current line to clipboard
 #: zim/gui/pageview/__init__.py:7096
-#, fuzzy
-#| msgid "Edit Link"
 msgid "Cut Line"
-msgstr "編輯鏈結"
+msgstr "剪下全行文字"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7109
-#, fuzzy
-#| msgid "_Date and Time..."
 msgid "Date and Time..."
-msgstr "日期時間(_D)..."
+msgstr "日期時間..."
 
 #. Menu item for Insert menu
 #: zim/gui/pageview/__init__.py:7124
 msgid "Horizontal _Line"
-msgstr ""
+msgstr "水平線 (_L)"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7133
@@ -1229,55 +1202,51 @@ msgstr "圖像(_I)..."
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7140
-#, fuzzy
-#| msgid "Attachments"
 msgid "_Attachment..."
-msgstr "附件"
+msgstr "附件(_A)..."
 
 #. Menu item | 
 #. Menu item,
 #: zim/gui/pageview/__init__.py:7155 zim/gui/pageview/__init__.py:7182
 msgid "Bulle_t List"
-msgstr "項目符號列表"
+msgstr "項目符號清單(_t)"
 
 #. Menu item | 
 #. Menu item,
 #: zim/gui/pageview/__init__.py:7160 zim/gui/pageview/__init__.py:7187
 msgid "_Numbered List"
-msgstr "順序(_N)列表"
+msgstr "編號順序清單(_N)"
 
 #. Menu item | 
 #. Menu item,
 #: zim/gui/pageview/__init__.py:7165 zim/gui/pageview/__init__.py:7192
 msgid "Checkbo_x List"
-msgstr "可復選列表(_x)"
+msgstr "勾選框清單(_x)"
 
 #. Menu item,
 #: zim/gui/pageview/__init__.py:7197
-#, fuzzy
-#| msgid "_Remove Link"
 msgid "_Remove List"
-msgstr "移除鏈結(_R)"
+msgstr "移除清單(_R)"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7225
 msgid "Text From _File..."
-msgstr "從檔案加入文字(_F)..."
+msgstr "文字來自檔案(_F)..."
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7272
 msgid "_Link..."
-msgstr "鏈結(_L)..."
+msgstr "連結(_L)..."
 
 #. message when no file templates are found in ~/Templates
 #: zim/gui/pageview/__init__.py:7299
 msgid "No templates installed"
-msgstr "沒有安裝任何模板"
+msgstr "沒有安裝任何範本"
 
 #. Menu item in "Insert > New File Attachment" submenu
 #: zim/gui/pageview/__init__.py:7348
 msgid "File _Templates..."
-msgstr "文件模板(_T)"
+msgstr "檔案範本(_T)"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7356
@@ -1286,10 +1255,8 @@ msgstr "清除格式(_C)"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7393
-#, fuzzy
-#| msgid "_Remove Link"
 msgid "_Remove Heading"
-msgstr "移除鏈結(_R)"
+msgstr "移除標題(_R)"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7518
@@ -1299,12 +1266,12 @@ msgstr "尋找(_F)..."
 #. Menu item
 #: zim/gui/pageview/__init__.py:7539
 msgid "Find Ne_xt"
-msgstr "找下一個(_X)"
+msgstr "尋找下一個(_x)"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7545
 msgid "Find Pre_vious"
-msgstr "找上一個(_V)"
+msgstr "尋找上一個(_v)"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7551
@@ -1334,7 +1301,7 @@ msgstr "正常大小(_N)"
 #. Dialog title
 #: zim/gui/pageview/__init__.py:7686
 msgid "Insert Date and Time"
-msgstr "加入日期時間"
+msgstr "插入日期時間"
 
 #. label in "insert date" dialog | 
 #. Column header versions dialog
@@ -1346,23 +1313,23 @@ msgstr "日期"
 #. check box in InsertDate dialog
 #: zim/gui/pageview/__init__.py:7732
 msgid "_Link to date"
-msgstr "鏈結日期(_L)"
+msgstr "連結至日期(_L)"
 
 #. Dialog title
 #: zim/gui/pageview/__init__.py:7825
 msgid "Insert Image"
-msgstr "加入圖像"
+msgstr "插入圖像"
 
 #. checkbox in the "Insert Image" dialog
 #: zim/gui/pageview/__init__.py:7838
 msgid "Attach image first"
-msgstr "先附加圖像"
+msgstr "先將圖像附加"
 
 #. Error message when trying to insert a not supported file as image
 #: zim/gui/pageview/__init__.py:7856
 #, python-format
 msgid "File type not supported: %s"
-msgstr "不支援的文件類型: %s"
+msgstr "不支援的檔案類型: %s"
 
 #. Dialog title
 #: zim/gui/pageview/__init__.py:7881
@@ -1373,7 +1340,7 @@ msgstr "附加檔案"
 #: zim/gui/pageview/__init__.py:7888
 #, python-format
 msgid "Page \"%s\" does not have a folder for attachments"
-msgstr "頁面 \"%s\" 並無附件之文件夾"
+msgstr "頁面 \"%s\" 並無附件的資料夾"
 
 #. Dialog title
 #: zim/gui/pageview/__init__.py:7948
@@ -1387,8 +1354,8 @@ msgid ""
 "A file with the name <b>\"%s\"</b> already exists.\n"
 "You can use another name or overwrite the existing file."
 msgstr ""
-"此檔名<b>\"%s\"</b>已存在\\n\n"
-"你可更改成其它檔名或是直接覆蓋"
+"檔案名稱 <b>\"%s\"</b> 已經存在。\n"
+"可以改用其它名稱或覆蓋現有檔案。"
 
 #. Input label
 #: zim/gui/pageview/__init__.py:7958
@@ -1409,7 +1376,7 @@ msgstr "覆蓋"
 #. Button label
 #: zim/gui/pageview/__init__.py:7977 zim/gui/widgets.py:92
 msgid "_OK"
-msgstr ""
+msgstr "_OK"
 
 #. Dialog title
 #: zim/gui/pageview/__init__.py:8015
@@ -1426,7 +1393,7 @@ msgstr "位置"
 #. Input in 'insert link' dialog
 #: zim/gui/pageview/__init__.py:8037 zim/gui/pageview/__init__.py:8206
 msgid "Link to"
-msgstr "鏈結至"
+msgstr "連結至"
 
 #. Input in 'edit image' dialog
 #: zim/gui/pageview/__init__.py:8038
@@ -1446,22 +1413,22 @@ msgstr "重設大小(_R)"
 #. Dialog title
 #: zim/gui/pageview/__init__.py:8170
 msgid "Insert Text From File"
-msgstr "加入檔案裡的文字"
+msgstr "插入文字來自檔案"
 
 #. Dialog title
 #: zim/gui/pageview/__init__.py:8197
 msgid "Edit Link"
-msgstr "編輯鏈結"
+msgstr "編輯連結"
 
 #. Dialog title
 #: zim/gui/pageview/__init__.py:8199
 msgid "Insert Link"
-msgstr "加入鏈結"
+msgstr "插入連結"
 
 #. Dialog button
 #: zim/gui/pageview/__init__.py:8201
 msgid "_Link"
-msgstr "鏈結(_L)"
+msgstr "連結(_L)"
 
 #. Input in 'insert link' dialog | 
 #. toolbar style
@@ -1473,7 +1440,7 @@ msgstr "文字"
 #. Input in 'move text' dialog
 #: zim/gui/pageview/__init__.py:8208 zim/gui/pageview/__init__.py:8669
 msgid "Prefer short link names for pages"
-msgstr ""
+msgstr "偏好使用頁面的短連結名稱"
 
 #. button in find bar and find & replace dialog
 #: zim/gui/pageview/__init__.py:8328
@@ -1488,12 +1455,12 @@ msgstr "上一個(_P)"
 #. checkbox option in find bar and find & replace dialog
 #: zim/gui/pageview/__init__.py:8340
 msgid "Match _case"
-msgstr "符合大小寫(_C)"
+msgstr "符合大小寫(_c)"
 
 #. checkbox option in find bar and find & replace dialog
 #: zim/gui/pageview/__init__.py:8345
 msgid "Whole _word"
-msgstr "尋找完整單字(_W)"
+msgstr "尋找完整單字(_w)"
 
 #. checkbox option in find bar and find & replace dialog
 #: zim/gui/pageview/__init__.py:8350
@@ -1503,7 +1470,7 @@ msgstr "正規表達式(_R)"
 #. checkbox option in find bar and find & replace dialog
 #: zim/gui/pageview/__init__.py:8355
 msgid "_Highlight"
-msgstr "以高亮度標示(_H)"
+msgstr "高亮度標示(_H)"
 
 #. label for input in find bar on bottom of page
 #: zim/gui/pageview/__init__.py:8441
@@ -1513,7 +1480,7 @@ msgstr "尋找"
 #. Dialog title
 #: zim/gui/pageview/__init__.py:8479
 msgid "Find and Replace"
-msgstr "尋找並替換"
+msgstr "尋找並取代"
 
 #. input label in find & replace dialog
 #: zim/gui/pageview/__init__.py:8489
@@ -1523,17 +1490,17 @@ msgstr "尋找"
 #. input label in find & replace dialog
 #: zim/gui/pageview/__init__.py:8499
 msgid "Replace with"
-msgstr "替換為"
+msgstr "取代為"
 
 #. Button in search & replace dialog
 #: zim/gui/pageview/__init__.py:8513
 msgid "_Replace"
-msgstr "替換(_R)"
+msgstr "取代(_R)"
 
 #. Button in search & replace dialog
 #: zim/gui/pageview/__init__.py:8518
 msgid "Replace _All"
-msgstr "替換全部(_A)"
+msgstr "全部取代(_A)"
 
 #. Dialog title
 #: zim/gui/pageview/__init__.py:8555
@@ -1573,7 +1540,7 @@ msgstr "字元數 (不計空格)"
 #. Dialog title
 #: zim/gui/pageview/__init__.py:8654
 msgid "Move Text to Other Page"
-msgstr "移動文本到其它頁面"
+msgstr "移動文字到其它頁面"
 
 #. Button label
 #: zim/gui/pageview/__init__.py:8655
@@ -1583,32 +1550,32 @@ msgstr "移動(_M)"
 #. Input in 'move text' dialog
 #: zim/gui/pageview/__init__.py:8667
 msgid "Move text to"
-msgstr "移動文字到"
+msgstr "移動文字至"
 
 #. Input in 'move text' dialog
 #: zim/gui/pageview/__init__.py:8668
 msgid "Leave link to new page"
-msgstr "保留到新頁面的連結"
+msgstr "保留連結到新的頁面"
 
 #. Input in 'move text' dialog
 #: zim/gui/pageview/__init__.py:8670
 msgid "Open new page"
-msgstr "保留到新頁面的連結"
+msgstr "開啟新的頁面"
 
 #. error message in "move selected text" action
 #: zim/gui/pageview/__init__.py:8693
 msgid "No text selected"
-msgstr ""
+msgstr "沒有選擇文字"
 
 #. Dialog title
 #: zim/gui/pageview/__init__.py:8733
 msgid "New File"
-msgstr "新增檔案"
+msgstr "新建檔案"
 
 #. Tab in preferences dialog
 #: zim/gui/preferencesdialog.py:32
 msgid "Interface"
-msgstr "界面"
+msgstr "介面"
 
 #. Tab in preferences dialog
 #: zim/gui/preferencesdialog.py:33
@@ -1624,18 +1591,18 @@ msgid ""
 "or see errors due to encoding, please ensure to configure your system to use "
 "\"UTF-8\""
 msgstr ""
+"您的系統編碼目前設定為 %s 。若是想要支援特殊的字符\n"
+"或是看到編碼原因發生的錯誤，請確定系統設定使用“UTF-8”"
 
 #. Dialog title
 #: zim/gui/preferencesdialog.py:52
 msgid "Preferences"
-msgstr "選項"
+msgstr "偏好設定"
 
 #. Heading in preferences dialog
 #: zim/gui/preferencesdialog.py:115
-#, fuzzy
-#| msgid "_Keybindings"
 msgid "Key bindings"
-msgstr "快捷鍵(_K)"
+msgstr "快速鍵"
 
 #. Heading in preferences dialog
 #: zim/gui/preferencesdialog.py:120
@@ -1660,24 +1627,22 @@ msgstr "更多(_M)"
 #. Button in plugin tab
 #: zim/gui/preferencesdialog.py:253
 msgid "C_onfigure"
-msgstr "設定(_O)"
+msgstr "設定(_o)"
 
 #. Button in plugin tab
 #: zim/gui/preferencesdialog.py:258
-#, fuzzy
-#| msgid "Properties"
 msgid "_Properties"
-msgstr "屬性"
+msgstr "屬性(_P)"
 
 #. button label
 #: zim/gui/preferencesdialog.py:273
 msgid "Open plugins folder"
-msgstr ""
+msgstr "開啟外掛程式資料夾"
 
 #. label for button with URL
 #: zim/gui/preferencesdialog.py:282
 msgid "Get more plugins online"
-msgstr "連線獲取更多插件"
+msgstr "線上取得更多外掛程式"
 
 #. help text when plugin cannot be activated
 #: zim/gui/preferencesdialog.py:317
@@ -1686,6 +1651,9 @@ msgid ""
 "Please see the dependencies section below for details.\n"
 "\n"
 msgstr ""
+"此外掛程式無法啟用，因為相依缺失。\n"
+"請查看相依缺失部分下方的詳細資訊。\n"
+"\n"
 
 #. help text when plugin cannot be loaded due to bug / issue
 #: zim/gui/preferencesdialog.py:327
@@ -1693,16 +1661,18 @@ msgid ""
 "There was a problem loading this plugin\n"
 "\n"
 msgstr ""
+"載入此外掛程式時發現問題\n"
+"\n"
 
 #. Heading in plugins tab of preferences dialog
 #: zim/gui/preferencesdialog.py:339
 msgid "Dependencies"
-msgstr "依賴套件"
+msgstr "相依套件"
 
 #. label in plugin info in preferences dialog
 #: zim/gui/preferencesdialog.py:342
 msgid "No dependencies"
-msgstr "無需依賴其他套件"
+msgstr "無相依套件"
 
 #. dependency is OK
 #: zim/gui/preferencesdialog.py:348
@@ -1717,7 +1687,7 @@ msgstr "失敗"
 #. optional dependency
 #: zim/gui/preferencesdialog.py:354
 msgid "Optional"
-msgstr "可選的"
+msgstr "可選用的"
 
 #. Heading in plugins tab of preferences dialog | 
 #. Column header versions dialog
@@ -1752,18 +1722,18 @@ msgid ""
 "This plugin also has properties,\n"
 "see the notebook properties dialog"
 msgstr ""
+"此外掛程式有其屬性，\n"
+"請查看筆記本屬性有關對話"
 
 #. button in preferences dialog to change default text editor
 #: zim/gui/preferencesdialog.py:506
 msgid "Set default text editor"
-msgstr "設定預設文字編輯器"
+msgstr "設定預設的文字編輯器"
 
 #. button in preferences dialog to change default browser
 #: zim/gui/preferencesdialog.py:511
-#, fuzzy
-#| msgid "Set default text editor"
 msgid "Set default browser"
-msgstr "設定預設文字編輯器"
+msgstr "設定預設的瀏覽器"
 
 #. help text in preferences dialog for modifying keybindings
 #: zim/gui/preferencesdialog.py:545
@@ -1773,20 +1743,18 @@ msgid ""
 "To disable a keybinding, select it in the list and use <tt>&lt;Backspace&gt;"
 "</tt>."
 msgstr ""
+"快速鍵組合變更綁定，可以在所列選項的輸入框中，直接按下新的組合鍵。\n"
+"若要停用某個快速鍵綁定，可以在選定項目上，使用 <tt>&lt;Backspace&gt;</tt> 。"
 
 #. Column header for keybinding list
 #: zim/gui/preferencesdialog.py:566
-#, fuzzy
-#| msgid "Location"
 msgid "Action"
-msgstr "位置"
+msgstr "操作"
 
 #. Column header for keybinding list
 #: zim/gui/preferencesdialog.py:577
-#, fuzzy
-#| msgid "_Keybindings"
 msgid "Key Binding"
-msgstr "快捷鍵(_K)"
+msgstr "快速鍵綁定"
 
 #. label for properties dialog
 #: zim/gui/propertiesdialog.py:17
@@ -1806,14 +1774,12 @@ msgstr "文件根目錄"
 #. label for properties dialog
 #: zim/gui/propertiesdialog.py:21
 msgid "Prefer short names for page links"
-msgstr ""
+msgstr "偏好使用頁面的短名稱"
 
 #. label for properties dialog
 #: zim/gui/propertiesdialog.py:22
-#, fuzzy
-#| msgid "Could not find the file or folder for this notebook"
 msgid "Do not use system trash for this notebook"
-msgstr "找不到此筆記本之檔案或文件夾"
+msgstr "請勿使用系統垃圾桶於此筆記本"
 
 #. Dialog title
 #: zim/gui/propertiesdialog.py:30
@@ -1823,7 +1789,7 @@ msgstr "屬性"
 #. Dialog title
 #: zim/gui/recentchangesdialog.py:20
 msgid "Recent Changes"
-msgstr "最近更改"
+msgstr "最近修改"
 
 #. label for modified time
 #: zim/gui/recentchangesdialog.py:72
@@ -1838,17 +1804,17 @@ msgstr "昨天"
 #. Column header
 #: zim/gui/recentchangesdialog.py:88
 msgid "Last Modified"
-msgstr "最後更新"
+msgstr "最後修改"
 
 #. Dialog title
 #: zim/gui/searchdialog.py:27
 msgid "Search"
-msgstr "尋找"
+msgstr "搜尋"
 
 #. Button label
 #: zim/gui/searchdialog.py:40
 msgid "_Find"
-msgstr ""
+msgstr "尋找(_F)"
 
 #. help text for the search dialog
 #: zim/gui/searchdialog.py:50
@@ -1856,32 +1822,28 @@ msgid ""
 "For advanced search you can use operators like\n"
 "AND, OR and NOT. See the help page for more details."
 msgstr ""
-"欲進階搜尋，可使用運算元如AND、OR、NOT\n"
-"細節可參考「幫助」之內容"
+"進階搜尋可以使用運算字元如 AND、OR、NOT\n"
+"可以查看「說明」頁面相關的詳細內容。"
 
 #. checkbox option in search dialog
 #: zim/gui/searchdialog.py:55
-#, fuzzy
-#| msgid "Limit search to the current page and sub-pages"
 msgid "_Limit search to the current page and sub-pages"
-msgstr "只搜尋該頁面及其子頁面"
+msgstr "限制搜尋於目前頁面及下層頁面(_L)"
 
 #. placeholder label when search has started
 #: zim/gui/searchdialog.py:68
-#, fuzzy
-#| msgid "_Search..."
 msgid "Searching ..."
-msgstr "搜尋(_S)..."
+msgstr "搜尋..."
 
 #. placeholder label when search has no results
 #: zim/gui/searchdialog.py:69
 msgid "No results"
-msgstr ""
+msgstr "搜尋無結果"
 
 #. Column header search dialog
 #: zim/gui/searchdialog.py:171
 msgid "Score"
-msgstr "相符"
+msgstr "搜尋成果"
 
 #. Window title
 #: zim/gui/server.py:46
@@ -1901,7 +1863,7 @@ msgstr "允許公開存取"
 #. checkbox in dialog for starting webserver
 #: zim/gui/server.py:85
 msgid "Require authentication"
-msgstr ""
+msgstr "需要身份驗證"
 
 #. Field in web server gui for HTTP port (e.g. port 80)
 #: zim/gui/server.py:104
@@ -1910,15 +1872,13 @@ msgstr "埠"
 
 #. Field in web server gui
 #: zim/gui/server.py:110
-#, fuzzy
-#| msgid "Filename"
 msgid "Username"
-msgstr "檔案名稱"
+msgstr "用戶名稱"
 
 #. Field in web server gui
 #: zim/gui/server.py:112
 msgid "Password"
-msgstr ""
+msgstr "密碼"
 
 #. Status in web server gui
 #: zim/gui/server.py:187
@@ -1949,64 +1909,62 @@ msgstr "複製範本"
 #. Menu item
 #: zim/gui/uiactions.py:95
 msgid "_New Page..."
-msgstr ""
+msgstr "新建頁面(_N)..."
 
 #. Menu item
 #: zim/gui/uiactions.py:106
 msgid "New S_ub Page..."
-msgstr "建立子頁面(_U)"
+msgstr "新建下層頁面(_u)..."
 
 #. Menu item
 #: zim/gui/uiactions.py:114
 msgid "_New Page Here..."
-msgstr ""
+msgstr "新建頁面於此(_N)..."
 
 #. Menu item
 #: zim/gui/uiactions.py:122
 msgid "_Open Another Notebook..."
-msgstr "開啟別的筆記本(_O)..."
+msgstr "開啟其他筆記本(_O)..."
 
 #. Menu item
 #: zim/gui/uiactions.py:142
 msgid "_Import Page..."
-msgstr "匯入頁面(_I)"
+msgstr "匯入頁面(_I)..."
 
 #. Menu item
 #: zim/gui/uiactions.py:165
 msgid "Save A _Copy..."
-msgstr "另存副本(_C)"
+msgstr "另存副本(_C)..."
 
 #. Menu item
 #: zim/gui/uiactions.py:170
 msgid "E_xport..."
-msgstr "匯出(_X)"
+msgstr "匯出(_x)..."
 
 #. Menu item
 #: zim/gui/uiactions.py:177
 msgid "_Send To..."
-msgstr "傳送至...(_S)"
+msgstr "傳送至(_S)..."
 
 #. Menu item
 #: zim/gui/uiactions.py:190
-#, fuzzy
-#| msgid "_Rename Page..."
 msgid "_Rename or Move Page..."
-msgstr "重新命名頁面(_R)"
+msgstr "重新命名或移動頁面(_R)..."
 
 #. Menu item
 #: zim/gui/uiactions.py:199
 msgid "_Delete Page"
-msgstr "移除頁面(_R)"
+msgstr "刪除頁面(_D)"
 
 #. question in "delete page" action
 #: zim/gui/uiactions.py:228
 msgid "Trash failed, do you want to permanently delete instead ?"
-msgstr ""
+msgstr "丟進垃圾桶處理失敗，要改以永遠刪除來處理嗎？"
 
 #. Menu item
 #: zim/gui/uiactions.py:234
 msgid "Proper_ties"
-msgstr "屬性(_T)"
+msgstr "屬性(_t)"
 
 #. Menu item | 
 #. menu item in tray icon menu
@@ -2027,7 +1985,7 @@ msgstr "範本(_T)"
 #. Menu item
 #: zim/gui/uiactions.py:266
 msgid "Pr_eferences"
-msgstr "選項(_E)"
+msgstr "偏好設定(_e)"
 
 #. Menu item
 #: zim/gui/uiactions.py:276
@@ -2037,32 +1995,32 @@ msgstr "搜尋(_S)..."
 #. Menu item for search a sub-set of the notebook
 #: zim/gui/uiactions.py:297
 msgid "Search this section"
-msgstr ""
+msgstr "搜尋此範圍"
 
 #. Menu item
 #: zim/gui/uiactions.py:302
 msgid "Search _Backlinks..."
-msgstr "搜尋反向鏈結(_B)..."
+msgstr "搜尋反向連結(_B)..."
 
 #. Menu item
 #: zim/gui/uiactions.py:310
 msgid "Recent Changes..."
-msgstr "最近更改..."
+msgstr "最近變更..."
 
 #. Menu item
 #: zim/gui/uiactions.py:317
 msgid "Open Attachments _Folder"
-msgstr "開啟附件之文件夾(_F)"
+msgstr "開啟附件的資料夾(_F)"
 
 #. Error message
 #: zim/gui/uiactions.py:322
 msgid "This page does not have an attachments folder"
-msgstr "此頁面無附件目錄"
+msgstr "此頁面沒有附件資料夾"
 
 #. Menu item
 #: zim/gui/uiactions.py:328
 msgid "Open _Notebook Folder"
-msgstr "開啟筆記本之文件夾(_N)"
+msgstr "開啟筆記本之資料夾(_N)"
 
 #. Menu item
 #: zim/gui/uiactions.py:333
@@ -2072,41 +2030,37 @@ msgstr "開啟文件根目錄(_D)"
 #. Error message
 #: zim/gui/uiactions.py:339
 msgid "No document root defined for this notebook"
-msgstr ""
+msgstr "此筆記本沒有定義文件根目錄"
 
 #. Menu item
 #: zim/gui/uiactions.py:345
 msgid "Edit _Source"
-msgstr "編輯原始碼(_S)"
+msgstr "編輯來源(_S)"
 
 #. Menu item
 #: zim/gui/uiactions.py:361
 msgid "Start _Web Server"
-msgstr "啟動 Web 伺服器(_W)"
+msgstr "啟動網頁伺服器(_W)"
 
 #. menu item
 #: zim/gui/uiactions.py:368
-#, fuzzy
-#| msgid "View _Log"
 msgid "View Debug Log"
-msgstr "觀看日誌(_L)"
+msgstr "查看除錯日誌"
 
 #. Menu item
 #: zim/gui/uiactions.py:382
-#, fuzzy
-#| msgid "Update Index"
 msgid "Check and Update Index"
-msgstr "更新索引"
+msgstr "檢查並更新索引"
 
 #. Menu item
 #: zim/gui/uiactions.py:415
 msgid "Custom _Tools"
-msgstr "自行定義工具(_T)"
+msgstr "自訂工具(_T)"
 
 #. Menu item
 #: zim/gui/uiactions.py:421
 msgid "_Contents"
-msgstr "內容(_C)"
+msgstr "目錄(_C)"
 
 #. Menu item
 #: zim/gui/uiactions.py:432
@@ -2116,7 +2070,7 @@ msgstr "常見問題(_F)"
 #. Menu item
 #: zim/gui/uiactions.py:437
 msgid "_Keybindings"
-msgstr "快捷鍵(_K)"
+msgstr "快速鍵(_K)"
 
 #. Menu item
 #: zim/gui/uiactions.py:442
@@ -2132,12 +2086,12 @@ msgstr "關於(_A)"
 #: zim/gui/uiactions.py:463
 #, python-format
 msgid "New Page in %s"
-msgstr ""
+msgstr "新建頁面於 %s"
 
 #. Dialog title
 #: zim/gui/uiactions.py:465
 msgid "New Page"
-msgstr "新頁面"
+msgstr "新建頁面"
 
 #. Dialog text in 'new page' dialog
 #: zim/gui/uiactions.py:469
@@ -2145,8 +2099,8 @@ msgid ""
 "Please note that linking to a non-existing page\n"
 "also creates a new page automatically."
 msgstr ""
-"請留意，當鏈結至不存在之頁面\n"
-"將自動建立新頁面"
+"請注意，當連結至不存在的頁面，\n"
+"也將會自動的建立出新的頁面。"
 
 #. Input label
 #: zim/gui/uiactions.py:483
@@ -2156,7 +2110,7 @@ msgstr "頁面名稱"
 #. Choice label
 #: zim/gui/uiactions.py:484
 msgid "Page Template"
-msgstr "頁面樣式"
+msgstr "頁面範本"
 
 #. Dialog title
 #: zim/gui/uiactions.py:534
@@ -2175,10 +2129,8 @@ msgstr "儲存副本"
 
 #. Dialog title
 #: zim/gui/uiactions.py:589
-#, fuzzy
-#| msgid "Rename Page"
 msgid "Rename or Move Page"
-msgstr "重新命名頁面"
+msgstr "重新命名或移動頁面"
 
 #. Heading in 'move page' dialog - %s is the page name
 #: zim/gui/uiactions.py:594
@@ -2191,63 +2143,60 @@ msgstr "重新命名頁面 \"%s\""
 #, python-format
 msgid "Update %i page linking to this page"
 msgid_plural "Update %i pages linking to this page"
-msgstr[0] "更新連結至此書頁共 %i 頁之頁面"
+msgstr[0] "更新 %1 個頁面連結至此頁面"
 
 #. option in 'move page' dialog
 #: zim/gui/uiactions.py:614
 msgid "Update the heading of this page"
-msgstr "更新此頁面之標題"
+msgstr "更新此頁面的標題"
 
 #. label for progress dialog
 #: zim/gui/uiactions.py:649
 msgid "Updating Links"
-msgstr "更新鏈結"
+msgstr "更新連結"
 
 #. label in DeletePageDialog
 #: zim/gui/uiactions.py:685
 #, python-format
 msgid "Remove links to %s"
-msgstr ""
+msgstr "移除連結至 %s"
 
 #. Dialog title
 #: zim/gui/uiactions.py:729
 msgid "Trash Page"
-msgstr ""
+msgstr "垃圾桶頁面"
 
 #. Heading in 'trash page' dialog - %s is the page name
 #: zim/gui/uiactions.py:730
 #, python-format
 msgid "Move page \"%s\" to trash?"
-msgstr "移頁面「%s」至垃圾桶？"
+msgstr "移動頁面 \"%s\" 至垃圾桶？"
 
 #. Text in 'trash page' dialog - %s is the page name
 #: zim/gui/uiactions.py:732
-#, fuzzy, python-format
-#| msgid ""
-#| "Page \"%s\" and all of it's\n"
-#| "sub-pages and attachments will be deleted"
+#, python-format
 msgid ""
 "Page \"%s\" and all of it's sub-pages and\n"
 "attachments will be moved to your system's trash.\n"
 "\n"
 "To undo later, go to your system's trashcan."
 msgstr ""
-"頁面 \"%s\" 及其所屬\n"
-"所有子頁面和附件，都將被刪除"
+"頁面 \"%s\" 及其下層頁面和附件，\n"
+"都將被移至系統垃圾桶待處理刪除。\n"
+"\n"
+"之後取消動作，要前往系統垃圾桶。"
 
 #. label in the TrashPage dialog to warn user of attachments being deleted
 #: zim/gui/uiactions.py:736
-#, fuzzy, python-format
-#| msgid "%i file will be deleted"
-#| msgid_plural "%i files will be deleted"
+#, python-format
 msgid "%i file will be trashed"
 msgid_plural "%i files will be trashed"
-msgstr[0] "%i 檔案將被移除"
+msgstr[0] "%i 個檔案將被丟進垃圾桶"
 
 #. Title of progressbar dialog
 #: zim/gui/uiactions.py:746 zim/gui/uiactions.py:786
 msgid "Removing Links"
-msgstr "移除鏈結"
+msgstr "移除連結"
 
 #. Dialog title
 #: zim/gui/uiactions.py:771
@@ -2258,41 +2207,39 @@ msgstr "刪除頁面"
 #: zim/gui/uiactions.py:772
 #, python-format
 msgid "Delete page \"%s\"?"
-msgstr "刪除頁面 \"%s\"?"
+msgstr "要刪除頁面 \"%s\"?"
 
 #. Text in 'delete page' dialog - %s is the page name
 #: zim/gui/uiactions.py:774
-#, fuzzy, python-format
-#| msgid ""
-#| "Page \"%s\" and all of it's\n"
-#| "sub-pages and attachments will be deleted"
+#, python-format
 msgid ""
 "Page \"%s\" and all of it's sub-pages and\n"
 "attachments will be deleted.\n"
 "\n"
 "This deletion is permanent and cannot be un-done."
 msgstr ""
-"頁面 \"%s\" 及其所屬\n"
-"所有子頁面和附件，都將被刪除"
+"頁面 \"%s\" 及其下層頁面和附件，都將被理刪除。\n"
+"\n"
+"此刪除操作是永久的，無法取消動作。"
 
 #. label in the DeletePage dialog to warn user of attachments being deleted
 #: zim/gui/uiactions.py:778
 #, python-format
 msgid "%i file will be deleted"
 msgid_plural "%i files will be deleted"
-msgstr[0] "%i 檔案將被移除"
+msgstr[0] "%i 個檔案將被刪除"
 
 #. General description of zim itself
 #: zim/gui/uiactions.py:808
 msgid "A desktop wiki"
-msgstr "桌面維基"
+msgstr "桌面維基 wiki"
 
 #. This string needs to be translated with names of the translators for this language
 #: zim/gui/uiactions.py:816
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  DreamerC https://launchpad.net/~dreamerwolf\n"
+" DreamerC https://launchpad.net/~dreamerwolf\n"
 "  Henry Lee https://launchpad.net/~henrylee\n"
 "  Jaap Karssenberg https://launchpad.net/~jaap.karssenberg\n"
 "  Takashi Kinami https://launchpad.net/~sloanej\n"
@@ -2300,7 +2247,8 @@ msgstr ""
 "  Tsung-Hao Lee https://launchpad.net/~tsunghao\n"
 "  YPWang https://launchpad.net/~blue119\n"
 "  Zihao Wang https://launchpad.net/~wzhd\n"
-"  cyberik https://launchpad.net/~cyberikee"
+"  cyberik https://launchpad.net/~cyberikee\n"
+"  BigELK176 https://launchpad.net/~bigelk176"
 
 #. dialog title
 #: zim/gui/widgets.py:546 zim/gui/widgets.py:1617
@@ -2310,12 +2258,12 @@ msgstr "選擇檔案"
 #. menu item in context menu
 #: zim/gui/widgets.py:674
 msgid "Expand _All"
-msgstr "展開所有(_A)內容"
+msgstr "展開全部(_A)"
 
 #. menu item in context menu
 #: zim/gui/widgets.py:676
 msgid "_Collapse All"
-msgstr "折疊所有(_C)內容"
+msgstr "縮合全部(_C)"
 
 #. tooltip for the inline icon to clear a text entry widget
 #: zim/gui/widgets.py:1475
@@ -2325,7 +2273,7 @@ msgstr "清除"
 #. dialog title
 #: zim/gui/widgets.py:1613
 msgid "Select Folder"
-msgstr "選擇文件夾"
+msgstr "選擇資料夾"
 
 #. dialog title
 #: zim/gui/widgets.py:1615
@@ -2340,66 +2288,64 @@ msgstr "<Top>"
 #. Option for placement of plugin widgets
 #: zim/gui/widgets.py:2074
 msgid "Left Side Pane"
-msgstr "左側窗格"
+msgstr "左側面板"
 
 #. Option for placement of plugin widgets
 #: zim/gui/widgets.py:2075
 msgid "Right Side Pane"
-msgstr "右側窗格"
+msgstr "右側面板"
 
 #. Option for placement of plugin widgets
 #: zim/gui/widgets.py:2076
 msgid "Bottom Pane"
-msgstr "底部窗格"
+msgstr "底部面板"
 
 #. Option for placement of plugin widgets
 #: zim/gui/widgets.py:2077
 msgid "Top Pane"
-msgstr "頂部窗格"
+msgstr "頂部面板"
 
 #. position of widget in window
 #: zim/gui/widgets.py:2086
-#, fuzzy
-#| msgid "<Top>"
 msgid "Top"
-msgstr "<Top>"
+msgstr "頂部"
 
 #. position of widget in window
 #: zim/gui/widgets.py:2087
-#, fuzzy
-#| msgid "Bottom Pane"
 msgid "Bottom"
-msgstr "底部窗格"
+msgstr "底部"
 
 #. position of widget in window | 
 #. alignment option
 #: zim/gui/widgets.py:2088 zim/plugins/tableeditor.py:53
 #: zim/plugins/tableeditor.py:864
 msgid "Left"
-msgstr ""
+msgstr "靠左對齊"
 
 #. position of widget in window | 
 #. alignment option
 #: zim/gui/widgets.py:2089 zim/plugins/tableeditor.py:55
 msgid "Right"
-msgstr ""
+msgstr "靠右對齊"
 
 #. Menu item
 #: zim/gui/widgets.py:2728
 msgid "_All Panes"
-msgstr "所有窗格(_A)"
+msgstr "全部面板(_A)"
 
 #. generic error dialog text
 #: zim/gui/widgets.py:3265
 msgid ""
 "When reporting this bug please include\n"
 "the information from the text box below"
-msgstr "提交錯誤時請包含以下文字框中的信息"
+msgstr ""
+"提交錯誤報告時，\n"
+"請包含以下文字框中的資訊"
 
 #. Filter in open file dialog, shows all files (*)
 #: zim/gui/widgets.py:3647
 msgid "All Files"
-msgstr "全部文件"
+msgstr "全部檔案"
 
 #. Filter in open file dialog, shows image files only
 #: zim/gui/widgets.py:3674
@@ -2410,7 +2356,7 @@ msgstr "圖像"
 #: zim/gui/widgets.py:3770
 #, python-brace-format
 msgid "{count} of {total}"
-msgstr ""
+msgstr "{count} / {total}"
 
 #. dialog title for log view dialog - e.g. for Equation Editor
 #: zim/gui/widgets.py:3792
@@ -2420,7 +2366,7 @@ msgstr "系統紀錄檔"
 #. Error verbose description
 #: zim/main/__init__.py:120
 msgid "Could not find the file or folder for this notebook"
-msgstr "找不到此筆記本之檔案或文件夾"
+msgstr "找不到此筆記本之檔案或資料夾"
 
 #. Error when looking up a notebook
 #: zim/main/__init__.py:153 zim/main/__init__.py:186
@@ -2442,22 +2388,22 @@ msgstr "指定用於匯出的位置"
 #: zim/main/__init__.py:460
 msgid ""
 "Output folder exists and not empty, specify \"--overwrite\" to force export"
-msgstr "輸出資料夾已存在且非空, 可以使用\"--overwrite\"以強制匯出"
+msgstr "輸出資料夾已存在且非全空，指定 \"--overwrite\" 可以強制匯出"
 
 #. error message for export
 #: zim/main/__init__.py:464
 msgid "Output file exists, specify \"--overwrite\" to force export"
-msgstr "輸出檔案已存在, 可以使用\"--overwrite\"以強制匯出"
+msgstr "輸出檔案已存在，指定 \"--overwrite\" 可以強制匯出"
 
 #. error message for export
 #: zim/main/__init__.py:469
 msgid "Need output file to export MHTML"
-msgstr "指定檔案以匯出MHTML"
+msgstr "需要指定輸出檔案以匯出 MHTML"
 
 #. error message for export
 #: zim/main/__init__.py:503
 msgid "Need output folder to export full notebook"
-msgstr "指定資料夾以匯出整個筆記本"
+msgstr "需要指定輸出資料夾以匯出整個筆記本"
 
 #. Error explanation
 #: zim/newfs/local.py:43
@@ -2466,13 +2412,14 @@ msgid ""
 "of the file name, please try using a name with less\n"
 "than 255 characters"
 msgstr ""
+"無法寫入此檔案。 原因可能是檔案名稱長度。\n"
+"請設定檔案名稱使用少於255個字元。"
 
 #. error message for filesystem limitations
 #: zim/newfs/local.py:49
-#, fuzzy, python-format
-#| msgid "File changed on disk: %s"
+#, python-format
 msgid "File name too long: %s"
-msgstr "硬碟裡的檔案已被修改: %s"
+msgstr "檔案名稱過長： %s"
 
 #. Error explanation
 #: zim/newfs/local.py:54
@@ -2481,12 +2428,14 @@ msgid ""
 "of the file path, please try using a folder structure resulting in less\n"
 "than 4096 characters"
 msgstr ""
+"無法寫入此檔案。 原因可能是檔案路徑長度。\n"
+"請設定資料夾結構使用少於 4096 個字元。"
 
 #. error message for filesystem limitations
 #: zim/newfs/local.py:60
 #, python-format
 msgid "File path too long: %s"
-msgstr ""
+msgstr "檔案路徑過長： %s"
 
 #. Title of progressbar dialog
 #: zim/notebook/index/__init__.py:435
@@ -2497,37 +2446,36 @@ msgstr "更新索引"
 #: zim/notebook/notebook.py:119
 #, python-format
 msgid "No such page: %s"
-msgstr ""
+msgstr "無此頁面 : %s"
 
 #. message for PageNotAllowedError
 #: zim/notebook/notebook.py:123
 #, python-format
 msgid "Page not allowed: %s"
-msgstr ""
+msgstr "頁面不允許： %s"
 
 #. description for PageNotAllowedError
 #: zim/notebook/notebook.py:124
 msgid ""
 "This page name cannot be used due to technical limitations of the storage"
-msgstr ""
+msgstr "此頁面名稱無法使用，因為儲存容量上的技術限制。"
 
 #. message for PageNotAvailableError
 #: zim/notebook/notebook.py:129
-#, fuzzy, python-format
-#| msgid "File is not writable: %s"
+#, python-format
 msgid "Page not available: %s"
-msgstr "檔案無法寫入: %s"
+msgstr "頁面未可使供用： %s"
 
 #. description for PageNotAvailableError
 #: zim/notebook/notebook.py:130
 msgid "This page name cannot be used due to a conflicting file in the storage"
-msgstr ""
+msgstr "此頁面名稱不可使用，因為儲存中檔案衝突"
 
 #. message for PageExistsError
 #: zim/notebook/notebook.py:139
 #, python-format
 msgid "Page already exists: %s"
-msgstr ""
+msgstr "頁面已存在: %s"
 
 #. error message for read-only pages
 #: zim/notebook/page.py:417
@@ -2538,7 +2486,7 @@ msgstr "無法修改頁面： %s"
 #. placeholder for unknown file name
 #: zim/parser.py:276
 msgid "<Unknown>"
-msgstr "<未知的>"
+msgstr "<不明>"
 
 #. Extended error message while parsing a file, gives file name, line number and words where error occurred
 #: zim/parser.py:282
@@ -2558,10 +2506,9 @@ msgid ""
 "It is based on the arithmetic module from\n"
 "http://pp.com.mx/python/arithmetic.\n"
 msgstr ""
-"此外掛可在 zim 中嵌入算數計算。\n"
-"此外掛基于\n"
+"此外掛程式可在 zim 中嵌入算術計算。\n"
+"此外掛程式基於算術模組，來源自 \n"
 "http://pp.com.mx/python/arithmetic\n"
-"中的算數模塊。\n"
 
 #. menu item
 #: zim/plugins/arithmetic.py:33
@@ -2572,31 +2519,27 @@ msgstr "算術(_A)"
 #: zim/plugins/attachmentbrowser/filebrowser.py:61
 #, python-format
 msgid "Are you sure you want to delete the file '%s'?"
-msgstr ""
+msgstr "您確定要刪除檔案 '%s'?"
 
 #. menu item to delete file
 #: zim/plugins/attachmentbrowser/filebrowser.py:361
-#, fuzzy
-#| msgid "_Delete"
 msgid "_Delete..."
-msgstr "刪除(_D)"
+msgstr "刪除(_D)..."
 
 #. menu item to rename file
 #: zim/plugins/attachmentbrowser/filebrowser.py:365
-#, fuzzy
-#| msgid "_Replace..."
 msgid "_Rename..."
-msgstr "取代(_R)..."
+msgstr "重新命名(_R)..."
 
 #. unspecified value for file modification time
 #: zim/plugins/attachmentbrowser/filebrowser.py:398
 msgid "Unknown"
-msgstr "未知狀態"
+msgstr "不明"
 
 #. label for file type
 #: zim/plugins/attachmentbrowser/filebrowser.py:411
 msgid "Type"
-msgstr "文件類型"
+msgstr "類型"
 
 #. label for file size
 #: zim/plugins/attachmentbrowser/filebrowser.py:412
@@ -2626,22 +2569,22 @@ msgstr "取消"
 #. dialog title
 #: zim/plugins/attachmentbrowser/filerenamedialog.py:18
 msgid "Rename file"
-msgstr ""
+msgstr "重新命名檔案"
 
 #. Error message
 #: zim/plugins/attachmentbrowser/filerenamedialog.py:69
 msgid "File name should not be blank."
-msgstr ""
+msgstr "檔案名稱不可空白。"
 
 #. Error message
 #: zim/plugins/attachmentbrowser/filerenamedialog.py:72
 msgid "A file with that name already exists."
-msgstr ""
+msgstr "相同名稱已有檔案存在。"
 
 #. Error message
 #: zim/plugins/attachmentbrowser/filerenamedialog.py:75
 msgid "File name should not contain path declaration."
-msgstr ""
+msgstr "檔案名稱不宜包含路徑聲明。"
 
 #. plugin name
 #: zim/plugins/attachmentbrowser/__init__.py:69
@@ -2653,7 +2596,9 @@ msgstr "附件瀏覽器"
 msgid ""
 "This plugin shows the attachments folder of the current page as an\n"
 "icon view at bottom pane.\n"
-msgstr "這個插件會在底欄顯示附件資料夾的圖示\n"
+msgstr ""
+"這個外掛程式會在底部板面中\n"
+"顯示附件資料夾的圖示\n"
 
 #. option for plugin preferences | 
 #. preferences option
@@ -2667,38 +2612,34 @@ msgstr "視窗中的位置"
 #. option for plugin preferences
 #: zim/plugins/attachmentbrowser/__init__.py:84
 msgid "Use thumbnails"
-msgstr ""
+msgstr "使用縮圖"
 
 #. option for plugin preferences
 #: zim/plugins/attachmentbrowser/__init__.py:86
 msgid "Support thumbnails for SVG"
-msgstr ""
+msgstr "支援 SVG 縮圖"
 
 #. label for attachment browser pane
 #: zim/plugins/attachmentbrowser/__init__.py:130
-#, fuzzy
-#| msgid "Attachments"
 msgid "Atta_chments"
-msgstr "附件"
+msgstr "附件(_c)"
 
 #. placeholder label for sidepane
 #: zim/plugins/attachmentbrowser/__init__.py:146
-#, fuzzy
-#| msgid "Attachments:"
 msgid "No attachments"
-msgstr "附件："
+msgstr "無附件"
 
 #. Label for the statusbar, %i is the number of attachments for the current page
 #: zim/plugins/attachmentbrowser/__init__.py:191
 #, python-format
 msgid "%i Atta_chment"
 msgid_plural "%i Atta_chments"
-msgstr[0] "%i個附件"
+msgstr[0] "%i 個附件(_c)"
 
 #. plugin name
 #: zim/plugins/backlinkpane.py:22
 msgid "BackLinks Pane"
-msgstr "反向連結窗格"
+msgstr "反向連結面板"
 
 #. plugin description
 #: zim/plugins/backlinkpane.py:23
@@ -2708,22 +2649,20 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"此插件會在視窗中新增一個小部件，\n"
-"顯示連結到當前頁面的所有頁面列表。\n"
+"此外掛程式會在額外視窗中顯示出\n"
+"連結到目前頁面的全部頁面列表。\n"
 "\n"
-"此插件為 zim 自帶的核心插件。\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. option for plugin preferences
 #: zim/plugins/backlinkpane.py:37
 msgid "Show BackLink count in title"
-msgstr ""
+msgstr "在標題中顯示反向連結的數量"
 
 #. option for plugin preferences
 #: zim/plugins/backlinkpane.py:39
-#, fuzzy
-#| msgid "Show full Page Name"
 msgid "Show full Page Names"
-msgstr "顯示完整頁面名稱"
+msgstr "顯示全套頁面名稱"
 
 #. widget label
 #: zim/plugins/backlinkpane.py:71
@@ -2732,37 +2671,31 @@ msgstr "反向連結"
 
 #. placeholder label in sidepane
 #: zim/plugins/backlinkpane.py:84
-#, fuzzy
-#| msgid "Backlinks:"
 msgid "No backlinks"
-msgstr "反向連結："
+msgstr "無反向連結"
 
 #. Label for the statusbar, %i is the number of BackLinks to the current page
 #: zim/plugins/backlinkpane.py:125
-#, fuzzy, python-format
-#| msgid "%i _Backlink..."
-#| msgid_plural "%i _Backlinks..."
+#, python-format
 msgid "%i _BackLink"
 msgid_plural "%i _BackLinks"
-msgstr[0] "%i 個反向鏈結(_B)..."
+msgstr[0] "%i 個反向鏈結(_B)"
 
 #. widget label
 #: zim/plugins/backlinkpane.py:128
-#, fuzzy
-#| msgid "BackLinks"
 msgid "_BackLinks"
-msgstr "反向連結"
+msgstr "反向連結(_B)"
 
 #. context menu for inserted objects
 #: zim/plugins/base/imagegenerator.py:361
 msgid "_Edit..."
-msgstr ""
+msgstr "編輯(_E)..."
 
 #. dialog title, %s is the object name like "Equation"
 #: zim/plugins/base/imagegenerator.py:390
 #, python-format
 msgid "Edit %s"
-msgstr ""
+msgstr "編輯 %s"
 
 #. button in e.g. equation editor dialog
 #: zim/plugins/base/imagegenerator.py:415
@@ -2775,13 +2708,13 @@ msgid ""
 "An error occurred while generating the image.\n"
 "Do you want to save the source text anyway?"
 msgstr ""
-"圖像產生失敗\n"
-"要儲存原始文字嗎？"
+"產生圖像時發生錯誤\n"
+"仍要儲存來源文字嗎？"
 
 #. plugin name
 #: zim/plugins/bookmarksbar.py:36
 msgid "BookmarksBar"
-msgstr "書籤欄"
+msgstr "書籤列"
 
 #. plugin description
 #: zim/plugins/bookmarksbar.py:37
@@ -2789,13 +2722,13 @@ msgid ""
 "\t\tThis plugin provides bar for bookmarks.\n"
 "\t\t"
 msgstr ""
-"\t\t這個插件顯示書籤欄\n"
+"\t\t這個外掛程式提供顯示書籤列\n"
 "\t\t"
 
 #. plugin preference
 #: zim/plugins/bookmarksbar.py:45
 msgid "Maximum number of bookmarks"
-msgstr ""
+msgstr "書籤的最大數量"
 
 #. preferences option
 #: zim/plugins/bookmarksbar.py:46
@@ -2805,7 +2738,7 @@ msgstr "儲存書籤"
 #. preferences option
 #: zim/plugins/bookmarksbar.py:47
 msgid "Add new bookmarks to the beginning of the bar"
-msgstr "新書籤新增到書籤欄最前"
+msgstr "新書籤新增到書籤列最前端"
 
 #. menu item bookmark plugin
 #: zim/plugins/bookmarksbar.py:99 zim/plugins/bookmarksbar.py:160
@@ -2820,17 +2753,17 @@ msgstr "書籤"
 #. button label
 #: zim/plugins/bookmarksbar.py:184
 msgid "Add bookmark/Show settings"
-msgstr ""
+msgstr "新增書籤/顯示設定"
 
 #. message for bookmark plugin
 #: zim/plugins/bookmarksbar.py:294
 msgid "Do you want to delete all bookmarks?"
-msgstr "您想要刪除所有書籤嗎?"
+msgstr "您想要刪除全部書籤嗎?"
 
 #. menu item for context menu
 #: zim/plugins/bookmarksbar.py:375
 msgid "Show full Page Name"
-msgstr "顯示完整頁面名稱"
+msgstr "顯示全套頁面名稱"
 
 #. button label
 #: zim/plugins/bookmarksbar.py:397
@@ -2845,7 +2778,7 @@ msgstr "恢復原有名稱"
 #. menu item
 #: zim/plugins/bookmarksbar.py:404
 msgid "Remove"
-msgstr "削除"
+msgstr "移除"
 
 #. menu item
 #: zim/plugins/bookmarksbar.py:405
@@ -2855,29 +2788,27 @@ msgstr "移除全部"
 #. menu item
 #: zim/plugins/bookmarksbar.py:407
 msgid "Copy"
-msgstr ""
+msgstr "複製"
 
 #. menu item
 #: zim/plugins/bookmarksbar.py:408
 msgid "Paste"
-msgstr ""
+msgstr "貼上"
 
 #. menu item
 #: zim/plugins/bookmarksbar.py:410
 msgid "Open in New Window"
-msgstr "在新視窗開啟"
+msgstr "在新視窗中開啟"
 
 #. menu item
 #: zim/plugins/bookmarksbar.py:413
 msgid "Set to Current Page"
-msgstr "設爲當前頁"
+msgstr "設爲目前頁面"
 
 #. plugin name
 #: zim/plugins/commandpalette.py:43 zim/plugins/commandpalette.py:115
-#, fuzzy
-#| msgid "Command"
 msgid "Command Palette"
-msgstr "指令"
+msgstr "指令調控板"
 
 #. plugin description
 #: zim/plugins/commandpalette.py:44
@@ -2886,11 +2817,13 @@ msgid ""
 "The search dialog can be opened by pressing the keyboard shortcut Ctrl+Shift"
 "+P which can be customized via Zim's key bindings preferences."
 msgstr ""
+"此外掛程式可以開啟搜尋對話框，允許快速執行選單項目。此搜尋對話框開啟快速鍵 "
+"Ctrl+Shift+P 可以透過 Zim 的快速鍵組合偏好來自訂。"
 
 #. plugin name
 #: zim/plugins/diagrameditor.py:23
 msgid "Insert Diagram"
-msgstr "加入圖表"
+msgstr "插入圖表"
 
 #. plugin description
 #: zim/plugins/diagrameditor.py:24
@@ -2899,24 +2832,24 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"此外掛程式以 GraphViz 為基礎，提供圖表編輯器\n"
+"此外掛程式提供圖表編輯器，基於 GraphViz 。\n"
 "\n"
-"此為 zim 內附之核心外掛程式\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. plugin preference
 #: zim/plugins/diagrameditor.py:38 zim/plugins/sequencediagrameditor.py:38
 msgid "Generate diagrams in SVG format"
-msgstr ""
+msgstr "產生示意圖，以 SVG 格式"
 
 #. menu item
 #: zim/plugins/diagrameditor.py:52
 msgid "Diagram"
-msgstr ""
+msgstr "圖表"
 
 #. plugin name
 #: zim/plugins/distractionfree.py:25
 msgid "Distraction Free Editing"
-msgstr "免打擾編輯模式"
+msgstr "無干擾自由編輯模式"
 
 #. plugin description
 #: zim/plugins/distractionfree.py:27
@@ -2924,11 +2857,13 @@ msgid ""
 "This plugin adds settings that help using zim\n"
 "as a distraction free editor.\n"
 msgstr ""
+"此外掛程式增加設定，用來輔助運用 zim\n"
+"於無干擾自由編輯模式。\n"
 
 #. plugin preference
 #: zim/plugins/distractionfree.py:36
 msgid "Hide menubar in fullscreen mode"
-msgstr "全螢幕時隱藏選單列"
+msgstr "在全螢幕時隱藏功能選單"
 
 #. plugin preference
 #: zim/plugins/distractionfree.py:37
@@ -2939,7 +2874,7 @@ msgstr "最大頁面寬度"
 #. preference option for sourceview plugin
 #: zim/plugins/distractionfree.py:38 zim/plugins/sourceview.py:99
 msgid "Border width"
-msgstr ""
+msgstr "邊界寬度"
 
 #. plugin preference
 #: zim/plugins/distractionfree.py:39
@@ -2954,7 +2889,7 @@ msgstr "文字的前景顏色"
 #. plugin name
 #: zim/plugins/ditaaeditor.py:28
 msgid "Insert Ditaa"
-msgstr "插入 ditaa"
+msgstr "插入 ditaa 製圖"
 
 #. plugin description
 #: zim/plugins/ditaaeditor.py:29
@@ -2963,16 +2898,19 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
+"此外掛程式提供製圖編輯器，基於 Ditaa。\n"
+"\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. menu item
 #: zim/plugins/ditaaeditor.py:47
 msgid "Ascii graph (Ditaa)"
-msgstr ""
+msgstr "Ascii 圖表 (Ditaa)"
 
 #. plugin name
 #: zim/plugins/equationeditor.py:21
 msgid "Insert Equation"
-msgstr "加入方程式"
+msgstr "插入方程式"
 
 #. plugin description
 #: zim/plugins/equationeditor.py:22
@@ -2981,60 +2919,59 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"此外掛程式提供 latex 之方程式編輯器\n"
+"此外掛程式提供方程式編輯器，基於 latex 語法。\n"
 "\n"
-"\n"
-"此為 zim 內附之核心外掛程式\n"
+"此為核心外程式，隨同  zim 發行。\n"
 
 #. plugin preference
 #: zim/plugins/equationeditor.py:33
 msgid "Use font color for dark theme"
-msgstr ""
+msgstr "暗色主題下使用字形顏色"
 
 #. plugin preference
 #: zim/plugins/equationeditor.py:34
 msgid "Font size"
-msgstr ""
+msgstr "字形大小"
 
 #. plugin preference
 #: zim/plugins/equationeditor.py:35
 msgid "Equation image DPI"
-msgstr ""
+msgstr "方程式圖像 DPI"
 
 #. menu item
 #: zim/plugins/equationeditor.py:49
 msgid "Equation"
-msgstr ""
+msgstr "方程式"
 
 #. plugin name
 #: zim/plugins/gnuplot_ploteditor.py:32
 msgid "Insert Gnuplot"
-msgstr "插入 Gnuplot"
+msgstr "插入 Gnuplot 製圖"
 
 #. plugin description
 #: zim/plugins/gnuplot_ploteditor.py:33
 msgid "This plugin provides a plot editor for zim based on Gnuplot.\n"
-msgstr "該插件提供一個基于Gnuplot的繪圖編輯器\n"
+msgstr "此外掛程式提供數學函數圖形編輯器，基於 Gnuplot 。\n"
 
 #. menu item
 #: zim/plugins/gnuplot_ploteditor.py:49
 msgid "Gnuplot"
-msgstr "Gnuplot"
+msgstr "Gnuplot 數學繪圖"
 
 #. plugin name
 #: zim/plugins/gnu_r_ploteditor.py:35
 msgid "Insert GNU R Plot"
-msgstr "加入數據圖"
+msgstr "插入 GNU R Plot 製圖"
 
 #. plugin description
 #: zim/plugins/gnu_r_ploteditor.py:36
 msgid "This plugin provides a plot editor for zim based on GNU R.\n"
-msgstr "此外掛程式以 GNU R 為基礎，提供數據圖表設計語法編輯器\n"
+msgstr "此外掛程式提供數據點陣佈列圖編輯器，基於 GNU R 。\n"
 
 #. menu item
 #: zim/plugins/gnu_r_ploteditor.py:52
 msgid "GNU R Plot"
-msgstr ""
+msgstr "GNU R Plot 製圖"
 
 #. error description
 #: zim/plugins/inlinecalculator.py:192
@@ -3042,11 +2979,13 @@ msgid ""
 "The inline calculator plugin was not able\n"
 "to evaluate the expression at the cursor."
 msgstr ""
+"內聯計算器外掛程式無法\n"
+"計算游標位處的表達式。"
 
 #. plugin name
 #: zim/plugins/inlinecalculator.py:204
 msgid "Inline Calculator"
-msgstr "內置計算機"
+msgstr "內聯計算器"
 
 #. plugin description
 #: zim/plugins/inlinecalculator.py:205
@@ -3056,6 +2995,10 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
+"此外掛程式讓您快速地在 zim 中\n"
+"對簡單的數學表達式進行求值。\n"
+"\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. error message
 #: zim/plugins/inlinecalculator.py:271
@@ -3071,7 +3014,7 @@ msgstr "執行計算(_M)"
 #. Dialog title
 #: zim/plugins/insertsymbol.py:25 zim/plugins/insertsymbol.py:130
 msgid "Insert Symbol"
-msgstr "加入符號"
+msgstr "插入符號"
 
 #. plugin description
 #: zim/plugins/insertsymbol.py:26
@@ -3081,10 +3024,10 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"此外掛程式提供「加入符號」之對話框\n"
-"方便自動輸入特殊符號\n"
+"此外掛程式添加'插入符號'對話框，\n"
+"可以使用自動格式化的特殊符號字元。\n"
 "\n"
-"此為 zim 內附之核心外掛程式\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. menu item
 #: zim/plugins/insertsymbol.py:77
@@ -3103,6 +3046,9 @@ msgid ""
 "with a page per day, week or month.\n"
 "Also adds a calendar widget to access these pages.\n"
 msgstr ""
+"此外掛程式可將筆記本部分轉為日誌，\n"
+"頁面可以是每日、每週、每月。\n"
+"同時也加上行事曆單元來存取這些頁面。\n"
 
 #. option value
 #: zim/plugins/journal.py:109
@@ -3127,29 +3073,27 @@ msgstr "年"
 #. preferences option
 #: zim/plugins/journal.py:117
 msgid "Hide Journal pane if empty"
-msgstr ""
+msgstr "隱藏日誌面板，若是空白"
 
 #. input label
 #: zim/plugins/journal.py:121
 msgid "Section"
-msgstr ""
+msgstr "章節"
 
 #. preferences option, values will be "Day", "Month", ...
 #: zim/plugins/journal.py:122
 msgid "Use a page for each"
-msgstr "每個一個頁面"
+msgstr "各別使用一個頁面"
 
 #. menu item
 #: zim/plugins/journal.py:271
 msgid "To_day"
-msgstr "今天(_D)"
+msgstr "今日(_d)"
 
 #. side pane title
 #: zim/plugins/journal.py:335
-#, fuzzy
-#| msgid "Journal"
 msgid "_Journal"
-msgstr "日誌"
+msgstr "日誌(_J)"
 
 #. strftime format for current date label
 #: zim/plugins/journal.py:396
@@ -3159,7 +3103,7 @@ msgstr "%A (週幾) %d (日) %B (月) %Y (年)"
 #. plugin name
 #: zim/plugins/linesorter.py:26
 msgid "Line Sorter"
-msgstr "行排序"
+msgstr "行列排序"
 
 #. plugin description
 #: zim/plugins/linesorter.py:27
@@ -3169,42 +3113,45 @@ msgid ""
 "(A-Z to Z-A). Additional features: move text lines up or down,\n"
 "duplicate or remove lines of text.\n"
 msgstr ""
+"此外掛程式可將所選的行列依字母排序，\n"
+"若是已經排序則會逆向排序(A-Z 變成 Z-A)。\n"
+"附加功能：上下移動文字行列、重複或移除文字行列。\n"
 
 #. Error message for linesorter plugin
 #: zim/plugins/linesorter.py:41
 msgid "Please select more than one line of text"
-msgstr ""
+msgstr "請選擇文字行列多於一行以上"
 
 #. menu item
 #: zim/plugins/linesorter.py:71
 msgid "_Sort lines"
-msgstr "排序(_S)"
+msgstr "排序行列(_S)"
 
 #. Menu item
 #: zim/plugins/linesorter.py:175
 msgid "_Move Line Up"
-msgstr ""
+msgstr "向上移動行列(_M)"
 
 #. Menu item
 #: zim/plugins/linesorter.py:181
 msgid "_Move Line Down"
-msgstr ""
+msgstr "向下移動行列(_M)"
 
 #. Menu item
 #: zim/plugins/linesorter.py:187
 msgid "_Duplicate Line"
-msgstr ""
+msgstr "重複行列(_D)"
 
 #. Menu item
 #: zim/plugins/linesorter.py:197
 msgid "_Remove Line"
-msgstr ""
+msgstr "移除行列(_R)"
 
 #. plugin name | 
 #. menu item
 #: zim/plugins/linkmap.py:33 zim/plugins/linkmap.py:140
 msgid "Link Map"
-msgstr "鏈結圖覽"
+msgstr "連結圖覽"
 
 #. plugin description
 #: zim/plugins/linkmap.py:34
@@ -3216,113 +3163,96 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"此外掛程式提供對話框\n"
-"以圖像顯示筆記本之鏈結結構\n"
-"以「心像圖覽」方式\n"
-"呈現頁面之交互關係\n"
+"此外掛程式提供對話框用來將\n"
+"記事本連結結構以圖形來呈現，\n"
+"像是心智圖方式來顯示各頁面的關聯。\n"
 "\n"
-"此為 zim 內附之核心外掛程式\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. preferences option
 #: zim/plugins/linkmap.py:49
 msgid "Show linkmap button in headerbar"
-msgstr ""
+msgstr "在標題列中顯示連結圖覽的按鈕"
 
 #. preferences option
 #: zim/plugins/linkmap.py:51
 msgid "Autozoom to fit map"
-msgstr ""
+msgstr "自動縮放符合圖覽"
 
 #. preferences option
 #: zim/plugins/linkmap.py:53
-#, fuzzy
-#| msgid "Position in the window"
 msgid "Follow main window"
-msgstr "視窗中的位置"
+msgstr "跟隨主要視窗"
 
 #. preferences option
 #: zim/plugins/linkmap.py:55
-#, fuzzy
-#| msgid "Open in New Window"
 msgid "Always open links in new windows"
-msgstr "在新視窗開啟"
+msgstr "總是在新視窗中開啟連結"
 
 #. plugin name
 #: zim/plugins/osx_menubar.py:74
-#, fuzzy
-#| msgid "Menubar"
 msgid "macOS Menubar"
-msgstr "選單列"
+msgstr "macOS 選單列"
 
 #. plugin description
 #: zim/plugins/osx_menubar.py:75
-#, fuzzy
-#| msgid ""
-#| "\t\tThis plugin provides bar for bookmarks.\n"
-#| "\t\t"
 msgid "This plugin provides a macOS menubar for zim."
-msgstr ""
-"\t\t這個插件顯示書籤欄\n"
-"\t\t"
+msgstr "此外掛程式提供 macOS 功能選單用於 zim。"
 
 #. plugin name
 #: zim/plugins/pageindex/__init__.py:51
 msgid "Page Index"
-msgstr ""
+msgstr "頁面索引"
 
 #. plugin description
 #: zim/plugins/pageindex/__init__.py:52
 msgid "This plugin adds the page index pane to the main window.\n"
-msgstr ""
+msgstr "此外掛程式在主要視窗上增加頁面索引面板。\n"
 
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:63
 msgid "Use drag&drop to move pages in the notebook"
-msgstr ""
+msgstr "在記事本中使用拖放操作來移動頁面"
 
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:65 zim/plugins/tags.py:49
-#, fuzzy
-#| msgid "Automatically saved version from zim"
 msgid "Automatically expand sections on open page"
-msgstr "zim 自動儲存的版本"
+msgstr "在開啟頁面自動地展開章節部分"
 
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:67 zim/plugins/tags.py:51
 msgid "Automatically collapse sections on close page"
-msgstr ""
+msgstr "在開啟頁面自動地縮合章節部分"
 
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:69 zim/plugins/tags.py:53
 msgid "Use horizontal scrollbar (may need restart)"
-msgstr ""
+msgstr "使用橫向拉動軸(可能需要重新啟動)"
 
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:71 zim/plugins/tags.py:55
 msgid "Use tooltips"
-msgstr ""
+msgstr "使用工具提示"
 
 #. menu item
 #: zim/plugins/pageindex/__init__.py:129
 msgid "Collapse Page Index"
-msgstr ""
+msgstr "縮合頁面索引"
 
 #. menu item
 #: zim/plugins/pageindex/__init__.py:133
 msgid "Reveal Current Page in Page Index"
-msgstr ""
+msgstr "在頁面索引中明示目前頁面"
 
 #. tab label for side pane
 #: zim/plugins/pageindex/__init__.py:147
-#, fuzzy
-#| msgid "Index"
 msgid "Inde_x"
-msgstr "索引"
+msgstr "索引(_x)"
 
 #. plugin name
 #: zim/plugins/pathbar.py:38
 msgid "Path Bar"
-msgstr ""
+msgstr "路徑列"
 
 #. plugin description
 #: zim/plugins/pathbar.py:39
@@ -3331,11 +3261,14 @@ msgid ""
 "This \"path bar\" can show the notebook path for the current page,\n"
 "recent visited pages or recent edited pages.\n"
 msgstr ""
+"此外掛程式在視窗上方加上\"路徑列\"。\n"
+"\"路徑列\"可以顯示出筆記本路徑，\n"
+"用於目前頁面、最近使用頁面、最近編輯頁面。\n"
 
 #. Menu title
 #: zim/plugins/pathbar.py:80
 msgid "P_athbar"
-msgstr "路徑列(_A)"
+msgstr "路徑列(_a)"
 
 #. Menu option for View->Pathbar
 #: zim/plugins/pathbar.py:81
@@ -3350,12 +3283,12 @@ msgstr "最近頁面(_R)"
 #. Menu option for View->Pathbar
 #: zim/plugins/pathbar.py:83
 msgid "Recently _Changed pages"
-msgstr "最近更改的頁面(_C)..."
+msgstr "最近修改頁面(_C)"
 
 #. Menu option for View->Pathbar
 #: zim/plugins/pathbar.py:84
 msgid "_History"
-msgstr "歷史(_H)"
+msgstr "歷史記錄(_H)"
 
 #. Menu option for View->Pathbar
 #: zim/plugins/pathbar.py:85
@@ -3378,13 +3311,12 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"此外掛程式為尚無列印支援的 zim 提供解決之道\n"
-"程式將匯出目前頁面為 html 並開啟瀏覽器程式\n"
-"若瀏覽器具備列印支援\n"
-"則此方法可利用上述兩個步驟(匯出頁面、開啟瀏覽器)\n"
-"讓您得以列印您的資料\n"
+"此外掛程式為尚無列印支援的 zim 提供解決方法。\n"
+"程式會將目前頁面匯出 html 並在瀏覽器開啟。\n"
+"若瀏覽器具備列印支援，則此方法兩個步驟，\n"
+"可以匯出頁面、開啟瀏覽器，即可操作列印。\n"
 "\n"
-"此為 zim 內附之核心外掛程式\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. menu item
 #: zim/plugins/printtobrowser.py:63
@@ -3394,19 +3326,17 @@ msgstr "列印至瀏覽器(_P)"
 #. menu item
 #: zim/plugins/printtobrowser.py:75
 msgid "_Print"
-msgstr ""
+msgstr "列印(_P)"
 
 #. menu item
 #: zim/plugins/printtobrowser.py:75
-#, fuzzy
-#| msgid "Print to Browser"
 msgid "Print tasklist to browser"
-msgstr "列印至瀏覽器"
+msgstr "列印任務清單至瀏覽器"
 
 #. plugin name
 #: zim/plugins/quicknote.py:166 zim/plugins/quicknote.py:202
 msgid "Quick Note"
-msgstr "快速記筆記"
+msgstr "快速筆記"
 
 #. plugin description
 #: zim/plugins/quicknote.py:167
@@ -3416,25 +3346,25 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"此外掛程式會使用對話框，迅速而方便的\n"
-"將某些文字或剪貼簿內容置入 zim 頁面\n"
+"此外掛程式會加上對話框，快速將文字部分或剪貼簿內容\n"
+"拖放至 zim 頁面。\n"
 "\n"
-"此為 zim 內附之核心外掛程式\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. menu item
 #: zim/plugins/quicknote.py:184
 msgid "Quick Note..."
-msgstr "快速記筆記..."
+msgstr "快速筆記..."
 
 #. text entry field
 #: zim/plugins/quicknote.py:246
 msgid "Page section"
-msgstr ""
+msgstr "頁面章節"
 
 #. checkbox in Quick Note dialog
 #: zim/plugins/quicknote.py:247
 msgid "Create a new page for each note"
-msgstr "為每則記事建立新頁面"
+msgstr "每則筆記建立新頁面"
 
 #. text entry field
 #: zim/plugins/quicknote.py:248 zim/plugins/tableeditor.py:923
@@ -3444,7 +3374,7 @@ msgstr "標題"
 #. Option in quicknote dialog
 #: zim/plugins/quicknote.py:285
 msgid "Open _Page"
-msgstr "打開頁面(_P)"
+msgstr "開啟頁面(_P)"
 
 #. confirm closing quick note dialog
 #: zim/plugins/quicknote.py:349
@@ -3463,27 +3393,30 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
+"此外掛程式提供 zim 使用樂譜編輯器，基於 GNU Lilypond。\n"
+"\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. plugin preference
 #: zim/plugins/scoreeditor.py:55
 msgid "Common include header"
-msgstr ""
+msgstr "通常包括標題"
 
 #. plugin preference
 #: zim/plugins/scoreeditor.py:56
 msgid "Common include footer"
-msgstr ""
+msgstr "通常包括頁尾"
 
 #. menu item
 #: zim/plugins/scoreeditor.py:72
 msgid "Musical Score"
-msgstr ""
+msgstr "樂譜"
 
 #. plugin name | 
 #. dialog title
 #: zim/plugins/screenshot.py:107 zim/plugins/screenshot.py:174
 msgid "Insert Screenshot"
-msgstr "加入螢幕快照"
+msgstr "插入螢幕快照"
 
 #. plugin description
 #: zim/plugins/screenshot.py:108
@@ -3493,11 +3426,15 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
+"此外掛程式提供螢幕快照\n"
+"並直接插入 zim 頁面中。\n"
+"\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. plugin preference
 #: zim/plugins/screenshot.py:119
 msgid "Screenshot Command"
-msgstr ""
+msgstr "螢幕快照指令"
 
 #. menu item for insert screenshot plugin
 #: zim/plugins/screenshot.py:161
@@ -3528,12 +3465,12 @@ msgstr "秒"
 #: zim/plugins/screenshot.py:221
 #, python-format
 msgid "Some error occurred while running \"%s\""
-msgstr "執行\"%s\"時發生錯誤"
+msgstr "執行 \"%s\" 時發生錯誤"
 
 #. plugin name
 #: zim/plugins/sequencediagrameditor.py:24
 msgid "Insert Sequence Diagram"
-msgstr ""
+msgstr "插入循序圖"
 
 #. plugin description
 #: zim/plugins/sequencediagrameditor.py:25
@@ -3541,16 +3478,18 @@ msgid ""
 "This plugin provides a sequence diagram editor for zim based on seqdiag.\n"
 "It allows easy editing of sequence diagrams.\n"
 msgstr ""
+"此外掛程式提供 zim 使用循序圖編輯器，基於 seqdiag 。\n"
+"可以方便循序圖的編輯工作。\n"
 
 #. menu item
 #: zim/plugins/sequencediagrameditor.py:52
 msgid "Sequence Diagram"
-msgstr ""
+msgstr "循序圖"
 
 #. plugin name
 #: zim/plugins/sourceview.py:70
 msgid "Source View"
-msgstr ""
+msgstr "檢視原始碼"
 
 #. plugin description
 #: zim/plugins/sourceview.py:71
@@ -3558,91 +3497,93 @@ msgid ""
 "This plugin allows inserting 'Code Blocks' in the page. These will be\n"
 "shown as embedded widgets with syntax highlighting, line numbers etc.\n"
 msgstr ""
+"此外掛程式允許在頁面中插入'原始碼區塊'，\n"
+"這會在內建工具中顯示語法標示、行列編碼等。\n"
 
 #. option value
 #: zim/plugins/sourceview.py:80
 msgid "Never wrap lines"
-msgstr ""
+msgstr "永不換行"
 
 #. option value
 #: zim/plugins/sourceview.py:81
 msgid "Try wrap at word boundaries or character"
-msgstr ""
+msgstr "嘗試在字詞邊界或字元位置進行換行"
 
 #. option value
 #: zim/plugins/sourceview.py:82
 msgid "Always wrap at character"
-msgstr ""
+msgstr "總是在字元位置進行換行"
 
 #. option value
 #: zim/plugins/sourceview.py:83
 msgid "Always wrap at word boundaries"
-msgstr ""
+msgstr "總是在字詞邊界進行換行"
 
 #. preference option for sourceview plugin
 #: zim/plugins/sourceview.py:87
 msgid "Auto indenting"
-msgstr ""
+msgstr "自動縮排"
 
 #. preference option for sourceview plugin
 #: zim/plugins/sourceview.py:89
 msgid "Smart Home key"
-msgstr ""
+msgstr "聰明 Home 鍵"
 
 #. preference option for sourceview plugin
 #: zim/plugins/sourceview.py:91
 msgid "Highlight current line"
-msgstr ""
+msgstr "強調目前行列"
 
 #. preference option for sourceview plugin
 #: zim/plugins/sourceview.py:93
 msgid "Show right margin"
-msgstr ""
+msgstr "顯示右側邊界"
 
 #. preference option for sourceview plugin
 #: zim/plugins/sourceview.py:95
 msgid "Right margin position"
-msgstr ""
+msgstr "右側邊界位置"
 
 #. preference option for sourceview plugin
 #: zim/plugins/sourceview.py:97
 msgid "Tab width"
-msgstr ""
+msgstr "Tab 位移寬度"
 
 #. preference option for sourceview plugin
 #: zim/plugins/sourceview.py:101
 msgid "Text wrap mode"
-msgstr ""
+msgstr "文字換行模式"
 
 #. preference option for sourceview plugin
 #: zim/plugins/sourceview.py:103
 msgid "Theme"
-msgstr ""
+msgstr "主題風格"
 
 #. menu item
 #: zim/plugins/sourceview.py:118
 msgid "Code Block"
-msgstr ""
+msgstr "原始碼區塊"
 
 #. preference option for sourceview plugin
 #: zim/plugins/sourceview.py:344
 msgid "Show Line Numbers"
-msgstr ""
+msgstr "顯示行列號碼"
 
 #. input label
 #: zim/plugins/sourceview.py:354 zim/plugins/sourceview.py:380
 msgid "Syntax"
-msgstr ""
+msgstr "語法"
 
 #. dialog title
 #: zim/plugins/sourceview.py:371
 msgid "Insert Code Block"
-msgstr ""
+msgstr "插入原始碼區塊"
 
 #. input checkbox
 #: zim/plugins/sourceview.py:407
 msgid "Display line numbers"
-msgstr ""
+msgstr "顯示行列號碼"
 
 #. plugin name
 #: zim/plugins/spell.py:78
