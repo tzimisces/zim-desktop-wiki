@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2024-01-29 05:01+0000\n"
+"PO-Revision-Date: 2024-01-30 02:10+0000\n"
 "Last-Translator: 麋悟BigELK176 <bigelk176@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
 "zim/develop/zh_Hant/>\n"
@@ -68,7 +68,7 @@ msgstr "無法讀取: %s"
 #. message for FileUnicodeError
 #: zim/fs.py:277 zim/newfs/base.py:66
 msgid "This usually means the file contains invalid characters"
-msgstr "通常指此檔案包含了無效的特殊字元"
+msgstr "通常是表示此檔案包含了無效的特殊字元"
 
 #. label for detailed error | 
 #. section for version details in "save version" dialog
@@ -96,7 +96,7 @@ msgid ""
 "(If disabled you will be prompted)"
 msgstr ""
 "自動建立遺失的目錄\n"
-"（如果停用，系統會發出提出）"
+"（如果停用，系統會發出提示）"
 
 #. Heading in a question dialog for creating a folder
 #: zim/gui/applications.py:595
@@ -110,7 +110,7 @@ msgid ""
 "The folder \"%s\" does not yet exist.\n"
 "Do you want to create it now?"
 msgstr ""
-"資料夾「%s」尚不存在\n"
+"資料夾 \"%s\" 尚不存在\n"
 "現在要建立它嗎？"
 
 #. error when external application fails
@@ -285,9 +285,9 @@ msgstr ""
 "執行指令時，\n"
 "下列參數將會被置換：\n"
 "<tt>\n"
-"<b>%f</b> 頁面來源為作轉存檔案\n"
+"<b>%f</b> 頁面原始檔案為作暫時檔案\n"
 "<b>%d</b> 目前頁面附件的路徑\n"
-"<b>%s</b> 實際頁面來源檔案 (如果有 ）\n"
+"<b>%s</b> 實際頁面原始檔案 (如果有 ）\n"
 "<b>%p</b> 頁面名稱\n"
 "<b>%n</b> 筆記本位置 (檔案或資料夾)\n"
 "<b>%D</b> 文件根目錄 (如果有）\n"
@@ -628,7 +628,7 @@ msgid ""
 "The file \"%s\" exists but is not a wiki page.\n"
 "Do you want to import it?"
 msgstr ""
-"檔案 \"%s\" 已存在，但非維基頁面。\n"
+"檔案 \"%s\" 已存在，但不是維基頁面。\n"
 "要匯入它嗎?"
 
 #. page status for title bar
@@ -660,10 +660,8 @@ msgstr "向前(_F)"
 
 #. tooltip for navigation button
 #: zim/gui/mainwindow.py:913
-#, fuzzy
-#| msgid "_Forward"
 msgid "Go forward"
-msgstr "向前(_F)"
+msgstr "向前"
 
 #. Menu item
 #: zim/gui/mainwindow.py:923
@@ -791,7 +789,7 @@ msgstr ""
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:180
 msgid "Show the cursor also for pages that can not be edited"
-msgstr "在「不允許編輯」的頁面上，仍然顯示游標"
+msgstr "在不允許編輯的頁面上，仍然顯示游標"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:183
@@ -840,7 +838,7 @@ msgstr "重覆點按勾選框將會循環變換狀態"
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:207
 msgid "(Un-)indenting a list item also changes any sub-items"
-msgstr "縮排(或取消縮排)任一條列項目，將會同時變更下層項目"
+msgstr "縮排(或取消縮排)某一條列項目，將會同時變更下層項目"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:210
@@ -1246,7 +1244,7 @@ msgstr "沒有安裝任何範本"
 #. Menu item in "Insert > New File Attachment" submenu
 #: zim/gui/pageview/__init__.py:7348
 msgid "File _Templates..."
-msgstr "檔案範本(_T)"
+msgstr "檔案範本(_T)..."
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7356
@@ -1440,7 +1438,7 @@ msgstr "文字"
 #. Input in 'move text' dialog
 #: zim/gui/pageview/__init__.py:8208 zim/gui/pageview/__init__.py:8669
 msgid "Prefer short link names for pages"
-msgstr "偏好使用頁面的短連結名稱"
+msgstr "偏好頁面的短連結名稱"
 
 #. button in find bar and find & replace dialog
 #: zim/gui/pageview/__init__.py:8328
@@ -1743,18 +1741,18 @@ msgid ""
 "To disable a keybinding, select it in the list and use <tt>&lt;Backspace&gt;"
 "</tt>."
 msgstr ""
-"快速鍵組合變更綁定，可以在所列選項的輸入框中，直接按下新的組合鍵。\n"
-"若要停用某個快速鍵綁定，可以在選定項目上，使用 <tt>&lt;Backspace&gt;</tt> 。"
+"快速鍵組合變更設定，可以在選擇項目的輸入框中，直接按下新的組合鍵。\n"
+"若要停用某個快速鍵設定，可以在選擇項目上，使用 <tt>&lt;Backspace&gt;</tt> 。"
 
 #. Column header for keybinding list
 #: zim/gui/preferencesdialog.py:566
 msgid "Action"
-msgstr "操作"
+msgstr "動作"
 
 #. Column header for keybinding list
 #: zim/gui/preferencesdialog.py:577
 msgid "Key Binding"
-msgstr "快速鍵綁定"
+msgstr "快速鍵組合"
 
 #. label for properties dialog
 #: zim/gui/propertiesdialog.py:17
@@ -1822,8 +1820,8 @@ msgid ""
 "For advanced search you can use operators like\n"
 "AND, OR and NOT. See the help page for more details."
 msgstr ""
-"進階搜尋可以使用運算字元如 AND、OR、NOT\n"
-"可以查看「說明」頁面相關的詳細內容。"
+"進階搜尋可以使用運算字元，如 AND、OR、NOT。\n"
+"可以查看說明頁面相關的詳細內容。"
 
 #. checkbox option in search dialog
 #: zim/gui/searchdialog.py:55
@@ -2035,7 +2033,7 @@ msgstr "此筆記本沒有定義文件根目錄"
 #. Menu item
 #: zim/gui/uiactions.py:345
 msgid "Edit _Source"
-msgstr "編輯來源(_S)"
+msgstr "編輯原始檔案(_S)"
 
 #. Menu item
 #: zim/gui/uiactions.py:361
@@ -2143,7 +2141,7 @@ msgstr "重新命名頁面 \"%s\""
 #, python-format
 msgid "Update %i page linking to this page"
 msgid_plural "Update %i pages linking to this page"
-msgstr[0] "更新 %1 個頁面連結至此頁面"
+msgstr[0] "更新 %i 個頁面連結至此頁面"
 
 #. option in 'move page' dialog
 #: zim/gui/uiactions.py:614
@@ -2182,9 +2180,9 @@ msgid ""
 "To undo later, go to your system's trashcan."
 msgstr ""
 "頁面 \"%s\" 及其下層頁面和附件，\n"
-"都將被移至系統垃圾桶待處理刪除。\n"
+"均將被移至系統垃圾桶待處理刪除。\n"
 "\n"
-"之後取消動作，要前往系統垃圾桶。"
+"之後要取消動作，須前往系統垃圾桶。"
 
 #. label in the TrashPage dialog to warn user of attachments being deleted
 #: zim/gui/uiactions.py:736
@@ -2218,7 +2216,7 @@ msgid ""
 "\n"
 "This deletion is permanent and cannot be un-done."
 msgstr ""
-"頁面 \"%s\" 及其下層頁面和附件，都將被理刪除。\n"
+"頁面 \"%s\" 及其下層頁面和附件，均將刪除。\n"
 "\n"
 "此刪除操作是永久的，無法取消動作。"
 
@@ -2240,15 +2238,15 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 " DreamerC https://launchpad.net/~dreamerwolf\n"
-"  Henry Lee https://launchpad.net/~henrylee\n"
-"  Jaap Karssenberg https://launchpad.net/~jaap.karssenberg\n"
-"  Takashi Kinami https://launchpad.net/~sloanej\n"
-"  Thomas Tsai https://launchpad.net/~thomas.tsai\n"
-"  Tsung-Hao Lee https://launchpad.net/~tsunghao\n"
-"  YPWang https://launchpad.net/~blue119\n"
-"  Zihao Wang https://launchpad.net/~wzhd\n"
-"  cyberik https://launchpad.net/~cyberikee\n"
-"  BigELK176 https://launchpad.net/~bigelk176"
+" Henry Lee https://launchpad.net/~henrylee\n"
+" Jaap Karssenberg https://launchpad.net/~jaap.karssenberg\n"
+" Takashi Kinami https://launchpad.net/~sloanej\n"
+" Thomas Tsai https://launchpad.net/~thomas.tsai\n"
+" Tsung-Hao Lee https://launchpad.net/~tsunghao\n"
+" YPWang https://launchpad.net/~blue119\n"
+" Zihao Wang https://launchpad.net/~wzhd\n"
+" cyberik https://launchpad.net/~cyberikee\n"
+" BigELK176 https://launchpad.net/~bigelk176"
 
 #. dialog title
 #: zim/gui/widgets.py:546 zim/gui/widgets.py:1617
@@ -2339,8 +2337,8 @@ msgid ""
 "When reporting this bug please include\n"
 "the information from the text box below"
 msgstr ""
-"提交錯誤報告時，\n"
-"請包含以下文字框中的資訊"
+"當要提交錯誤報告時，\n"
+"請包含以下文字框裡的資訊"
 
 #. Filter in open file dialog, shows all files (*)
 #: zim/gui/widgets.py:3647
@@ -2413,7 +2411,7 @@ msgid ""
 "than 255 characters"
 msgstr ""
 "無法寫入此檔案。 原因可能是檔案名稱長度。\n"
-"請設定檔案名稱使用少於255個字元。"
+"請設定檔案名稱少於255個字元"
 
 #. error message for filesystem limitations
 #: zim/newfs/local.py:49
@@ -2507,7 +2505,7 @@ msgid ""
 "http://pp.com.mx/python/arithmetic.\n"
 msgstr ""
 "此外掛程式可在 zim 中嵌入算術計算。\n"
-"此外掛程式基於算術模組，來源自 \n"
+"此外掛程式基於算術模組，源自 \n"
 "http://pp.com.mx/python/arithmetic\n"
 
 #. menu item
@@ -2579,7 +2577,7 @@ msgstr "檔案名稱不可空白。"
 #. Error message
 #: zim/plugins/attachmentbrowser/filerenamedialog.py:72
 msgid "A file with that name already exists."
-msgstr "相同名稱已有檔案存在。"
+msgstr "檔案使用相同名稱已存在。"
 
 #. Error message
 #: zim/plugins/attachmentbrowser/filerenamedialog.py:75
@@ -2679,7 +2677,7 @@ msgstr "無反向連結"
 #, python-format
 msgid "%i _BackLink"
 msgid_plural "%i _BackLinks"
-msgstr[0] "%i 個反向鏈結(_B)"
+msgstr[0] "%i 個反向連結(_B)"
 
 #. widget label
 #: zim/plugins/backlinkpane.py:128
@@ -2709,7 +2707,7 @@ msgid ""
 "Do you want to save the source text anyway?"
 msgstr ""
 "產生圖像時發生錯誤\n"
-"仍要儲存來源文字嗎？"
+"仍要儲存原始文字嗎？"
 
 #. plugin name
 #: zim/plugins/bookmarksbar.py:36
@@ -2921,7 +2919,7 @@ msgid ""
 msgstr ""
 "此外掛程式提供方程式編輯器，基於 latex 語法。\n"
 "\n"
-"此為核心外程式，隨同  zim 發行。\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. plugin preference
 #: zim/plugins/equationeditor.py:33
@@ -3489,7 +3487,7 @@ msgstr "循序圖"
 #. plugin name
 #: zim/plugins/sourceview.py:70
 msgid "Source View"
-msgstr "檢視原始碼"
+msgstr "檢視原始檔案"
 
 #. plugin description
 #: zim/plugins/sourceview.py:71
@@ -3597,41 +3595,41 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"藉由 gtkspell 提供拼字檢查功能\n"
+"藉由 gtkspell 提供拼字檢查功能。\n"
 "\n"
-"此為 zim 內附之核心外掛程式\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. menu item
 #: zim/plugins/spell.py:137
 msgid "Check _spelling"
-msgstr "拼字檢查(_S)"
+msgstr "拼字檢查(_s)"
 
 #. error message
 #: zim/plugins/spell.py:169
 msgid "Could not load spell checking"
-msgstr ""
+msgstr "無法載入拼字檢查"
 
 #. error message explanation
 #: zim/plugins/spell.py:171
 msgid ""
 "This could mean you don't have the proper\n"
 "dictionaries installed"
-msgstr ""
+msgstr "這表示您尚未安裝適合的字典庫"
 
 #. alignment option
 #: zim/plugins/tableeditor.py:54
 msgid "Center"
-msgstr ""
+msgstr "置中"
 
 #. alignment option
 #: zim/plugins/tableeditor.py:56
 msgid "Unspecified"
-msgstr ""
+msgstr "未指定"
 
 #. plugin name
 #: zim/plugins/tableeditor.py:83
 msgid "Table Editor"
-msgstr ""
+msgstr "表格編輯器"
 
 #. plugin description
 #: zim/plugins/tableeditor.py:84
@@ -3641,91 +3639,93 @@ msgid ""
 "Exporting them to various formats (i.e. HTML/LaTeX) completes the feature "
 "set.\n"
 msgstr ""
+"利用此外掛程式可以在維基頁面嵌入'表格'。表格會被顯示為 GTK TreeView 工具。\n"
+"匯出至各種格式(如 HTML/LaTex)，會完整表格功能置定。\n"
 
 #. option value
 #: zim/plugins/tableeditor.py:93
 msgid "with lines"
-msgstr ""
+msgstr "使用行列"
 
 #. option value
 #: zim/plugins/tableeditor.py:94
 msgid "no grid lines"
-msgstr ""
+msgstr "不使用網格線"
 
 #. option value
 #: zim/plugins/tableeditor.py:95
 msgid "horizontal lines"
-msgstr ""
+msgstr "水平線"
 
 #. option value
 #: zim/plugins/tableeditor.py:96
 msgid "vertical lines"
-msgstr ""
+msgstr "垂直線"
 
 #. preference description
 #: zim/plugins/tableeditor.py:102
 msgid "Show helper toolbar"
-msgstr ""
+msgstr "顯示輔助工具列"
 
 #. preference description
 #: zim/plugins/tableeditor.py:105
 msgid "Grid lines"
-msgstr ""
+msgstr "網格線"
 
 #. menu item
 #: zim/plugins/tableeditor.py:155
 msgid "Table"
-msgstr ""
+msgstr "表格"
 
 #. tooltip on mouse hover | 
 #. menu item
 #: zim/plugins/tableeditor.py:459 zim/plugins/tableeditor.py:615
 msgid "Add row"
-msgstr ""
+msgstr "增加行欄"
 
 #. tooltip on mouse hover
 #: zim/plugins/tableeditor.py:460
 msgid "Remove row"
-msgstr ""
+msgstr "移除行欄"
 
 #. tooltip on mouse hover | 
 #. menu item
 #: zim/plugins/tableeditor.py:461 zim/plugins/tableeditor.py:617
 msgid "Clone row"
-msgstr ""
+msgstr "複製行欄"
 
 #. tooltip on mouse hover | 
 #. menu item
 #: zim/plugins/tableeditor.py:463 zim/plugins/tableeditor.py:621
 msgid "Row up"
-msgstr ""
+msgstr "行欄上移"
 
 #. tooltip on mouse hover | 
 #. menu item
 #: zim/plugins/tableeditor.py:464 zim/plugins/tableeditor.py:622
 msgid "Row down"
-msgstr ""
+msgstr "行欄下移"
 
 #. tooltip on mouse hover | 
 #. menu item
 #: zim/plugins/tableeditor.py:466 zim/plugins/tableeditor.py:624
 msgid "Change columns"
-msgstr ""
+msgstr "修改列欄"
 
 #. tooltip on mouse hover
 #: zim/plugins/tableeditor.py:468
 msgid "Open help"
-msgstr ""
+msgstr "開啟說明"
 
 #. menu item
 #: zim/plugins/tableeditor.py:616
 msgid "Delete row"
-msgstr ""
+msgstr "刪除行欄"
 
 #. menu item
 #: zim/plugins/tableeditor.py:619
 msgid "Open cell content link"
-msgstr ""
+msgstr "開啟格中內容連結"
 
 #. Popup dialog
 #: zim/plugins/tableeditor.py:682
@@ -3733,31 +3733,33 @@ msgid ""
 "The table must consist of at least on row!\n"
 " No deletion done."
 msgstr ""
+"表格必須包含一行欄!\n"
+" ．未予删除。"
 
 #. Popup dialog
 #: zim/plugins/tableeditor.py:773 zim/plugins/tableeditor.py:1082
 msgid "Please select a row, before you push the button."
-msgstr ""
+msgstr "在按鈕之前，請選擇一行欄。"
 
 #. Dialog title
 #: zim/plugins/tableeditor.py:860
 msgid "Insert Table"
-msgstr ""
+msgstr "插入表格"
 
 #. Dialog title
 #: zim/plugins/tableeditor.py:860
 msgid "Edit Table"
-msgstr ""
+msgstr "編輯表格"
 
 #. Description of "Table-Insert" Dialog
 #: zim/plugins/tableeditor.py:869
 msgid "Managing table columns"
-msgstr ""
+msgstr "管理表格列欄"
 
 #. Initial data for column title in table
 #: zim/plugins/tableeditor.py:899
 msgid "Column 1"
-msgstr ""
+msgstr "列欄 1"
 
 #. table header
 #: zim/plugins/tableeditor.py:932
@@ -3765,41 +3767,43 @@ msgid ""
 "Auto\n"
 "Wrap"
 msgstr ""
+"自動\n"
+"換行"
 
 #. table header
 #: zim/plugins/tableeditor.py:942
 msgid "Align"
-msgstr ""
+msgstr "對齊"
 
 #. hoover tooltip
 #: zim/plugins/tableeditor.py:969
 msgid "Add column"
-msgstr ""
+msgstr "增加列欄"
 
 #. hoover tooltip
 #: zim/plugins/tableeditor.py:970
 msgid "Remove column"
-msgstr ""
+msgstr "移除列欄"
 
 #. hoover tooltip
 #: zim/plugins/tableeditor.py:971
 msgid "Move column ahead"
-msgstr ""
+msgstr "列欄前移"
 
 #. hoover tooltip
 #: zim/plugins/tableeditor.py:972
 msgid "Move column backward"
-msgstr ""
+msgstr "列欄後移"
 
 #. popup dialog
 #: zim/plugins/tableeditor.py:1056
 msgid "A table needs to have at least one column."
-msgstr ""
+msgstr "表格必須至少包含一列欄。"
 
 #. plugin name
 #: zim/plugins/tableofcontents.py:101
 msgid "Table of Contents"
-msgstr "目錄"
+msgstr "目錄表格"
 
 #. plugin description
 #: zim/plugins/tableofcontents.py:102
@@ -3809,26 +3813,30 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
+"此外掛程式增加額工具用來顯示\n"
+"目前頁面的目錄表格。\n"
+"\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. option for plugin preferences
 #: zim/plugins/tableofcontents.py:117
 msgid "Show ToC as floating widget instead of in sidepane"
-msgstr "浮動顯示目錄（代替側面板）"
+msgstr "浮動顯示目錄表格（代替側邊面板）"
 
 #. option for plugin preferences
 #: zim/plugins/tableofcontents.py:119
 msgid "Show the page title heading in the ToC"
-msgstr ""
+msgstr "在目錄表格中顯示頁面標題"
 
 #. option for plugin preferences
 #: zim/plugins/tableofcontents.py:121
 msgid "Include horizontal lines in the ToC"
-msgstr ""
+msgstr "在目錄表格中包含水平線行列"
 
 #. option for plugin preferences
 #: zim/plugins/tableofcontents.py:123
 msgid "Set ToC fontsize"
-msgstr ""
+msgstr "設定目錄表格字型大小"
 
 #. action to lower level of heading in the text
 #: zim/plugins/tableofcontents.py:411
@@ -3838,184 +3846,174 @@ msgstr "降級"
 #. action to raise level of heading in the text
 #: zim/plugins/tableofcontents.py:413
 msgid "Promote"
-msgstr "提升"
+msgstr "升級"
 
 #. widget label
 #: zim/plugins/tableofcontents.py:527
 msgid "T_oC"
-msgstr ""
+msgstr "目錄表格(_o)"
 
 #. small label above Table Of Contents
 #: zim/plugins/tableofcontents.py:557
 msgid "ToC"
-msgstr "目錄"
+msgstr "目錄表格"
 
 #. plugin name | 
 #. header in selection drop down
 #: zim/plugins/tags.py:37 zim/plugins/tasklist/gui.py:750
 msgid "Tags"
-msgstr "標籤"
+msgstr "標記"
 
 #. plugin description
 #: zim/plugins/tags.py:38
 msgid ""
 "This plugin provides a page index filtered by means of selecting tags in a "
 "cloud.\n"
-msgstr "此外掛依據標簽雲中的所選標簽，生成頁面索引\\n\n"
+msgstr "此外掛程式提供索引頁面，依標記雲中所選擇的標記來進行篩選。\n"
 
 #. title for sidepane tab
 #: zim/plugins/tags.py:98
 msgid "T_ags"
-msgstr ""
+msgstr "標記(_a)"
 
 #. menu option
 #: zim/plugins/tags.py:148
 msgid "Show full page name"
-msgstr ""
+msgstr "顯示全套頁面名稱"
 
 #. menu option
 #: zim/plugins/tags.py:153
 msgid "Sort pages by tags"
-msgstr "按標簽排序頁面"
+msgstr "依照標記排序頁面"
 
 #. Context menu item for tag cloud
 #: zim/plugins/tags.py:444
 msgid "Sort alphabetically"
-msgstr "依英文字母排序"
+msgstr "依照英文字母排序"
 
 #. list with tasks
 #: zim/plugins/tasklist/gui.py:89
 msgid "All Tasks"
-msgstr "所有任務"
+msgstr "全部任務"
 
 #. list with tasks
 #: zim/plugins/tasklist/gui.py:90
-#, fuzzy
-#| msgid "Location"
 msgid "Active"
-msgstr "位置"
+msgstr "運作中"
 
 #. list with tasks (GTD style category)
 #: zim/plugins/tasklist/gui.py:91
 msgid "Inbox"
-msgstr ""
+msgstr "收件匣"
 
 #. list with tasks (GTD style category)
 #: zim/plugins/tasklist/gui.py:92
-#, fuzzy
-#| msgid "Location"
 msgid "Next Actions"
-msgstr "位置"
+msgstr "下一步動作"
 
 #. list with tasks (GTD style category)
 #: zim/plugins/tasklist/gui.py:93
 msgid "Projects"
-msgstr ""
+msgstr "專案"
 
 #. list with tasks (GTD style category)
 #: zim/plugins/tasklist/gui.py:94
-#, fuzzy
-#| msgid "Editing"
 msgid "Waiting"
-msgstr "編輯"
+msgstr "等待中"
 
 #. placeholder label for sidepane
 #: zim/plugins/tasklist/gui.py:140
 msgid "No tasks"
-msgstr ""
+msgstr "無任務"
 
 #. tooltip
 #: zim/plugins/tasklist/gui.py:166
 msgid "Show tasklist window"
-msgstr ""
+msgstr "顯示任務清單視窗"
 
 #. label for filtering/searching tasks
 #: zim/plugins/tasklist/gui.py:211
-#, fuzzy
-#| msgid "Filter"
 msgid "Filter tasks"
-msgstr "過濾器"
+msgstr "篩選任務"
 
 #. tab label for side pane
 #: zim/plugins/tasklist/gui.py:274
 msgid "Tas_ks"
-msgstr ""
+msgstr "任務(_k)"
 
 #. Window title for tasklist
 #: zim/plugins/tasklist/gui.py:374 zim/plugins/tasklist/gui.py:379
-#, fuzzy
-#| msgid "Task"
 msgid "Tasks"
-msgstr "工作項目"
+msgstr "任務"
 
 #. number of tasks shown in tasklist window
 #: zim/plugins/tasklist/gui.py:453
 #, python-format
 msgid "%s shown"
-msgstr ""
+msgstr "已顯示 %s 個"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:505
 msgid "Show open tasks"
-msgstr ""
+msgstr "顯示開啟任務"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:506
 msgid "Show closed tasks"
-msgstr ""
+msgstr "顯示已結束的任務"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:507
 msgid "Show cancelled tasks"
-msgstr ""
+msgstr "顯示已取消的任務"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:508
 msgid "Show migrated tasks"
-msgstr ""
+msgstr "顯示已遷移的任務"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:509
 msgid "Show trans-migrated tasks"
-msgstr ""
+msgstr "顯示已移轉遷移的任務"
 
 #. Header for list selection in tasklist window
 #: zim/plugins/tasklist/gui.py:602
 msgid "Lists"
-msgstr ""
+msgstr "清單"
 
 #. selection of tasks without tags
 #: zim/plugins/tasklist/gui.py:693
 msgid "Untagged"
-msgstr "沒有標籤"
+msgstr "未有標籤"
 
 #. header in selection drop down
 #: zim/plugins/tasklist/gui.py:748
 msgid "Labels"
-msgstr ""
+msgstr "標籤"
 
 #. Column header Task List dialog
 #: zim/plugins/tasklist/gui.py:881
 msgid "Task"
-msgstr "工作項目"
+msgstr "任務"
 
 #. Column header Task List dialog | 
 #. due date for task
 #: zim/plugins/tasklist/gui.py:932 zim/plugins/tasklist/gui.py:1218
 msgid "Due"
-msgstr ""
+msgstr "截止"
 
 #. Column header Task List dialog | 
 #. start date for task
 #: zim/plugins/tasklist/gui.py:933 zim/plugins/tasklist/gui.py:1216
 msgid "Start"
-msgstr ""
+msgstr "起始"
 
 #. plugin name | 
 #. menu item
 #: zim/plugins/tasklist/__init__.py:31 zim/plugins/tasklist/__init__.py:163
 msgid "Task List"
-msgstr "工作清單"
+msgstr "任務清單"
 
 #. plugin description
 #: zim/plugins/tasklist/__init__.py:32
@@ -4026,124 +4024,115 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"此外掛程式會加入對話框，顯示此筆記本所有未完成之工作項目\n"
-"此類項目包含未勾選之勾選框\n"
-"或帶有 \"TODO\" 或 \"FIXME\" 等標籤之項目\n"
+"此外掛程式會加上對話框，顯示筆記本全部的未完成任務。\n"
+"這些任務會成為勾選框項目，或是標記成 \"TODO\" 或 \"FIXME\" 。\n"
 "\n"
-"此為 zim 內附之核心外掛程式\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. preferences option
 #: zim/plugins/tasklist/__init__.py:45
 msgid "Show tasklist button in headerbar"
-msgstr ""
+msgstr "在標題列顯示任務清單按鈕"
 
 #. preferences option - "GTD" means "Getting Things Done" methodology
 #: zim/plugins/tasklist/__init__.py:47
 msgid "Show \"GTD-style\" inbox & next actions lists"
-msgstr ""
+msgstr "顯示 \"GTD (搞定) 樣式\" 收件匣及下一步動作清單"
 
 #. preferences option
 #: zim/plugins/tasklist/__init__.py:49
 msgid "Show tasklist in sidepane"
-msgstr ""
+msgstr "在側邊面板顯示任務清單"
 
 #. preferences option
 #: zim/plugins/tasklist/__init__.py:53
 msgid "Show due date in sidepane"
-msgstr ""
+msgstr "在側邊面板顯示截止日期"
 
 #. preferences option
 #: zim/plugins/tasklist/__init__.py:55
-#, fuzzy
-#| msgid "Show ToC as floating widget instead of in sidepane"
 msgid "Show start date in sidepane"
-msgstr "浮動顯示目錄（代替側面板）"
+msgstr "在側邊面板顯示起始日期"
 
 #. preferences option
 #: zim/plugins/tasklist/__init__.py:57
 msgid "Show page column in the sidepane"
-msgstr ""
+msgstr "在側邊面板顯示頁面列欄"
 
 #. label for plugin preferences dialog
 #: zim/plugins/tasklist/__init__.py:63
 msgid "Consider all checkboxes as tasks"
-msgstr "將所有勾選框視為工作項目"
+msgstr "將全部勾選框作為任務項目"
 
 #. label for plugin preferences dialog - labels are e.g. "FIXME", "TODO"
 #: zim/plugins/tasklist/__init__.py:65
 msgid "Labels marking tasks"
-msgstr "以標籤註記工作項目"
+msgstr "用標籤註記為任務"
 
 #. label for plugin preferences dialog - labels are e.g. "Waiting", "Planned"
 #: zim/plugins/tasklist/__init__.py:67
-#, fuzzy
-#| msgid "Labels marking tasks"
 msgid "Labels for \"waiting\" tasks"
-msgstr "以標籤註記工作項目"
+msgstr "用標籤註記為\"等待\"任務"
 
 #. label for plugin preferences dialog - tags are e.g. "@waiting", "@planned"
 #: zim/plugins/tasklist/__init__.py:69
 msgid "Tags for \"waiting\" tasks"
-msgstr ""
+msgstr "標記為\"等待\"任務"
 
 #. label for preference with multiple options
 #: zim/plugins/tasklist/__init__.py:71
 msgid "Use date from journal pages"
-msgstr ""
+msgstr "使用日期來自日誌頁面"
 
 #. choice for "Use date from journal pages"
 #: zim/plugins/tasklist/__init__.py:72
 msgid "do not use"
-msgstr "不使用"
+msgstr "不可使用"
 
 #. choice for "Use date from journal pages"
 #: zim/plugins/tasklist/__init__.py:73
 msgid "as start date for tasks"
-msgstr ""
+msgstr "作為任務起始日期"
 
 #. choice for "Use date from journal pages"
 #: zim/plugins/tasklist/__init__.py:74
 msgid "as due date for tasks"
-msgstr ""
+msgstr "作為任務截止日期"
 
 #. Notebook sections to search for tasks - default is the whole tree (empty string means everything)
 #: zim/plugins/tasklist/__init__.py:76
 msgid "Section(s) to index"
-msgstr ""
+msgstr "章節部分進行索引"
 
 #. Notebook sections to exclude when searching for tasks - default is none
 #: zim/plugins/tasklist/__init__.py:78
 msgid "Section(s) to ignore"
-msgstr ""
+msgstr "章節部分進行忽略"
 
 #. label for plugin preferences dialog
 #: zim/plugins/tasklist/__init__.py:83
 msgid "Show page names in selection pane"
-msgstr ""
+msgstr "在章節面板顯示頁面名稱"
 
 #. label for plugin preferences dialog
 #: zim/plugins/tasklist/__init__.py:85
 msgid "Don't count Saturday and Sunday as working days"
-msgstr ""
+msgstr "不要將週六週日計入工作日"
 
 #. toolbar style
 #: zim/plugins/toolbar.py:19
-#, fuzzy
-#| msgid "Icon"
 msgid "Icons"
 msgstr "圖示"
 
 #. toolbar style
 #: zim/plugins/toolbar.py:21
-#, fuzzy
-#| msgid "Icons _And Text"
 msgid "Icons & Text"
-msgstr "圖示和文字(_A)"
+msgstr "圖示和文字"
 
 #. toolbar style
 #: zim/plugins/toolbar.py:22
 msgid "Icons & Text horizontal"
-msgstr ""
+msgstr "圖示和文字平行"
 
 #. Toolbar size small
 #: zim/plugins/toolbar.py:30
@@ -4163,33 +4152,27 @@ msgstr "工具列"
 #. plugin description
 #: zim/plugins/toolbar.py:42
 msgid "This plugin allows to customize the toolbar in the main window.\n"
-msgstr ""
+msgstr "此外掛程式允許自訂主要視窗的工具列。\n"
 
 #. option for plugin preferences
 #: zim/plugins/toolbar.py:51
-#, fuzzy
-#| msgid "Show in the toolbar"
 msgid "Show toolbar"
-msgstr "顯示於工具列"
+msgstr "顯示工具列"
 
 #. option for plugin preferences
 #: zim/plugins/toolbar.py:53
 msgid "Include formatting tools in toolbar"
-msgstr ""
+msgstr "在工具列中包含格式工具"
 
 #. option for plugin preferences
 #: zim/plugins/toolbar.py:57
-#, fuzzy
-#| msgid "_Toolbar"
 msgid "Toolbar style"
-msgstr "工具列(_T)"
+msgstr "工具列樣式"
 
 #. option for plugin preferences
 #: zim/plugins/toolbar.py:59
-#, fuzzy
-#| msgid "_Toolbar"
 msgid "Toolbar size"
-msgstr "工具列(_T)"
+msgstr "工具列大小"
 
 #. plugin name
 #: zim/plugins/trayicon.py:71
@@ -4205,11 +4188,11 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"此外掛程式於系統匣增添 zim 圖示以方便存取\n"
+"此外掛程式於系統匣增添 zim 圖示以方便存取。\n"
 "\n"
-"此外掛程式需依賴 Gtk+ 之 2.10 或較新之版本\n"
+"此外掛程式需相依 Gtk+ 版本 2.10 或較新版本。\n"
 "\n"
-"此為 zim 內附之核心外掛程式\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. preferences option
 #: zim/plugins/trayicon.py:85
@@ -4217,18 +4200,18 @@ msgid ""
 "Classic trayicon,\n"
 "do not use new style status icon on Ubuntu"
 msgstr ""
-"使用舊樣式之系統匣圖示\n"
-"在 Ubuntu 作業系統上不使用新風格之狀態欄圖示"
+"經典樣式系統匣圖示，\n"
+"在 Ubuntu 上不使用新型狀態欄圖示"
 
 #. preferences option
 #: zim/plugins/trayicon.py:86
 msgid "Show a separate icon for each notebook"
-msgstr "一本筆記本一個圖示"
+msgstr "每個筆記本顯示各別圖示"
 
 #. menu item in tray icon menu
 #: zim/plugins/trayicon.py:132
 msgid "_Quick Note..."
-msgstr "快速記筆記(_Q)"
+msgstr "快速筆記(_Q)..."
 
 #. menu item in tray icon menu
 #: zim/plugins/trayicon.py:141
@@ -4244,7 +4227,7 @@ msgstr "筆記本"
 #. short description of zim
 #: zim/plugins/trayicon.py:257 zim/plugins/zeitgeist-logger.py:49
 msgid "Zim Desktop Wiki"
-msgstr "Zim 桌面維基"
+msgstr "Zim 桌面維基 Wiki"
 
 #. plugin name
 #: zim/plugins/versioncontrol/__init__.py:54
@@ -4260,47 +4243,52 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
+"此外掛程式加上筆記本的版本控制。\n"
+"\n"
+"此外掛程式支援 Bazaar, Git and Mercurial 版本控制系統。\n"
+"\n"
+"此為核心外掛程式，隨同 zim 發行。\n"
 
 #. Label for plugin preference
 #: zim/plugins/versioncontrol/__init__.py:67
 msgid "Autosave version when the notebook is closed"
-msgstr ""
+msgstr "當筆記本關閉時自動儲存版本"
 
 #. Label for plugin preference
 #: zim/plugins/versioncontrol/__init__.py:68
 msgid "Autosave version on regular intervals"
-msgstr "每隔一段間自動儲存"
+msgstr "每隔一段時間即自動儲存"
 
 #. Label for plugin preference
 #: zim/plugins/versioncontrol/__init__.py:69
 msgid "Autosave interval in minutes"
-msgstr ""
+msgstr "自動儲存每隔數分鐘"
 
 #. default version comment for auto-saved versions
 #: zim/plugins/versioncontrol/__init__.py:201
 msgid "Automatically saved version from zim"
-msgstr "zim 自動儲存的版本"
+msgstr "自動由 zim 儲存版本"
 
 #. menu item
 #: zim/plugins/versioncontrol/__init__.py:209
 msgid "S_ave Version..."
-msgstr "儲存版本(_A)"
+msgstr "儲存版本(_a)..."
 
 #. menu item
 #: zim/plugins/versioncontrol/__init__.py:226
 msgid "_Versions..."
-msgstr "所有版本(_V)"
+msgstr "版本(_V)..."
 
 #. verbose error description
 #: zim/plugins/versioncontrol/__init__.py:238
 msgid ""
 "There are no changes in this notebook since the last version that was saved"
-msgstr "最近儲存的版本以來，此筆記本至今尚無更動"
+msgstr "自從上次最後版本儲存以來，此筆記本尚無修改變動。"
 
 #. Short error descriotion
 #: zim/plugins/versioncontrol/__init__.py:241
 msgid "No changes since last version"
-msgstr "最近版本以來，至今尚無更動"
+msgstr "上次最後版本以來尚無變動修改"
 
 #. option value
 #: zim/plugins/versioncontrol/__init__.py:257
@@ -4320,7 +4308,7 @@ msgstr "Git"
 #. option value
 #: zim/plugins/versioncontrol/__init__.py:260
 msgid "Fossil"
-msgstr ""
+msgstr "Fossil"
 
 #. Question dialog
 #: zim/plugins/versioncontrol/__init__.py:720
@@ -4333,8 +4321,8 @@ msgid ""
 "Version control is currently not enabled for this notebook.\n"
 "Do you want to enable it?"
 msgstr ""
-"此筆記本尚未啟用版本控制功能\n"
-"需啟用嗎？"
+"此筆記本尚未啟用版本控制功能。\n"
+"需要啟用嗎？"
 
 #. option to chose versioncontrol backend
 #: zim/plugins/versioncontrol/__init__.py:733
@@ -4354,7 +4342,7 @@ msgstr "請為此版本加註"
 #. default version comment in the "save version" dialog
 #: zim/plugins/versioncontrol/__init__.py:764
 msgid "Saved version from zim"
-msgstr "zim 儲存之版本"
+msgstr "由 zim 儲存的版本"
 
 #. dialog title
 #: zim/plugins/versioncontrol/__init__.py:798
@@ -4370,7 +4358,7 @@ msgstr "頁面(_P)"
 #. Button label
 #: zim/plugins/versioncontrol/__init__.py:837
 msgid "View _Annotated"
-msgstr "檢視註解(_A)"
+msgstr "檢視附加註解(_A)"
 
 #. Help text in versions dialog
 #: zim/plugins/versioncontrol/__init__.py:842
@@ -4378,8 +4366,8 @@ msgid ""
 "Select a version to see changes between that version and the current\n"
 "state. Or select multiple versions to see changes between those versions.\n"
 msgstr ""
-"選擇一個版本，以檢視該版本與目前版本的差異\n"
-"或選擇多個版本，以檢視各版本間的差異\n"
+"選擇一個版本來查看該版本與目前版本的差異，\n"
+"或是選擇多個版本，以查看各版本之間的差異。\n"
 
 #. version details
 #: zim/plugins/versioncontrol/__init__.py:867
@@ -4394,7 +4382,7 @@ msgstr "回復版本(_R)"
 #. button in versions dialog for diff
 #: zim/plugins/versioncontrol/__init__.py:887
 msgid "Show _Changes"
-msgstr "顯示更動(_C)"
+msgstr "顯示變動(_C)"
 
 #. button in versions dialog for side by side comparison
 #: zim/plugins/versioncontrol/__init__.py:893
@@ -4404,12 +4392,12 @@ msgstr "並列比較(_S)"
 #. dialog title
 #: zim/plugins/versioncontrol/__init__.py:981
 msgid "Annotated Page Source"
-msgstr "註解頁面來源"
+msgstr "註記頁面原始檔案"
 
 #. Confirmation question
 #: zim/plugins/versioncontrol/__init__.py:990
 msgid "Restore page to saved version?"
-msgstr "恢復頁面至原先儲存之版本？"
+msgstr "恢復頁面至原先儲存的版本？"
 
 #. Detailed question, "%(page)s" is replaced by the page, "%(version)s" by the version id
 #: zim/plugins/versioncontrol/__init__.py:991
@@ -4420,15 +4408,15 @@ msgid ""
 "\n"
 "All changes since the last saved version will be lost !"
 msgstr ""
-"您要將頁面：%(page)s\n"
+"您要將此頁面：%(page)s\n"
 "回復至先前儲存的版本：%(version)s 嗎？\n"
 "\n"
-"上次儲存版本以來，至今的所有更動都將消失喔！"
+"上次儲存版本以來全部的變動都將會遺失喔！"
 
 #. dialog title
 #: zim/plugins/versioncontrol/__init__.py:1006
 msgid "Changes"
-msgstr "更動"
+msgstr "變動"
 
 #. Column header versions dialog
 #: zim/plugins/versioncontrol/__init__.py:1064
@@ -4438,12 +4426,12 @@ msgstr "版本"
 #. plugin name
 #: zim/plugins/zeitgeist-logger.py:33
 msgid "Log events with Zeitgeist"
-msgstr "使用 Zeitgeist 記錄事件"
+msgstr "使用 Zeitgeist 來紀錄事件"
 
 #. plugin description
 #: zim/plugins/zeitgeist-logger.py:34
 msgid "Pushes events to the Zeitgeist daemon."
-msgstr "事件記錄送往 Zeitgeist 伺服器。"
+msgstr "將事件紀錄送至 Zeitgeist 伺服器。"
 
 #. label for how zim pages show up in the recent files menu, %s is the page name
 #: zim/plugins/zeitgeist-logger.py:64
