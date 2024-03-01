@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Zim 0.48\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2023-10-03 08:13+0000\n"
-"Last-Translator: Mukli Krisztián <weblate@rejtettmail.eu.org>\n"
+"PO-Revision-Date: 2024-03-01 09:47+0000\n"
+"Last-Translator: Mukli Krisztián <krisztianmukli@mukli.hu>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/zim/develop/hu/"
 ">\n"
 "Language: hu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.1-dev\n"
+"X-Generator: Weblate 5.5-dev\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:41+0000\n"
 "X-Poedit-Bookmarks: 566,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 
@@ -4029,7 +4029,7 @@ msgstr "Nincs címke"
 #. header in selection drop down
 #: zim/plugins/tasklist/gui.py:748
 msgid "Labels"
-msgstr "Címkék"
+msgstr "Jelölők"
 
 #. Column header Task List dialog
 #: zim/plugins/tasklist/gui.py:881
@@ -4107,12 +4107,12 @@ msgstr "Minden jelölőnégyzet feladatnak tekintése"
 #. label for plugin preferences dialog - labels are e.g. "FIXME", "TODO"
 #: zim/plugins/tasklist/__init__.py:65
 msgid "Labels marking tasks"
-msgstr "A megjelölt feladatok címkéi"
+msgstr "Feladatok megjelölése"
 
 #. label for plugin preferences dialog - labels are e.g. "Waiting", "Planned"
 #: zim/plugins/tasklist/__init__.py:67
 msgid "Labels for \"waiting\" tasks"
-msgstr "A \"várakozó\" feladatok jelölői"
+msgstr "A \"várakozó\" feladatok megjelölése"
 
 #. label for plugin preferences dialog - tags are e.g. "@waiting", "@planned"
 #: zim/plugins/tasklist/__init__.py:69
