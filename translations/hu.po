@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Zim 0.48\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2024-03-01 09:47+0000\n"
+"PO-Revision-Date: 2024-03-01 09:58+0000\n"
 "Last-Translator: Mukli Krisztián <krisztianmukli@mukli.hu>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/zim/develop/hu/"
 ">\n"
@@ -908,7 +908,7 @@ msgid ""
 msgstr ""
 "Ahhoz, hogy folytasd a munkát, vagy elmented a fájlt egy másolatba,\n"
 "vagy eldobod a változásokat. Ha a másolat készítést választod,\n"
-"a változások akkor is elvesznek, de a másolatből később visszaállíthatod."
+"a változások akkor is elvesznek, de a másolatból később visszaállíthatod."
 
 #. Button label
 #: zim/gui/pageview/__init__.py:5648 zim/gui/pageview/__init__.py:7976
