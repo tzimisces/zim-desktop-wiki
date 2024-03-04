@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Zim 0.48\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2024-03-01 09:58+0000\n"
+"PO-Revision-Date: 2024-03-04 20:11+0000\n"
 "Last-Translator: Mukli Krisztián <krisztianmukli@mukli.hu>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/zim/develop/hu/"
 ">\n"
@@ -713,8 +713,8 @@ msgstr "Ugrás a kezdőlapra"
 #, python-format
 msgid "%i _Backlink"
 msgid_plural "%i _Backlinks"
-msgstr[0] "%i visszacsatolás"
-msgstr[1] "%i visszacsatolás"
+msgstr[0] "%i hivatkozás az oldalra"
+msgstr[1] "%i hivatkozás az oldalra"
 
 #. Dialog title
 #: zim/gui/mainwindow.py:1155
@@ -2020,7 +2020,7 @@ msgstr "Keresés ebben a szakaszban"
 #. Menu item
 #: zim/gui/uiactions.py:302
 msgid "Search _Backlinks..."
-msgstr "_Visszacsatolások keresése..."
+msgstr "_Hivatkozások keresése..."
 
 #. Menu item
 #: zim/gui/uiactions.py:310
@@ -2660,7 +2660,7 @@ msgstr[1] "%i melléklet"
 #. plugin name
 #: zim/plugins/backlinkpane.py:22
 msgid "BackLinks Pane"
-msgstr "Visszacsatolások panelja"
+msgstr "Hivatkozások panelja"
 
 #. plugin description
 #: zim/plugins/backlinkpane.py:23
@@ -2688,25 +2688,25 @@ msgstr "Teljes oldal nevek megjelenítése"
 #. widget label
 #: zim/plugins/backlinkpane.py:71
 msgid "BackLinks"
-msgstr "Visszacsatolások"
+msgstr "Hivatkozások"
 
 #. placeholder label in sidepane
 #: zim/plugins/backlinkpane.py:84
 msgid "No backlinks"
-msgstr "Nincs visszacsatolás"
+msgstr "Nincs hivatkozás"
 
 #. Label for the statusbar, %i is the number of BackLinks to the current page
 #: zim/plugins/backlinkpane.py:125
 #, python-format
 msgid "%i _BackLink"
 msgid_plural "%i _BackLinks"
-msgstr[0] "%i visszacsatolás"
-msgstr[1] "%i visszacsatolás"
+msgstr[0] "%i hivatkozás"
+msgstr[1] "%i hivatkozás"
 
 #. widget label
 #: zim/plugins/backlinkpane.py:128
 msgid "_BackLinks"
-msgstr "Visszacsatolások"
+msgstr "_Hivatkozások"
 
 #. context menu for inserted objects
 #: zim/plugins/base/imagegenerator.py:361
@@ -2898,7 +2898,7 @@ msgstr "Legnagyobb oldalszélesség"
 #. preference option for sourceview plugin
 #: zim/plugins/distractionfree.py:38 zim/plugins/sourceview.py:99
 msgid "Border width"
-msgstr "szegély szélesség"
+msgstr "Szegély szélesség"
 
 #. plugin preference
 #: zim/plugins/distractionfree.py:39
@@ -3244,12 +3244,12 @@ msgstr ""
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:65 zim/plugins/tags.py:49
 msgid "Automatically expand sections on open page"
-msgstr "Automatikusan nyissa ki a szakaszokat a megnyitott lapon"
+msgstr "Automatikusan nyissa ki a szakaszokat a megnyitott laphoz"
 
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:67 zim/plugins/tags.py:51
 msgid "Automatically collapse sections on close page"
-msgstr "Automatikusan zárja össze a szakaszokat a bezár lapon"
+msgstr "Automatikusan zárja össze a szakaszokat lap bezárásakor"
 
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:69 zim/plugins/tags.py:53
@@ -3538,7 +3538,7 @@ msgstr "Sose törje meg a sorokat"
 #. option value
 #: zim/plugins/sourceview.py:81
 msgid "Try wrap at word boundaries or character"
-msgstr "Próbáljon meg a szavak határainál vagy karakternél törni"
+msgstr "Próbáljon meg a szó- vagy karakterhatároknál törni"
 
 #. option value
 #: zim/plugins/sourceview.py:82
@@ -4507,7 +4507,7 @@ msgstr "Következõ"
 #: data/templates/html/Default.html:81
 #: data/templates/html/Default_with_index.html:96
 msgid "Backlinks:"
-msgstr "Visszacsatolások:"
+msgstr "Hivatkozások:"
 
 #: data/templates/html/Default.html:90
 #: data/templates/html/Default_with_index.html:105
