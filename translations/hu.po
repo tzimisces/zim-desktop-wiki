@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Zim 0.48\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2024-03-04 20:11+0000\n"
+"PO-Revision-Date: 2024-03-22 13:01+0000\n"
 "Last-Translator: Mukli Krisztián <krisztianmukli@mukli.hu>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/zim/develop/hu/"
 ">\n"
@@ -1058,7 +1058,7 @@ msgstr "_Hivatkozás másolása"
 #. context menu item
 #: zim/gui/pageview/__init__.py:6832
 msgid "Cut Lin_k"
-msgstr "Hivatkozás törlése"
+msgstr "Hivatkozás kivágása"
 
 #. context menu item
 #: zim/gui/pageview/__init__.py:6845
