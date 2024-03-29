@@ -3,47 +3,42 @@
 
 import tests
 
-from zim.parsing import *
+from zim.parse.encode import \
+	escape_string, unescape_string, split_escaped_string, \
+	url_decode, url_encode, \
+	URL_ENCODE_READABLE, URL_ENCODE_PATH, URL_ENCODE_DATA
+from zim.parse.links import *
+
+from zim.plugins.tasklist.dates import old_parse_date
+
 from zim.parser import *
 
-class TestParsing(tests.TestCase):
+class TestEscapeStringFunctions(tests.TestCase):
 
-	def testParseDate(self):
-		'''Test parsing dates'''
-		from datetime import date
-		today = date.today()
-		year = today.year
-		if today.month > 6:
-			year += 1 # Starting July next year January is closer
-		self.assertEqual(parse_date('1/1'), (year, 1, 1))
-		self.assertEqual(parse_date('1-1'), (year, 1, 1))
-		self.assertEqual(parse_date('1:1'), (year, 1, 1))
-		self.assertEqual(parse_date('11/11/99'), (1999, 11, 11))
-		self.assertEqual(parse_date('11/11/11'), (2011, 11, 11))
-		self.assertEqual(parse_date('1/11/2001'), (2001, 11, 1))
-		self.assertEqual(parse_date('1-11-2001'), (2001, 11, 1))
-		self.assertEqual(parse_date('1:11:2001'), (2001, 11, 1))
-		self.assertEqual(parse_date('2001/11/1'), (2001, 11, 1))
+	def testEscapeString(self):
+		for raw, escaped in (
+			('Newline \n', 'Newline \\n'),
+			('Tab \t', 'Tab \\t'),
+			('Special char |', 'Special char \\|'),
+			('Backslash \\', 'Backslash \\\\'),
+			('Backslashed special char \\|', 'Backslashed special char \\\\\\|'),
+			('Not a newline \\n', 'Not a newline \\\\n'),
+		):
+			self.assertEqual(escape_string(raw, chars='|'), escaped)
+			self.assertEqual(unescape_string(escaped), raw)
 
-	def testRe(self):
-		'''Test parsing Re class'''
-		string = 'foo bar baz'
-		re = Re(r'f(oo)\s*(bar)')
-		if re.match(string):
-			self.assertEqual(len(re), 3)
-			self.assertEqual(re[0], 'foo bar')
-			self.assertEqual(re[1], 'oo')
-			self.assertEqual(re[2], 'bar')
-		else:
-			assert False, 'fail'
+	def testSplitEscapedString(self):
+		for string, parts in (
+			('Part A|Part B|Part C', ['Part A', 'Part B', 'Part C']),
+			('Part A\\| with pipe|Part B|Part C', ['Part A\\| with pipe', 'Part B', 'Part C']),
+			('Part A\\\\\\| with multiple backslash|Part B|Part C', ['Part A\\\\\\| with multiple backslash', 'Part B', 'Part C']),
+			('Part A with backslash\\\\|Part B|Part C', ['Part A with backslash\\\\', 'Part B', 'Part C']),
+			('No agressive strip \\', ['No agressive strip \\'])
+		):
+			self.assertEqual(split_escaped_string(string, '|'), parts)
 
-	def testTextBuffer(self):
-		'''Test parsing TextBuffer class'''
-		buffer = TextBuffer()
-		buffer += ['test 123\n test !', 'fooo bar\n', 'duss']
-		self.assertEqual(
-			buffer.get_lines(),
-			['test 123\n', ' test !fooo bar\n', 'duss\n'])
+
+class TestURLEncode(tests.TestCase):
 
 	def testURLEncoding(self):
 		'''Test encoding and decoding urls'''
@@ -83,6 +78,9 @@ class TestParsing(tests.TestCase):
 		self.assertEqual(url_decode(encoded), data)
 		self.assertEqual(url_encode(decoded), encoded)
 
+
+class TestParseLinks(tests.TestCase):
+
 	def testLinkType(self):
 		'''Test link_type()'''
 		for href, type in (
@@ -113,43 +111,25 @@ class TestParsing(tests.TestCase):
 			# print('>>', href)
 			self.assertEqual(link_type(href), type)
 
-	def testValidInterwikiKey(self):
-		for name, key in (
-			('Foo', 'Foo'),
-			('Foo Bar', 'Foo_Bar'),
-			('Foo*Bar', 'Foo_Bar'),
-			('Foo-Bar', 'Foo-Bar'),
-			('Foo.Bar', 'Foo.Bar'),
-			('.Foo.Bar', '_Foo.Bar'),
-		):
-			self.assertEqual(valid_interwiki_key(name), key)
-			self.assertTrue(is_interwiki_keyword_re.match(key))
 
+class TestParseDates(tests.TestCase):
 
-class TestEscapeStringFunctions(tests.TestCase):
-
-	def testEscapeString(self):
-		for raw, escaped in (
-			('Newline \n', 'Newline \\n'),
-			('Tab \t', 'Tab \\t'),
-			('Special char |', 'Special char \\|'),
-			('Backslash \\', 'Backslash \\\\'),
-			('Backslashed special char \\|', 'Backslashed special char \\\\\\|'),
-			('Not a newline \\n', 'Not a newline \\\\n'),
-		):
-			self.assertEqual(escape_string(raw, chars='|'), escaped)
-			self.assertEqual(unescape_string(escaped), raw)
-
-	def testSplitEscapedString(self):
-		for string, parts in (
-			('Part A|Part B|Part C', ['Part A', 'Part B', 'Part C']),
-			('Part A\\| with pipe|Part B|Part C', ['Part A\\| with pipe', 'Part B', 'Part C']),
-			('Part A\\\\\\| with multiple backslash|Part B|Part C', ['Part A\\\\\\| with multiple backslash', 'Part B', 'Part C']),
-			('Part A with backslash\\\\|Part B|Part C', ['Part A with backslash\\\\', 'Part B', 'Part C']),
-			('No agressive strip \\', ['No agressive strip \\'])
-		):
-			self.assertEqual(split_escaped_string(string, '|'), parts)
-
+	def testParseDate(self):
+		'''Test parsing dates'''
+		from datetime import date
+		today = date.today()
+		year = today.year
+		if today.month > 6:
+			year += 1 # Starting July next year January is closer
+		self.assertEqual(old_parse_date('1/1'), (year, 1, 1))
+		self.assertEqual(old_parse_date('1-1'), (year, 1, 1))
+		self.assertEqual(old_parse_date('1:1'), (year, 1, 1))
+		self.assertEqual(old_parse_date('11/11/99'), (1999, 11, 11))
+		self.assertEqual(old_parse_date('11/11/11'), (2011, 11, 11))
+		self.assertEqual(old_parse_date('1/11/2001'), (2001, 11, 1))
+		self.assertEqual(old_parse_date('1-11-2001'), (2001, 11, 1))
+		self.assertEqual(old_parse_date('1:11:2001'), (2001, 11, 1))
+		self.assertEqual(old_parse_date('2001/11/1'), (2001, 11, 1))
 
 
 class TestSimpleTreeBuilder(tests.TestCase):

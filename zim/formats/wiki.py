@@ -10,14 +10,10 @@ logger = logging.getLogger('zim.formats.wiki')
 
 from zim.parser import Rule, fix_unicode_chars, convert_space_to_tab
 from zim.parser import Parser as RuleParser
-from zim.parsing import url_encode, URL_ENCODE_DATA, \
-	escape_string, unescape_string, split_escaped_string
-from zim.parsing import url_re as old_url_re
+from zim.parse.links import url_re as old_url_re
 from zim.formats import *
 from zim.formats.plain import Dumper as TextDumper
-
-old_url_re = old_url_re.p
-
+from zim.parse.encode import escape_string, split_escaped_string, unescape_string, url_encode, URL_ENCODE_DATA
 
 WIKI_FORMAT_VERSION = 'zim 0.6'
 assert WIKI_FORMAT_VERSION != 'zim 0.26' # skip number for historic reasons

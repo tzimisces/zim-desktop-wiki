@@ -12,9 +12,10 @@
 # - add \ before line ends to match line breaks from user
 
 import re
+from zim.parse.encode import escape_string
 
 from zim.formats import *
-from zim.parsing import url_re, escape_string
+from zim.parse.links import url_re
 from zim.formats.plain import Dumper as TextDumper
 
 
