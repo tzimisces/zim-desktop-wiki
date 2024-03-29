@@ -25,8 +25,8 @@ from zim.plugins.journal import daterange_from_path
 logger = logging.getLogger('zim.plugins.tasklist')
 
 
-from .dates import date_re as _raw_parse_date_re
-from .dates import parse_date, old_parse_date
+from zim.parse.dates import date_re as _raw_parse_date_re
+from zim.parse.dates import parse_date, old_parse_date
 
 _tag_re = re.compile(r'(?<!\S)@(\w+)\b', re.U)
 _date_re = re.compile('[<>] ?' + _raw_parse_date_re.pattern + r'|\[d:.+\]')

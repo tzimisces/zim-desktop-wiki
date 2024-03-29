@@ -9,11 +9,10 @@ from functools import partial
 
 from zim.plugins import PluginManager
 from zim.plugins.tasklist import *
-from zim.plugins.tasklist.dates import old_parse_date
 from zim.plugins.tasklist.indexer import *
 from zim.plugins.tasklist.indexer import _MAX_DUE_DATE, _MIN_START_DATE
 
-
+from zim.parse.dates import old_parse_date
 from zim.tokenparser import testTokenStream
 from zim.formats.wiki import Parser as WikiParser
 
