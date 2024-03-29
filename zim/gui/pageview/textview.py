@@ -9,10 +9,12 @@ import logging
 
 import zim.formats
 
-from zim.formats.wiki import url_re, match_url
+from zim.parse.links import url_link_re, match_url_link
+
 from zim.gui.widgets import strip_boolean_result
 from zim.gui.clipboard import Clipboard, SelectionClipboard
 from zim.gui.insertedobjects import InsertedObjectWidget, POSITION_BEGIN, POSITION_END
+
 
 from .constants import *
 from .objectanchors import LineSeparatorAnchor
@@ -945,12 +947,12 @@ class TextView(Gtk.TextView):
 		elif self.preferences['autolink_anchor'] and anchor_re.match(word):
 			m = anchor_re.match(word)
 			handled = apply_anchor(m.group(0))
-		elif url_re.search(word):
+		elif url_link_re.search(word):
 			if char == ')':
 				handled = False # to early to call
 			else:
-				m = url_re.search(word)
-				url = match_url(m.group(0))
+				m = url_link_re.search(word)
+				url = match_url_link(m.group(0))
 				tail = word[m.start()+len(url):]
 				handled = apply_link(url, exclude_end=len(tail))
 		elif self.preferences['autolink_anchor'] and link_to_anchor_re.match(word) and word.startswith('#'):
