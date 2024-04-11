@@ -176,98 +176,6 @@ class BuilderTextBuffer(Builder):
 		self.builder.append(tag, attrib, text)
 
 
-class SimpleTreeElement(list):
-
-	# Not unlike the Element class of xml.etree, but without the
-	# "text" and "tail" attributes - text is just part of the list.
-	# This makes processing so much easier...
-
-	__slots__ = ('tag', 'attrib')
-
-	def __init__(self, tag, attrib=None, children=None):
-		self.tag = tag
-		self.attrib = attrib
-		if children:
-			self.extend(children)
-
-	def get(self, attr, default=None):
-		if self.attrib:
-			return self.attrib.get(attr, default)
-		else:
-			return None
-
-	def __eq__(self, other):
-		if self.tag == other.tag \
-		and self.attrib == other.attrib \
-		and len(self) == len(other):
-			return all(s == o for s, o in zip(self, other))
-		else:
-			return False
-
-	def __repr__(self):
-		if len(self) > 0:
-			return '<%s:\n%s>' % (self.__class__.__name__, self.pprint(level=1))
-		else:
-			return '<%s: %s>' % (self.__class__.__name__, self.pprint(level=0).strip())
-
-	def __str__(self):
-		return self.__repr__()
-
-	def pprint(self, level=0):
-		'''Returns pretty-printed text representation'''
-		prefix = '  ' * level
-		if len(self) > 0:
-			lines = [prefix + '%s %r [\n' % (self.tag, self.attrib)]
-			for item in self:
-				if isinstance(item, SimpleTreeElement):
-					lines.append(item.pprint(level=level + 1))
-				elif isinstance(item, str):
-					for line in item.splitlines(True):
-						lines.append(prefix + '  %r\n' % line)
-				else:
-					lines.append(prefix + '  %r\n' % item)
-			lines.append(prefix + ']\n')
-			return ''.join(lines)
-		else:
-			return prefix + '%s %r []\n' % (self.tag, self.attrib)
-
-
-class SimpleTreeBuilder(Builder):
-	'''Builder class that builds a tree of L{SimpleTreeElement}s'''
-
-	def __init__(self, elementfactory=SimpleTreeElement):
-		self.elementfactory = elementfactory
-		self.root = []
-		self.stack = [self.root]
-		self.merge_text = False
-
-	def get_root(self):
-		if not len(self.stack) == 1:
-			raise AssertionError('Did not finish processing')
-		return self.root
-
-	# Builder interface
-
-	def start(self, tag, attrib=None):
-		element = self.elementfactory(tag, attrib)
-		self.stack[-1].append(element)
-		self.stack.append(element)
-
-	def end(self, tag):
-		element = self.stack.pop()
-		if element.tag != tag:
-			raise AssertionError('Unmatched %s at end of %s' % (element.tag, tag))
-
-	def text(self, text):
-		self.stack[-1].append(text)
-
-	def append(self, tag, attrib=None, text=None):
-		element = self.elementfactory(tag, attrib)
-		if text:
-			element.append(text)
-		self.stack[-1].append(element)
-
-
 class ParserError(Error):
 
 	def __init__(self, msg):
@@ -458,6 +366,8 @@ class Parser(object):
 		if isinstance(error, AssertionError):
 			error = ParserError(str(error))
 			# Assume any assertion is a parser check
+		elif not isinstance(error, ParserError):
+			raise  # original error, do not change stack trace
 
 		if hasattr(error, 'parser_offset'):
 			offset = start + error.parser_offset
@@ -470,10 +380,7 @@ class Parser(object):
 		error.parser_offset = offset
 		error.parser_line_offset = get_line_count(text, offset)
 
-		if isinstance(error, ParserError):
-			raise error
-		else:
-			raise  # original error, do not change stack trace
+		raise error
 
 
 def get_line_count(text, offset):

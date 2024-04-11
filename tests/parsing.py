@@ -12,7 +12,8 @@ from zim.parse.encode import \
 from zim.parse.links import *
 from zim.parse.dates import *
 from zim.parse.dates import old_parse_date
-
+from zim.parse.simpletree import *
+from zim.tokenparser import *
 from zim.parser import *
 
 
@@ -274,7 +275,7 @@ class TestSimpleTreeBuilder(tests.TestCase):
 		builder.end('root')
 
 		root = builder.get_root()
-		self.assertEqual(root, [
+		self.assertEqual(root,
 			E('root', {}, [
 					'foo', 'bar',
 					E('dus', {}, ['ja']),
@@ -283,35 +284,73 @@ class TestSimpleTreeBuilder(tests.TestCase):
 					'foo', 'bar',
 				]
 			)
-		])
+		)
 
 
 		realbuilder = SimpleTreeBuilder()
 		builder = BuilderTextBuffer(realbuilder)
 
-		builder.start('root', {})
+		builder.start('root', None)
 		builder.text('foo')
 		builder.text('bar')
-		builder.append('dus', {}, 'ja')
+		builder.append('bold', {'level': 3}, 'ja')
 		builder.text('foo')
 		builder.text('bar')
-		builder.append('br', {})
+		builder.append('br', None)
 		builder.text('foo')
 		builder.text('bar')
 		builder.end('root')
 
 		root = realbuilder.get_root()
-		self.assertEqual(root, [
-			E('root', {}, [
+		self.assertEqual(root,
+				E('root', None, [
 					'foobar',
-					E('dus', {}, ['ja']),
+					E('bold', {'level': 3}, ['ja']),
 					'foobar',
-					E('br', {}, []),
+					E('br', None, []),
 					'foobar',
 				]
 			)
-		])
+		)
 
+
+class TestTokensToSimpleTree(tests.TestCase):
+
+	def setUp(self):
+		E = SimpleTreeElement
+		self.elt = E('root', None, [
+				'foobar',
+				E('bold', {'level': 3}, ['ja']),
+				'foobar',
+				E('br', None, []),
+				'foobar',
+			]
+		)
+		self.tokens = [
+			('root', None),
+				(TEXT, 'foobar'),
+				('bold', {'level': 3}), (TEXT, 'ja'), (END, 'bold'),
+				(TEXT, 'foobar'),
+				('br', None), (END, 'br'),
+				(TEXT, 'foobar'),
+			(END, 'root')
+		]
+
+	def testSimpleTreeToTokens(self):
+		self.assertEqual(simpletree_to_tokens(self.elt), self.tokens)
+
+	def testSimpleTreeToTokensWithParserBuilder(self):
+		builder = TokenBuilder()
+		SimpleTreeParser(builder).parse(self.elt)
+		self.assertEqual(builder.tokens, self.tokens)
+
+	def testTokensToSimpleTree(self):
+		self.assertEqual(tokens_to_simpletree(self.tokens), self.elt)
+
+	def testTokensToSimpleTreeWithParserBuilder(self):
+		builder = SimpleTreeBuilder()
+		TokenParser(builder).parse(self.tokens)
+		self.assertAlmostEqual(builder.get_root(), self.elt)
 
 
 class TestBuilderTextBuffer(tests.TestCase):
@@ -343,13 +382,13 @@ class TestBuilderTextBuffer(tests.TestCase):
 		buffer.end('FOO')
 
 		E = SimpleTreeElement
-		self.assertEqual(builder.get_root(), [
+		self.assertEqual(builder.get_root(), 
 			E('FOO', None, [
 				'aaa\nbbb\nccc\n',
 				E('BAR', None, []),
 				'ddd\neee',
 			])
-		])
+		)
 
 
 
