@@ -5,6 +5,8 @@ import tests
 
 import zim.datetimetz as datetime
 
+from zim.parse import convert_space_to_tab, fix_unicode_whitespace
+from zim.parse.builder import BuilderTextBuffer
 from zim.parse.encode import \
 	escape_string, unescape_string, split_escaped_string, \
 	url_decode, url_encode, \
@@ -12,13 +14,11 @@ from zim.parse.encode import \
 from zim.parse.links import *
 from zim.parse.dates import *
 from zim.parse.dates import old_parse_date
+from zim.parse.regexparser import *
 from zim.parse.simpletree import *
 from zim.parse.tokenlist import EndOfTokenListError, TokenBuilder, TokenParser, \
 	collect_until_end_token, filter_token, reverseTopLevelLists, \
 	testTokenStream, tokens_to_text, topLevelLists
-
-
-from zim.parser import *
 from zim.formats import ParseTreeBuilder, PARAGRAPH
 
 
@@ -400,7 +400,7 @@ class TestBuilderTextBuffer(tests.TestCase):
 class TestParser(tests.TestCase):
 
 	def testFixUnicode(self):
-		self.assertEqual(fix_unicode_chars('foo\u2028bar\u2029check\n'), 'foo\nbar check\n')
+		self.assertEqual(fix_unicode_whitespace('foo\u2028bar\u2029check\n'), 'foo\nbar check\n')
 
 	def testConvertSpaceToTab(self):
 		self.assertEqual(convert_space_to_tab('    foo\n\t     bar\n'), '\tfoo\n\t\t bar\n')

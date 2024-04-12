@@ -76,22 +76,22 @@ to a title or subtitle in the document.
 import re
 import itertools
 import logging
-
 import collections
+
+from functools import reduce
+
+logger = logging.getLogger('zim.formats')
+
 
 from zim.parse.encode import url_decode, url_encode, URL_ENCODE_READABLE, URL_ENCODE_DATA
 from zim.parse.links import link_type, is_url_re, is_www_link_re
 from zim.parse.tokenlist import TokenParser, topLevelLists, collect_until_end_token
+from zim.parse.builder import Builder
 
-from zim.parser import Builder
 from zim.config import ConfigDict
 from zim.plugins import PluginManager
 
 import zim.plugins
-from functools import reduce
-
-
-logger = logging.getLogger('zim.formats')
 
 # Needed to determine RTL, but may not be available
 # if gtk bindings are not installed

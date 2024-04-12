@@ -10,8 +10,9 @@ expressions in the template.
 
 import re
 
+from zim.parse.builder import BuilderTextBuffer
+from zim.parse.regexparser import Rule
 from zim.parse.simpletree import SimpleTreeBuilder
-from zim.parser import Parser, Rule, BuilderTextBuffer
 
 from zim.templates.expressionparser import ExpressionParser, ExpressionParameter
 

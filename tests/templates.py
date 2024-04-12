@@ -20,7 +20,6 @@ from zim.templates.expressionparser import *
 
 from zim.templates.processor import *
 
-from zim.parser import BuilderTextBuffer
 
 E = SimpleTreeElement
 

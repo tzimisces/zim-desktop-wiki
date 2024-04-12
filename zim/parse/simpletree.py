@@ -5,8 +5,7 @@ representation of formatted text.
 '''
 
 from .tokenlist import TEXT, END
-
-from zim.parser import Builder
+from .builder import Builder
 
 
 

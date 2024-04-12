@@ -15,7 +15,7 @@
 #
 # Tags need to be properly nested, so they represent a hierarchy.
 
-from zim.parser import Builder
+from .builder import Builder
 
 TEXT = 'T'
 END = '/'
