@@ -4,8 +4,10 @@
 representation of formatted text.
 '''
 
+from .tokenlist import TEXT, END
+
 from zim.parser import Builder
-from zim.tokenparser import TEXT, END
+
 
 
 class SimpleTreeElement(list):
