@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2024-04-27 17:16+0000\n"
+"PO-Revision-Date: 2024-04-27 18:13+0000\n"
 "Last-Translator: RiwsPy <thibault.debruyne@hotmail.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/zim/develop/fr/>\n"
 "Language: fr\n"
@@ -1203,10 +1203,8 @@ msgstr "Copier la ligne"
 
 #. menu item to cut current line to clipboard
 #: zim/gui/pageview/__init__.py:7096
-#, fuzzy
-#| msgid "Cut Lin_k"
 msgid "Cut Line"
-msgstr "Couper le Lie_n"
+msgstr "Couper la ligne"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7109
