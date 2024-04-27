@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2024-04-27 18:13+0000\n"
+"PO-Revision-Date: 2024-04-27 19:14+0000\n"
 "Last-Translator: RiwsPy <thibault.debruyne@hotmail.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/zim/develop/fr/>\n"
 "Language: fr\n"
@@ -3318,7 +3318,7 @@ msgstr "Réduire l'index des pages"
 #. menu item
 #: zim/plugins/pageindex/__init__.py:133
 msgid "Reveal Current Page in Page Index"
-msgstr ""
+msgstr "Afficher la page actuelle dans l'index des pages"
 
 #. tab label for side pane
 #: zim/plugins/pageindex/__init__.py:147
