@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2023-04-23 13:52+0000\n"
-"Last-Translator: joel MKO <joelmko90@outlook.com>\n"
+"PO-Revision-Date: 2024-04-27 17:16+0000\n"
+"Last-Translator: RiwsPy <thibault.debruyne@hotmail.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/zim/develop/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 5.5.1\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:41+0000\n"
 
 #. Error message when external application could not be found, %s is the command
@@ -144,7 +144,7 @@ msgstr ""
 #, fuzzy, python-format
 #| msgid "Failed to run application: %s"
 msgid "Cound not find terminal emulator to run application: %s"
-msgstr "Échec du lancement de l'application : %s"
+msgstr "Échec du lancement de l'application : %s"
 
 #. label to customize 'open with' menu
 #: zim/gui/applications.py:1081
@@ -2075,8 +2075,6 @@ msgstr "Démarrer le serveur _web"
 
 #. menu item
 #: zim/gui/uiactions.py:368
-#, fuzzy
-#| msgid "View debug log"
 msgid "View Debug Log"
 msgstr "Consulter le journal de débogage"
 
@@ -2915,7 +2913,7 @@ msgstr ""
 #. plugin preference
 #: zim/plugins/diagrameditor.py:38 zim/plugins/sequencediagrameditor.py:38
 msgid "Generate diagrams in SVG format"
-msgstr ""
+msgstr "Générer les diagrammes au format SVG"
 
 #. menu item
 #: zim/plugins/diagrameditor.py:52
@@ -3316,10 +3314,8 @@ msgstr "Utiliser des infobulles"
 
 #. menu item
 #: zim/plugins/pageindex/__init__.py:129
-#, fuzzy
-#| msgid "Page Index"
 msgid "Collapse Page Index"
-msgstr "Index des pages"
+msgstr "Réduire l'index des pages"
 
 #. menu item
 #: zim/plugins/pageindex/__init__.py:133
@@ -4029,10 +4025,8 @@ msgstr "Tâches"
 
 #. tooltip
 #: zim/plugins/tasklist/gui.py:166
-#, fuzzy
-#| msgid "Show tasklist in sidepane"
 msgid "Show tasklist window"
-msgstr "Montrer la liste des tâches dans une panneau latéral"
+msgstr "Montrer la liste des tâches dans le panneau latéral"
 
 #. label for filtering/searching tasks
 #: zim/plugins/tasklist/gui.py:211
@@ -4060,19 +4054,17 @@ msgstr ""
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:505
 msgid "Show open tasks"
-msgstr ""
+msgstr "Montrer les tâches en cours"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:506
-#, fuzzy
-#| msgid "Only Show Active Tasks"
 msgid "Show closed tasks"
-msgstr "Montrer uniquement les tâches actives"
+msgstr "Montrer les tâches terminées"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:507
 msgid "Show cancelled tasks"
-msgstr ""
+msgstr "Montrer les tâches annulées"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:508
@@ -4087,7 +4079,7 @@ msgstr ""
 #. Header for list selection in tasklist window
 #: zim/plugins/tasklist/gui.py:602
 msgid "Lists"
-msgstr ""
+msgstr "Listes"
 
 #. selection of tasks without tags
 #: zim/plugins/tasklist/gui.py:693
@@ -4191,10 +4183,8 @@ msgstr "Labels marquant les tâches"
 
 #. label for plugin preferences dialog - tags are e.g. "@waiting", "@planned"
 #: zim/plugins/tasklist/__init__.py:69
-#, fuzzy
-#| msgid "Tags for non-actionable tasks"
 msgid "Tags for \"waiting\" tasks"
-msgstr "Etiquettes pour les tâches non-déclenchables"
+msgstr "Etiquettes pour les tâches en attente"
 
 #. label for preference with multiple options
 #: zim/plugins/tasklist/__init__.py:71
@@ -4236,7 +4226,7 @@ msgstr "Afficher les dates dues dans la panneau latéral"
 #. label for plugin preferences dialog
 #: zim/plugins/tasklist/__init__.py:85
 msgid "Don't count Saturday and Sunday as working days"
-msgstr ""
+msgstr "Ne pas inclure Samedi et Dimanche comme jours travaillés"
 
 #. toolbar style
 #: zim/plugins/toolbar.py:19
