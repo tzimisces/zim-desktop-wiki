@@ -2166,7 +2166,11 @@ class WindowSidePane(Gtk.VBox):
 		_show(self.notebook.get_action_widget(Gtk.PackType.END))
 		_hide(self.topbar)
 
-	def add_tab(self, key, widget):
+	def add_sidepane_widget(self, key: str, widget: 'WindowSidePaneWidget'):
+		'''Add a sidepane widget to this sidepane
+		@param key: string identifyer or the widget, typically the class name
+		@param widget: a C{WindowSidePaneWidget}
+		'''
 		assert isinstance(widget, WindowSidePaneWidget)
 		assert widget.title is not None
 		if self.key in (TOP_PANE, BOTTOM_PANE):
@@ -2297,8 +2301,24 @@ class WindowSidePaneWidget(ConnectorMixin):
 	L{WindowSidePane}
 	'''
 
+	title = 'NAME' #: title used for label above the widget
+	_info_text = None
+
+	def set_info(self, text):
+		'''Set info text for the widget, displayed instead of title
+		@param text: label text or C{None} to unset
+		'''
+		self._info_text = text
+		if hasattr(self, '_title_labels'):
+			for label in self._title_labels:
+				label.set_text_with_mnemonic(text)
+
 	def get_title_label(self):
-		label = Gtk.Label.new_with_mnemonic(self.title)
+		'''Create a C{Gtk.Label} containing the title or info text
+		This label will dynamically be updated
+		'''
+		text = self._info_text or self.title
+		label = Gtk.Label.new_with_mnemonic(text)
 		if not hasattr(self, '_title_labels'):
 			self._title_labels = set()
 		self._title_labels.add(label)
@@ -2308,12 +2328,6 @@ class WindowSidePaneWidget(ConnectorMixin):
 	def _drop_label(self, label):
 		if hasattr(self, '_title_labels'):
 			self._title_labels.remove(label)
-
-	def set_title(self, text):
-		self.title = text
-		if hasattr(self, '_title_labels'):
-			for label in self._title_labels:
-				label.set_text_with_mnemonic(text)
 
 	def set_embeded_closebutton(self, button):
 		'''Embed a button in the widget to close the side pane
@@ -2534,16 +2548,15 @@ class Window(Gtk.Window):
 		statusbar.pack_end(frame, False, True, 0)
 		frame.show_all()
 
-	def add_tab(self, key, widget, pane):
-		'''Add a tab in one of the panes.
-		@param key: string that is used to identify this tab in the window state
-		@param widget: the gtk widget to show in the tab
-		@param pane: can be one of: C{LEFT_PANE}, C{RIGHT_PANE},
-		C{TOP_PANE} or C{BOTTOM_PANE}.
+	def add_sidepane_widget(self, key: str, widget: 'WindowSidePaneWidget', pane):
+		'''Add a sidepane widget to this window
+		@param key: string identifyer or the widget, typically the class name
+		@param widget: a C{WindowSidePaneWidget}
+		@param pane: can be one of: C{LEFT_PANE}, C{RIGHT_PANE}, C{TOP_PANE} or C{BOTTOM_PANE}.
 		'''
 		pane_key = pane
 		paned, pane, mini = self._zim_window_sidepanes[pane_key]
-		pane.add_tab(key, widget)
+		pane.add_sidepane_widget(key, widget)
 		self.set_pane_state(pane_key, True)
 
 	def remove(self, widget):

@@ -195,7 +195,7 @@ class AttachmentBrowserPluginWidget(Gtk.Box, WindowSidePaneWidget):
 
 	def update_status(self):
 		n = len(self.iconview.get_model())
-		self.set_title(ngettext('%i Atta_chment', '%i Atta_chments', n) % n)
+		self.set_info(ngettext('%i Atta_chment', '%i Atta_chments', n) % n)
 		# T: Label for the statusbar, %i is the number of attachments for the current page
 
 		if n == 0:
