@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2023-02-25 11:35+0000\n"
-"Last-Translator: Humiaki M <fumi032456@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/zim/develop/ja/"
-">\n"
+"PO-Revision-Date: 2024-05-06 14:04+0000\n"
+"Last-Translator: shigeru serizawa <shigerusz3@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/zim/develop/ja/>"
+"\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 5.5.3\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:41+0000\n"
 
 #. Error message when external application could not be found, %s is the command
@@ -57,7 +57,7 @@ msgstr "デフォルト"
 #. Translate to "calendar:week_start:0" if you want Sunday to be the first day of the week or to "calendar:week_start:1" if you want Monday to be the first day of the week
 #: zim/datetimetz.py:98
 msgid "calendar:week_start:0"
-msgstr "calendar:week_start:0"
+msgstr "calendar:週の開始は:0"
 
 #. generic error dialog
 #: zim/errors.py:46
@@ -100,6 +100,8 @@ msgid ""
 "Create missing directories automatically\n"
 "(If disabled you will be prompted)"
 msgstr ""
+"ディレクトリーの自動作成に失敗しました\n"
+"（自動生成をしない場合はプロンプトされます）"
 
 #. Heading in a question dialog for creating a folder
 #: zim/gui/applications.py:595
