@@ -211,6 +211,9 @@ class AttachmentBrowserPluginWidget(Gtk.Box, WindowSidePaneWidget):
 		if self._close_button:
 			self.buttonbox.remove(self._close_button)
 
+		if self.get_orientation() == Gtk.Orientation.VERTICAL:
+			return False
+
 		if button is not None:
 			self.buttonbox.pack_start(button, False, True, 0)
 			self.buttonbox.reorder_child(button, 0)
