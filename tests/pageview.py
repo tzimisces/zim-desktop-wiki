@@ -17,6 +17,7 @@ from zim.gui.pageview import *
 from zim.gui.pageview.find import FIND_CASE_SENSITIVE, FIND_REGEX, FIND_WHOLE_WORD
 from zim.gui.pageview.lists import TextBufferList
 from zim.gui.pageview.textview import camelcase
+from zim.gui.pageview.serialize import *
 from zim.gui.pageview.undostack import UndoStackManager
 
 
@@ -1465,6 +1466,33 @@ normal <strike>strike  <strong>nested bold</strong> strike2 <emphasis>striked it
 		self.assertBufferEquals(buffer, 'Existing page\n')
 
 
+class TestInternalSerialization(tests.TestCase):
+
+	def setUp(self):
+		self.notebook = self.setUpNotebook(content={'Test': tests.new_page_as_wiki_text()})
+		self.page = self.notebook.get_page(Path('Test'))
+		with tests.LoggingFilter('zim.gui.pageview'):
+			self.buffer = TextBuffer(self.notebook, self.page, parsetree=self.page.get_parsetree())
+
+	def testInternalDataReproducesBuffer(self):
+		data = textbuffer_internal_serialize_range(self.buffer, *self.buffer.get_bounds())
+		#print(data.to_xml())
+		buffer1 = TextBuffer(self.notebook, self.page)
+		with tests.LoggingFilter('zim.gui.pageview'):
+			textbuffer_internal_insert_at_cursor(buffer1, data)
+		data1 = textbuffer_internal_serialize_range(buffer1, *buffer1.get_bounds())
+		self.assertEqual(data1._data, data._data)
+
+	def testXMLReproducesInternalData(self):
+		# It might be easier to just compare the xml representations, because the conversion
+		# flattens some of the differences. However, for tests that create buffers from xml data
+		# it is important the xml exactly reproduces to buffer internal contents
+		data = textbuffer_internal_serialize_range(self.buffer, *self.buffer.get_bounds())
+		xml = data.to_xml()
+		data1 = TextBufferInternalContents.new_from_xml(xml)
+		self.assertEqual(data1._data, data._data)
+
+
 class TestUndoStackManager(tests.TestCase, TextBufferTestCaseMixin):
 
 	def testInsertUndoRedo(self):
@@ -1484,17 +1512,8 @@ class TestUndoStackManager(tests.TestCase, TextBufferTestCaseMixin):
 		# insert_parsetree() function is not strictly serial, which
 		# probably breaks proper formatting e.g. when pasting a tree
 		# half way in a line.
-		#~ import pprint
-		#~ undomanager.flush_insert()
-		#~ def tostring(data):
-			#~ if hasattr(data, 'tostring'):
-				#~ return data.tostring()[39:]
-			#~ else:
-				#~ return data.get_property('name')
 		i = 0
 		for group in undomanager.stack + [undomanager.group]:
-			#~ pprint.pprint(
-				#~ [(a[0], a[1], a[2], tostring(a[3])) for a in group] )
 			for action in group:
 				self.assertEqual(action[1], i) # assert undo stack is continous
 				i = action[2]
@@ -1506,7 +1525,6 @@ class TestUndoStackManager(tests.TestCase, TextBufferTestCaseMixin):
 		buffertree1 = buffer.get_parsetree(raw=True)
 
 		while undomanager.undo():
-			#print(">>>", buffer.get_parsetree(raw=True).tostring())
 			_ = buffer.get_parsetree() # just check for no warnings
 
 		emptytree = buffer.get_parsetree(raw=True)
@@ -2230,7 +2248,7 @@ foo
 		assert False # FIXME
 
 		notebook = self.setUpNotebook(
-			content={'roundtrip': tests.FULL_NOTEBOOK['roundtrip']}
+			content={'roundtrip': tests.new_page_as_wiki_text()}
 		)
 		page = notebook.get_page(Path('roundtrip'))
 		parsetree = page.get_parsetree()

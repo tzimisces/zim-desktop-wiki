@@ -1,4 +1,4 @@
-# Copyright 2008-2023 Jaap Karssenberg <jaap.karssenberg@gmail.com>
+# Copyright 2008-2024 Jaap Karssenberg <jaap.karssenberg@gmail.com>
 
 from gi.repository import GObject
 from gi.repository import GLib
@@ -26,7 +26,6 @@ from .constants import *
 from .objectanchors import *
 from .lists import TextBufferList
 from .find import TextFinder
-from .undostack import UndoStackManager
 
 
 logger = logging.getLogger('zim.gui.pageview.textbuffer')
@@ -75,9 +74,6 @@ _is_not_link_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag != 'link'
 _is_tag_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag == 'tag'
 _is_not_tag_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag != 'tag'
 _is_link_tag_without_href = lambda tag: _is_link_tag(tag) and not tag.zim_attrib['href']
-
-# Special character that acts as placeholder for images and objects
-PIXBUF_CHR = '\uFFFC'
 
 
 def increase_list_bullet(bullet):
@@ -379,6 +375,7 @@ class TextBuffer(Gtk.TextBuffer):
 			self.set_parsetree(parsetree)
 			self.set_modified(False)
 
+		from .undostack import UndoStackManager # prevent circular import
 		self.undostack = UndoStackManager(self)
 
 	#~ def do_begin_user_action(self):
@@ -1959,7 +1956,7 @@ class TextBuffer(Gtk.TextBuffer):
 						**self.tag_styles['indent'])
 
 			tag.zim_tag = 'indent'
-			tag.zim_attrib = {'indent': level, '_bullet': (bullet is not None)}
+			tag.zim_attrib = {'indent': level, '_bullet': bullet}
 
 			# Set the prioriy below any _static_style_tags
 			tag.set_priority(0)

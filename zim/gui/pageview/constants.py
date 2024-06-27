@@ -8,6 +8,11 @@ from zim.formats import \
 	BULLET, CHECKED_BOX, UNCHECKED_BOX, XCHECKED_BOX, TRANSMIGRATED_BOX, \
 	MIGRATED_BOX, LINE, OBJECT, HEADING, LISTITEM, BLOCK_LEVEL, FORMATTEDTEXT
 
+# Special character that acts as placeholder for images and objects
+PIXBUF_CHR = '\uFFFC'
+
+
+## Bullets and checkboxes
 
 STOCK_CHECKED_BOX = 'zim-checked-box'
 STOCK_UNCHECKED_BOX = 'zim-unchecked-box'
@@ -47,6 +52,9 @@ BULLETS = (BULLET, UNCHECKED_BOX, CHECKED_BOX, XCHECKED_BOX, MIGRATED_BOX, TRANS
 CHECKBOXES = (UNCHECKED_BOX, CHECKED_BOX, XCHECKED_BOX, MIGRATED_BOX, TRANSMIGRATED_BOX)
 
 NUMBER_BULLET = '#.' # Special case for autonumbering
+
+
+## Keybindings
 
 # Check the (undocumented) list of constants in Gtk.keysyms to see all names
 KEYVALS_HOME = list(map(Gdk.keyval_from_name, ('Home', 'KP_Home')))
