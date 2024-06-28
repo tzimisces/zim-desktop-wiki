@@ -16,16 +16,14 @@ logger = logging.getLogger('zim.gui.pageview')
 from zim.formats import IMAGE, OBJECT, ANCHOR, LINK, TAG, HEADING, LINE
 from zim.parse.tokenlist import TEXT, END
 
-from .constants import PIXBUF_CHR, BULLETS_FROM_STOCK
+from .constants import PIXBUF_CHR, BULLETS_FROM_STOCK, ICON, INDENT_BLOCK
 from .objectanchors import InsertedObjectAnchor, LineSeparatorAnchor
 from .textbuffer import _is_inline_nesting_tag
 
 __all__ = ('textbuffer_internal_insert_at_cursor', 'textbuffer_internal_serialize_range', 'TextBufferInternalContents')
 
 _INTERNAL_ROOT = 'zim-textbuffer'
-_INTERNAL_ICON = 'icon'
-_INTERNAL_INDENT = 'indent'
-_INTERNAL_OBJECT_LIKE_TAGS = (IMAGE, ANCHOR, _INTERNAL_ICON, LINE) # These are not text ranges, but pixbuf / object anchor
+_INTERNAL_OBJECT_LIKE_TAGS = (IMAGE, ANCHOR, ICON, LINE) # These are not text ranges, but pixbuf / object anchor
 
 
 from zim.parse.tokenlist import TokenBuilder
@@ -207,10 +205,7 @@ def textbuffer_internal_serialize_range(textbuffer, start, end):
 		anchor = iter.get_child_anchor()
 		if pixbuf:
 			assert hasattr(pixbuf, 'zim_type')
-			if pixbuf.zim_type == 'image':
-				textbuffer_data.append(('img', pixbuf.zim_attrib.copy())) # TODO: remove exception to change to IMAGE constant everywhere
-			else:
-				textbuffer_data.append((pixbuf.zim_type, pixbuf.zim_attrib.copy()))
+			textbuffer_data.append((pixbuf.zim_type, pixbuf.zim_attrib.copy()))
 			iter.forward_char()
 		elif anchor:
 			assert isinstance(anchor, InsertedObjectAnchor)
@@ -383,7 +378,7 @@ def textbuffer_internal_insert_at_cursor(textbuffer, data):
 			textbuffer.insert_image_at_cursor(None, **t[1]) # TODO - should we use _file to store actual file object in attrib
 		elif t[0] == ANCHOR:
 			textbuffer.insert_anchor_at_cursor(**t[1])
-		elif t[0] == _INTERNAL_ICON:
+		elif t[0] == ICON:
 			bullet = BULLETS_FROM_STOCK[t[1]['stock']] # TODO low level function that takes stock
 			textbuffer._insert_bullet_at_cursor(bullet, raw=True) # TODO - remove "raw"
 
@@ -420,7 +415,7 @@ def textbuffer_internal_insert_at_cursor(textbuffer, data):
 				texttag = textbuffer._create_tag_tag(None)
 			elif t[0] == HEADING:
 				texttag = textbuffer.get_tag_table().lookup('style-h' + str(t[1]['level']))
-			elif t[0] == _INTERNAL_INDENT:
+			elif t[0] == INDENT_BLOCK:
 				texttag = textbuffer._get_indent_tag(t[1]['indent'], t[1]['_bullet'])
 				# TODO: note from original insert function: We don't set the LTR / RTL direction here
 				# instead we update all indent tags after the full

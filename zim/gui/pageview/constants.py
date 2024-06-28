@@ -6,10 +6,25 @@ from gi.repository import Gdk
 
 from zim.formats import \
 	BULLET, CHECKED_BOX, UNCHECKED_BOX, XCHECKED_BOX, TRANSMIGRATED_BOX, \
-	MIGRATED_BOX, LINE, OBJECT, HEADING, LISTITEM, BLOCK_LEVEL, FORMATTEDTEXT
+	MIGRATED_BOX, LINE, OBJECT, HEADING, LISTITEM, BLOCK_LEVEL, FORMATTEDTEXT, \
+	LINK, TAG, ANCHOR, EMPHASIS, STRONG, MARK, STRIKE, SUBSCRIPT, SUPERSCRIPT, IMAGE, \
+	VERBATIM, VERBATIM_BLOCK, \
+	BULLETLIST, NUMBEREDLIST
+
 
 # Special character that acts as placeholder for images and objects
 PIXBUF_CHR = '\uFFFC'
+
+
+# Tag names used internally but not part of tokenlist for formats
+INDENT_BLOCK = 'indent'
+HEADING_1, HEADING_2, HEADING_3, HEADING_4, HEADING_5, HEADING_6 = 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
+HEADING_1_to_6 = (HEADING_1, HEADING_2, HEADING_3, HEADING_4, HEADING_5, HEADING_6)
+PAGE_LINK = 'page-link'
+
+
+# Pixbuf types used internally
+ICON = 'icon'
 
 
 ## Bullets and checkboxes
@@ -52,6 +67,10 @@ BULLETS = (BULLET, UNCHECKED_BOX, CHECKED_BOX, XCHECKED_BOX, MIGRATED_BOX, TRANS
 CHECKBOXES = (UNCHECKED_BOX, CHECKED_BOX, XCHECKED_BOX, MIGRATED_BOX, TRANSMIGRATED_BOX)
 
 NUMBER_BULLET = '#.' # Special case for autonumbering
+
+# Styles
+BULLET_LIST_STYLE = 'bullet-list'
+NUMBERED_LIST_STYLE = 'numbered-list'
 
 
 ## Keybindings

@@ -31,7 +31,6 @@ from .find import TextFinder
 logger = logging.getLogger('zim.gui.pageview.textbuffer')
 
 
-
 is_numbered_bullet_re = re.compile(r'^(\d+|\w|#)\.$')
 	#: This regular expression is used to test whether a bullet belongs to a numbered list or not
 
@@ -56,23 +55,23 @@ _is_inline_format_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag in _
 _is_not_inline_format_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag not in _inline_format_tags
 	# Inline format tags are format tags that are not line based
 
-_is_inline_nesting_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag in TextBuffer._nesting_style_tags or tag.zim_tag == 'link'
+_is_inline_nesting_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag in TextBuffer._nesting_style_tags or tag.zim_tag == LINK
 _is_non_nesting_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag in ('pre', 'code', 'tag')
 	# Nesting tags can have other formatting styles nested inside them
 	# So they are specifically not mutually exclusive
 	# Non-nesting tags are exclusive and also do not allow other tags to be combined
 
 # Tests for specific tags
-_is_indent_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag == 'indent'
-_is_not_indent_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag != 'indent'
-_is_heading_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag == 'h'
-_is_not_heading_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag != 'h'
-_is_pre_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag == 'pre'
-_is_pre_or_code_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag in ('pre', 'code')
-_is_link_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag == 'link'
-_is_not_link_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag != 'link'
-_is_tag_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag == 'tag'
-_is_not_tag_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag != 'tag'
+_is_indent_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag == INDENT_BLOCK
+_is_not_indent_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag != INDENT_BLOCK
+_is_heading_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag == HEADING
+_is_not_heading_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag != HEADING
+_is_pre_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag == VERBATIM_BLOCK
+_is_pre_or_code_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag in (VERBATIM, VERBATIM_BLOCK)
+_is_link_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag == LINK
+_is_not_link_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag != LINK
+_is_tag_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag == TAG
+_is_not_tag_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag != TAG
 _is_link_tag_without_href = lambda tag: _is_link_tag(tag) and not tag.zim_attrib['href']
 
 
@@ -267,47 +266,46 @@ class TextBuffer(Gtk.TextBuffer):
 
 	#: text styles supported by the editor
 	tag_styles = {
-		'h1': {'weight': Pango.Weight.BOLD, 'scale': 1.15**4},
-		'h2': {'weight': Pango.Weight.BOLD, 'scale': 1.15**3},
-		'h3': {'weight': Pango.Weight.BOLD, 'scale': 1.15**2},
-		'h4': {'weight': Pango.Weight.ULTRABOLD, 'scale': 1.15},
-		'h5': {'weight': Pango.Weight.BOLD, 'scale': 1.15, 'style': Pango.Style.ITALIC},
-		'h6': {'weight': Pango.Weight.BOLD, 'scale': 1.15},
-		'emphasis': {'style': Pango.Style.ITALIC},
-		'strong': {'weight': Pango.Weight.BOLD},
-		'mark': {'background': 'yellow'},
-		'strike': {'strikethrough': True, 'foreground': 'grey'},
-		'code': {'family': 'monospace'},
-		'pre': {'family': 'monospace', 'wrap-mode': Gtk.WrapMode.NONE},
-		'sub': {'rise': -3500, 'scale': 0.7},
-		'sup': {'rise': 7500, 'scale': 0.7},
-		'link': {'foreground': 'blue'},
-		'page-link': {'foreground': 'blue'},
-		'tag': {'foreground': '#ce5c00'},
-		'indent': {},
-		'bullet-list': {},
-		'numbered-list': {},
-		'unchecked-checkbox': {},
-		'checked-checkbox': {},
-		'xchecked-checkbox': {},
-		'migrated-checkbox': {},
-		'transmigrated-checkbox': {},
+		HEADING_1: {'weight': Pango.Weight.BOLD, 'scale': 1.15**4},
+		HEADING_2: {'weight': Pango.Weight.BOLD, 'scale': 1.15**3},
+		HEADING_3: {'weight': Pango.Weight.BOLD, 'scale': 1.15**2},
+		HEADING_4: {'weight': Pango.Weight.ULTRABOLD, 'scale': 1.15},
+		HEADING_5: {'weight': Pango.Weight.BOLD, 'scale': 1.15, 'style': Pango.Style.ITALIC},
+		HEADING_6: {'weight': Pango.Weight.BOLD, 'scale': 1.15},
+		EMPHASIS:  {'style': Pango.Style.ITALIC},
+		STRONG:    {'weight': Pango.Weight.BOLD},
+		MARK:      {'background': 'yellow'},
+		STRIKE:    {'strikethrough': True, 'foreground': 'grey'},
+		VERBATIM:  {'family': 'monospace'},
+		VERBATIM_BLOCK: {'family': 'monospace', 'wrap-mode': Gtk.WrapMode.NONE},
+		SUBSCRIPT:       {'rise': -3500, 'scale': 0.7},
+		SUPERSCRIPT:       {'rise': 7500, 'scale': 0.7},
+		LINK:      {'foreground': 'blue'},
+		PAGE_LINK: {'foreground': 'blue'},
+		TAG:       {'foreground': '#ce5c00'},
+		INDENT_BLOCK: {},
+		BULLET_LIST_STYLE: {},
+		NUMBERED_LIST_STYLE: {},
+		UNCHECKED_BOX: {},
+		CHECKED_BOX: {},
+		XCHECKED_BOX: {},
+		MIGRATED_BOX: {},
+		TRANSMIGRATED_BOX: {},
 		'find-highlight': {'background': 'magenta', 'foreground': 'white'},
-		'find-match': {'background': '#38d878', 'foreground': 'white'}
+		'find-match':     {'background': '#38d878', 'foreground': 'white'}
 	}
 
 	#: tags that can be mapped to named TextTags
-	_static_style_tags = (
-		# The order determines order of nesting, and order of formatting
+	_static_style_tags = \
+		HEADING_1_to_6 + (
+		EMPHASIS, STRONG, MARK, STRIKE, SUBSCRIPT, SUPERSCRIPT,
+		VERBATIM_BLOCK, VERBATIM
+	)   # The order here determines order of nesting, and order of formatting
 		# Indent-tags will be inserted before headings
 		# Link-tags and tag-tags will be inserted before "pre" and "code"
 		# search for "set_priority()" and "get_priority()" to see impact
-		'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-		'emphasis', 'strong', 'mark', 'strike', 'sub', 'sup',
-		'pre', 'code',
-	)
-	_static_tag_before_links = 'sup' # link will be inserted with this prio +1
-	_static_tag_after_tags = 'pre' # link will be inserted with this prio
+	_static_tag_before_links = SUPERSCRIPT # link will be inserted with this prio +1
+	_static_tag_after_tags = VERBATIM_BLOCK # link will be inserted with this prio
 
 	#: tags that can nest in any order
 	_nesting_style_tags = (
@@ -355,9 +353,9 @@ class TextBuffer(Gtk.TextBuffer):
 
 		for name in self._static_style_tags:
 			tag = self.create_tag('style-' + name, **self.tag_styles[name])
-			if name in ('h1', 'h2', 'h3', 'h4', 'h5', 'h6'):
+			if name in HEADING_1_to_6:
 				# This is needed to get proper output in get_parse_tree
-				tag.zim_tag = 'h'
+				tag.zim_tag = HEADING
 				tag.zim_attrib = {'level': int(name[1])}
 			else:
 				tag.zim_tag = name
@@ -795,9 +793,9 @@ class TextBuffer(Gtk.TextBuffer):
 		if hasattr(href, 'uri'):
 			href = href.uri
 		assert isinstance(href, str) or href is None
-		link_style = 'page-link' if (link_type(href or '') == 'page') else 'link'
+		link_style = PAGE_LINK if (link_type(href or '') == 'page') else LINK
 		tag = self.create_tag(None, **self.tag_styles[link_style])
-		tag.zim_tag = 'link'
+		tag.zim_tag = LINK
 		tag.zim_attrib = attrib
 		if href == text or not href or href.isspace():
 			tag.zim_attrib['href'] = None
@@ -820,7 +818,7 @@ class TextBuffer(Gtk.TextBuffer):
 		# would also be considered part of the link. Position before the
 		# link is included here.
 		for tag in sorted(iter.get_tags(), key=lambda i: i.get_priority()):
-			if hasattr(tag, 'zim_tag') and tag.zim_tag == 'link':
+			if hasattr(tag, 'zim_tag') and tag.zim_tag == LINK:
 				return tag
 		else:
 			return None
@@ -923,7 +921,7 @@ class TextBuffer(Gtk.TextBuffer):
 		# These are created after __init__, so higher priority for Formatting
 		# properties than any of the _static_style_tags
 		tag = self.create_tag(None, **self.tag_styles['tag'])
-		tag.zim_tag = 'tag'
+		tag.zim_tag = TAG
 		tag.zim_attrib = attrib
 		tag.zim_attrib['name'] = None
 
@@ -943,7 +941,7 @@ class TextBuffer(Gtk.TextBuffer):
 		# would also be considered part of the tag. Position before the
 		# tag is included here.
 		for tag in iter.get_tags():
-			if hasattr(tag, 'zim_tag') and tag.zim_tag == 'tag':
+			if hasattr(tag, 'zim_tag') and tag.zim_tag == TAG:
 				return tag
 		else:
 			return None
@@ -979,7 +977,7 @@ class TextBuffer(Gtk.TextBuffer):
 		'''Insert a "link anchor" with id C{name} at C{iter}'''
 		widget = Gtk.HBox() # Need *some* widget here...
 		pixbuf = widget.render_icon('zim-pilcrow', self.bullet_icon_size)
-		pixbuf.zim_type = 'anchor'
+		pixbuf.zim_type = ANCHOR
 		pixbuf.zim_attrib = attrib
 		pixbuf.zim_attrib['name'] = name
 		self.insert_pixbuf(iter, pixbuf)
@@ -991,7 +989,7 @@ class TextBuffer(Gtk.TextBuffer):
 
 	def get_anchor_data(self, iter):
 		pixbuf = iter.get_pixbuf()
-		if pixbuf and hasattr(pixbuf, 'zim_type') and pixbuf.zim_type == 'anchor':
+		if pixbuf and hasattr(pixbuf, 'zim_type') and pixbuf.zim_type == ANCHOR:
 			return pixbuf.zim_attrib.copy()
 		else:
 			return None
@@ -999,9 +997,9 @@ class TextBuffer(Gtk.TextBuffer):
 	def get_anchor_or_object_id(self, iter):
 		# anchor or image
 		pixbuf = iter.get_pixbuf()
-		if pixbuf and hasattr(pixbuf, 'zim_type') and pixbuf.zim_type == 'anchor':
+		if pixbuf and hasattr(pixbuf, 'zim_type') and pixbuf.zim_type == ANCHOR:
 			return pixbuf.zim_attrib.get('name', None)
-		elif pixbuf and hasattr(pixbuf, 'zim_type') and pixbuf.zim_type == 'image':
+		elif pixbuf and hasattr(pixbuf, 'zim_type') and pixbuf.zim_type == IMAGE:
 			return pixbuf.zim_attrib.get('id', None)
 
 		# object?
@@ -1096,7 +1094,7 @@ class TextBuffer(Gtk.TextBuffer):
 			pixbuf = widget.render_icon(Gtk.STOCK_MISSING_IMAGE, Gtk.IconSize.DIALOG)
 			pixbuf = pixbuf.copy() # need unique instance to set zim_attrib
 
-		pixbuf.zim_type = 'image'
+		pixbuf.zim_type = IMAGE
 		pixbuf.zim_attrib = attrib
 		pixbuf.zim_attrib['src'] = src
 		self.insert_pixbuf(iter, pixbuf)
@@ -1121,7 +1119,7 @@ class TextBuffer(Gtk.TextBuffer):
 		@returns: a dict with image properties or C{None}
 		'''
 		pixbuf = iter.get_pixbuf()
-		if pixbuf and hasattr(pixbuf, 'zim_type') and pixbuf.zim_type == 'image':
+		if pixbuf and hasattr(pixbuf, 'zim_type') and pixbuf.zim_type == IMAGE:
 			return pixbuf.zim_attrib.copy()
 		else:
 			return None
@@ -1324,7 +1322,7 @@ class TextBuffer(Gtk.TextBuffer):
 				if pixbuf is None:
 					logger.warning('Could not find icon: %s', stock)
 					pixbuf = widget.render_icon(Gtk.STOCK_MISSING_IMAGE, self.bullet_icon_size)
-				pixbuf.zim_type = 'icon'
+				pixbuf.zim_type = ICON
 				pixbuf.zim_attrib = {'stock': stock}
 				self.insert_pixbuf(self.get_insert_iter(), pixbuf)
 
@@ -1601,7 +1599,7 @@ class TextBuffer(Gtk.TextBuffer):
 		start, end = bounds if bounds else (None, None)
 		mark = self.create_mark(None, self.get_insert_iter())
 
-		if name in ('h1', 'h2', 'h3', 'h4', 'h5', 'h6'):
+		if name in HEADING_1_to_6:
 			selected = self.select_lines_for_selection()
 		elif name == 'code' and bounds and start.starts_line() and end.starts_line():
 			# Change 'code' to 'pre'
@@ -1669,12 +1667,12 @@ class TextBuffer(Gtk.TextBuffer):
 				had_tag = self.whole_range_has_tag(tag, start, end)
 				pre_tag = self.get_tag_table().lookup('style-pre')
 
-				if tag.zim_tag == "h":
+				if tag.zim_tag == HEADING:
 					assert start.starts_line() and (end.starts_line() or end.is_end()), 'Selection must be whole line'
 					self.smart_remove_tags(_is_line_based_tag, start, end)
-				elif tag.zim_tag == 'code':
+				elif tag.zim_tag == VERBATIM:
 					self.smart_remove_tags(_is_non_nesting_tag, start, end)
-				elif tag.zim_tag == 'pre':
+				elif tag.zim_tag == VERBATIM_BLOCK:
 					assert start.starts_line() and (end.starts_line() or end.is_end()), 'Selection must be whole line'
 					if not had_tag:
 						start, end = self._fix_pre_selection(start, end)
@@ -1915,19 +1913,11 @@ class TextBuffer(Gtk.TextBuffer):
 		if tag is None:
 			if bullet:
 				if bullet == BULLET:
-					stylename = 'bullet-list'
-				elif bullet == CHECKED_BOX:
-					stylename = 'checked-checkbox'
-				elif bullet == UNCHECKED_BOX:
-					stylename = 'unchecked-checkbox'
-				elif bullet == XCHECKED_BOX:
-					stylename = 'xchecked-checkbox'
-				elif bullet == MIGRATED_BOX:
-					stylename = 'migrated-checkbox'
-				elif bullet == TRANSMIGRATED_BOX:
-					stylename = 'transmigrated-checkbox'
+					stylename = BULLET_LIST_STYLE
+				elif bullet in CHECKBOXES:
+					stylename = bullet
 				elif is_numbered_bullet_re.match(bullet):
-					stylename = 'numbered-list'
+					stylename = NUMBERED_LIST_STYLE
 				else:
 					raise AssertionError('BUG: Unknown bullet type')
 				margin = 12 + self.pixels_indent * level # offset from left side for all lines
@@ -1955,7 +1945,7 @@ class TextBuffer(Gtk.TextBuffer):
 						right_margin=margin,
 						**self.tag_styles['indent'])
 
-			tag.zim_tag = 'indent'
+			tag.zim_tag = INDENT_BLOCK
 			tag.zim_attrib = {'indent': level, '_bullet': bullet}
 
 			# Set the prioriy below any _static_style_tags
@@ -2263,7 +2253,7 @@ class TextBuffer(Gtk.TextBuffer):
 		start = iter.copy()
 		start.backward_char()
 		self.remove_all_tags(start, iter)
-		if hasattr(pixbuf, 'zim_type') and pixbuf.zim_type == 'anchor':
+		if hasattr(pixbuf, 'zim_type') and pixbuf.zim_type == ANCHOR:
 			for tag in self._editmode_tags:
 				self.apply_tag(tag, start, iter)
 		else:
@@ -2353,7 +2343,7 @@ class TextBuffer(Gtk.TextBuffer):
 
 		for tag in self.iter_get_zim_tags(iter):
 			if _is_line_based_tag(tag):
-				if tag.zim_tag == 'pre':
+				if tag.zim_tag == VERBATIM_BLOCK:
 					self.smart_remove_tags(_is_zim_tag, iter, end)
 				self.apply_tag(tag, iter, end)
 			elif _is_link_tag(tag):
@@ -2399,7 +2389,7 @@ class TextBuffer(Gtk.TextBuffer):
 	def _get_bullet_at_iter(self, iter):
 		pixbuf = iter.get_pixbuf()
 		if pixbuf:
-			if getattr(pixbuf, 'zim_type', None) == 'icon':
+			if getattr(pixbuf, 'zim_type', None) == ICON:
 
 				return BULLETS_FROM_STOCK.get(pixbuf.zim_attrib['stock'])
 			else:
@@ -2508,13 +2498,13 @@ class TextBuffer(Gtk.TextBuffer):
 			# For tags that can only appear once, if somehow an overlap
 			# occured, choose the one with the highest prio
 			for i in range(len(tags)-2, -1, -1):
-				if tags[i].zim_tag in ('link', 'tag', 'indent') \
+				if tags[i].zim_tag in (LINK, TAG, INDENT_BLOCK) \
 					and tags[i+1].zim_tag == tags[i].zim_tag:
 						tags.pop(i)
-				elif tags[i+1].zim_tag == 'h' \
-					and tags[i].zim_tag in ('h', 'indent'):
+				elif tags[i+1].zim_tag == HEADING \
+					and tags[i].zim_tag in (HEADING, INDENT_BLOCK):
 						tags.pop(i)
-				elif tags[i+1].zim_tag == 'pre' \
+				elif tags[i+1].zim_tag == VERBATIM_BLOCK \
 					and _is_format_tag(tags[i]):
 						tags.pop(i)
 
@@ -2544,7 +2534,7 @@ class TextBuffer(Gtk.TextBuffer):
 						elif not raw and not iter.starts_line():
 							# Indent not visible if it does not start at begin of line
 							t = '_ignore_'
-						elif len([t for t in tags[i:] if t.zim_tag == 'pre']):
+						elif len([t for t in tags[i:] if t.zim_tag == VERBATIM_BLOCK]):
 							# Indent of 'pre' blocks handled in subsequent iteration
 							continue_attrib.update(attrib)
 							continue
@@ -2600,12 +2590,12 @@ class TextBuffer(Gtk.TextBuffer):
 			pixbuf = iter.get_pixbuf()
 			anchor = iter.get_child_anchor()
 			if pixbuf:
-				if pixbuf.zim_type == 'icon':
+				if pixbuf.zim_type == ICON:
 					# Reset all tags - and let set_tags parse the bullet
 					if open_tags:
 						break_tags(open_tags[0][1])
 					set_tags(iter, list(filter(_is_indent_tag, iter.get_tags())))
-				elif pixbuf.zim_type == 'anchor':
+				elif pixbuf.zim_type == ANCHOR:
 					pass # allow as object nested in e.g. header tag
 				else:
 					# reset all tags except indenting
@@ -2615,16 +2605,16 @@ class TextBuffer(Gtk.TextBuffer):
 				if pixbuf is None:
 					continue
 
-				if pixbuf.zim_type == 'icon':
+				if pixbuf.zim_type == ICON:
 					logger.warning('BUG: Checkbox outside of indent ?')
-				elif pixbuf.zim_type == 'image':
+				elif pixbuf.zim_type == IMAGE:
 					attrib = pixbuf.zim_attrib.copy()
-					builder.start('img', attrib or {})
-					builder.end('img')
-				elif pixbuf.zim_type == 'anchor':
+					builder.start(IMAGE, attrib or {})
+					builder.end(IMAGE)
+				elif pixbuf.zim_type == ANCHOR:
 					attrib = pixbuf.zim_attrib.copy()
-					builder.start('anchor', attrib)
-					builder.end('anchor')
+					builder.start(ANCHOR, attrib)
+					builder.end(ANCHOR)
 				else:
 					assert False, 'BUG: unknown pixbuf type'
 

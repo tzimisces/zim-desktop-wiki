@@ -819,6 +819,7 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 				for k in section._input if k in TextBuffer.tag_attributes]
 			section.define(defs)
 			tag = key[4:]
+			tag = tag.replace('-checkbox', '-box') # backward compatibility after renaming constants
 
 			try:
 				if not tag in TextBuffer.tag_styles:
