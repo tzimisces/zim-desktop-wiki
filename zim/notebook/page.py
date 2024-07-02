@@ -5,6 +5,7 @@
 import re
 import logging
 import itertools
+import uuid
 
 from typing import Generator, Generic, List, Optional, Union
 
@@ -536,9 +537,9 @@ class Page(Path, SignalEmitter):
 	def _store_tree(self, tree):
 		if tree and tree.hascontent:
 			if self._meta is not None:
-				tree.meta.update(self._meta) # Preserver headers
+				tree.meta.update(self._meta) # Preserverheaders
 			elif self.source_file.exists():
-				# Try getting headers from file
+				# Try getting headers from file.
 				try:
 					text = self.source_file.read()
 				except zim.newfs.FileNotFoundError:
@@ -547,10 +548,13 @@ class Page(Path, SignalEmitter):
 					parser = self.format.Parser()
 					tree = parser.parse(text)
 					self._meta = tree.meta
-					tree.meta.update(self._meta) # Preserver headers
+					tree.meta.update(self._meta) # Preserve headers
 			else: # not self.source_file.exists()
-				now = datetime.now()
-				tree.meta['Creation-Date'] = now.isoformat()
+				tree.meta['Creation-Date'] = datetime.now().isoformat()
+				
+			# A unique identifier should be present on all pages.
+			if not 'Page-Identifier' in tree.meta:
+				tree.meta['Page-Identifier'] = str( uuid.uuid4())
 
 			lines = self.format.Dumper().dump(tree, file_output=True)
 			self._last_etag = self.source_file.writelines_with_etag(lines, self._last_etag)

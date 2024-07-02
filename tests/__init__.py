@@ -16,6 +16,7 @@ import xml.etree.cElementTree as etree
 import types
 import glob
 import logging
+import uuid
 
 logger = logging.getLogger('tests')
 
@@ -345,8 +346,9 @@ class TestCase(unittest.TestCase):
 				(
 					'Content-Type: text/x-zim-wiki\n'
 					'Wiki-Format: %s\n'
-					'Creation-Date: %s\n\n'
-				) % (WIKI_FORMAT_VERSION, datetime.datetime.now().isoformat())
+					'Creation-Date: %s\n'
+					'Page-Identifier: %s\n\n'
+				) % (WIKI_FORMAT_VERSION, datetime.datetime.now().isoformat(), str( uuid.uuid4()))
 				+ text
 			)
 
