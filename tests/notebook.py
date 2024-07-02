@@ -647,7 +647,7 @@ class TestUpdateLinksOnMovePage(tests.TestCase):
 		with tests.LoggingFilter('zim.notebook', message='Number of links after move'):
 			notebook.move_page(Path(move[0]), Path(move[1]), update_links=update_links)
 		self.assertEqual(self.getNotebookContent(notebook), post[0])
-		# self.assertEqual(self.getNotebookLinks(notebook), set(post[1]))
+		self.assertEqual(self.getNotebookLinks(notebook), set(post[1]))
 
 	def testFloatingLink(self):
 		self.movePage(
