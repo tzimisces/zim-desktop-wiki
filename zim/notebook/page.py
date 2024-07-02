@@ -537,7 +537,7 @@ class Page(Path, SignalEmitter):
 	def _store_tree(self, tree):
 		if tree and tree.hascontent:
 			if self._meta is not None:
-				tree.meta.update(self._meta) # Preserverheaders
+				tree.meta.update(self._meta) # Preserve headers
 			elif self.source_file.exists():
 				# Try getting headers from file.
 				try:
