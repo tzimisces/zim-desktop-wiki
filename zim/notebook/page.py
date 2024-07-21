@@ -563,10 +563,10 @@ class Page(Path, SignalEmitter):
 
 			# A unique identifier should be present on all pages.
 			if 'Page-Identifier' not in tree.meta:
-				if not self._page_identifier is None:
-					tree.meta['Page-Identifier'] = self._page_identifier
-				else:
-					tree.meta['Page-Identifier'] = str(uuid.uuid4())
+				if self._page_identifier is None:
+					self._page_identifier = str(uuid.uuid4())
+
+				tree.meta['Page-Identifier'] = self._page_identifier
 
 			lines = self.format.Dumper().dump(tree, file_output=True)
 			self._last_etag = self.source_file.writelines_with_etag(lines, self._last_etag)
