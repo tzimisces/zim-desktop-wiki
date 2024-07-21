@@ -304,9 +304,11 @@ class Notebook(ConnectorMixin, SignalEmitter):
 		self.tags = TagsView.new_from_index(self.index)
 
 		def on_page_row_changed(o, row, oldrow):
-			if row['name'] in self._page_cache:
-				self._page_cache[row['name']].haschildren = row['n_children'] > 0
-				self.emit('page-info-changed', self._page_cache[row['name']])
+			page_name = row['name']
+			if page_name in self._page_cache:
+				self._page_cache[page_name].haschildren = row['n_children'] > 0
+				self._page_cache[page_name].set_page_identifier(row['page_identifier'])
+				self.emit('page-info-changed', self._page_cache[page_name])
 
 		def on_page_row_deleted(o, row):
 			if row['name'] in self._page_cache:
