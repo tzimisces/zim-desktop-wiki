@@ -351,7 +351,7 @@ class HRef():
 		return klass.new_from_wiki_link(href).to_wiki_link()
 
 	@classmethod
-	def new_from_wiki_link(klass, href: str) -> 'Href':
+	def new_from_wiki_link(klass, href: str) -> 'HRef':
 		'''Constructor that constructs a L{HRef} object for a link as
 		written in zim's wiki syntax.
 		@param href: a string for the link
@@ -477,6 +477,8 @@ class Page(Path, SignalEmitter):
 			self.format = format
 		self.source_file = file
 		self.attachments_folder = folder
+		
+		self._page_identifier = None
 
 	@property
 	def readonly(self):
@@ -517,6 +519,13 @@ class Page(Path, SignalEmitter):
 		else:
 			self._modified = False
 		self.emit('modified-changed')
+		
+	@property
+	def page_identifier(self):
+		return self._page_identifier
+	
+	def set_page_identifier(self, identifier):
+		self._page_identifier = identifier
 
 	def on_buffer_modified_changed(self, buffer):
 		# one-way traffic, set page modified after modifying the buffer
@@ -537,24 +546,27 @@ class Page(Path, SignalEmitter):
 	def _store_tree(self, tree):
 		if tree and tree.hascontent:
 			if self._meta is not None:
-				tree.meta.update(self._meta) # Preserve headers
+				tree.meta.update(self._meta) # Preserve headers.
 			elif self.source_file.exists():
 				# Try getting headers from file.
 				try:
 					text = self.source_file.read()
 				except zim.newfs.FileNotFoundError:
-					return None
+					return
 				else:
 					parser = self.format.Parser()
 					tree = parser.parse(text)
 					self._meta = tree.meta
-					tree.meta.update(self._meta) # Preserve headers
+					tree.meta.update(self._meta) # Preserve headers.
 			else: # not self.source_file.exists()
 				tree.meta['Creation-Date'] = datetime.now().isoformat()
-				
+
 			# A unique identifier should be present on all pages.
-			if not 'Page-Identifier' in tree.meta:
-				tree.meta['Page-Identifier'] = str( uuid.uuid4())
+			if 'Page-Identifier' not in tree.meta:
+				if not self._page_identifier is None:
+					tree.meta['Page-Identifier'] = self._page_identifier
+				else:
+					tree.meta['Page-Identifier'] = str(uuid.uuid4())
 
 			lines = self.format.Dumper().dump(tree, file_output=True)
 			self._last_etag = self.source_file.writelines_with_etag(lines, self._last_etag)

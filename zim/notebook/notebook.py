@@ -412,10 +412,13 @@ class Notebook(ConnectorMixin, SignalEmitter):
 				pass
 				# TODO trigger indexer here if page exists !
 			else:
-				if indexpath and indexpath.haschildren:
-					page.haschildren = True
-				# page might be the parent of a placeholder, in that case
-				# the index knows it has children, but the store does not
+				if indexpath:
+					if indexpath.haschildren:
+						page.haschildren = True
+						# page might be the parent of a placeholder, in that case
+						# the index knows it has children, but the store does not
+					if not indexpath.page_identifier() is None:
+						page.set_page_identifier(indexpath.page_identifier())
 
 			# TODO - set haschildren if page maps to a store namespace
 			self._page_cache[path.name] = page
