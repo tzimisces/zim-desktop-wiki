@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2017-07-11 12:14+0000\n"
-"Last-Translator: Jongsung Kang <limerainne@gmail.com>\n"
-"Language-Team: Korean <ko@li.org>\n"
+"PO-Revision-Date: 2024-08-17 00:09+0000\n"
+"Last-Translator: Jeongsu Kim <jeongsu816@gmail.com>\n"
+"Language-Team: Korean <https://hosted.weblate.org/projects/zim/develop/ko/>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.7\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:41+0000\n"
-"X-Generator: Launchpad (build bceb5ef013b87ef7aafe0755545ceb689ca7ac60)\n"
 
 #. Error message when external application could not be found, %s is the command
 #: zim/applications.py:133
@@ -532,7 +532,7 @@ msgstr "찾기(_S)"
 #. Menu title
 #: zim/gui/mainwindow.py:54
 msgid "For_mat"
-msgstr "서식(&M)"
+msgstr "서식(_M)"
 
 #. Menu title
 #: zim/gui/mainwindow.py:55
@@ -553,7 +553,7 @@ msgstr "도움말(_H)"
 #. Menu title
 #: zim/gui/mainwindow.py:58
 msgid "_Checkbox"
-msgstr "체크박스(&C)"
+msgstr "체크박스(_C)"
 
 #. option for plugin preferences
 #: zim/gui/mainwindow.py:68
