@@ -15,7 +15,6 @@ debian/zim.*
 windows/build/
 windows/version-and-date.nsi
 MANIFEST
-tests/tmp/
 test_*
 coverage/
 
@@ -98,7 +97,6 @@ ENV/
 /site
 
 # debian pybuild
-.pybuild/
 debian/python-module-stampdir/
 
 # PyCharm

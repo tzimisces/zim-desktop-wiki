@@ -105,7 +105,7 @@ class ZimGtkApplication(Gtk.Application):
 		from zim import ZIM_EXECUTABLE
 		from zim.applications import Application
 
-		args = [ZIM_EXECUTABLE] + [a for a in args if a is not None]
+		args = [ZIM_EXECUTABLE] + [a for a in arg if a is not None]
 		if not '--standalone' in args:
 			args.append('--standalone')
 
