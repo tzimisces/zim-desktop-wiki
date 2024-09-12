@@ -38,12 +38,11 @@ is_numbered_bullet_re = re.compile(r'^(\d+|\w|#)\.$')
 # Base categories - these are not mutually exclusive
 _is_zim_tag = lambda tag: hasattr(tag, 'zim_tag')
 
-_line_based_tags = ('indent', 'h', 'pre')
+_line_based_tags = (BLOCK, LISTITEM, HEADING, VERBATIM_BLOCK)
 _is_line_based_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag in _line_based_tags
 _is_not_line_based_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag not in _line_based_tags
 	# Line based tags are mutually exclusive and should cover the newline at the
 	# end of the last line
-	# The 'indent' tag is also used for list items
 
 _format_tags = ('h', 'pre', 'emphasis', 'strong', 'mark', 'strike', 'sub', 'sup', 'code')
 _inline_format_tags = ('emphasis', 'strong', 'mark', 'strike', 'sub', 'sup', 'code')
@@ -62,8 +61,9 @@ _is_non_nesting_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag in ('p
 	# Non-nesting tags are exclusive and also do not allow other tags to be combined
 
 # Tests for specific tags
-_is_indent_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag == INDENT_BLOCK
-_is_not_indent_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag != INDENT_BLOCK
+_is_indent_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag in (BLOCK, LISTITEM)
+_is_not_indent_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag not in (BLOCK, LISTITEM)
+_is_listitem_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag == LISTITEM 
 _is_heading_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag == HEADING
 _is_not_heading_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag != HEADING
 _is_pre_tag = lambda tag: hasattr(tag, 'zim_tag') and tag.zim_tag == VERBATIM_BLOCK
@@ -283,7 +283,7 @@ class TextBuffer(Gtk.TextBuffer):
 		LINK:      {'foreground': 'blue'},
 		PAGE_LINK: {'foreground': 'blue'},
 		TAG:       {'foreground': '#ce5c00'},
-		INDENT_BLOCK: {},
+		INDENT_BLOCK_STYLE: {},
 		BULLET_LIST_STYLE: {},
 		NUMBERED_LIST_STYLE: {},
 		UNCHECKED_BOX: {},
@@ -1274,7 +1274,6 @@ class TextBuffer(Gtk.TextBuffer):
 
 				self._insert_bullet_at_cursor(bullet)
 
-			#~ self.update_indent_tag(line, bullet)
 			self._set_indent(line, indent, bullet)
 
 	def _insert_bullet_at_cursor(self, bullet, raw=False):
@@ -1906,20 +1905,23 @@ class TextBuffer(Gtk.TextBuffer):
 	def _get_indent_tag(self, level, bullet=None, dir='LTR'):
 		if dir is None:
 			dir = 'LTR'  # Assume western default direction - FIXME need system default
-		name = 'indent-%s-%i' % (dir, level)
+
 		if bullet:
-			name += '-' + bullet
+			if bullet == BULLET:
+				stylename = BULLET_LIST_STYLE
+			elif bullet in CHECKBOXES or bullet in (BULLET_LIST_STYLE, NUMBERED_LIST_STYLE):
+				stylename = bullet
+			elif is_numbered_bullet_re.match(bullet):
+				stylename = NUMBERED_LIST_STYLE
+			else:
+				raise AssertionError('BUG: Unknown bullet type')
+			name = 'indent-%s-%i-%s' % (dir, level, stylename)
+		else:
+			name = 'indent-%s-%i' % (dir, level)
+
 		tag = self.get_tag_table().lookup(name)
 		if tag is None:
 			if bullet:
-				if bullet == BULLET:
-					stylename = BULLET_LIST_STYLE
-				elif bullet in CHECKBOXES:
-					stylename = bullet
-				elif is_numbered_bullet_re.match(bullet):
-					stylename = NUMBERED_LIST_STYLE
-				else:
-					raise AssertionError('BUG: Unknown bullet type')
 				margin = 12 + self.pixels_indent * level # offset from left side for all lines
 				indent = -12 # offset for first line (bullet)
 				if dir == 'LTR':
@@ -1930,6 +1932,9 @@ class TextBuffer(Gtk.TextBuffer):
 					tag = self.create_tag(name,
 						right_margin=margin, indent=indent,
 						**self.tag_styles[stylename])
+
+				tag.zim_tag = LISTITEM
+				tag.zim_attrib = {'indent': level, 'style': stylename}
 			else:
 				margin = 12 + self.pixels_indent * level
 				# Note: I would think the + 12 is not needed here, but
@@ -1939,14 +1944,14 @@ class TextBuffer(Gtk.TextBuffer):
 				if dir == 'LTR':
 					tag = self.create_tag(name,
 						left_margin=margin,
-						**self.tag_styles['indent'])
+						**self.tag_styles[INDENT_BLOCK_STYLE])
 				else: # RTL
 					tag = self.create_tag(name,
 						right_margin=margin,
-						**self.tag_styles['indent'])
+						**self.tag_styles[INDENT_BLOCK_STYLE])
 
-			tag.zim_tag = INDENT_BLOCK
-			tag.zim_attrib = {'indent': level, '_bullet': bullet}
+				tag.zim_tag = BLOCK
+				tag.zim_attrib = {'indent': level}
 
 			# Set the prioriy below any _static_style_tags
 			tag.set_priority(0)
@@ -2012,26 +2017,7 @@ class TextBuffer(Gtk.TextBuffer):
 			self.set_modified(True)
 		return ok
 
-	def update_indent_tag(self, line, bullet):
-		'''Update the indent TextTag for a given line
-
-		The TextTags used for indenting differ between normal indented
-		paragraphs and indented items in a bullet list. The reason for
-		this is that the line wrap behavior of list items should be
-		slightly different to align wrapped text with the bullet.
-
-		This method does not change the indent level for a specific line,
-		but it makes sure the correct TextTag is applied. Typically
-		called e.g. after inserting or deleting a bullet.
-
-		@param line: the line number
-		@param bullet: the bullet type for this line, or C{None}
-		'''
-		level = self.get_indent(line)
-		self._set_indent(line, level, bullet)
-
-	def _set_indent(self, line, level, bullet, dir=None):
-		# Common code between set_indent() and update_indent_tag()
+	def _set_indent(self, line, level, bullet=None, dir=None):
 		self._remove_indent(line)
 
 		start, end = self.get_line_bounds(line)
@@ -2285,9 +2271,7 @@ class TextBuffer(Gtk.TextBuffer):
 		if self._raw_delete_ongoing:
 			return
 
-		was_list = any(
-			t for t in start.get_tags()
-				if _is_indent_tag(t) and t.zim_attrib.get('_bullet') )
+		was_list = any(_is_listitem_tag(t) for t in start.get_tags())
 			# get_tags() uses right side gravity, so omits list item ending here
 
 		# Do merging of tags regardless of whether we deleted a line end or not
@@ -2320,17 +2304,18 @@ class TextBuffer(Gtk.TextBuffer):
 			else:
 				pass
 		elif start.starts_line():
-			indent_tags = list(filter(_is_indent_tag, start.get_tags()))
-			if indent_tags and indent_tags[0].zim_attrib['_bullet']:
+			if any(_is_listitem_tag(t) for t in start.get_tags()):
 				# had a bullet, but no longer (implies we are start of
 				# line - case where we are not start of line is
 				# handled by _do_lines_merged by extending the indent tag)
-				self.update_indent_tag(start.get_line(), None)
+				line = start.get_line()
+				level = self.get_indent(line)
+				self._set_indent(line, level) # Update the indent tag
 
 		self.update_editmode()
 
 	def _do_lines_merged(self, iter):
-		# Enforce tags like 'h', 'pre' and 'indent' to be consistent over the line
+		# Enforce tags like 'h', 'pre', 'div' and 'li' to be consistent over the line
 		# and including the line end
 		# Merge links that have same href target
 		if iter.starts_line():
@@ -2498,11 +2483,11 @@ class TextBuffer(Gtk.TextBuffer):
 			# For tags that can only appear once, if somehow an overlap
 			# occured, choose the one with the highest prio
 			for i in range(len(tags)-2, -1, -1):
-				if tags[i].zim_tag in (LINK, TAG, INDENT_BLOCK) \
+				if tags[i].zim_tag in (LINK, TAG) \
 					and tags[i+1].zim_tag == tags[i].zim_tag:
 						tags.pop(i)
-				elif tags[i+1].zim_tag == HEADING \
-					and tags[i].zim_tag in (HEADING, INDENT_BLOCK):
+				elif tags[i+1].zim_tag in (HEADING, BLOCK, LISTITEM) \
+					and tags[i].zim_tag in (HEADING, BLOCK, LISTITEM):
 						tags.pop(i)
 				elif tags[i+1].zim_tag == VERBATIM_BLOCK \
 					and _is_format_tag(tags[i]):
@@ -2523,9 +2508,10 @@ class TextBuffer(Gtk.TextBuffer):
 				continue_attrib = {}
 				for tag in tags[i:]:
 					t, attrib = tag.zim_tag, tag.zim_attrib
-					if t == 'indent':
+					if t in (BLOCK, LISTITEM):
 						attrib = attrib.copy() # break ref with tree
-						del attrib['_bullet']
+						if t == LISTITEM:
+							del attrib['style']
 						bullet = self._get_bullet_at_iter(iter)
 						if bullet:
 							t = 'li'
@@ -2570,12 +2556,12 @@ class TextBuffer(Gtk.TextBuffer):
 						# maybe easier when tags for list and indent
 						# are separated ?
 
-		def break_tags(type):
+		def break_tags(*types):
 			# Forces breaking the stack of open tags on the level of 'tag'
 			# The next set_tags() will re-open any tags that are still open
 			i = 0
 			for i in range(len(open_tags)):
-				if open_tags[i][1] == type:
+				if open_tags[i][1] in types:
 					break
 
 			# so i is the breakpoint
@@ -2643,7 +2629,7 @@ class TextBuffer(Gtk.TextBuffer):
 
 				bullet = self.get_bullet_at_iter(iter) # implies check for start of line
 				if bullet:
-					break_tags('indent')
+					break_tags(BLOCK, LISTITEM)
 					# This is part of the HACK for bullets in
 					# set_tags()
 

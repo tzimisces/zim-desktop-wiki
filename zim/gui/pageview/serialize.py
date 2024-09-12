@@ -16,7 +16,7 @@ logger = logging.getLogger('zim.gui.pageview')
 from zim.formats import IMAGE, OBJECT, ANCHOR, LINK, TAG, HEADING, LINE
 from zim.parse.tokenlist import TEXT, END
 
-from .constants import PIXBUF_CHR, BULLETS_FROM_STOCK, ICON, INDENT_BLOCK
+from .constants import PIXBUF_CHR, BULLETS_FROM_STOCK, ICON, BLOCK, LISTITEM
 from .objectanchors import InsertedObjectAnchor, LineSeparatorAnchor
 from .textbuffer import _is_inline_nesting_tag
 
@@ -64,7 +64,7 @@ def _xml_to_tag_and_attribute(string):
 	tag = re.match('[\w-]+', string).group(0)
 	attrib = {}
 	for k, v in re.findall(r'(\w+)="(.*?)"', string):
-		if k in ('href', 'name', '_bullet') and v == 'None':
+		if k in ('href', 'name') and v == 'None':
 			attrib[k] = None
 		elif k in ('indent', 'level'):
 			attrib[k] = int(v)
@@ -415,8 +415,13 @@ def textbuffer_internal_insert_at_cursor(textbuffer, data):
 				texttag = textbuffer._create_tag_tag(None)
 			elif t[0] == HEADING:
 				texttag = textbuffer.get_tag_table().lookup('style-h' + str(t[1]['level']))
-			elif t[0] == INDENT_BLOCK:
-				texttag = textbuffer._get_indent_tag(t[1]['indent'], t[1]['_bullet'])
+			elif t[0] == BLOCK:
+				texttag = textbuffer._get_indent_tag(t[1]['indent'])
+				# TODO: note from original insert function: We don't set the LTR / RTL direction here
+				# instead we update all indent tags after the full
+				# insert is done.
+			elif t[0] == LISTITEM:
+				texttag = textbuffer._get_indent_tag(t[1]['indent'], t[1]['style'])
 				# TODO: note from original insert function: We don't set the LTR / RTL direction here
 				# instead we update all indent tags after the full
 				# insert is done.
