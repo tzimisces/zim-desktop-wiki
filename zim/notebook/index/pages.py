@@ -263,10 +263,32 @@ class PagesIndexer(IndexerBase):
 				self.emit('page-row-changed', newrow, oldrow or row)
 
 	def update_page(self, pagename, mtime, tree):
+		logger.debug( 'update_page: pagename: "%s".', pagename)
+
+		row = self._select(pagename)
+
 		if 'Page-Identifier' in tree.meta:
+			page_identifier = tree.meta['Page-Identifier']
+
+			# Last page has preference. It can happen that an imported page
+			# already has an identifier, which is also in use by another page.
+			# Zim currently does not prevent this from happening - it is
+			# something that requires user intervention.
+			#
+			# Another situation is the existence of "ephimeral" pages. That is,
+			# pages which are present in the database, but not on the
+			# filesystem. This happens when a page is moved, and some other page
+			# refers to it, but its link is not updated.
+			#
+			# TODO Handle duplicate page identifiers on another level.
+			self.db.execute(
+				'UPDATE pages SET mtime=?, page_identifier=NULL WHERE page_identifier=?',
+				(mtime, page_identifier),
+			)
+
 			self.db.execute(
 				'UPDATE pages SET mtime=?, page_identifier=? WHERE name=?',
-				(mtime, tree.meta['Page-Identifier'], pagename.name),
+				(mtime, page_identifier, pagename.name),
 			)
 		else:
 			self.db.execute(
@@ -275,6 +297,7 @@ class PagesIndexer(IndexerBase):
 			)
 
 		row = self._select(pagename)
+
 		self.emit('page-changed', row, tree)
 		self.emit('page-row-changed', row, row)
 
