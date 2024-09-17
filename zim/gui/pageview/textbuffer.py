@@ -9,9 +9,10 @@ from gi.repository import Gtk
 import re
 import logging
 
+from zim.signals import SignalHandler
 from zim.config import Float, Boolean, Integer, String, ConfigDefinitionConstant
 from zim.formats import get_dumper, heading_to_anchor, increase_list_iter, \
-	ParseTree, ElementTreeModule, BackwardParseTreeBuilderWithCleanup
+	ParseTree, BackwardParseTreeBuilderWithCleanup
 from zim.newfs import LocalFile
 from zim.config import String, Float, Integer, Boolean, \
 	ConfigDefinitionConstant
@@ -342,7 +343,6 @@ class TextBuffer(Gtk.TextBuffer):
 		self.notebook = notebook
 		self.page = page
 		self._insert_tree_in_progress = False
-		self._raw_delete_ongoing = False
 		self._deleted_editmode_mark = None
 		self._deleted_line_end = False
 		self._check_renumber = []
@@ -365,8 +365,8 @@ class TextBuffer(Gtk.TextBuffer):
 
 		textbuffer_register_serialize_formats(self, notebook, page)
 
-		self.connect('delete-range', self.__class__.do_pre_delete_range)
-		self.connect_after('delete-range', self.__class__.do_post_delete_range)
+		self.connect('delete-range', self.do_pre_delete_range)
+		self.connect_after('delete-range', self.do_post_delete_range)
 
 		if parsetree is not None:
 			# Do this *before* initializing the undostack
@@ -486,14 +486,10 @@ class TextBuffer(Gtk.TextBuffer):
 		# Check tree
 		root = tree._etree.getroot() # HACK - switch to new interface !
 		assert root.tag == 'zim-tree'
-		raw = root.attrib.get('raw')
-		if isinstance(raw, str):
-			raw = (raw != 'False')
 
 		# Check if we are at a bullet or checkbox line
 		iter = self.get_iter_at_mark(self.get_insert())
-		if not raw and iter.starts_line() \
-		and not tree.get_ends_with_newline():
+		if iter.starts_line() and not tree.get_ends_with_newline():
 			bullet = self._get_bullet_at_iter(iter)
 			if bullet:
 				self._iter_forward_past_bullet(iter, bullet)
@@ -523,7 +519,7 @@ class TextBuffer(Gtk.TextBuffer):
 			self.emit('begin-insert-tree', interactive)
 			if root.text:
 				self.insert_at_cursor(root.text)
-			self._insert_element_children(root, raw=raw, indent_offset=indent_offset)
+			self._insert_element_children(root, indent_offset=indent_offset)
 
 			# Fix partial tree inserts
 			startiter = self.get_iter_at_offset(startoffset)
@@ -570,7 +566,7 @@ class TextBuffer(Gtk.TextBuffer):
 
 	# emitting textstyle-changed is skipped while loading the tree
 
-	def _insert_element_children(self, node, list_level=-1, list_type=None, list_start='0', raw=False, textstyles=[], indent_offset=0):
+	def _insert_element_children(self, node, list_level=-1, list_type=None, list_start='0', textstyles=[], indent_offset=0):
 		# FIXME should load list_level from cursor position
 		#~ list_level = get_indent --- with bullets at indent 0 this is not bullet proof...
 		list_iter = list_start
@@ -605,143 +601,142 @@ class TextBuffer(Gtk.TextBuffer):
 		def force_line_start():
 			# Inserts a newline if we are not at the beginning of a line
 			# makes pasting a tree halfway in a line more sane
-			if not raw:
-				iter = self.get_iter_at_mark(self.get_insert())
-				if not iter.starts_line():
-					self.insert_at_cursor('\n')
+			iter = self.get_iter_at_mark(self.get_insert())
+			if not iter.starts_line():
+				self.insert_at_cursor('\n')
 
 		for element in iter(node):
-			if element.tag in ('p', 'div'):
-				# No force line start here on purpose
-				if 'indent' in element.attrib:
-					set_indent(int(element.attrib['indent']) + indent_offset)
-				elif indent_offset:
-					set_indent(indent_offset)
-				else:
+			with self.user_action: # For test case only ...
+				if element.tag in ('p', 'div'):
+					# No force line start here on purpose
+					if 'indent' in element.attrib:
+						set_indent(int(element.attrib['indent']) + indent_offset)
+					elif indent_offset:
+						set_indent(indent_offset)
+					else:
+						set_indent(None)
+
+					if element.text:
+						self.insert_at_cursor(element.text)
+
+					self._insert_element_children(element, list_level=list_level, textstyles=textstyles)  # recurs
+
+					set_indent(None)
+				elif element.tag in ('ul', 'ol'):
+					start = element.attrib.get('start')
+					if 'indent' in element.attrib:
+						level = int(element.attrib['indent']) + indent_offset
+					else:
+						level = list_level + 1
+					self._insert_element_children(element, list_level=level, list_type=element.tag, list_start=start,
+												textstyles=textstyles)  # recurs
+					set_indent(None)
+				elif element.tag == 'li':
+					force_line_start()
+
+					if 'indent' in element.attrib:
+						list_level = int(element.attrib['indent'])
+					elif list_level < 0:
+						list_level = 0 # We skipped the <ul> ?
+
+					if list_type == 'ol':
+						bullet = list_iter + '.'
+						list_iter = increase_list_iter(list_iter)
+					elif 'bullet' in element.attrib and element.attrib['bullet'] != '*':
+						bullet = element.attrib['bullet']
+					else:
+						bullet = BULLET # default to '*'
+
+					set_indent(list_level, bullet)
+					self._insert_bullet_at_cursor(bullet)
+					self.insert_at_cursor(' ')
+
+					if element.text:
+						self.insert_at_cursor(element.text)
+
+					self._insert_element_children(element, list_level=list_level, textstyles=textstyles)  # recurs
 					set_indent(None)
 
-				if element.text:
-					self.insert_at_cursor(element.text)
-
-				self._insert_element_children(element, list_level=list_level, raw=raw, textstyles=textstyles)  # recurs
-
-				set_indent(None)
-			elif element.tag in ('ul', 'ol'):
-				start = element.attrib.get('start')
-				if 'indent' in element.attrib:
-					level = int(element.attrib['indent']) + indent_offset
-				else:
-					level = list_level + 1
-				self._insert_element_children(element, list_level=level, list_type=element.tag, list_start=start, raw=raw,
-											  textstyles=textstyles)  # recurs
-				set_indent(None)
-			elif element.tag == 'li':
-				force_line_start()
-
-				if 'indent' in element.attrib:
-					list_level = int(element.attrib['indent'])
-				elif list_level < 0:
-					list_level = 0 # We skipped the <ul> - raw tree ?
-
-				if list_type == 'ol':
-					bullet = list_iter + '.'
-					list_iter = increase_list_iter(list_iter)
-				elif 'bullet' in element.attrib and element.attrib['bullet'] != '*':
-					bullet = element.attrib['bullet']
-				else:
-					bullet = BULLET # default to '*'
-
-				set_indent(list_level, bullet)
-				self._insert_bullet_at_cursor(bullet, raw=raw)
-
-				if element.text:
-					self.insert_at_cursor(element.text)
-
-				self._insert_element_children(element, list_level=list_level, raw=raw, textstyles=textstyles)  # recurs
-				set_indent(None)
-
-			elif element.tag == 'link':
-				self._set_textstyles(textstyles)  # reset Needed for interactive insert tree after paste
-				tag = self._create_link_tag('', **element.attrib)
-				self._editmode_tags = list(filter(_is_not_link_tag, self._editmode_tags)) + [tag]
-				linkstartpos = self.get_insert_iter().get_offset()
-				if element.text:
-					self.insert_at_cursor(element.text)
-				self._insert_element_children(element, list_level=list_level, raw=raw,
-											  textstyles=textstyles)  # recurs
-				linkstart = self.get_iter_at_offset(linkstartpos)
-				text = linkstart.get_text(self.get_insert_iter())
-				if element.attrib['href'] and text != element.attrib['href']:
-					# same logic in _create_link_tag, but need to check text after all child elements inserted
-					tag.zim_attrib['href'] = element.attrib['href']
-				else:
-					tag.zim_attrib['href'] = None
-				self._editmode_tags.pop()
-			elif element.tag == 'tag':
-				self._set_textstyles(textstyles)  # reset Needed for interactive insert tree after paste
-				self.insert_tag_at_cursor(element.text, **element.attrib)
-			elif element.tag == 'anchor':
-				self._set_textstyles(textstyles)
-				self.insert_anchor_at_cursor(element.attrib['name'])
-			elif element.tag == 'img':
-				self.insert_image_at_cursor(None, **element.attrib)
-			elif element.tag == 'pre':
-				if 'indent' in element.attrib:
-					set_indent(int(element.attrib['indent']))
-				self._set_textstyles([element.tag])
-				if element.text:
-					self.insert_at_cursor(element.text)
-				self._set_textstyles(None)
-				set_indent(None)
-			elif element.tag == 'table':
-				force_line_start()
-				if 'indent' in element.attrib:
-					set_indent(int(element.attrib['indent']))
-				self._insert_table_element_at_cursor(element, raw=raw)
-				set_indent(None)
-			elif element.tag == 'line':
-				anchor = LineSeparatorAnchor()
-				self.insert_objectanchor_at_cursor(anchor)
-				if not raw:
+				elif element.tag == 'link':
+					self._set_textstyles(textstyles)  # reset Needed for interactive insert tree after paste
+					tag = self._create_link_tag('', **element.attrib)
+					self._editmode_tags = list(filter(_is_not_link_tag, self._editmode_tags)) + [tag]
+					linkstartpos = self.get_insert_iter().get_offset()
+					if element.text:
+						self.insert_at_cursor(element.text)
+					self._insert_element_children(element, list_level=list_level,
+												textstyles=textstyles)  # recurs
+					linkstart = self.get_iter_at_offset(linkstartpos)
+					text = linkstart.get_text(self.get_insert_iter())
+					if element.attrib['href'] and text != element.attrib['href']:
+						# same logic in _create_link_tag, but need to check text after all child elements inserted
+						tag.zim_attrib['href'] = element.attrib['href']
+					else:
+						tag.zim_attrib['href'] = None
+					self._editmode_tags.pop()
+				elif element.tag == 'tag':
+					self._set_textstyles(textstyles)  # reset Needed for interactive insert tree after paste
+					self.insert_tag_at_cursor(element.text, **element.attrib)
+				elif element.tag == 'anchor':
+					self._set_textstyles(textstyles)
+					self.insert_anchor_at_cursor(element.attrib['name'])
+				elif element.tag == 'img':
+					self.insert_image_at_cursor(None, **element.attrib)
+				elif element.tag == 'pre':
+					if 'indent' in element.attrib:
+						set_indent(int(element.attrib['indent']))
+					self._set_textstyles([element.tag])
+					if element.text:
+						self.insert_at_cursor(element.text)
+					self._set_textstyles(None)
+					set_indent(None)
+				elif element.tag == 'table':
+					force_line_start()
+					if 'indent' in element.attrib:
+						set_indent(int(element.attrib['indent']))
+					self._insert_table_element_at_cursor(element)
+					set_indent(None)
+				elif element.tag == 'line':
+					anchor = LineSeparatorAnchor()
+					self.insert_objectanchor_at_cursor(anchor)
 					self.insert_at_cursor('\n')
-			elif element.tag == 'object':
-				if 'indent' in element.attrib:
-					force_line_start()
-					set_indent(int(element.attrib['indent']))
-					self.insert_object_at_cursor(element.attrib, element.text, raw=raw)
-					set_indent(None)
+				elif element.tag == 'object':
+					if 'indent' in element.attrib:
+						force_line_start()
+						set_indent(int(element.attrib['indent']))
+						self.insert_object_at_cursor(element.attrib, element.text)
+						set_indent(None)
+					else:
+						self.insert_object_at_cursor(element.attrib, element.text)
 				else:
-					self.insert_object_at_cursor(element.attrib, element.text, raw=raw)
-			else:
-				# Text styles
-				if element.tag == 'h':
-					force_line_start()
-					tag = 'h' + str(element.attrib['level'])
-					self._set_textstyles([tag])
-					if element.text:
-						self.insert_at_cursor(element.text)
-					self._insert_element_children(element, list_level=list_level, raw=raw,
-												  textstyles=[tag])  # recurs
-				elif element.tag in self._static_style_tags:
-					self._set_textstyles(textstyles + [element.tag])
-					if element.text:
-						self.insert_at_cursor(element.text)
-					self._insert_element_children(element, list_level=list_level, raw=raw,
-												  textstyles=textstyles + [element.tag])  # recurs
-				elif element.tag == '_ignore_':
-					# raw tree from undo can contain these
-					if element.text:
-						self.insert_at_cursor(element.text)
-					self._insert_element_children(element, list_level=list_level, raw=raw, textstyles=textstyles)  # recurs
-				else:
-					logger.debug("Unknown tag : %s, %s, %s", element.tag,
-								 element.attrib, element.text)
-					assert False, 'Unknown tag: %s' % element.tag
+					# Text styles
+					if element.tag == 'h':
+						force_line_start()
+						tag = 'h' + str(element.attrib['level'])
+						self._set_textstyles([tag])
+						if element.text:
+							self.insert_at_cursor(element.text)
+						self._insert_element_children(element, list_level=list_level,
+													textstyles=[tag])  # recurs
+					elif element.tag in self._static_style_tags:
+						self._set_textstyles(textstyles + [element.tag])
+						if element.text:
+							self.insert_at_cursor(element.text)
+						self._insert_element_children(element, list_level=list_level,
+													textstyles=textstyles + [element.tag])  # recurs
+					elif element.tag == '_ignore_':
+						if element.text:
+							self.insert_at_cursor(element.text)
+						self._insert_element_children(element, list_level=list_level, textstyles=textstyles)  # recurs
+					else:
+						logger.debug("Unknown tag : %s, %s, %s", element.tag,
+									element.attrib, element.text)
+						assert False, 'Unknown tag: %s' % element.tag
 
-				self._set_textstyles(textstyles)
+					self._set_textstyles(textstyles)
 
-			if element.tail:
-				self.insert_at_cursor(element.tail)
+				if element.tail:
+					self.insert_at_cursor(element.tail)
 
 	def _set_textstyles(self, names):
 		# TODO: fully factor out this method
@@ -827,7 +822,7 @@ class TextBuffer(Gtk.TextBuffer):
 		tag = self.get_link_tag(iter)
 		return self.get_tag_text(iter, tag) if tag else None
 
-	def get_link_data(self, iter, raw=False):
+	def get_link_data(self, iter):
 		'''Get the link attributes for a link at a specific position, if any
 
 		@param iter: a C{Gtk.TextIter}
@@ -839,13 +834,10 @@ class TextBuffer(Gtk.TextBuffer):
 		if tag:
 			link = tag.zim_attrib.copy()
 			if link['href'] is None:
-				if raw:
-					link['href'] = ''
-				else:
-					# Copy text content as href
-					start, end = self.get_tag_bounds(iter, tag)
-					link['href'] = start.get_text(end).strip()
-						# assume starting or trailing whitespace is an editing artefact
+				# Copy text content as href
+				start, end = self.get_tag_bounds(iter, tag)
+				link['href'] = start.get_text(end).strip()
+					# assume starting or trailing whitespace is an editing artefact
 			return link
 		else:
 			return None
@@ -1128,12 +1120,15 @@ class TextBuffer(Gtk.TextBuffer):
 
 	#region Objects
 
-	def insert_object_at_cursor(self, attrib, data, raw=False):
+	def insert_object_at_cursor(self, attrib, data):
 		'''Inserts a custom object in the page
 		@param attrib: dict with object attributes
 		@param data: string data of object
-		@param raw: boolean for "raw" parsetree insert
 		'''
+		objecttype, model = self._get_objecttype_and_model_for_object(attrib, data)
+		self.insert_object_model_at_cursor(objecttype, model)
+
+	def _get_objecttype_and_model_for_object(self, attrib, data):
 		try:
 			objecttype = PluginManager.insertedobjects[attrib['type']]
 		except KeyError:
@@ -1144,9 +1139,18 @@ class TextBuffer(Gtk.TextBuffer):
 				objecttype = UnknownInsertedObject()
 
 		model = objecttype.model_from_data(self.notebook, self.page, attrib, data)
-		self.insert_object_model_at_cursor(objecttype, model, raw=raw)
+		return objecttype, model
 
-	def insert_object_model_at_cursor(self, objecttype, model, raw=False):
+	def insert_object_model_at_cursor(self, objecttype, model):
+		if objecttype.is_inline:
+			self._insert_object_model_at_cursor(objecttype, model)
+		else:
+			if not self.get_insert_iter().starts_line():
+				self.insert_at_cursor('\n')
+			self._insert_object_model_at_cursor(objecttype, model)
+			self.insert_at_cursor('\n')
+
+	def _insert_object_model_at_cursor(self, objecttype, model):
 		from zim.plugins.tableeditor import TableViewObjectType # XXX
 
 		model.connect('changed', lambda o: self.set_modified(True))
@@ -1156,15 +1160,9 @@ class TextBuffer(Gtk.TextBuffer):
 		else:
 			anchor = PluginInsertedObjectAnchor(objecttype, model)
 
-		if not objecttype.is_inline and not raw:
-			if not self.get_insert_iter().starts_line():
-				self.insert_at_cursor('\n')
-			self.insert_objectanchor_at_cursor(anchor)
-			self.insert_at_cursor('\n')
-		else:
-			self.insert_objectanchor_at_cursor(anchor)
+		self.insert_objectanchor_at_cursor(anchor)
 
-	def _insert_table_element_at_cursor(self, element, raw):
+	def _insert_table_element_at_cursor(self, element):
 		try:
 			obj = PluginManager.insertedobjects['table']
 		except KeyError:
@@ -1178,8 +1176,7 @@ class TextBuffer(Gtk.TextBuffer):
 
 			anchor = TableAnchor(obj, model)
 			self.insert_objectanchor_at_cursor(anchor)
-			if not raw:
-				self.insert_at_cursor('\n')
+			self.insert_at_cursor('\n')
 
 	def insert_objectanchor_at_cursor(self, anchor):
 		iter = self.get_insert_iter()
@@ -1251,90 +1248,70 @@ class TextBuffer(Gtk.TextBuffer):
 
 	def _replace_bullet(self, line, bullet):
 		indent = self.get_indent(line)
-		with self.tmp_cursor(gravity=GRAVITY_RIGHT):
-			iter = self.get_iter_at_line(line)
-			bound = iter.copy()
-			self.iter_forward_past_bullet(bound)
-			self.delete(iter, bound)
-			# Will trigger do_delete_range, which will update indent tag
-
-			if not bullet is None:
+		with self.user_action:
+			with self.tmp_cursor(gravity=GRAVITY_RIGHT):
 				iter = self.get_iter_at_line(line)
-				self.place_cursor(iter) # update editmode
+				bound = iter.copy()
+				self.iter_forward_past_bullet(bound)
+				with self.do_pre_delete_range.blocked():
+					with self.do_post_delete_range.blocked():
+						self.delete(iter, bound)
 
-				insert = self.get_insert_iter()
-				assert insert.starts_line(), 'BUG: bullet not at line start'
+				if not bullet is None:
+					iter = self.get_iter_at_line(line)
+					self.place_cursor(iter) # update editmode
 
-				# Turning into list item removes heading
-				end = insert.copy()
-				end.forward_line()
-				self.smart_remove_tags(_is_heading_tag, insert, end)
+					insert = self.get_insert_iter()
+					assert insert.starts_line(), 'BUG: bullet not at line start'
 
-				# TODO: convert 'pre' to 'code' ?
+					# Turning into list item removes heading
+					end = insert.copy()
+					end.forward_line()
+					self.smart_remove_tags(_is_heading_tag, insert, end)
 
-				self._insert_bullet_at_cursor(bullet)
+					# TODO: convert 'pre' to 'code' ?
+
+					# Temporary clear non indent tags during insert
+					orig_editmode_tags = self._editmode_tags
+					self._editmode_tags = list(filter(_is_indent_tag, self._editmode_tags))
+
+					# Actual bullet insert
+					self._insert_bullet_at_cursor(bullet)
+					self.insert_at_cursor(' ')
+					self._editmode_tags = orig_editmode_tags
 
 			self._set_indent(line, indent, bullet)
 
-	def _insert_bullet_at_cursor(self, bullet, raw=False):
-		'''Insert a bullet plus a space at the cursor position.
-		If 'raw' is True the space will be omitted and the check that
-		cursor position must be at the start of a line will not be
-		enforced.
+	def _insert_bullet_at_cursor(self, bullet):
+		'''Low level insert bullet
 
-		External interface should use set_bullet(line, bullet)
+		External interface should use `set_bullet(line, bullet)` 
 		instead of calling this method directly.
 		'''
+		insert = self.get_insert_iter()
+		assert insert.starts_line(), 'BUG: bullet not at line start'
+
 		assert bullet in BULLETS or is_numbered_bullet_re.match(bullet), 'Bullet: >>%s<<' % bullet
 		if self._deleted_editmode_mark is not None:
 			self.delete_mark(self._deleted_editmode_mark)
 			self._deleted_editmode_mark = None
 
-		orig_editmode_tags = self._editmode_tags
-		if not raw:
-			insert = self.get_insert_iter()
-			assert insert.starts_line(), 'BUG: bullet not at line start'
-
-			# Temporary clear non indent tags during insert
-			self._editmode_tags = list(filter(_is_indent_tag, self._editmode_tags))
-
-			if not self._editmode_tags:
-				# Without indent get_parsetree will not recognize
-				# the icon as a bullet item. This will mess up
-				# undo stack. If 'raw' we assume indent tag is set
-				# already.
-				dir = self._find_base_dir(insert.get_line())
-				tag = self._get_indent_tag(0, bullet, dir=dir)
-				self._editmode_tags.append(tag)
-
-		with self.user_action:
-			if bullet == BULLET:
-				if raw:
-					self.insert_at_cursor('\u2022')
-				else:
-					self.insert_at_cursor('\u2022 ')
-			elif bullet in BULLET_TYPES:
-				# Insert icon
-				stock = BULLET_TYPES[bullet]
-				widget = Gtk.HBox() # Need *some* widget here...
-				pixbuf = widget.render_icon(stock, self.bullet_icon_size)
-				if pixbuf is None:
-					logger.warning('Could not find icon: %s', stock)
-					pixbuf = widget.render_icon(Gtk.STOCK_MISSING_IMAGE, self.bullet_icon_size)
-				pixbuf.zim_type = ICON
-				pixbuf.zim_attrib = {'stock': stock}
-				self.insert_pixbuf(self.get_insert_iter(), pixbuf)
-
-				if not raw:
-					self.insert_at_cursor(' ')
-			else:
-				# Numbered
-				if raw:
-					self.insert_at_cursor(bullet)
-				else:
-					self.insert_at_cursor(bullet + ' ')
-
-		self._editmode_tags = orig_editmode_tags
+		if bullet == BULLET:
+			self.insert_at_cursor('\u2022')
+		elif bullet in BULLET_TYPES:
+			# Insert icon
+			stock = BULLET_TYPES[bullet]
+			widget = Gtk.HBox() # Need *some* widget here...
+			pixbuf = widget.render_icon(stock, self.bullet_icon_size)
+			if pixbuf is None:
+				logger.warning('Could not find icon: %s', stock)
+				pixbuf = widget.render_icon(Gtk.STOCK_MISSING_IMAGE, self.bullet_icon_size)
+			pixbuf.zim_type = ICON
+			pixbuf.zim_attrib = {'stock': stock}
+			self.insert_pixbuf(self.get_insert_iter(), pixbuf)
+		else:
+			# Numbered
+			self.insert_at_cursor(bullet)
 
 	def renumber_list(self, line):
 		'''Renumber list from this line downward
@@ -2246,16 +2223,14 @@ class TextBuffer(Gtk.TextBuffer):
 			for tag in filter(_is_indent_tag, self._editmode_tags):
 				self.apply_tag(tag, start, iter)
 
-	def do_pre_delete_range(self, start, end):
+	@SignalHandler
+	def do_pre_delete_range(self, o, start, end):
 		# (Interactive) deleting a formatted word with <del>, or <backspace>
 		# should drop the formatting, however selecting a formatted word and
 		# than typing to replace it, should keep formatting
 		# Therefore we set a mark to remember the formatting and clear it
 		# at the end of a user action, or with the next insert at a different
 		# location
-		if self._raw_delete_ongoing:
-			return
-
 		if self._deleted_editmode_mark:
 			self.delete_mark(self._deleted_editmode_mark)
 		self._deleted_editmode_mark = self.create_mark(None, end, left_gravity=True)
@@ -2264,13 +2239,11 @@ class TextBuffer(Gtk.TextBuffer):
 		# Also need to know whether range spanned multiple lines or not
 		self._deleted_line_end = start.get_line() != end.get_line()
 
-	def do_post_delete_range(self, start, end):
+	@SignalHandler
+	def do_post_delete_range(self, o, start, end):
 		# Post handler to hook _do_lines_merged and do some logic
 		# when deleting bullets
 		# Note that 'start' and 'end' refer to the same postion here ...
-		if self._raw_delete_ongoing:
-			return
-
 		was_list = any(_is_listitem_tag(t) for t in start.get_tags())
 			# get_tags() uses right side gravity, so omits list item ending here
 
@@ -2409,7 +2382,7 @@ class TextBuffer(Gtk.TextBuffer):
 		else:
 			return False
 
-	def _iter_forward_past_bullet(self, iter, bullet, raw=False):
+	def _iter_forward_past_bullet(self, iter, bullet):
 		if bullet in BULLETS:
 			# Each of these just means one char
 			iter.forward_char()
@@ -2417,51 +2390,36 @@ class TextBuffer(Gtk.TextBuffer):
 			assert is_numbered_bullet_re.match(bullet)
 			self.iter_forward_word_end(iter)
 
-		if not raw:
-			# Skip whitespace as well
-			bound = iter.copy()
-			bound.forward_char()
-			while iter.get_text(bound) == ' ':
-				if iter.forward_char():
-					bound.forward_char()
-				else:
-					break
+		# Skip whitespace as well
+		bound = iter.copy()
+		bound.forward_char()
+		while iter.get_text(bound) == ' ':
+			if iter.forward_char():
+				bound.forward_char()
+			else:
+				break
 
-	def get_parsetree(self, bounds=None, raw=False):
+	def get_parsetree(self, bounds=None):
 		'''Get a L{ParseTree} representing the buffer contents
+
+		NOTE: the C{ParseTree} is a cleaned up representation of the buffer,
+		reloading it may have subtle differences in the internal representation.
+		If it is important to get an exact representation use the low-level
+		functions from L{zim.gui.pageview.serialize} instead.
 
 		@param bounds: a 2-tuple with two C{Gtk.TextIter} specifying a
 		range in the buffer (e.g. current selection). If C{None} the
 		whole buffer is returned.
 
-		@param raw: if C{True} you get a tree that is B{not} nicely
-		cleaned up. This raw tree should result in the exact same
-		contents in the buffer when reloaded. However such a 'raw'
-		tree may cause problems when passed to one of the format
-		modules. So it is intended only for internal use between the
-		buffer and e.g. the L{UndoStackManager}.
-
-		Raw parsetrees have an attribute to flag them as a raw tree, so
-		on insert we can make sure they are inserted in the same way.
-
-		When C{raw} is C{False} reloading the same tree may have subtle
-		differences.
-
 		@returns: a L{ParseTree} object
 		'''
-		if self.showing_template and not raw:
+		if self.showing_template:
 			return None
 
 		attrib = {}
 		start, end = bounds or self.get_bounds()
-
-		if raw:
-			builder = ElementTreeModule.TreeBuilder()
-			attrib['raw'] = True
-			builder.start('zim-tree', attrib)
-		else:
-			builder = BackwardParseTreeBuilderWithCleanup()
-			builder.start('zim-tree', attrib)
+		builder = BackwardParseTreeBuilderWithCleanup()
+		builder.start('zim-tree', attrib)
 
 		open_tags = []
 		def set_tags(iter, tags):
@@ -2516,8 +2474,8 @@ class TextBuffer(Gtk.TextBuffer):
 						if bullet:
 							t = 'li'
 							attrib['bullet'] = bullet
-							self._iter_forward_past_bullet(iter, bullet, raw=raw)
-						elif not raw and not iter.starts_line():
+							self._iter_forward_past_bullet(iter, bullet)
+						elif not iter.starts_line():
 							# Indent not visible if it does not start at begin of line
 							t = '_ignore_'
 						elif len([t for t in tags[i:] if t.zim_tag == VERBATIM_BLOCK]):
@@ -2526,11 +2484,11 @@ class TextBuffer(Gtk.TextBuffer):
 							continue
 						else:
 							t = 'div'
-					elif t == 'pre' and not raw and not iter.starts_line():
+					elif t == 'pre' and not iter.starts_line():
 						# Without indenting 'pre' looks the same as 'code'
 						# Prevent turning into a separate paragraph here
 						t = 'code'
-					elif t in BLOCK_LEVEL and not raw and not iter.starts_line():
+					elif t in BLOCK_LEVEL and not iter.starts_line():
 						# Not perfect, but prevent illegal sequence towards dumper
 						t = '_ignore_'
 					elif t == 'pre':
@@ -2540,7 +2498,7 @@ class TextBuffer(Gtk.TextBuffer):
 							attrib = continue_attrib
 						continue_attrib = {}
 					elif t == 'link':
-						attrib = self.get_link_data(iter, raw=raw)
+						attrib = self.get_link_data(iter)
 					elif t == 'tag':
 						attrib = self.get_tag_data(iter)
 						if not attrib['name']:
@@ -2611,7 +2569,7 @@ class TextBuffer(Gtk.TextBuffer):
 				set_tags(iter, list(filter(_is_indent_tag, iter.get_tags())))
 				anchor = iter.get_child_anchor() # iter may have moved
 				if isinstance(anchor, InsertedObjectAnchor):
-					if anchor.is_inline or raw:
+					if anchor.is_inline:
 						anchor.dump(builder)
 						iter.forward_char()
 					else:
@@ -2673,7 +2631,7 @@ class TextBuffer(Gtk.TextBuffer):
 					if any(t[1] in (HEADING, LISTITEM) for t in open_tags):
 						# And limit bullets and headings to a single line
 						break_at = LISTITEM if LISTITEM in [t[1] for t in open_tags] else HEADING
-					elif not raw and any(t[1] not in BLOCK_LEVEL for t in open_tags):
+					elif any(t[1] not in BLOCK_LEVEL for t in open_tags):
 						# Prevent formatting tags to run multiple lines
 						for t in open_tags:
 							if t[1] not in BLOCK_LEVEL:
@@ -2707,8 +2665,8 @@ class TextBuffer(Gtk.TextBuffer):
 		tree = ParseTree(builder.close())
 		tree.encode_urls()
 
-		if not raw and tree.hascontent:
-			# Reparsing the parsetree in order to find raw wiki codes
+		if tree.hascontent:
+			# Reparsing the parsetree in order to find wiki codes
 			# and get rid of oddities in our generated parsetree.
 			#print(">>> Parsetree original:\n", tree.tostring())
 			from zim.formats import get_format

@@ -54,7 +54,7 @@ def _attrib_to_xml(attrib):
 	else:
 		text = []
 		for k in sorted(attrib):
-			v = _encode_xml(attrib[k]) if isinstance(attrib[k], str) else attrib[k]
+			v = _encode_xml_attrib(attrib[k]) if isinstance(attrib[k], str) else attrib[k]
 			text.append(' %s="%s"' % (k, v))
 		return ''.join(text)
 
@@ -75,8 +75,10 @@ def _xml_to_tag_and_attribute(string):
 
 
 def _encode_xml(text):
-	return text.replace('&', '&amp;').replace('>', '&gt;').replace('<', '&lt;').replace('"', '&quot;').replace("'", '&apos;')
+	return text.replace('&', '&amp;').replace('>', '&gt;').replace('<', '&lt;')
 
+def _encode_xml_attrib(text):
+	return text.replace('&', '&amp;').replace('>', '&gt;').replace('<', '&lt;').replace('"', '&quot;').replace("'", '&apos;')
 
 def _decode_xml(text):
 	chars = {'amp': '&', 'gt': '>', 'lt': '<', 'quot': '"', 'apos': "'"}
@@ -130,7 +132,7 @@ class TextBufferInternalContents():
 			elif part[0] == '<':
 				if part[1] == '/':
 					tag = part[2:-1].strip()
-					assert stack[-1] == tag, 'Unexpected end tag: %s (%r)' % (tag, stack)
+					assert stack[-1] == tag, 'Unexpected end tag: %r expected %r' % (tag, stack[-1])
 					stack.pop()
 					data.append((END, tag))
 				else:
@@ -186,8 +188,6 @@ def textbuffer_internal_serialize_range(textbuffer, start, end):
 	The only logic it applies is the hierarchic nesting of TextTags to allow 
 	a stable xml-like representation.
 	'''
-	assert not start.equal(end) # will misbehave on empty range
-
 	textbuffer_data = []
 	texttags_stack = [] # list of (texttag, zimtag)
 
@@ -380,7 +380,7 @@ def textbuffer_internal_insert_at_cursor(textbuffer, data):
 			textbuffer.insert_anchor_at_cursor(**t[1])
 		elif t[0] == ICON:
 			bullet = BULLETS_FROM_STOCK[t[1]['stock']] # TODO low level function that takes stock
-			textbuffer._insert_bullet_at_cursor(bullet, raw=True) # TODO - remove "raw"
+			textbuffer._insert_bullet_at_cursor(bullet)
 
 		# InsertedObject
 		elif t[0] == LINE:
@@ -395,7 +395,8 @@ def textbuffer_internal_insert_at_cursor(textbuffer, data):
 				else:
 					assert t == (END, OBJECT), 'Expected end of object, got: %r' % t
 					break
-			textbuffer.insert_object_at_cursor(attrib, data or None, raw=True)
+			objecttype, model = textbuffer._get_objecttype_and_model_for_object(attrib, data or None)
+			textbuffer._insert_object_model_at_cursor(objecttype, model)
 
 		# TextTag types
 		elif t[0] == END:

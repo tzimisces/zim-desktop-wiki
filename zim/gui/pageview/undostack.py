@@ -160,6 +160,14 @@ class UndoStackManager:
 		#~ self.buffer.connect_object('set-mark',
 			#~ self.__class__._flush_if_typing, self)
 
+	def clear_undostack(self):
+		'''Clear all recorded information - intended for testing only'''
+		self.stack = [] # stack of actions & action groups
+		self.group = UndoActionGroup() # current group of actions
+		self.interactive = False # interactive edit or not
+		self.insert_pending = False # whether we need to call flush insert or not
+		self.undo_count = 0 # number of undo steps that were done
+
 	def block(self):
 		'''Stop listening to events from the L{TextBuffer} until
 		the next call to L{unblock()}. Any change in between will not
@@ -402,9 +410,9 @@ class UndoStackManager:
 					else:
 						pass # to_xml() flattens e.g. integer arguments to string, ignore such differences here
 				with self.buffer.user_action:
-					self.buffer._raw_delete_ongoing = True # XXX
-					self.buffer.delete(iter, bound)
-					self.buffer._raw_delete_ongoing = False # XXX
+					with self.buffer.do_pre_delete_range.blocked():
+						with self.buffer.do_post_delete_range.blocked():
+							self.buffer.delete(iter, bound)
 			elif action == self.ACTION_APPLY_TAG:
 				self.buffer.apply_tag(data, iter, bound)
 				self.buffer.place_cursor(bound)
