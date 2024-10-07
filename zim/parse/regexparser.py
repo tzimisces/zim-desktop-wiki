@@ -226,7 +226,7 @@ class Rule(object):
 	this function is called with the whole match.
 	The default function will use the C{tag} and C{descent}
 	attributes
-	@ivar decent: optional function (or object) to recursively parse the
+	@ivar descent: optional function (or object) to recursively parse the
 	text matched by this rule. Called in the same way as C{process}.
 	'''
 
