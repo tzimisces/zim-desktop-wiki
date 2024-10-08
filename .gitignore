@@ -6,6 +6,7 @@ test_times.csv
 locale/
 man/
 html/
+!data/templates/html/
 xdg/hicolor/
 debian/pycompat
 debian/.debhelper
