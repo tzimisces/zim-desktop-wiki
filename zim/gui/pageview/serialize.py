@@ -15,6 +15,7 @@ logger = logging.getLogger('zim.gui.pageview')
 
 from zim.formats import IMAGE, OBJECT, ANCHOR, LINK, TAG, HEADING, LINE
 from zim.parse.tokenlist import TEXT, END
+from zim.parse.xml import simple_token_to_xml_dumper, simple_xml_to_token_parser
 
 from .constants import PIXBUF_CHR, BULLETS_FROM_STOCK, ICON, BLOCK, LISTITEM
 from .objectanchors import InsertedObjectAnchor, LineSeparatorAnchor
@@ -46,43 +47,6 @@ def _object_to_tag(objectanchor):
 			data = ''.join(t[1] for t in tokens[1:-1])
 			tokens = [tokens[0], (TEXT, data), tokens[-1]]
 		return tokens
-
-
-def _attrib_to_xml(attrib):
-	if not attrib:
-		return ''
-	else:
-		text = []
-		for k in sorted(attrib):
-			v = _encode_xml_attrib(attrib[k]) if isinstance(attrib[k], str) else attrib[k]
-			text.append(' %s="%s"' % (k, v))
-		return ''.join(text)
-
-
-def _xml_to_tag_and_attribute(string):
-	# XXX: attrib type encoding is not robust, just some hard-coded heuristics
-	tag = re.match('[\w-]+', string).group(0)
-	attrib = {}
-	for k, v in re.findall(r'(\w+)="(.*?)"', string):
-		if k in ('href', 'name') and v == 'None':
-			attrib[k] = None
-		elif k in ('indent', 'level'):
-			attrib[k] = int(v)
-		else:
-			attrib[k] = _decode_xml(v)
-	attrib = attrib if attrib else None
-	return tag, attrib
-
-
-def _encode_xml(text):
-	return text.replace('&', '&amp;').replace('>', '&gt;').replace('<', '&lt;')
-
-def _encode_xml_attrib(text):
-	return text.replace('&', '&amp;').replace('>', '&gt;').replace('<', '&lt;').replace('"', '&quot;').replace("'", '&apos;')
-
-def _decode_xml(text):
-	chars = {'amp': '&', 'gt': '>', 'lt': '<', 'quot': '"', 'apos': "'"}
-	return re.sub(r'&(\w+);', lambda m: chars[m.group(1)], text)
 
 
 class TextBufferInternalContents():
@@ -125,24 +89,17 @@ class TextBufferInternalContents():
 		not robust / un-save for external or mal-formed context
 		'''
 		data = []
-		stack = []
-		for part in re.split('(<.*?>)', xml):
-			if not part:
-				pass
-			elif part[0] == '<':
-				if part[1] == '/':
-					tag = part[2:-1].strip()
-					assert stack[-1] == tag, 'Unexpected end tag: %r expected %r' % (tag, stack[-1])
-					stack.pop()
-					data.append((END, tag))
-				else:
-					data.append(_xml_to_tag_and_attribute(part[1:-1]))
-					tag = data[-1][0]
-					if not tag in _INTERNAL_OBJECT_LIKE_TAGS:
-						stack.append(tag)
+		token_iter = simple_xml_to_token_parser(xml)
+		for t in token_iter:
+			if t[0] in (TEXT, END):
+				data.append(t)
 			else:
-				data.append((TEXT, _decode_xml(part)))
-		assert not stack, 'Missing end tags for: %r' % stack
+				data.append(t)
+				if t[0] in _INTERNAL_OBJECT_LIKE_TAGS:
+					# skip end tag
+					end = next(token_iter)
+					assert end == (END, t[0]), 'Expected %s got %s' % ((END, t[0]), end)
+
 		if data[0][0] == _INTERNAL_ROOT:
 			data = data[1:-1]
 		return cls(data)
@@ -153,22 +110,11 @@ class TextBufferInternalContents():
 		NOTE: Inteded for test cases only, do not use in the application - 
 		not robust / un-save for external or mal-formed context
 		'''	
-		xml = []
-		stack = []
-		for t in self._data:
-			if t[0] == TEXT:
-				xml.append(_encode_xml(t[1]))
-			elif t[0] == END:
-				assert stack and t[1] == stack[-1], 'Unexpected end tag: %r' % (t,)
-				stack.pop()
-				xml.append('</%s>' % t[1])
-			elif t[0] in _INTERNAL_OBJECT_LIKE_TAGS:
-				xml.append('<%s%s />' % (t[0], _attrib_to_xml(t[1])))
-			else:
-				stack.append(t[0])
-				xml.append('<%s%s>' % (t[0], _attrib_to_xml(t[1])))
-
-		return '<%s>%s</%s>' % (_INTERNAL_ROOT, ''.join(xml), _INTERNAL_ROOT)
+		xml = simple_token_to_xml_dumper(
+			self._data,
+			tags_without_end_tag=_INTERNAL_OBJECT_LIKE_TAGS
+		)
+		return '<%s>%s</%s>' % (_INTERNAL_ROOT, xml, _INTERNAL_ROOT)
 
 
 
