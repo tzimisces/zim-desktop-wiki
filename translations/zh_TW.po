@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2024-11-17 05:00+0000\n"
+"PO-Revision-Date: 2024-12-03 13:19+0000\n"
 "Last-Translator: 麋麓 BigELK176 <BigELK176@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/zim/develop/zh_Hant/>\n"
@@ -57,7 +57,7 @@ msgstr "calendar:week_start:0"
 #. generic error dialog
 #: zim/errors.py:46
 msgid "Looks like you found a bug"
-msgstr "似乎你發現了一個 bug"
+msgstr "似乎你發現了一個問題 bug"
 
 #. message for FileUnicodeError (%s is the file name)
 #: zim/fs.py:275 zim/newfs/base.py:64
@@ -110,8 +110,8 @@ msgid ""
 "The folder \"%s\" does not yet exist.\n"
 "Do you want to create it now?"
 msgstr ""
-"資料夾 \"%s\" 不存在。\n"
-"現在要建立它嗎？"
+"資料夾 \"%s\" 尚不存在。\n"
+"現在要建立嗎？"
 
 #. error when external application fails
 #: zim/gui/applications.py:664 zim/gui/applications.py:738
@@ -146,7 +146,7 @@ msgstr "自訂..."
 #. message when no applications in "Open With" menu
 #: zim/gui/applications.py:1107
 msgid "No Applications Found"
-msgstr "未找到應用程式"
+msgstr "找無應用程式"
 
 #. menu item to open a file with an application, %s is the app name
 #: zim/gui/applications.py:1137
@@ -173,7 +173,7 @@ msgstr ""
 #. Dialog title
 #: zim/gui/applications.py:1161
 msgid "Configure Applications"
-msgstr "設定應用程式"
+msgstr "調設應用程式"
 
 #. Button for adding a new application to the 'open with' menu | 
 #. Dialog title
@@ -231,8 +231,8 @@ msgid ""
 "You can configure custom tools that will appear\n"
 "in the tool menu and in the tool bar or context menus."
 msgstr ""
-"可以自訂工具使其顯示於\n"
-"工具選單、工具列、及滑鼠右鍵選單中。"
+"可以自訂各項工具並會顯示於\n"
+"工具選單及工具列中、或是滑鼠右鍵選單中。"
 
 #. Dialog title
 #: zim/gui/customtools.py:654
@@ -335,7 +335,7 @@ msgstr ""
 #. title of step in export dialog
 #: zim/gui/exportdialog.py:167
 msgid "Select the pages to export"
-msgstr "選擇要匯出的頁面"
+msgstr "選擇頁面用來匯出"
 
 #. Option in export dialog to export complete notebook | 
 #. Option in versions dialog to show version for complete notebook
@@ -412,7 +412,7 @@ msgstr "選擇匯出檔案或資料夾"
 #. Label for option in export dialog
 #: zim/gui/exportdialog.py:316
 msgid "Export each page to a separate file"
-msgstr "匯出每個頁面成個別檔案"
+msgstr "匯出每個頁面成各個檔案"
 
 #. Label for option in export dialog
 #: zim/gui/exportdialog.py:318
@@ -547,7 +547,7 @@ msgstr "說明(_H)"
 #. Menu title
 #: zim/gui/mainwindow.py:58
 msgid "_Checkbox"
-msgstr "勾選框(_C)"
+msgstr "核取方塊(_C)"
 
 #. option for plugin preferences
 #: zim/gui/mainwindow.py:68
@@ -833,7 +833,7 @@ msgstr ""
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:204
 msgid "Repeated clicking a checkbox cycles through the checkbox states"
-msgstr "重覆點按勾選框，將會循環變換勾選框狀態"
+msgstr "重覆點按核取方塊，將會循環變換核取方塊狀態"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:207
@@ -843,7 +843,7 @@ msgstr "縮排(或取消縮排)某一條列項目，將會同時變更下層項�
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:210
 msgid "Checking a checkbox also changes any sub-items"
-msgstr "點按勾選框，亦將變更下層項目"
+msgstr "點按核取方塊，亦會變更下層各個項目"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:213
@@ -951,7 +951,7 @@ msgstr "斜體(_E)"
 #. menu item for formatting
 #: zim/gui/pageview/__init__.py:5874 zim/gui/pageview/__init__.py:5889
 msgid "_Mark"
-msgstr "底線(_M)"
+msgstr "螢光(_M)"
 
 #. Menu item | 
 #. menu item for formatting
@@ -1080,28 +1080,28 @@ msgstr "開啟(_O)"
 #. popup menu menuitem
 #: zim/gui/pageview/__init__.py:6915
 msgid "Check Checkbox '<'"
-msgstr "點按勾選框 '←'"
+msgstr "點按核取方塊 '←'"
 
 #. popup menu menuitem
 #: zim/gui/pageview/__init__.py:6916
 msgid "Check Checkbox '>'"
-msgstr "點按勾選框 '→'"
+msgstr "點按核取方塊 '→'"
 
 #. popup menu menuitem
 #: zim/gui/pageview/__init__.py:6917
 msgid "Check Checkbox 'X'"
-msgstr "點按勾選框 '×'"
+msgstr "點按核取方塊 '×'"
 
 #. popup menu menuitem
 #: zim/gui/pageview/__init__.py:6918
 msgid "Check Checkbox 'V'"
-msgstr "點按勾選框 '✓'"
+msgstr "點按核取方塊 '✓'"
 
 #. popup menu menuitem | 
 #. Menu item
 #: zim/gui/pageview/__init__.py:6919 zim/gui/pageview/__init__.py:6982
 msgid "Un-check Checkbox"
-msgstr "取消點按勾選框"
+msgstr "取消點按核取方塊"
 
 #. Menu item | 
 #. Button label | 
@@ -1152,22 +1152,22 @@ msgstr "刪除(_D)"
 #. Menu item
 #: zim/gui/pageview/__init__.py:6988
 msgid "Toggle Checkbox 'V'"
-msgstr "切換勾選框 '✓'"
+msgstr "切換核取方塊 '✓'"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:6997
 msgid "Toggle Checkbox 'X'"
-msgstr "切換勾選框 '×'"
+msgstr "切換核取方塊 '×'"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7006
 msgid "Toggle Checkbox '>'"
-msgstr "切換勾選框 '→'"
+msgstr "切換核取方塊 '→'"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7015
 msgid "Toggle Checkbox '<'"
-msgstr "切換勾選框 '←'"
+msgstr "切換核取方塊 '←'"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7024
@@ -1220,7 +1220,7 @@ msgstr "編號清單(_N)"
 #. Menu item,
 #: zim/gui/pageview/__init__.py:7165 zim/gui/pageview/__init__.py:7192
 msgid "Checkbo_x List"
-msgstr "勾選框清單(_x)"
+msgstr "核取方塊清單(_x)"
 
 #. Menu item,
 #: zim/gui/pageview/__init__.py:7197
@@ -1339,7 +1339,7 @@ msgstr "附加檔案"
 #: zim/gui/pageview/__init__.py:7888
 #, python-format
 msgid "Page \"%s\" does not have a folder for attachments"
-msgstr "頁面 \"%s\" 並無附件的資料夾"
+msgstr "頁面 \"%s\" 沒有用於附件的資料夾"
 
 #. Dialog title
 #: zim/gui/pageview/__init__.py:7948
@@ -1554,7 +1554,7 @@ msgstr "移動文字至"
 #. Input in 'move text' dialog
 #: zim/gui/pageview/__init__.py:8668
 msgid "Leave link to new page"
-msgstr "保留連結到新建頁面"
+msgstr "留下連結至新建頁面"
 
 #. Input in 'move text' dialog
 #: zim/gui/pageview/__init__.py:8670
@@ -1579,7 +1579,7 @@ msgstr "介面"
 #. Tab in preferences dialog
 #: zim/gui/preferencesdialog.py:33
 msgid "Editing"
-msgstr "編輯"
+msgstr "編輯中"
 
 #. warning message, %s is the current locale - e.g. "NL_nl"
 #: zim/gui/preferencesdialog.py:40
@@ -1743,6 +1743,7 @@ msgid ""
 "</tt>."
 msgstr ""
 "快速鍵組合變更設定，可以在選擇項目的輸入框中，直接按下新的組合鍵。\n"
+"\n"
 "若要停用某個快速鍵設定，可以在選擇項目上，使用 <tt>&lt;Backspace&gt;</tt> 。"
 
 #. Column header for keybinding list
@@ -1827,7 +1828,7 @@ msgstr ""
 #. checkbox option in search dialog
 #: zim/gui/searchdialog.py:55
 msgid "_Limit search to the current page and sub-pages"
-msgstr "限制搜尋於目前頁面及下層頁面(_L)"
+msgstr "限於搜尋目前及下層各頁面(_L)"
 
 #. placeholder label when search has started
 #: zim/gui/searchdialog.py:68
@@ -1958,7 +1959,7 @@ msgstr "刪除頁面(_D)"
 #. question in "delete page" action
 #: zim/gui/uiactions.py:228
 msgid "Trash failed, do you want to permanently delete instead ?"
-msgstr "垃圾桶處理失敗，要改為永遠刪除來處理嗎？"
+msgstr "垃圾桶處理失敗，要改為永遠刪除處理嗎？"
 
 #. Menu item
 #: zim/gui/uiactions.py:234
@@ -1994,7 +1995,7 @@ msgstr "搜尋(_S)..."
 #. Menu item for search a sub-set of the notebook
 #: zim/gui/uiactions.py:297
 msgid "Search this section"
-msgstr "搜尋此範圍"
+msgstr "搜尋此章節部分"
 
 #. Menu item
 #: zim/gui/uiactions.py:302
@@ -2183,7 +2184,7 @@ msgstr ""
 "頁面 \"%s\" 及其下層頁面與附件，\n"
 "均將被移至垃圾桶等待處理刪除。\n"
 "\n"
-"之後要取消動作，可前往系統垃圾桶進一步處理。"
+"之後若要取消刪除，可前往系統垃圾桶進行處理。"
 
 #. label in the TrashPage dialog to warn user of attachments being deleted
 #: zim/gui/uiactions.py:736
@@ -2360,7 +2361,7 @@ msgstr "{count} / {total}"
 #. dialog title for log view dialog - e.g. for Equation Editor
 #: zim/gui/widgets.py:3792
 msgid "Log file"
-msgstr "系統紀錄檔案"
+msgstr "紀錄檔案"
 
 #. Error verbose description
 #: zim/main/__init__.py:120
@@ -2387,22 +2388,22 @@ msgstr "需要用於匯出的輸出位置"
 #: zim/main/__init__.py:460
 msgid ""
 "Output folder exists and not empty, specify \"--overwrite\" to force export"
-msgstr "輸出資料夾已經存在且非空白，指示 \"--overwrite\" 可以強制匯出"
+msgstr "匯出資料夾已經存在且非空白，標示 \"--overwrite\" 可以強制匯出"
 
 #. error message for export
 #: zim/main/__init__.py:464
 msgid "Output file exists, specify \"--overwrite\" to force export"
-msgstr "輸出檔案已經存在，指示 \"--overwrite\" 可以強制匯出"
+msgstr "匯出檔案已經存在，標示 \"--overwrite\" 可以強制匯出"
 
 #. error message for export
 #: zim/main/__init__.py:469
 msgid "Need output file to export MHTML"
-msgstr "需要用於匯出 MHTML 的輸出檔案"
+msgstr "需要匯出檔案用於匯出 MHTML"
 
 #. error message for export
 #: zim/main/__init__.py:503
 msgid "Need output folder to export full notebook"
-msgstr "需要輸出資料夾用於匯出整個筆記本"
+msgstr "需要匯出資料夾用於匯出整個筆記本"
 
 #. Error explanation
 #: zim/newfs/local.py:43
@@ -2411,7 +2412,8 @@ msgid ""
 "of the file name, please try using a name with less\n"
 "than 255 characters"
 msgstr ""
-"無法寫入此檔案。 原因可能是檔案名稱長度。\n"
+"無法寫入此檔案。 \n"
+"原因可能是檔案名稱長度。\n"
 "請改用檔案名稱，少於255個字元"
 
 #. error message for filesystem limitations
@@ -2427,8 +2429,8 @@ msgid ""
 "of the file path, please try using a folder structure resulting in less\n"
 "than 4096 characters"
 msgstr ""
-"無法寫入此檔案。 原因可能是檔案路徑長度。\n"
-"\n"
+"無法寫入此檔案。 \n"
+"原因可能是檔案路徑長度。\n"
 "請改用資料夾結構，少於 4096 個字元"
 
 #. error message for filesystem limitations
@@ -2469,7 +2471,7 @@ msgstr "頁面不可使用: %s"
 #. description for PageNotAvailableError
 #: zim/notebook/notebook.py:130
 msgid "This page name cannot be used due to a conflicting file in the storage"
-msgstr "此頁面名稱不可使用，因為儲存之中檔案衝突"
+msgstr "此頁面名稱不可使用，因為儲存中檔案有所衝突"
 
 #. message for PageExistsError
 #: zim/notebook/notebook.py:139
@@ -2519,7 +2521,7 @@ msgstr "算術運算(_A)"
 #: zim/plugins/attachmentbrowser/filebrowser.py:61
 #, python-format
 msgid "Are you sure you want to delete the file '%s'?"
-msgstr "您確定要刪除檔案 '%s'?"
+msgstr "確定要刪除檔案 '%s'?"
 
 #. menu item to delete file
 #: zim/plugins/attachmentbrowser/filebrowser.py:361
@@ -2758,7 +2760,7 @@ msgstr "新增書籤/顯示設定"
 #. message for bookmark plugin
 #: zim/plugins/bookmarksbar.py:294
 msgid "Do you want to delete all bookmarks?"
-msgstr "您想要刪除全部書籤嗎?"
+msgstr "要刪除全部書籤嗎?"
 
 #. menu item for context menu
 #: zim/plugins/bookmarksbar.py:375
@@ -2849,7 +2851,7 @@ msgstr "圖表"
 #. plugin name
 #: zim/plugins/distractionfree.py:25
 msgid "Distraction Free Editing"
-msgstr "無干擾自由編輯模式"
+msgstr "免除干擾編輯模式"
 
 #. plugin description
 #: zim/plugins/distractionfree.py:27
@@ -2858,7 +2860,7 @@ msgid ""
 "as a distraction free editor.\n"
 msgstr ""
 "此外掛程式增加設定，用來輔助運用 Zim\n"
-"如同無干擾自由編輯器。\n"
+"如同免除干擾編輯器。\n"
 
 #. plugin preference
 #: zim/plugins/distractionfree.py:36
@@ -3400,7 +3402,7 @@ msgstr ""
 #. plugin preference
 #: zim/plugins/scoreeditor.py:55
 msgid "Common include header"
-msgstr "通常包括標題"
+msgstr "通常包括開頭"
 
 #. plugin preference
 #: zim/plugins/scoreeditor.py:56
@@ -3626,7 +3628,7 @@ msgstr "置中"
 #. alignment option
 #: zim/plugins/tableeditor.py:56
 msgid "Unspecified"
-msgstr "未指定"
+msgstr "尚未指定"
 
 #. plugin name
 #: zim/plugins/tableeditor.py:83
@@ -3844,12 +3846,12 @@ msgstr "設定目錄表列字型大小"
 #. action to lower level of heading in the text
 #: zim/plugins/tableofcontents.py:411
 msgid "Demote"
-msgstr "降級"
+msgstr "降階"
 
 #. action to raise level of heading in the text
 #: zim/plugins/tableofcontents.py:413
 msgid "Promote"
-msgstr "升級"
+msgstr "升階"
 
 #. widget label
 #: zim/plugins/tableofcontents.py:527
@@ -3958,12 +3960,12 @@ msgstr "%s 個顯示"
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:505
 msgid "Show open tasks"
-msgstr "顯示未完成的任務"
+msgstr "顯示尚未完成任務"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:506
 msgid "Show closed tasks"
-msgstr "顯示已結束的任務"
+msgstr "顯示已經結束任務"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:507
@@ -3988,7 +3990,7 @@ msgstr "清單"
 #. selection of tasks without tags
 #: zim/plugins/tasklist/gui.py:693
 msgid "Untagged"
-msgstr "未有標記"
+msgstr "尚未標記"
 
 #. header in selection drop down
 #: zim/plugins/tasklist/gui.py:748
@@ -4027,15 +4029,16 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"此外掛程式會加上對話框，顯示筆記本全部未完成的任務。\n"
-"這些任務會轉成為未完成勾選框，或是標記 \"TODO\" 或 \"FIXME\" 。\n"
+"此外掛程式會加上對話框，顯示筆記本中全部尚未完成任務。\n"
+"這些任務可以是尚未完成核取方塊，\n"
+"或是標記像是 \"TODO\" 或 \"FIXME\" 。\n"
 "\n"
 "此為核心外掛程式，隨同 Zim 發行。\n"
 
 #. preferences option
 #: zim/plugins/tasklist/__init__.py:45
 msgid "Show tasklist button in headerbar"
-msgstr "在標題列顯示任務清單按鈕"
+msgstr "在開頭列顯示任務清單按鈕"
 
 #. preferences option - "GTD" means "Getting Things Done" methodology
 #: zim/plugins/tasklist/__init__.py:47
@@ -4065,7 +4068,7 @@ msgstr "在側邊面板顯示頁面列欄"
 #. label for plugin preferences dialog
 #: zim/plugins/tasklist/__init__.py:63
 msgid "Consider all checkboxes as tasks"
-msgstr "將全部勾選框作為任務項目"
+msgstr "將全部核取方塊視為任務"
 
 #. label for plugin preferences dialog - labels are e.g. "FIXME", "TODO"
 #: zim/plugins/tasklist/__init__.py:65
@@ -4120,7 +4123,7 @@ msgstr "在章節面板顯示頁面名稱"
 #. label for plugin preferences dialog
 #: zim/plugins/tasklist/__init__.py:85
 msgid "Don't count Saturday and Sunday as working days"
-msgstr "不要將週六週日計入工作日"
+msgstr "週六週日不計入工作日"
 
 #. toolbar style
 #: zim/plugins/toolbar.py:19
@@ -4204,12 +4207,12 @@ msgid ""
 "do not use new style status icon on Ubuntu"
 msgstr ""
 "經典樣式系統匣圖示，\n"
-"在 Ubuntu 上不使用新型狀態欄圖示"
+"在 Ubuntu 上不使用新型狀態圖示"
 
 #. preferences option
 #: zim/plugins/trayicon.py:86
 msgid "Show a separate icon for each notebook"
-msgstr "每個筆記本顯示各別圖示"
+msgstr "每個筆記本顯示個別圖示"
 
 #. menu item in tray icon menu
 #: zim/plugins/trayicon.py:132
@@ -4265,7 +4268,7 @@ msgstr "每隔一段時間即自動儲存"
 #. Label for plugin preference
 #: zim/plugins/versioncontrol/__init__.py:69
 msgid "Autosave interval in minutes"
-msgstr "自動儲存每隔分鐘"
+msgstr "自動儲存每隔幾分鐘"
 
 #. default version comment for auto-saved versions
 #: zim/plugins/versioncontrol/__init__.py:201
@@ -4411,10 +4414,10 @@ msgid ""
 "\n"
 "All changes since the last saved version will be lost !"
 msgstr ""
-"您要還原此頁面: %(page)s\n"
-"至已經儲存的版本: %(version)s 嗎？\n"
+"您想要還原此頁面: %(page)s\n"
+"至已經儲存的版本: %(version)s 是嗎？\n"
 "\n"
-"上次儲存版本以來全部的變動都將會遺失喔！"
+"上次儲存版本以來全部變動都將會遺失喔！"
 
 #. dialog title
 #: zim/plugins/versioncontrol/__init__.py:1006
@@ -4434,7 +4437,7 @@ msgstr "使用 Zeitgeist 來紀錄事件"
 #. plugin description
 #: zim/plugins/zeitgeist-logger.py:34
 msgid "Pushes events to the Zeitgeist daemon."
-msgstr "將事件紀錄送至 Zeitgeist 伺服器。"
+msgstr "將活動事件推送至 Zeitgeist 伺服器。"
 
 #. label for how zim pages show up in the recent files menu, %s is the page name
 #: zim/plugins/zeitgeist-logger.py:64
