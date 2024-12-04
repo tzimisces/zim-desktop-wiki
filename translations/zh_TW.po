@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2024-12-03 13:19+0000\n"
+"PO-Revision-Date: 2024-12-05 13:00+0000\n"
 "Last-Translator: 麋麓 BigELK176 <BigELK176@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/zim/develop/zh_Hant/>\n"
@@ -3026,7 +3026,7 @@ msgid ""
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"此外掛程式添加 '插入符號' 對話框，\n"
+"此外掛程式添加〔插入符號〕對話框，\n"
 "可以使用自動格式化的特殊符號字元。\n"
 "\n"
 "此為核心外掛程式，隨同 Zim 發行。\n"
@@ -3166,8 +3166,9 @@ msgid ""
 "This is a core plugin shipping with zim.\n"
 msgstr ""
 "此外掛程式提供對話框\n"
-"用來將記事本連結結構以圖形來呈現，\n"
-"像是心智圖型式來顯示各頁面的關聯。\n"
+"以圖形來呈現記事本中的連結結構，\n"
+"像是用心智圖型式顯示各頁面的關聯。\n"
+"\n"
 "\n"
 "此為核心外掛程式，隨同 Zim 發行。\n"
 
@@ -3199,7 +3200,7 @@ msgstr "macOS 選單列"
 #. plugin description
 #: zim/plugins/osx_menubar.py:75
 msgid "This plugin provides a macOS menubar for zim."
-msgstr "此外掛程式提供 macOS 功能選單用於 Zim。"
+msgstr "此外掛程式提供 macOS 功能選單。"
 
 #. plugin name
 #: zim/plugins/pageindex/__init__.py:51
@@ -3315,8 +3316,9 @@ msgid ""
 msgstr ""
 "此外掛程式提供方法解決 Zim 所缺乏的列印支援。\n"
 "程式會將目前頁面匯出 html 並在瀏覽器中開啟。\n"
-"若瀏覽器具備列印支援，則此方法用兩個步驟，\n"
+"若瀏覽器具備列印支援，則此方法用兩個步驟：\n"
 "匯出頁面、開啟瀏覽器，即可使用操作列印了。\n"
+"\n"
 "\n"
 "此為核心外掛程式，隨同 Zim 發行。\n"
 
@@ -4196,7 +4198,7 @@ msgid ""
 msgstr ""
 "此外掛程式於系統匣增添 Zim 圖示以方便存取。\n"
 "\n"
-"此外掛程式需相依 Gtk+ 版本 2.10 或較新版本。\n"
+"此外掛程式必須為 Gtk+ 版本 2.10 或較新版本。\n"
 "\n"
 "此為核心外掛程式，隨同 Zim 發行。\n"
 
@@ -4273,7 +4275,7 @@ msgstr "自動儲存每隔幾分鐘"
 #. default version comment for auto-saved versions
 #: zim/plugins/versioncontrol/__init__.py:201
 msgid "Automatically saved version from zim"
-msgstr "由 Zim 自動儲存版本"
+msgstr "由 Zim 自動儲存的版本"
 
 #. menu item
 #: zim/plugins/versioncontrol/__init__.py:209
