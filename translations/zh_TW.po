@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2024-12-05 13:00+0000\n"
+"PO-Revision-Date: 2024-12-07 08:00+0000\n"
 "Last-Translator: 麋麓 BigELK176 <BigELK176@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/zim/develop/zh_Hant/>\n"
@@ -146,7 +146,7 @@ msgstr "自訂..."
 #. message when no applications in "Open With" menu
 #: zim/gui/applications.py:1107
 msgid "No Applications Found"
-msgstr "找無應用程式"
+msgstr "未找到應用程式"
 
 #. menu item to open a file with an application, %s is the app name
 #: zim/gui/applications.py:1137
@@ -158,7 +158,7 @@ msgstr "使用 \"%s\" 開啟"
 #: zim/gui/applications.py:1146
 #, python-format
 msgid "Configure an application to open \"%s\" links"
-msgstr "設定用於開啟 “%s” 連結的應用程式"
+msgstr "調設應用程式以開啟 “%s” 個連結"
 
 #. Text in the 'custom command' dialog, "%s" will be mimetype like "text/plain"
 #: zim/gui/applications.py:1149
@@ -167,8 +167,8 @@ msgid ""
 "Configure an application to open files\n"
 "of type \"%s\""
 msgstr ""
-"設定應用程式\n"
-"用於開啟 \"%s\" 類型檔案"
+"調設應用程式用於開啟\n"
+"\"%s\" 類型檔案"
 
 #. Dialog title
 #: zim/gui/applications.py:1161
@@ -212,7 +212,7 @@ msgstr "指令"
 #. Field in 'custom command' dialog
 #: zim/gui/applications.py:1289
 msgid "Make default application"
-msgstr "設作預設應用程式"
+msgstr "設為預設應用程式"
 
 #. Error message for new commands in "open with" dialog
 #: zim/gui/applications.py:1306
@@ -231,8 +231,8 @@ msgid ""
 "You can configure custom tools that will appear\n"
 "in the tool menu and in the tool bar or context menus."
 msgstr ""
-"可以自訂各項工具並會顯示於\n"
-"工具選單及工具列中、或是滑鼠右鍵選單中。"
+"可以調設自訂各項工具，其將會顯示於\n"
+"工具選單及工具列中、或滑鼠右鍵選單中。"
 
 #. Dialog title
 #: zim/gui/customtools.py:654
@@ -1439,7 +1439,7 @@ msgstr "文字"
 #. Input in 'move text' dialog
 #: zim/gui/pageview/__init__.py:8208 zim/gui/pageview/__init__.py:8669
 msgid "Prefer short link names for pages"
-msgstr "偏好簡短的連結名稱用於各頁面"
+msgstr "偏好簡短的連結名稱用於各個頁面"
 
 #. button in find bar and find & replace dialog
 #: zim/gui/pageview/__init__.py:8328
@@ -1591,7 +1591,7 @@ msgid ""
 "\"UTF-8\""
 msgstr ""
 "您的系統編碼目前設定為 %s 。若是想要支援特殊字元\n"
-"或是看到編碼所致錯誤，請確定系統設定使用 \"UTF-8\""
+"或是看到編碼所致錯誤，請確定系統調設使用 \"UTF-8\""
 
 #. Dialog title
 #: zim/gui/preferencesdialog.py:52
@@ -2153,13 +2153,13 @@ msgstr "更新此頁面的標題"
 #. label for progress dialog
 #: zim/gui/uiactions.py:649
 msgid "Updating Links"
-msgstr "更新連結"
+msgstr "正在更新各個連結"
 
 #. label in DeletePageDialog
 #: zim/gui/uiactions.py:685
 #, python-format
 msgid "Remove links to %s"
-msgstr "移除連結至 %s"
+msgstr "移除各個連結至 %s"
 
 #. Dialog title
 #: zim/gui/uiactions.py:729
@@ -2196,7 +2196,7 @@ msgstr[0] "%i 個檔案將被丟進垃圾桶"
 #. Title of progressbar dialog
 #: zim/gui/uiactions.py:746 zim/gui/uiactions.py:786
 msgid "Removing Links"
-msgstr "移除連結"
+msgstr "正在移除各個連結"
 
 #. Dialog title
 #: zim/gui/uiactions.py:771
@@ -2652,7 +2652,7 @@ msgid ""
 "This is a core plugin shipping with zim.\n"
 msgstr ""
 "此外掛程式會加上額外小工具來顯示\n"
-"連結到目前頁面的頁面列表。\n"
+"連結到目前頁面的各個頁面列表。\n"
 "\n"
 "此為核心外掛程式，隨同 Zim 發行。\n"
 
@@ -3732,7 +3732,7 @@ msgstr "刪除行欄"
 #. menu item
 #: zim/plugins/tableeditor.py:619
 msgid "Open cell content link"
-msgstr "開啟格中內容連結"
+msgstr "開啟框格內容連結"
 
 #. Popup dialog
 #: zim/plugins/tableeditor.py:682
