@@ -11,6 +11,8 @@ from zim.formats import \
 	VERBATIM, VERBATIM_BLOCK, \
 	BULLETLIST, NUMBEREDLIST, BLOCK
 
+# Special character that acts as placeholder for images and objects
+PIXBUF_CHR = '\uFFFC'
 
 # Special character that acts as placeholder for images and objects
 PIXBUF_CHR = '\uFFFC'

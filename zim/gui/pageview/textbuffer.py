@@ -26,7 +26,7 @@ from zim.gui.insertedobjects import \
 from .constants import *
 from .objectanchors import *
 from .lists import TextBufferList
-from .find import TextFinder
+from .find import TextBufferFindMixin, FIND_HIGHLIGHT_TAG, FIND_MATCH_TAG
 
 
 logger = logging.getLogger('zim.gui.pageview.textbuffer')
@@ -156,7 +156,7 @@ class UserActionContext(object):
 		self.buffer.end_user_action()
 
 
-class TextBuffer(Gtk.TextBuffer):
+class TextBuffer(TextBufferFindMixin, Gtk.TextBuffer):
 	'''Data model for the editor widget
 
 	This sub-class of C{Gtk.TextBuffer} manages the contents of
@@ -224,7 +224,6 @@ class TextBuffer(Gtk.TextBuffer):
 	@ivar notebook: The L{Notebook} object
 	@ivar page: The L{Page} object
 	@ivar user_action: A L{UserActionContext} context manager
-	@ivar finder: A L{TextFinder} for this buffer
 
 	@signal: C{begin-insert-tree (interactive)}:
 	Emitted at the begin of a complex insert, c{interactive} is boolean flag
@@ -292,8 +291,8 @@ class TextBuffer(Gtk.TextBuffer):
 		XCHECKED_BOX: {},
 		MIGRATED_BOX: {},
 		TRANSMIGRATED_BOX: {},
-		'find-highlight': {'background': 'magenta', 'foreground': 'white'},
-		'find-match':     {'background': '#38d878', 'foreground': 'white'}
+		FIND_HIGHLIGHT_TAG: {'background': 'magenta', 'foreground': 'white'},
+		FIND_MATCH_TAG: {'background': '#38d878', 'foreground': 'white'}
 	}
 
 	#: tags that can be mapped to named TextTags
@@ -340,6 +339,7 @@ class TextBuffer(Gtk.TextBuffer):
 		initialize the buffer content *before* initializing the undostack
 		'''
 		GObject.GObject.__init__(self)
+		TextBufferFindMixin.__init__(self)
 		self.notebook = notebook
 		self.page = page
 		self._insert_tree_in_progress = False
@@ -348,7 +348,6 @@ class TextBuffer(Gtk.TextBuffer):
 		self._check_renumber = []
 		self._renumbering = False
 		self.user_action = UserActionContext(self)
-		self.finder = TextFinder(self)
 		self.showing_template = False
 
 		for name in self._static_style_tags:
@@ -1204,7 +1203,7 @@ class TextBuffer(Gtk.TextBuffer):
 			start, end = match
 			anchor = start.get_child_anchor()
 			if anchor and isinstance(anchor, InsertedObjectAnchor):
-				yield anchor
+				yield start, anchor
 			match = end.forward_search(PIXBUF_CHR, 0)
 
 	#endregion

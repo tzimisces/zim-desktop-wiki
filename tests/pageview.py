@@ -14,7 +14,6 @@ from zim.notebook import Path
 from zim.gui.clipboard import Clipboard
 
 from zim.gui.pageview import *
-from zim.gui.pageview.find import FIND_CASE_SENSITIVE, FIND_REGEX, FIND_WHOLE_WORD
 from zim.gui.pageview.lists import TextBufferList
 from zim.gui.pageview.textview import camelcase
 from zim.gui.pageview.serialize import *
@@ -1466,115 +1465,6 @@ class TestUndoStackManager(tests.TestCase, TextBufferTestCaseMixin):
 		self.assertBufferEqual(buffer, 'test ABC')
 		buffer.undostack.undo()
 		self.assertBufferEqual(buffer, 'test 123')
-
-
-class TestFind(tests.TestCase, TextBufferTestCaseMixin):
-
-	def testVarious(self):
-		notebook = self.setUpNotebook()
-		page = notebook.get_page(Path('Test'))
-		buffer = TextBuffer(notebook, page)
-		finder = buffer.finder
-		buffer.set_text('''\
-FOO FooBar FOOBAR
-FooBaz Foo Bar
-foo Bar Baz Foo
-''')
-		buffer.place_cursor(buffer.get_start_iter())
-
-		# Check normal usage, case-insensitive
-		for text in ('f', 'fo', 'foo', 'fo', 'f', 'F', 'Fo', 'Foo'):
-			finder.find(text)
-			self.assertSelection(buffer, 0, 0, text.upper())
-
-		finder.find('Grr')
-		self.assertCursorPosition(buffer, 0, 0)
-
-		finder.find('Foob')
-		self.assertSelection(buffer, 0, 4, 'FooB')
-
-		for line, offset, text in (
-			(0, 11, 'FOOB'),
-			(1, 0, 'FooB'),
-			(0, 4, 'FooB'),
-		):
-			finder.find_next()
-			self.assertSelection(buffer, line, offset, text)
-
-		for line, offset, text in (
-			(1, 0, 'FooB'),
-			(0, 11, 'FOOB'),
-			(0, 4, 'FooB'),
-		):
-			finder.find_previous()
-			self.assertSelection(buffer, line, offset, text)
-
-		# Case sensitive
-		finder.find('Foo', FIND_CASE_SENSITIVE)
-		self.assertSelection(buffer, 0, 4, 'Foo')
-
-		for line, offset, text in (
-			(1, 0, 'Foo'),
-			(1, 7, 'Foo'),
-			(2, 12, 'Foo'),
-			(0, 4, 'Foo'),
-		):
-			finder.find_next()
-			self.assertSelection(buffer, line, offset, text)
-
-		# Whole word
-		finder.find('Foo', FIND_WHOLE_WORD)
-		self.assertSelection(buffer, 1, 7, 'Foo')
-
-		for line, offset, text in (
-			(2, 0, 'foo'),
-			(2, 12, 'Foo'),
-			(0, 0, 'FOO'),
-			(1, 7, 'Foo'),
-		):
-			finder.find_next()
-			self.assertSelection(buffer, line, offset, text)
-
-		# Regular expression
-		finder.find(r'Foo\s*Bar', FIND_REGEX | FIND_CASE_SENSITIVE)
-		self.assertSelection(buffer, 1, 7, 'Foo Bar')
-		finder.find_next()
-		self.assertSelection(buffer, 0, 4, 'FooBar')
-
-		# Highlight - just check it doesn't crash
-		finder.set_highlight(True)
-		finder.set_highlight(False)
-
-	def testReplace(self):
-		input = '''\
-FOO FooBar FOOBAR
-FooBaz Foo Bar
-<strong>foo</strong> Bar Baz Foo
-'''
-		buffer = self.get_buffer(input)
-		finder = buffer.finder
-
-		finder.find(r'Foo(\w*)', FIND_REGEX) # not case sensitive!
-		finder.find_next()
-		self.assertSelection(buffer, 0, 4, 'FooBar')
-
-		finder.replace('Dus')
-		self.assertSelection(buffer, 0, 4, 'Dus')
-		wanted = '''\
-FOO Dus FOOBAR
-FooBaz Foo Bar
-<strong>foo</strong> Bar Baz Foo
-'''
-		self.assertBufferEqual(buffer, wanted)
-
-		finder.replace_all('dus*\\1*')
-		wanted = '''\
-dus** Dus dus*BAR*
-dus*Baz* dus** Bar
-<strong>dus**</strong> Bar Baz dus**
-'''
-		self.assertBufferEqual(buffer, wanted)
-
 
 class TestLists(tests.TestCase, TextBufferTestCaseMixin):
 

@@ -54,7 +54,7 @@ __all__ = [
 	'indexers', 'indexviews', 'operations', 'notebook', 'history',
 	'export', 'import_files', 'www', 'search',
 	# Core application
-	'widgets', 'pageview', 'save_page', 'clipboard', 'uiactions',
+	'widgets', 'pageview', 'save_page', 'find', 'clipboard', 'uiactions',
 	'mainwindow', 'notebookdialog',
 	'preferencesdialog', 'searchdialog', 'customtools', 'templateeditordialog',
 	'main', 'plugins',
