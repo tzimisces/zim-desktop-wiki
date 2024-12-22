@@ -8,23 +8,22 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-06 19:43+0200\n"
-"PO-Revision-Date: 2021-09-30 18:57+0000\n"
+"PO-Revision-Date: 2024-12-22 20:28+0000\n"
 "Last-Translator: Jaap Karssenberg <jaap.karssenberg@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/zim/master/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/zim/develop/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"X-Generator: Weblate 5.10-dev\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:41+0000\n"
 
 #. Error message when external application could not be found, %s is the command
 #: zim/applications.py:133
-#, fuzzy, python-format
-#| msgid "Could not find template \"%s\""
+#, python-format
 msgid "Cound not find application: %s"
-msgstr "Kan sjabloon niet vinden: \"%s\""
+msgstr "Kan applicatie niet vinden: \"%s\""
 
 #. Error message when external application failed, %s is the command
 #: zim/applications.py:150
@@ -100,6 +99,8 @@ msgid ""
 "Create missing directories automatically\n"
 "(If disabled you will be prompted)"
 msgstr ""
+"Maak folders automatische aan\n"
+"(Als dit uitstaat verschijnt er een dialoog)"
 
 #. Heading in a question dialog for creating a folder
 #: zim/gui/applications.py:595
@@ -139,10 +140,9 @@ msgstr ""
 
 #. Error message when external application could not be run in terminal, %s is the command
 #: zim/gui/applications.py:827
-#, fuzzy, python-format
-#| msgid "Failed to run application: %s"
+#, python-format
 msgid "Cound not find terminal emulator to run application: %s"
-msgstr "Fout opgetreden bij de excutie van: %s"
+msgstr "Kon geen terminal emulator vinden om applicatie uit te voeren: %s"
 
 #. label to customize 'open with' menu
 #: zim/gui/applications.py:1081
@@ -562,12 +562,12 @@ msgstr "_Checkbox"
 #. option for plugin preferences
 #: zim/gui/mainwindow.py:68
 msgid "Show controls in the window decoration"
-msgstr ""
+msgstr "Laat knoppen zien in de scherm rand"
 
 #. option for plugin preferences
 #: zim/gui/mainwindow.py:68
 msgid "This option requires restart of the application"
-msgstr ""
+msgstr "Deze optie heeft een herstart van de applicatie nodig"
 
 #. Option in the preferences dialog - %s will map to either <Control><Space> or <Command><Space> key binding
 #: zim/gui/mainwindow.py:70
@@ -613,7 +613,7 @@ msgstr "_Zijpanelen"
 #. menu item
 #: zim/gui/mainwindow.py:388
 msgid "Focus Sidepane"
-msgstr ""
+msgstr "Focus zij-paneel"
 
 #. Menu item | 
 #. Button label
@@ -810,24 +810,18 @@ msgstr "Link woorden in CamelCase automatisch tijden het typen"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:186
-#, fuzzy
-#| msgid "Automatically turn file paths into links"
 msgid "Automatically turn wiki page names into links"
-msgstr "Link bestandsnamen automatisch tijden het typen"
+msgstr "Link wiki pagina namen automatisch tijden het typen"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:189
-#, fuzzy
-#| msgid "Automatically turn file paths into links"
 msgid "Automatically turn identifiers starting with \"#\" into links"
-msgstr "Link bestandsnamen automatisch tijden het typen"
+msgstr "Link IDs die beginnen met \"#\" automatisch tijden het typen"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:192
-#, fuzzy
-#| msgid "Automatically turn file paths into links"
 msgid "Automatically turn interwiki names into links"
-msgstr "Link bestandsnamen automatisch tijden het typen"
+msgstr "Link interwiki namen automatisch tijden het typen"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:195
@@ -1061,10 +1055,8 @@ msgstr "_Link Kopiëren"
 
 #. context menu item
 #: zim/gui/pageview/__init__.py:6832
-#, fuzzy
-#| msgid "Edit Link"
 msgid "Cut Lin_k"
-msgstr "Link Bewerken"
+msgstr "Link knippen"
 
 #. context menu item
 #: zim/gui/pageview/__init__.py:6845
@@ -1203,10 +1195,8 @@ msgstr "Regel kopiëren"
 
 #. menu item to cut current line to clipboard
 #: zim/gui/pageview/__init__.py:7096
-#, fuzzy
-#| msgid "Edit Link"
 msgid "Cut Line"
-msgstr "Link Bewerken"
+msgstr "Link Knippen"
 
 #. Menu item
 #: zim/gui/pageview/__init__.py:7109
@@ -1870,7 +1860,7 @@ msgstr "_Zoeken..."
 #. placeholder label when search has no results
 #: zim/gui/searchdialog.py:69
 msgid "No results"
-msgstr ""
+msgstr "Geen resultaten"
 
 #. Column header search dialog
 #: zim/gui/searchdialog.py:171
@@ -2678,10 +2668,8 @@ msgstr "Bijlagen"
 
 #. placeholder label for sidepane
 #: zim/plugins/attachmentbrowser/__init__.py:146
-#, fuzzy
-#| msgid "Attachments:"
 msgid "No attachments"
-msgstr "Bijlagen:"
+msgstr "Geen bijlagen"
 
 #. Label for the statusbar, %i is the number of attachments for the current page
 #: zim/plugins/attachmentbrowser/__init__.py:191
@@ -2728,10 +2716,8 @@ msgstr "Referenties"
 
 #. placeholder label in sidepane
 #: zim/plugins/backlinkpane.py:84
-#, fuzzy
-#| msgid "Backlinks:"
 msgid "No backlinks"
-msgstr "Referenties:"
+msgstr "Geen referenties"
 
 #. Label for the statusbar, %i is the number of BackLinks to the current page
 #: zim/plugins/backlinkpane.py:125
@@ -2906,7 +2892,7 @@ msgstr ""
 #. plugin preference
 #: zim/plugins/diagrameditor.py:38 zim/plugins/sequencediagrameditor.py:38
 msgid "Generate diagrams in SVG format"
-msgstr ""
+msgstr "Maak diagrammen in SVG formaat"
 
 #. menu item
 #: zim/plugins/diagrameditor.py:52
@@ -3000,14 +2986,12 @@ msgstr "Gebruik een donker kleuren thema"
 #. plugin preference
 #: zim/plugins/equationeditor.py:34
 msgid "Font size"
-msgstr ""
+msgstr "Letter grootte"
 
 #. plugin preference
 #: zim/plugins/equationeditor.py:35
-#, fuzzy
-#| msgid "Equation"
 msgid "Equation image DPI"
-msgstr "Formule"
+msgstr "Formule plaatje DPI"
 
 #. menu item
 #: zim/plugins/equationeditor.py:49
@@ -3261,7 +3245,7 @@ msgstr "Toon linkmap knop in de applicatie balk"
 #. preferences option
 #: zim/plugins/linkmap.py:51
 msgid "Autozoom to fit map"
-msgstr ""
+msgstr "Automatisch zoomen"
 
 #. preferences option
 #: zim/plugins/linkmap.py:53
@@ -3302,7 +3286,7 @@ msgstr ""
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:63
 msgid "Use drag&drop to move pages in the notebook"
-msgstr ""
+msgstr "Verplaats paginas in het notitieboek door te slepen"
 
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:65 zim/plugins/tags.py:49
@@ -3322,7 +3306,7 @@ msgstr "Gebruik horizontaal scrollen (heeft herstart nodig)"
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:71 zim/plugins/tags.py:55
 msgid "Use tooltips"
-msgstr ""
+msgstr "Gebruik tooltips"
 
 #. menu item
 #: zim/plugins/pageindex/__init__.py:129
@@ -3334,7 +3318,7 @@ msgstr "Pagina index"
 #. menu item
 #: zim/plugins/pageindex/__init__.py:133
 msgid "Reveal Current Page in Page Index"
-msgstr ""
+msgstr "Laat huidige pagina in de index zien"
 
 #. tab label for side pane
 #: zim/plugins/pageindex/__init__.py:147
@@ -3509,7 +3493,7 @@ msgstr "Standaard footer"
 #. menu item
 #: zim/plugins/scoreeditor.py:72
 msgid "Musical Score"
-msgstr ""
+msgstr "Muziek noten"
 
 #. plugin name | 
 #. dialog title
@@ -3952,7 +3936,7 @@ msgstr "Promoveren"
 #. widget label
 #: zim/plugins/tableofcontents.py:527
 msgid "T_oC"
-msgstr ""
+msgstr "T_oC"
 
 #. small label above Table Of Contents
 #: zim/plugins/tableofcontents.py:557
@@ -3977,7 +3961,7 @@ msgstr ""
 #. title for sidepane tab
 #: zim/plugins/tags.py:98
 msgid "T_ags"
-msgstr ""
+msgstr "T_ags"
 
 #. menu option
 #: zim/plugins/tags.py:148
@@ -4009,7 +3993,7 @@ msgstr "Actie"
 #. list with tasks (GTD style category)
 #: zim/plugins/tasklist/gui.py:91
 msgid "Inbox"
-msgstr ""
+msgstr "Inbox"
 
 #. list with tasks (GTD style category)
 #: zim/plugins/tasklist/gui.py:92
@@ -4021,7 +4005,7 @@ msgstr "Actie"
 #. list with tasks (GTD style category)
 #: zim/plugins/tasklist/gui.py:93
 msgid "Projects"
-msgstr ""
+msgstr "Projecten"
 
 #. list with tasks (GTD style category)
 #: zim/plugins/tasklist/gui.py:94
@@ -4054,7 +4038,7 @@ msgstr "Filter"
 #. tab label for side pane
 #: zim/plugins/tasklist/gui.py:274
 msgid "Tas_ks"
-msgstr ""
+msgstr "Ta_ken"
 
 #. Window title for tasklist
 #: zim/plugins/tasklist/gui.py:374 zim/plugins/tasklist/gui.py:379
@@ -4065,12 +4049,12 @@ msgstr "Taken"
 #: zim/plugins/tasklist/gui.py:453
 #, python-format
 msgid "%s shown"
-msgstr ""
+msgstr "%s getoond"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:505
 msgid "Show open tasks"
-msgstr ""
+msgstr "Laat open taken zien"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:506
@@ -4082,22 +4066,22 @@ msgstr "Laat alleen actieve taken zien"
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:507
 msgid "Show cancelled tasks"
-msgstr ""
+msgstr "Laat gecancelde taken zien"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:508
 msgid "Show migrated tasks"
-msgstr ""
+msgstr "Laat verplaatste taken zien"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:509
 msgid "Show trans-migrated tasks"
-msgstr ""
+msgstr "Laat trans-verplaatste taken zien"
 
 #. Header for list selection in tasklist window
 #: zim/plugins/tasklist/gui.py:602
 msgid "Lists"
-msgstr ""
+msgstr "Lijsten"
 
 #. selection of tasks without tags
 #: zim/plugins/tasklist/gui.py:693
@@ -4107,7 +4091,7 @@ msgstr "Zonder label"
 #. header in selection drop down
 #: zim/plugins/tasklist/gui.py:748
 msgid "Labels"
-msgstr ""
+msgstr "Labels"
 
 #. Column header Task List dialog
 #: zim/plugins/tasklist/gui.py:881
@@ -4155,7 +4139,7 @@ msgstr "Toon knop voor takenlijst in de applicatie-balk"
 #. preferences option - "GTD" means "Getting Things Done" methodology
 #: zim/plugins/tasklist/__init__.py:47
 msgid "Show \"GTD-style\" inbox & next actions lists"
-msgstr ""
+msgstr "Laat \"GTD-stijl\" inbox & actie lijsten zien"
 
 #. preferences option
 #: zim/plugins/tasklist/__init__.py:49
@@ -4245,7 +4229,7 @@ msgstr "Toon einddatum in zijpaneel"
 #. label for plugin preferences dialog
 #: zim/plugins/tasklist/__init__.py:85
 msgid "Don't count Saturday and Sunday as working days"
-msgstr ""
+msgstr "Tel zaterdag en zondag niet als werkdagen"
 
 #. toolbar style
 #: zim/plugins/toolbar.py:19
