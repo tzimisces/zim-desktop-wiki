@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-22 21:26+0100\n"
-"PO-Revision-Date: 2023-11-15 18:16+0000\n"
-"Last-Translator: Eric <zxmegaxqug@hldrive.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/zim/"
-"develop/zh_Hans/>\n"
+"PO-Revision-Date: 2024-12-24 02:00+0000\n"
+"Last-Translator: 大王叫我来巡山 "
+"<hamburger2048@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
+"projects/zim/develop/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.2-dev\n"
+"X-Generator: Weblate 5.10-dev\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:40+0000\n"
 
 #. Error message when external application could not be found, %s is the command
@@ -557,17 +558,13 @@ msgstr "复选框(_C)"
 
 #. option for preferences dialog
 #: zim/gui/mainwindow.py:68
-#, fuzzy
-#| msgid "Use font color for dark theme"
 msgid "Prefer dark theme"
-msgstr "为深色主题使用字体颜色"
+msgstr "偏好深色主题"
 
 #. info text for preferences dialog
 #: zim/gui/mainwindow.py:69
-#, fuzzy
-#| msgid "This option requires restart of the application"
 msgid "This option requires a Gtk theme supporting a dark variant"
-msgstr "这个选项需要重新启动应用程序"
+msgstr "这个选项需要支持深色变体的 Gtk 主题"
 
 #. info text for preferences dialog | 
 #. option for preferences dialog
@@ -1097,7 +1094,7 @@ msgstr ""
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:87
 msgid "Preview link destination in overlay"
-msgstr ""
+msgstr "在遮罩中预览链接目的地"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:90
@@ -2378,10 +2375,8 @@ msgstr "右对齐"
 
 #. label for menu item which opens preferences dialog
 #: zim/gui/widgets.py:2377
-#, fuzzy
-#| msgid "Preferences"
 msgid "Preferences..."
-msgstr "首选项"
+msgstr "首选项…"
 
 #. Menu item
 #: zim/gui/widgets.py:2813
@@ -2570,7 +2565,7 @@ msgstr ""
 #. plugin preference
 #: zim/plugins/arithmetic.py:28
 msgid "Output precision"
-msgstr ""
+msgstr "输出精度"
 
 #. menu item
 #: zim/plugins/arithmetic.py:38
@@ -2900,10 +2895,8 @@ msgstr "生成 SVG 格式的示意图"
 
 #. Plugin preference for diagram editor
 #: zim/plugins/diagrameditor.py:44
-#, fuzzy
-#| msgid "Default"
 msgid "Default text"
-msgstr "默认"
+msgstr "默认文本"
 
 #. menu item
 #: zim/plugins/diagrameditor.py:58
@@ -3040,7 +3033,7 @@ msgstr "GNU R 绘图"
 #. plugin name
 #: zim/plugins/indexed_fts.py:43
 msgid "Indexed Full-Text Search"
-msgstr ""
+msgstr "索引的全文搜索"
 
 #. plugin description
 #: zim/plugins/indexed_fts.py:44
@@ -3050,6 +3043,10 @@ msgid ""
 "based on the FTS5 virtual table module of\n"
 "sqlite.\n"
 msgstr ""
+"此插件为快速全文搜索\n"
+"提供页面内容的全文索引，\n"
+"基于 sqlite 的 FTS5 虚拟\n"
+"表格模块。\n"
 
 #. error description
 #: zim/plugins/inlinecalculator.py:192
@@ -3271,30 +3268,22 @@ msgstr "始终在新窗口中打开链接"
 
 #. plugin name
 #: zim/plugins/mermaiddiagrameditor.py:23
-#, fuzzy
-#| msgid "Insert Diagram"
 msgid "Insert Mermaid Diagram"
-msgstr "插入图形"
+msgstr "插入 Mermaid 示意图"
 
 #. plugin description
 #: zim/plugins/mermaiddiagrameditor.py:24
-#, fuzzy
-#| msgid ""
-#| "This plugin provides a sequence diagram editor for zim based on seqdiag.\n"
-#| "It allows easy editing of sequence diagrams.\n"
 msgid ""
 "This plugin provides a Mermaid diagram editor for zim.\n"
 "It allows easy editing of Mermaid diagrams.\n"
 msgstr ""
-"此插件为 zim 提供一个基于seqdiag 的时序图编辑器。\n"
-"它允许轻松编辑时序图。\n"
+"此插件为 zim 提供 Mermaid 示意图编辑器。\n"
+"它允许轻松编辑 Mermaid 示意图。\n"
 
 #. menu item
 #: zim/plugins/mermaiddiagrameditor.py:56
-#, fuzzy
-#| msgid "Insert Diagram"
 msgid "Mermaid Diagram"
-msgstr "插入图形"
+msgstr "Mermaid 示意图"
 
 #. plugin name
 #: zim/plugins/osx_menubar.py:74
@@ -3700,18 +3689,14 @@ msgstr "拼写检查器"
 
 #. plugin description
 #: zim/plugins/spell.py:97
-#, fuzzy
-#| msgid ""
-#| "Adds spell checking support using gtkspell.\n"
-#| "\n"
-#| "This is a core plugin shipping with zim.\n"
 msgid ""
 "Adds spell checking support using \n"
 "gtkspellchecker, Gspell, or gtkspell libraries.\n"
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"使用 gtkspell 增加拼写检查功能。\n"
+"添加拼写检查支持\n"
+"使用 gtkspellchecker、Gspell 或 gtkspell 库。\n"
 "\n"
 "这是 zim 附带的核心插件。\n"
 
@@ -4540,36 +4525,32 @@ msgstr "版本"
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:19
 msgid "Page Path - Notebook Name"
-msgstr ""
+msgstr "页面路径 - 笔记本名称"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:20
 msgid "Notebook Name - Zim"
-msgstr ""
+msgstr "笔记本名称 - zim"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:21
 msgid "Page Name — Page Title — Zim"
-msgstr ""
+msgstr "页面名称 - 页面标题 - Zim"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:22
 msgid "Notebook Name: Page Title (Page Source Path)"
-msgstr ""
+msgstr "笔记本名称：页面标题（页面源路径）"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:23
-#, fuzzy
-#| msgid "Customize..."
 msgid "Custom"
-msgstr "自定义..."
+msgstr "自定义"
 
 #. plugin name
 #: zim/plugins/windowtitleeditor.py:28
-#, fuzzy
-#| msgid "Table Editor"
 msgid "Window Title Editor"
-msgstr "表格编辑器"
+msgstr "窗口标题编辑器"
 
 #. plugin description
 #: zim/plugins/windowtitleeditor.py:29
@@ -4579,23 +4560,25 @@ msgid ""
 "Press \"Configure\" below to choose a preset\n"
 "or to create a custom one.\n"
 msgstr ""
+"此插件允许编辑窗口标题。\n"
+"\n"
+"按下下方的”配置“ 选择预设\n"
+"或自行定义。\n"
 
 #. window title editor preference option
 #: zim/plugins/windowtitleeditor.py:41
-#, fuzzy
-#| msgid "Template"
 msgid "Title template"
-msgstr "模板"
+msgstr "标题模板"
 
 #. window title editor preference option
 #: zim/plugins/windowtitleeditor.py:45
 msgid "Template string for custom format"
-msgstr ""
+msgstr "自定义格式的模板字符串"
 
 #. window title in case of critical error
 #: zim/plugins/windowtitleeditor.py:98
 msgid "Plugin error - check debug log! - Zim"
-msgstr ""
+msgstr "插件错误 - 检查调试日志！- Zim"
 
 #. plugin name
 #: zim/plugins/zeitgeist-logger.py:33
