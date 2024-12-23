@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-22 21:26+0100\n"
-"PO-Revision-Date: 2023-07-10 11:57+0000\n"
+"PO-Revision-Date: 2024-12-24 02:00+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/zim/develop/he/>\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.10-dev\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:41+0000\n"
 
 #. Error message when external application could not be found, %s is the command
@@ -557,10 +557,8 @@ msgstr "תיבת _סימון"
 
 #. option for preferences dialog
 #: zim/gui/mainwindow.py:68
-#, fuzzy
-#| msgid "Use font color for dark theme"
 msgid "Prefer dark theme"
-msgstr "להשתמש בצבע גופן לערכת עיצוב כהה"
+msgstr "העדפת ערכת עיצוב כהה"
 
 #. info text for preferences dialog
 #: zim/gui/mainwindow.py:69
@@ -2882,10 +2880,8 @@ msgstr "יצירת תרשימים במבנה SVG"
 
 #. Plugin preference for diagram editor
 #: zim/plugins/diagrameditor.py:44
-#, fuzzy
-#| msgid "Default"
 msgid "Default text"
-msgstr "בררת מחדל"
+msgstr "טקסט ברירת מחדל"
 
 #. menu item
 #: zim/plugins/diagrameditor.py:58
@@ -3272,10 +3268,8 @@ msgstr ""
 
 #. menu item
 #: zim/plugins/mermaiddiagrameditor.py:56
-#, fuzzy
-#| msgid "Insert Diagram"
 msgid "Mermaid Diagram"
-msgstr "הוספת תרשים"
+msgstr "תרשים Mermaid"
 
 #. plugin name
 #: zim/plugins/osx_menubar.py:74
@@ -4548,10 +4542,8 @@ msgstr "התאמה אישית…"
 
 #. plugin name
 #: zim/plugins/windowtitleeditor.py:28
-#, fuzzy
-#| msgid "Table Editor"
 msgid "Window Title Editor"
-msgstr "עורך טבלאות"
+msgstr "עורך כותרת חלון"
 
 #. plugin description
 #: zim/plugins/windowtitleeditor.py:29
