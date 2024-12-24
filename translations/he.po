@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-22 21:26+0100\n"
-"PO-Revision-Date: 2024-12-24 02:00+0000\n"
+"PO-Revision-Date: 2024-12-25 05:09+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/zim/develop/he/>\n"
 "Language: he\n"
@@ -562,10 +562,8 @@ msgstr "העדפת ערכת עיצוב כהה"
 
 #. info text for preferences dialog
 #: zim/gui/mainwindow.py:69
-#, fuzzy
-#| msgid "This option requires restart of the application"
 msgid "This option requires a Gtk theme supporting a dark variant"
-msgstr "אפשרות זו דורשת את הפעלת היישום מחדש"
+msgstr "אפשרות זו דורשת ערכת עיצוב שתומכת בהגוון כהה"
 
 #. info text for preferences dialog | 
 #. option for preferences dialog
@@ -1096,7 +1094,7 @@ msgstr ""
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:87
 msgid "Preview link destination in overlay"
-msgstr ""
+msgstr "הצגה מקדימה של יעד הקישור בשכבת על"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:90
@@ -2354,10 +2352,8 @@ msgstr "ימין"
 
 #. label for menu item which opens preferences dialog
 #: zim/gui/widgets.py:2377
-#, fuzzy
-#| msgid "Preferences"
 msgid "Preferences..."
-msgstr "העדפות"
+msgstr "העדפות…"
 
 #. Menu item
 #: zim/gui/widgets.py:2813
@@ -2547,7 +2543,7 @@ msgstr ""
 #. plugin preference
 #: zim/plugins/arithmetic.py:28
 msgid "Output precision"
-msgstr ""
+msgstr "דיוק פלט"
 
 #. menu item
 #: zim/plugins/arithmetic.py:38
@@ -3018,7 +3014,7 @@ msgstr "שרטוט של GNU R"
 #. plugin name
 #: zim/plugins/indexed_fts.py:43
 msgid "Indexed Full-Text Search"
-msgstr ""
+msgstr "חיפוש טקסט מלא מסודר במפתח"
 
 #. plugin description
 #: zim/plugins/indexed_fts.py:44
@@ -3028,6 +3024,10 @@ msgid ""
 "based on the FTS5 virtual table module of\n"
 "sqlite.\n"
 msgstr ""
+"התוסף הזה מספר סידור של טקסט מלא במפתח\n"
+"לתוכן העמודים לחיפוש טקסט מלא מהיר,\n"
+"מבוסס על מודול הטבלה הווירטואלית FTS5 של\n"
+"sqlite.\n"
 
 #. error description
 #: zim/plugins/inlinecalculator.py:192
@@ -3248,23 +3248,17 @@ msgstr "תמיד לפתוח קישורים בחלונות חדשים"
 
 #. plugin name
 #: zim/plugins/mermaiddiagrameditor.py:23
-#, fuzzy
-#| msgid "Insert Diagram"
 msgid "Insert Mermaid Diagram"
-msgstr "הוספת תרשים"
+msgstr "הוספת תרשים Mermaid"
 
 #. plugin description
 #: zim/plugins/mermaiddiagrameditor.py:24
-#, fuzzy
-#| msgid ""
-#| "This plugin provides a sequence diagram editor for zim based on seqdiag.\n"
-#| "It allows easy editing of sequence diagrams.\n"
 msgid ""
 "This plugin provides a Mermaid diagram editor for zim.\n"
 "It allows easy editing of Mermaid diagrams.\n"
 msgstr ""
-"תוסף זה מספק עורך תרשימי רצף עבור zim המבוסס על seqdiag.\n"
-"הוא מאפשר עריכה קלה של תרשימי רצף.\n"
+"תוסף זה מספק עורך תרשימי Mermaid עבור zim.\n"
+"הוא מאפשר עריכה קלה של תרשימי Mermaid.\n"
 
 #. menu item
 #: zim/plugins/mermaiddiagrameditor.py:56
@@ -3675,18 +3669,14 @@ msgstr "בדיקת איות"
 
 #. plugin description
 #: zim/plugins/spell.py:97
-#, fuzzy
-#| msgid ""
-#| "Adds spell checking support using gtkspell.\n"
-#| "\n"
-#| "This is a core plugin shipping with zim.\n"
 msgid ""
 "Adds spell checking support using \n"
 "gtkspellchecker, Gspell, or gtkspell libraries.\n"
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"התוסף מוסיף תמיכה בבדיקת איות באמצעות gtkspell.\n"
+"התוסף מוסיף תמיכה בבדיקת איות באמצעות\n"
+"ספריות gtkspell,‏ Gspell או gtkspellchecker.\n"
 "\n"
 "תוסף זה הוא חלק מהליבה של zim.\n"
 
@@ -4516,29 +4506,27 @@ msgstr "מהדורה"
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:19
 msgid "Page Path - Notebook Name"
-msgstr ""
+msgstr "נתיב עמוד - שם המחברת"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:20
 msgid "Notebook Name - Zim"
-msgstr ""
+msgstr "שם המחברת - Zim"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:21
 msgid "Page Name — Page Title — Zim"
-msgstr ""
+msgstr "שם העמוד — כותרת העמוד — Zim"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:22
 msgid "Notebook Name: Page Title (Page Source Path)"
-msgstr ""
+msgstr "שם המחברת: כותרת העמוד (נתיב מקור העמוד)"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:23
-#, fuzzy
-#| msgid "Customize..."
 msgid "Custom"
-msgstr "התאמה אישית…"
+msgstr "מותאם אישית"
 
 #. plugin name
 #: zim/plugins/windowtitleeditor.py:28
@@ -4553,23 +4541,25 @@ msgid ""
 "Press \"Configure\" below to choose a preset\n"
 "or to create a custom one.\n"
 msgstr ""
+"התוסף הזה מאפשר לערוך את כותרת החלון\n"
+"\n"
+"לחיצה על „הגדרה” להלן תאפשר לבחור ערכה\n"
+"מוגדרת או שתאפשר ליצור אחת חדשה.\n"
 
 #. window title editor preference option
 #: zim/plugins/windowtitleeditor.py:41
-#, fuzzy
-#| msgid "Template"
 msgid "Title template"
-msgstr "תבנית"
+msgstr "תבנית כותרת"
 
 #. window title editor preference option
 #: zim/plugins/windowtitleeditor.py:45
 msgid "Template string for custom format"
-msgstr ""
+msgstr "מחרוזת תבנית לעיצוב מותאם אישית"
 
 #. window title in case of critical error
 #: zim/plugins/windowtitleeditor.py:98
 msgid "Plugin error - check debug log! - Zim"
-msgstr ""
+msgstr "שגיאת תוסף - נא לבדוק את יומן ניפוי השגיאות! - Zim"
 
 #. plugin name
 #: zim/plugins/zeitgeist-logger.py:33
