@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-22 21:26+0100\n"
-"PO-Revision-Date: 2024-12-24 03:21+0000\n"
+"PO-Revision-Date: 2024-12-25 05:09+0000\n"
 "Last-Translator: eduardomozart182 <eduardomozart182@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/zim/"
 "develop/pt_BR/>\n"
@@ -1154,17 +1154,13 @@ msgstr ""
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:117
-#, fuzzy
-#| msgid "(Un-)Indenting a list item also change any sub-items"
 msgid "(Un-)indenting a list item also changes any sub-items"
-msgstr "Remover o recuo de um item da lista também altera todos os subitens"
+msgstr "(Des)recuar um item da lista também altera todos os subitens"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:120
-#, fuzzy
-#| msgid "Checking a checkbox also change any sub-items"
 msgid "Checking a checkbox also changes any sub-items"
-msgstr "Marcar uma caixa de seleção altera todos seus sub-items"
+msgstr "Marcar uma caixa de seleção altera todos seus sub-itens"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:123
@@ -1275,15 +1271,11 @@ msgstr "Forma _Literal"
 
 #. menu item for formatting
 #: zim/gui/pageview/__init__.py:528
-#, fuzzy
-#| msgid "_Superscript"
 msgid "Su_perscript"
 msgstr "S_obrescrito"
 
 #. menu item for formatting
 #: zim/gui/pageview/__init__.py:529
-#, fuzzy
-#| msgid "_Subscript"
 msgid "Su_bscript"
 msgstr "S_ubscrito"
 
@@ -4010,7 +4002,7 @@ msgstr ""
 #. title for sidepane tab
 #: zim/plugins/tags.py:98
 msgid "T_ags"
-msgstr ""
+msgstr "T_ags"
 
 #. menu option
 #: zim/plugins/tags.py:148
@@ -4034,60 +4026,48 @@ msgstr "Todas as Tarefas"
 
 #. list with tasks
 #: zim/plugins/tasklist/gui.py:91
-#, fuzzy
-#| msgid "Action"
 msgid "Active"
-msgstr "Ação"
+msgstr "Ativo"
 
 #. list with tasks (GTD style category)
 #: zim/plugins/tasklist/gui.py:92
 msgid "Inbox"
-msgstr ""
+msgstr "Caixa de Entrada"
 
 #. list with tasks (GTD style category)
 #: zim/plugins/tasklist/gui.py:93
-#, fuzzy
-#| msgid "Action"
 msgid "Next Actions"
-msgstr "Ação"
+msgstr "Próximas Ações"
 
 #. list with tasks (GTD style category)
 #: zim/plugins/tasklist/gui.py:94
 msgid "Projects"
-msgstr ""
+msgstr "Projetos"
 
 #. list with tasks (GTD style category)
 #: zim/plugins/tasklist/gui.py:95
-#, fuzzy
-#| msgid "Editing"
 msgid "Waiting"
-msgstr "Editando"
+msgstr "Aguardando"
 
 #. placeholder label for sidepane
 #: zim/plugins/tasklist/gui.py:141
-#, fuzzy
-#| msgid "Tasks"
 msgid "No tasks"
-msgstr "Tarefas"
+msgstr "Nenhuma tarefa"
 
 #. tooltip
 #: zim/plugins/tasklist/gui.py:167
-#, fuzzy
-#| msgid "Show tasklist in sidepane"
 msgid "Show tasklist window"
-msgstr "Mostrar lista de tarefas no painel lateral"
+msgstr "Mostrar janela de lista de tarefas"
 
 #. label for filtering/searching tasks
 #: zim/plugins/tasklist/gui.py:212
-#, fuzzy
-#| msgid "Filter"
 msgid "Filter tasks"
-msgstr "Filtrar"
+msgstr "Filtrar tarefas"
 
 #. tab label for side pane
 #: zim/plugins/tasklist/gui.py:275
 msgid "Tas_ks"
-msgstr ""
+msgstr "Ta_refas"
 
 #. Window title for tasklist
 #: zim/plugins/tasklist/gui.py:375 zim/plugins/tasklist/gui.py:380
@@ -4098,39 +4078,37 @@ msgstr "Tarefas"
 #: zim/plugins/tasklist/gui.py:454
 #, python-format
 msgid "%s shown"
-msgstr ""
+msgstr "%s exibidas"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:506
 msgid "Show open tasks"
-msgstr ""
+msgstr "Mostrar tarefas abertas"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:507
-#, fuzzy
-#| msgid "Only Show Active Tasks"
 msgid "Show closed tasks"
-msgstr "Mostrar apenas as tarefas ativas."
+msgstr "Mostrar tarefas concluídas"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:508
 msgid "Show cancelled tasks"
-msgstr ""
+msgstr "Mostrar tarefas canceladas"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:509
 msgid "Show migrated tasks"
-msgstr ""
+msgstr "Mostrar tarefas migradas"
 
 #. selection menu option
 #: zim/plugins/tasklist/gui.py:510
 msgid "Show trans-migrated tasks"
-msgstr ""
+msgstr "Mostrar tarefas trans-migradas"
 
 #. Header for list selection in tasklist window
 #: zim/plugins/tasklist/gui.py:603
 msgid "Lists"
-msgstr ""
+msgstr "Listas"
 
 #. selection of tasks without tags
 #: zim/plugins/tasklist/gui.py:694
@@ -4140,7 +4118,7 @@ msgstr "Sem marcadores"
 #. header in selection drop down
 #: zim/plugins/tasklist/gui.py:749
 msgid "Labels"
-msgstr ""
+msgstr "Rótulos"
 
 #. Column header Task List dialog
 #: zim/plugins/tasklist/gui.py:893
@@ -4182,15 +4160,13 @@ msgstr ""
 
 #. preferences option
 #: zim/plugins/tasklist/__init__.py:45
-#, fuzzy
-#| msgid "Show tasklist in sidepane"
 msgid "Show tasklist button in headerbar"
-msgstr "Mostrar lista de tarefas no painel lateral"
+msgstr "Mostrar botão da lista de tarefas na barra de cabeçalho"
 
 #. preferences option - "GTD" means "Getting Things Done" methodology
 #: zim/plugins/tasklist/__init__.py:47
 msgid "Show \"GTD-style\" inbox & next actions lists"
-msgstr ""
+msgstr "Mostrar caixa de entrada \"estilo GTD\" & listas de próximas ações"
 
 #. preferences option
 #: zim/plugins/tasklist/__init__.py:49
@@ -4199,24 +4175,18 @@ msgstr "Mostrar lista de tarefas no painel lateral"
 
 #. preferences option
 #: zim/plugins/tasklist/__init__.py:53
-#, fuzzy
-#| msgid "Show tasklist in sidepane"
 msgid "Show due date in sidepane"
-msgstr "Mostrar lista de tarefas no painel lateral"
+msgstr "Mostrar data de vencimento no painel lateral"
 
 #. preferences option
 #: zim/plugins/tasklist/__init__.py:55
-#, fuzzy
-#| msgid "Show tasklist in sidepane"
 msgid "Show start date in sidepane"
-msgstr "Mostrar lista de tarefas no painel lateral"
+msgstr "Mostrar data de início no painel lateral"
 
 #. preferences option
 #: zim/plugins/tasklist/__init__.py:57
-#, fuzzy
-#| msgid "Show tasklist in sidepane"
 msgid "Show page column in the sidepane"
-msgstr "Mostrar lista de tarefas no painel lateral"
+msgstr "Mostrar coluna da página no painel lateral"
 
 #. label for plugin preferences dialog
 #: zim/plugins/tasklist/__init__.py:63
@@ -4230,17 +4200,13 @@ msgstr "Rótulos marcando tarefas"
 
 #. label for plugin preferences dialog - labels are e.g. "Waiting", "Planned"
 #: zim/plugins/tasklist/__init__.py:67
-#, fuzzy
-#| msgid "Labels marking tasks"
 msgid "Labels for \"waiting\" tasks"
-msgstr "Rótulos marcando tarefas"
+msgstr "Rótulos para tarefas \"aguardando\""
 
 #. label for plugin preferences dialog - tags are e.g. "@waiting", "@planned"
 #: zim/plugins/tasklist/__init__.py:69
-#, fuzzy
-#| msgid "Tags for non-actionable tasks"
 msgid "Tags for \"waiting\" tasks"
-msgstr "Etiquetas para tarefas não-acionáveis"
+msgstr "Etiquetas para tarefas \"aguardando\""
 
 #. label for preference with multiple options
 #: zim/plugins/tasklist/__init__.py:71
@@ -4274,44 +4240,38 @@ msgstr "Seção(ões) a ignorar"
 
 #. label for plugin preferences dialog
 #: zim/plugins/tasklist/__init__.py:83
-#, fuzzy
-#| msgid "Show tasklist in sidepane"
 msgid "Show page names in selection pane"
-msgstr "Mostrar lista de tarefas no painel lateral"
+msgstr "Mostrar nomes de página no painel de seleção"
 
 #. label for plugin preferences dialog
 #: zim/plugins/tasklist/__init__.py:85
 msgid "Don't count Saturday and Sunday as working days"
-msgstr ""
+msgstr "Não conte Sábado e Domingo como dias úteis"
 
 #. toolbar style
 #: zim/plugins/toolbar.py:19
-#, fuzzy
-#| msgid "Icon"
 msgid "Icons"
-msgstr "Ícone"
+msgstr "Ícones"
 
 #. toolbar style
 #: zim/plugins/toolbar.py:21
-#, fuzzy
-#| msgid "Icons _And Text"
 msgid "Icons & Text"
-msgstr "Ícones _e Texto"
+msgstr "Ícones & Texto"
 
 #. toolbar style
 #: zim/plugins/toolbar.py:22
 msgid "Icons & Text horizontal"
-msgstr ""
+msgstr "Ícones & Texto horizontal"
 
 #. Toolbar size small
 #: zim/plugins/toolbar.py:30
 msgid "Small"
-msgstr ""
+msgstr "Pequeno"
 
 #. Toolbar size large
 #: zim/plugins/toolbar.py:31
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #. plugin name
 #: zim/plugins/toolbar.py:41
@@ -4324,34 +4284,27 @@ msgstr "Barra de _Ferramentas"
 #: zim/plugins/toolbar.py:42
 msgid "This plugin allows to customize the toolbar in the main window.\n"
 msgstr ""
+"Este plugin permite customizar a barra de ferramentas na janela principal.\n"
 
 #. option for plugin preferences
 #: zim/plugins/toolbar.py:51
-#, fuzzy
-#| msgid "Show in the toolbar"
 msgid "Show toolbar"
-msgstr "Mostrar na barra de ferramentas"
+msgstr "Mostrar barra de ferramentas"
 
 #. option for plugin preferences
 #: zim/plugins/toolbar.py:53
-#, fuzzy
-#| msgid "horizontal lines"
 msgid "Include formatting tools in toolbar"
-msgstr "linhas horizontais"
+msgstr "Incluir ferramentas de formatação na barra de ferramentas"
 
 #. option for plugin preferences
 #: zim/plugins/toolbar.py:57
-#, fuzzy
-#| msgid "_Toolbar"
 msgid "Toolbar style"
-msgstr "Barra de _Ferramentas"
+msgstr "Estilo da barra de ferramentas"
 
 #. option for plugin preferences
 #: zim/plugins/toolbar.py:59
-#, fuzzy
-#| msgid "_Toolbar"
 msgid "Toolbar size"
-msgstr "Barra de _Ferramentas"
+msgstr "Tamanho da barra de ferramentas"
 
 #. plugin name
 #: zim/plugins/trayicon.py:68
@@ -4601,36 +4554,32 @@ msgstr "Rev"
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:19
 msgid "Page Path - Notebook Name"
-msgstr ""
+msgstr "Caminho da Página - Nome do Caderno"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:20
 msgid "Notebook Name - Zim"
-msgstr ""
+msgstr "Nome do Caderno - Zim"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:21
 msgid "Page Name — Page Title — Zim"
-msgstr ""
+msgstr "Nome da Página — Título da Página — Zim"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:22
 msgid "Notebook Name: Page Title (Page Source Path)"
-msgstr ""
+msgstr "Nome do Caderno: Título da Página (Origem do Caminho da Página)"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:23
-#, fuzzy
-#| msgid "Customize..."
 msgid "Custom"
-msgstr "Personalizar..."
+msgstr "Personalizado"
 
 #. plugin name
 #: zim/plugins/windowtitleeditor.py:28
-#, fuzzy
-#| msgid "Table Editor"
 msgid "Window Title Editor"
-msgstr "Editor de Tabelas"
+msgstr "Editor de Título de Janela"
 
 #. plugin description
 #: zim/plugins/windowtitleeditor.py:29
@@ -4640,23 +4589,25 @@ msgid ""
 "Press \"Configure\" below to choose a preset\n"
 "or to create a custom one.\n"
 msgstr ""
+"Este plugin permite editar o título da janela.\n"
+"\n"
+"Pressione \"Configurar\" abaixo para escolher uma predefinição\n"
+"ou para criar um personalizado.\n"
 
 #. window title editor preference option
 #: zim/plugins/windowtitleeditor.py:41
-#, fuzzy
-#| msgid "Template"
 msgid "Title template"
-msgstr "Modelo"
+msgstr "Modelo de Título"
 
 #. window title editor preference option
 #: zim/plugins/windowtitleeditor.py:45
 msgid "Template string for custom format"
-msgstr ""
+msgstr "String de modelo para formato personalizado"
 
 #. window title in case of critical error
 #: zim/plugins/windowtitleeditor.py:98
 msgid "Plugin error - check debug log! - Zim"
-msgstr ""
+msgstr "Erro de plugin - verifique o log de depuração! - Zim"
 
 #. plugin name
 #: zim/plugins/zeitgeist-logger.py:33
