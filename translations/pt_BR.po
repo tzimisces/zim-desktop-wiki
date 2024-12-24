@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-22 21:26+0100\n"
-"PO-Revision-Date: 2024-12-24 02:00+0000\n"
+"PO-Revision-Date: 2024-12-24 03:21+0000\n"
 "Last-Translator: eduardomozart182 <eduardomozart182@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/zim/"
 "develop/pt_BR/>\n"
@@ -721,8 +721,8 @@ msgstr "Ir para a página inicial"
 #, python-format
 msgid "%i _Backlink"
 msgid_plural "%i _Backlinks"
-msgstr[0] "%i _Link de Entrada"
-msgstr[1] "%i _Links de entrada"
+msgstr[0] "%i _Link Reverso"
+msgstr[1] "%i _Links Reversos"
 
 #. Dialog title
 #: zim/gui/mainwindow.py:1168
@@ -2042,7 +2042,7 @@ msgstr "Pesquisar nesta seção"
 #. Menu item
 #: zim/gui/uiactions.py:283
 msgid "Search _Backlinks..."
-msgstr "Pesquisar _Links de Entrada..."
+msgstr "Pesquisar _Links Reversos..."
 
 #. Menu item
 #: zim/gui/uiactions.py:291
@@ -2482,10 +2482,9 @@ msgstr ""
 
 #. error message for filesystem limitations
 #: zim/newfs/local.py:47
-#, fuzzy, python-format
-#| msgid "File changed on disk: %s"
+#, python-format
 msgid "File name too long: %s"
-msgstr "Arquivo foi alterado externamente: %s"
+msgstr "Nome de arquivo muito longo: %s"
 
 #. Error explanation
 #: zim/newfs/local.py:52
@@ -2494,12 +2493,17 @@ msgid ""
 "of the file path, please try using a folder structure resulting in less\n"
 "than 4096 characters"
 msgstr ""
+"Não é possível gravar este arquivo. Provavelmente isso se deve ao "
+"comprimento\n"
+"do caminho do arquivo, tente usar uma estrutura de pastas que resulte em "
+"menos\n"
+"de 4096 caracteres"
 
 #. error message for filesystem limitations
 #: zim/newfs/local.py:58
 #, python-format
 msgid "File path too long: %s"
-msgstr ""
+msgstr "Caminho do arquivo muito longo: %s"
 
 #. Title of progressbar dialog
 #: zim/notebook/index/__init__.py:436
@@ -2528,20 +2532,16 @@ msgstr ""
 
 #. message for PageNotAvailableError
 #: zim/notebook/notebook.py:123
-#, fuzzy, python-format
-#| msgid "Page not allowed: %s"
+#, python-format
 msgid "Page not available: %s"
-msgstr "Página não permitida: %s"
+msgstr "Página não disponível: %s"
 
 #. description for PageNotAvailableError
 #: zim/notebook/notebook.py:124
-#, fuzzy
-#| msgid ""
-#| "This page name cannot be used due to technical limitations of the storage"
 msgid "This page name cannot be used due to a conflicting file in the storage"
 msgstr ""
-"Este nome de página não pode ser utilizado devido a limitações técnicas de "
-"armazenamento."
+"Este nome de página não pode ser utilizado devido a um arquivo conflitante "
+"no armazenamento."
 
 #. message for PageExistsError
 #: zim/notebook/notebook.py:133
@@ -2585,7 +2585,7 @@ msgstr ""
 #. plugin preference
 #: zim/plugins/arithmetic.py:28
 msgid "Output precision"
-msgstr ""
+msgstr "Precisão de saída"
 
 #. menu item
 #: zim/plugins/arithmetic.py:38
@@ -2596,21 +2596,17 @@ msgstr "_Aritmética"
 #: zim/plugins/attachmentbrowser/filebrowser.py:61
 #, python-format
 msgid "Are you sure you want to delete the file '%s'?"
-msgstr ""
+msgstr "Você tem certeza de que deseja excluir o arquivo '%s'?"
 
 #. menu item to delete file
 #: zim/plugins/attachmentbrowser/filebrowser.py:392
-#, fuzzy
-#| msgid "_Delete"
 msgid "_Delete..."
-msgstr "_Apagar"
+msgstr "_Apagar..."
 
 #. menu item to rename file
 #: zim/plugins/attachmentbrowser/filebrowser.py:396
-#, fuzzy
-#| msgid "_Replace..."
 msgid "_Rename..."
-msgstr "S_ubstituir..."
+msgstr "_Renomear..."
 
 #. unspecified value for file modification time
 #: zim/plugins/attachmentbrowser/filebrowser.py:429
@@ -2650,22 +2646,22 @@ msgstr "Cancelar"
 #. dialog title
 #: zim/plugins/attachmentbrowser/filerenamedialog.py:18
 msgid "Rename file"
-msgstr ""
+msgstr "Renomear arquivo"
 
 #. Error message
 #: zim/plugins/attachmentbrowser/filerenamedialog.py:69
 msgid "File name should not be blank."
-msgstr ""
+msgstr "Nome de arquivo não deve ficar em branco."
 
 #. Error message
 #: zim/plugins/attachmentbrowser/filerenamedialog.py:72
 msgid "A file with that name already exists."
-msgstr ""
+msgstr "Já existe um arquivo com esse nome."
 
 #. Error message
 #: zim/plugins/attachmentbrowser/filerenamedialog.py:75
 msgid "File name should not contain path declaration."
-msgstr ""
+msgstr "O nome do arquivo não deve conter declaração de caminho."
 
 #. plugin name
 #: zim/plugins/attachmentbrowser/__init__.py:69
@@ -2693,41 +2689,35 @@ msgstr "Posição na janela"
 #. option for plugin preferences
 #: zim/plugins/attachmentbrowser/__init__.py:84
 msgid "Use thumbnails"
-msgstr ""
+msgstr "Usar miniaturas"
 
 #. option for plugin preferences
 #: zim/plugins/attachmentbrowser/__init__.py:86
 msgid "Support thumbnails for SVG"
-msgstr ""
+msgstr "Suportar miniaturas para SVG"
 
 #. label for attachment browser pane
 #: zim/plugins/attachmentbrowser/__init__.py:130
-#, fuzzy
-#| msgid "Attachments"
 msgid "Atta_chments"
-msgstr "Anexos"
+msgstr "Ane_xos"
 
 #. placeholder label for sidepane
 #: zim/plugins/attachmentbrowser/__init__.py:147
-#, fuzzy
-#| msgid "Attachments:"
 msgid "No attachments"
-msgstr "Anexos:"
+msgstr "Nenhum anexo"
 
 #. Label for the statusbar, %i is the number of attachments for the current page
 #: zim/plugins/attachmentbrowser/__init__.py:198
-#, fuzzy, python-format
-#| msgid "%i Attachment"
-#| msgid_plural "%i Attachments"
+#, python-format
 msgid "%i Atta_chment"
 msgid_plural "%i Atta_chments"
-msgstr[0] "%i anexo"
-msgstr[1] "%i anexos"
+msgstr[0] "%i Ane_xo"
+msgstr[1] "%i Ane_xos"
 
 #. plugin name
 #: zim/plugins/backlinkpane.py:22
 msgid "BackLinks Pane"
-msgstr "Painel do BackLinks"
+msgstr "Painel de Links Reversos"
 
 #. plugin description
 #: zim/plugins/backlinkpane.py:23
@@ -2745,36 +2735,30 @@ msgstr ""
 #. option for plugin preferences
 #: zim/plugins/backlinkpane.py:37
 msgid "Show BackLink count in title"
-msgstr ""
+msgstr "Exibir contagem de Links Reversos no título"
 
 #. option for plugin preferences
 #: zim/plugins/backlinkpane.py:39
-#, fuzzy
-#| msgid "Show full Page Name"
 msgid "Show full Page Names"
-msgstr "Mostrar o nome completo da página"
+msgstr "Mostrar nomes completos de páginas"
 
 #. widget label
 #: zim/plugins/backlinkpane.py:71
 msgid "BackLinks"
-msgstr "Backlinks"
+msgstr "Links Reversos"
 
 #. placeholder label in sidepane
 #: zim/plugins/backlinkpane.py:84
-#, fuzzy
-#| msgid "Backlinks:"
 msgid "No backlinks"
-msgstr "Links de Entrada:"
+msgstr "Sem links reversos"
 
 #. Label for the statusbar, %i is the number of BackLinks to the current page
 #: zim/plugins/backlinkpane.py:125
-#, fuzzy, python-format
-#| msgid "%i _Backlink"
-#| msgid_plural "%i _Backlinks"
+#, python-format
 msgid "%i _BackLink"
 msgid_plural "%i _BackLinks"
-msgstr[0] "%i _Link de Entrada"
-msgstr[1] "%i _Links de entrada"
+msgstr[0] "%i _Link Reverso"
+msgstr[1] "%i _Links Reversos"
 
 #. context menu for inserted objects
 #: zim/plugins/base/imagegenerator.py:382
@@ -2897,10 +2881,8 @@ msgstr "Definir como Página Atual"
 
 #. plugin name
 #: zim/plugins/commandpalette.py:43 zim/plugins/commandpalette.py:115
-#, fuzzy
-#| msgid "Command"
 msgid "Command Palette"
-msgstr "Comando"
+msgstr "Palheta de Comando"
 
 #. plugin description
 #: zim/plugins/commandpalette.py:44
@@ -2909,6 +2891,10 @@ msgid ""
 "The search dialog can be opened by pressing the keyboard shortcut "
 "Ctrl+Shift+P which can be customized via Zim's key bindings preferences."
 msgstr ""
+"Este plugin abre uma caixa de diálogo de pesquisa para permitir a execução "
+"rápida de entradas de menu. A caixa de diálogo de pesquisa pode ser aberta "
+"pressionando o atalho de teclado Ctrl+Shift+P, que pode ser personalizado "
+"por meio das preferências de teclas do Zim."
 
 #. plugin name
 #: zim/plugins/diagrameditor.py:23
@@ -2929,14 +2915,12 @@ msgstr ""
 #. plugin preference
 #: zim/plugins/diagrameditor.py:38 zim/plugins/sequencediagrameditor.py:38
 msgid "Generate diagrams in SVG format"
-msgstr ""
+msgstr "Gerar diagramas em formato SVG"
 
 #. Plugin preference for diagram editor
 #: zim/plugins/diagrameditor.py:44
-#, fuzzy
-#| msgid "Default"
 msgid "Default text"
-msgstr "Padrão"
+msgstr "Texto padrão"
 
 #. menu item
 #: zim/plugins/diagrameditor.py:58
@@ -2971,7 +2955,7 @@ msgstr "Largura máxima da página"
 #. preference option for sourceview plugin
 #: zim/plugins/distractionfree.py:38 zim/plugins/sourceview.py:99
 msgid "Border width"
-msgstr ""
+msgstr "Largura da borda"
 
 #. plugin preference
 #: zim/plugins/distractionfree.py:39
@@ -3002,7 +2986,7 @@ msgstr ""
 #. menu item
 #: zim/plugins/ditaaeditor.py:47
 msgid "Ascii graph (Ditaa)"
-msgstr ""
+msgstr "Gráfico ascii (Ditaa)"
 
 #. plugin name
 #: zim/plugins/equationeditor.py:21
@@ -3023,19 +3007,17 @@ msgstr ""
 #. plugin preference
 #: zim/plugins/equationeditor.py:33
 msgid "Use font color for dark theme"
-msgstr ""
+msgstr "Use a cor da fonte para o tema escuro"
 
 #. plugin preference
 #: zim/plugins/equationeditor.py:34
 msgid "Font size"
-msgstr ""
+msgstr "Tamanho da fonte"
 
 #. plugin preference
 #: zim/plugins/equationeditor.py:35
-#, fuzzy
-#| msgid "Equation"
 msgid "Equation image DPI"
-msgstr "Equação"
+msgstr "DPI da imagem da equação"
 
 #. menu item
 #: zim/plugins/equationeditor.py:49
@@ -3077,7 +3059,7 @@ msgstr "GNU R Plot"
 #. plugin name
 #: zim/plugins/indexed_fts.py:43
 msgid "Indexed Full-Text Search"
-msgstr ""
+msgstr "Pesquisa de Texto Completo Indexada"
 
 #. plugin description
 #: zim/plugins/indexed_fts.py:44
@@ -3087,6 +3069,10 @@ msgid ""
 "based on the FTS5 virtual table module of\n"
 "sqlite.\n"
 msgstr ""
+"Este plugin fornece indexação de texto completo de\n"
+"conteúdo da página para pesquisa rápida de texto completo,\n"
+"baseado no módulo de mesa virtual FTS5 de\n"
+"sqlite.\n"
 
 #. error description
 #: zim/plugins/inlinecalculator.py:192
@@ -3188,7 +3174,7 @@ msgstr "Ano"
 #. preferences option
 #: zim/plugins/journal.py:117
 msgid "Hide Journal pane if empty"
-msgstr ""
+msgstr "Ocultar painel Diário se estiver vazio"
 
 #. input label
 #: zim/plugins/journal.py:121
@@ -3207,10 +3193,8 @@ msgstr "Ho_je"
 
 #. side pane title
 #: zim/plugins/journal.py:336
-#, fuzzy
-#| msgid "Journal"
 msgid "_Journal"
-msgstr "Diário"
+msgstr "_Diário"
 
 #. strftime format for current date label
 #: zim/plugins/journal.py:397
@@ -3224,11 +3208,6 @@ msgstr "Ordenador de Linhas"
 
 #. plugin description
 #: zim/plugins/linesorter.py:26
-#, fuzzy
-#| msgid ""
-#| "This plugin sorts selected lines in alphabetical order.\n"
-#| "If the list is already sorted the order will be reversed\n"
-#| "(A-Z to Z-A).\n"
 msgid ""
 "This plugin sorts selected lines in alphabetical order.\n"
 "If the list is already sorted the order will be reversed\n"
@@ -3236,12 +3215,15 @@ msgid ""
 "duplicate or remove lines of text.\n"
 msgstr ""
 "Esse plugin ordena alfabeticamente as linhas selecionadas.\n"
-"Se a lista já estiver ordenada, a ordem será invertida (de A-Z para Z-A).\n"
+"Se a lista já estiver ordenada, a ordem será invertida\n"
+"(de A-Z para Z-A). Recursos adicionais: mover linhas de texto para cima ou "
+"para baixo,\n"
+"duplicar ou remover linhas de texto.\n"
 
 #. Error message for linesorter plugin
 #: zim/plugins/linesorter.py:40
 msgid "Please select more than one line of text"
-msgstr ""
+msgstr "Selecione mais de uma linha de texto"
 
 #. menu item
 #: zim/plugins/linesorter.py:70
@@ -3294,130 +3276,106 @@ msgstr ""
 #. preferences option
 #: zim/plugins/linkmap.py:49
 msgid "Show linkmap button in headerbar"
-msgstr ""
+msgstr "Mostrar botão do mapa de links na barra de cabeçalho"
 
 #. preferences option
 #: zim/plugins/linkmap.py:51
 msgid "Autozoom to fit map"
-msgstr ""
+msgstr "Zoom automático para ajustar o mapa"
 
 #. preferences option
 #: zim/plugins/linkmap.py:53
-#, fuzzy
-#| msgid "Position in the window"
 msgid "Follow main window"
-msgstr "Posição na janela"
+msgstr "Seguir janela principal"
 
 #. preferences option
 #: zim/plugins/linkmap.py:55
-#, fuzzy
-#| msgid "Open in New Window"
 msgid "Always open links in new windows"
-msgstr "Abrir em uma nova janela"
+msgstr "Sempre abrir links em uma nova janela"
 
 #. plugin name
 #: zim/plugins/mermaiddiagrameditor.py:23
-#, fuzzy
-#| msgid "Insert Diagram"
 msgid "Insert Mermaid Diagram"
-msgstr "Inserir Diagrama"
+msgstr "Inserir Diagrama Mermaid"
 
 #. plugin description
 #: zim/plugins/mermaiddiagrameditor.py:24
-#, fuzzy
-#| msgid ""
-#| "This plugin provides a sequence diagram editor for zim based on seqdiag.\n"
-#| "It allows easy editing of sequence diagrams.\n"
 msgid ""
 "This plugin provides a Mermaid diagram editor for zim.\n"
 "It allows easy editing of Mermaid diagrams.\n"
 msgstr ""
-"Este plugin fornece um editor de diagrama de sequência para o Zim baseado no "
-"seqdiag. Ele permite a fácil edição de diagramas de sequência.\n"
+"Este plugin fornece um editor de diagramas para o Zim baseado no Mermaid.\n"
+"Ele permite a fácil edição de diagramas Mermaid.\n"
 
 #. menu item
 #: zim/plugins/mermaiddiagrameditor.py:56
-#, fuzzy
-#| msgid "Insert Diagram"
 msgid "Mermaid Diagram"
-msgstr "Inserir Diagrama"
+msgstr "Diagrama Mermaid"
 
 #. plugin name
 #: zim/plugins/osx_menubar.py:74
-#, fuzzy
-#| msgid "Menubar"
 msgid "macOS Menubar"
-msgstr "Barra de menu"
+msgstr "Barra de menu do macOS"
 
 #. plugin description
 #: zim/plugins/osx_menubar.py:75
-#, fuzzy
-#| msgid ""
-#| "\t\tThis plugin provides bar for bookmarks.\n"
-#| "\t\t"
 msgid "This plugin provides a macOS menubar for zim."
-msgstr ""
-"\t\tEste plug-in fornece uma barra para os marcadores.\n"
-"\t\t"
+msgstr "Este plug-in fornece uma barra de menu para o macOS."
 
 #. plugin name
 #: zim/plugins/pageindex/__init__.py:51
 msgid "Page Index"
-msgstr ""
+msgstr "Índice de Página"
 
 #. plugin description
 #: zim/plugins/pageindex/__init__.py:52
 msgid "This plugin adds the page index pane to the main window.\n"
-msgstr ""
+msgstr "Este plugin adiciona o painel de índice da página à janela principal.\n"
 
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:63
 msgid "Use drag&drop to move pages in the notebook"
-msgstr ""
+msgstr "Usar arrastar&soltar para mover páginas no caderno"
 
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:65 zim/plugins/tags.py:49
-#, fuzzy
-#| msgid "Automatically saved version from zim"
 msgid "Automatically expand sections on open page"
-msgstr "Versão automaticamente salva pelo Zim"
+msgstr "Expandir seções automaticamente ao abrir a página"
 
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:67 zim/plugins/tags.py:51
 msgid "Automatically collapse sections on close page"
-msgstr ""
+msgstr "Colapsar seções automaticamente ao fechar a página"
 
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:69 zim/plugins/tags.py:53
 msgid "Use horizontal scrollbar (may need restart)"
-msgstr ""
+msgstr "Use a barra de rolagem horizontal (pode ser necessário reiniciar)"
 
 #. preferences option
 #: zim/plugins/pageindex/__init__.py:71 zim/plugins/tags.py:55
 msgid "Use tooltips"
-msgstr ""
+msgstr "Usar dicas de ferramentas"
 
 #. menu item
 #: zim/plugins/pageindex/__init__.py:129
 msgid "Collapse Page Index"
-msgstr ""
+msgstr "Colapsar Índice de Página"
 
 #. menu item
 #: zim/plugins/pageindex/__init__.py:133
 msgid "Reveal Current Page in Page Index"
-msgstr ""
+msgstr "Revelar Página Atual no Índice de Página"
 
 #. tab label for side pane
 #: zim/plugins/pageindex/__init__.py:147
-#, fuzzy
-#| msgid "Index"
 msgid "Inde_x"
-msgstr "Índice"
+msgstr "Índi_ce"
 
 #. plugin name
 #: zim/plugins/pathbar.py:38
 msgid "Path Bar"
-msgstr ""
+msgstr "Barra de Caminho"
 
 #. plugin description
 #: zim/plugins/pathbar.py:39
@@ -3426,6 +3384,10 @@ msgid ""
 "This \"path bar\" can show the notebook path for the current page,\n"
 "recent visited pages or recent edited pages.\n"
 msgstr ""
+"Este plugin adiciona uma \"barra de caminho\" no topo da janela.\n"
+"Esta \"barra de caminho\" pode mostrar o caminho do caderno para a página "
+"atual,\n"
+"páginas visitadas recentemente ou páginas editadas recentemente.\n"
 
 #. Menu title
 #: zim/plugins/pathbar.py:80
@@ -3493,10 +3455,8 @@ msgstr "Im_primir"
 
 #. menu item
 #: zim/plugins/printtobrowser.py:75
-#, fuzzy
-#| msgid "Print to Browser"
 msgid "Print tasklist to browser"
-msgstr "Imprimir no navegador"
+msgstr "Imprimir lista de tarefas no navegador"
 
 #. plugin name
 #: zim/plugins/quicknote.py:141 zim/plugins/quicknote.py:176
@@ -3576,7 +3536,7 @@ msgstr "Incluir rodapé usual"
 #. menu item
 #: zim/plugins/scoreeditor.py:72
 msgid "Musical Score"
-msgstr ""
+msgstr "Score Musical"
 
 #. plugin name | 
 #. dialog title
@@ -3663,28 +3623,29 @@ msgid ""
 "This plugin allows inserting 'Code Blocks' in the page. These will be\n"
 "shown as embedded widgets with syntax highlighting, line numbers etc.\n"
 msgstr ""
+"Este plugin permite inserir 'Blocos de Código' na página. Estes serão\n"
+"mostrados como widgets incorporados com destaque de sintaxe, números de "
+"linha etc.\n"
 
 #. option value
 #: zim/plugins/sourceview.py:80
-#, fuzzy
-#| msgid "vertical lines"
 msgid "Never wrap lines"
-msgstr "linhas verticais"
+msgstr "Nunca quebrar linhas"
 
 #. option value
 #: zim/plugins/sourceview.py:81
 msgid "Try wrap at word boundaries or character"
-msgstr ""
+msgstr "Tente quebrar os limites das palavras ou caracteres"
 
 #. option value
 #: zim/plugins/sourceview.py:82
 msgid "Always wrap at character"
-msgstr ""
+msgstr "Sempre quebrar os caracteres"
 
 #. option value
 #: zim/plugins/sourceview.py:83
 msgid "Always wrap at word boundaries"
-msgstr ""
+msgstr "Sempre quebrar os limites das palavras"
 
 #. preference option for sourceview plugin
 #: zim/plugins/sourceview.py:87
@@ -3719,12 +3680,12 @@ msgstr "Largura da aba"
 #. preference option for sourceview plugin
 #: zim/plugins/sourceview.py:101
 msgid "Text wrap mode"
-msgstr ""
+msgstr "Modo de quebra de texto"
 
 #. preference option for sourceview plugin
 #: zim/plugins/sourceview.py:103
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #. menu item
 #: zim/plugins/sourceview.py:118
@@ -3749,7 +3710,7 @@ msgstr "Inserir Bloco de Código"
 #. input checkbox
 #: zim/plugins/sourceview.py:407
 msgid "Display line numbers"
-msgstr ""
+msgstr "Exibir números de linha"
 
 #. plugin name
 #: zim/plugins/spell.py:96
@@ -3758,20 +3719,16 @@ msgstr "Verificador Ortográfico"
 
 #. plugin description
 #: zim/plugins/spell.py:97
-#, fuzzy
-#| msgid ""
-#| "Adds spell checking support using gtkspell.\n"
-#| "\n"
-#| "This is a core plugin shipping with zim.\n"
 msgid ""
 "Adds spell checking support using \n"
 "gtkspellchecker, Gspell, or gtkspell libraries.\n"
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"Este plugin adiciona verificação ortográfica através do gtkspell.\n"
+"Este plugin adiciona verificação ortográfica através das\n"
+"bibliotecas gtkspellchecker, Gspell, ou gtkspell.\n"
 "\n"
-"Este é um plugin interno que acompanha o zim.\n"
+"Este é um plugin interno que acompanha o Zim.\n"
 
 #. menu item
 #: zim/plugins/spell.py:159
@@ -4007,15 +3964,13 @@ msgstr "Mostra o título da página na TdC"
 
 #. option for plugin preferences
 #: zim/plugins/tableofcontents.py:112
-#, fuzzy
-#| msgid "horizontal lines"
 msgid "Include horizontal lines in the ToC"
-msgstr "linhas horizontais"
+msgstr "Incluir linhas horizontais no ToC"
 
 #. option for plugin preferences
 #: zim/plugins/tableofcontents.py:114
 msgid "Set ToC fontsize"
-msgstr ""
+msgstr "Definir tamanho da fonte do ToC"
 
 #. action to lower level of heading in the text
 #: zim/plugins/tableofcontents.py:402
@@ -4030,7 +3985,7 @@ msgstr "Promover"
 #. widget label
 #: zim/plugins/tableofcontents.py:518
 msgid "T_oC"
-msgstr ""
+msgstr "T_oC"
 
 #. small label above Table Of Contents
 #: zim/plugins/tableofcontents.py:548
@@ -4744,7 +4699,7 @@ msgstr "Próx."
 #: data/templates/html/Default.html:82
 #: data/templates/html/Default_with_index.html:97
 msgid "Backlinks:"
-msgstr "Links de Entrada:"
+msgstr "Links Reversos:"
 
 #: data/templates/html/Default.html:91
 #: data/templates/html/Default_with_index.html:106
