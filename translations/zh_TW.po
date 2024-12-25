@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-22 21:26+0100\n"
-"PO-Revision-Date: 2024-12-07 08:00+0000\n"
+"PO-Revision-Date: 2024-12-26 06:00+0000\n"
 "Last-Translator: 麋麓 BigELK176 <BigELK176@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/zim/develop/zh_Hant/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.9-dev\n"
+"X-Generator: Weblate 5.10-dev\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:40+0000\n"
 
 #. Error message when external application could not be found, %s is the command
@@ -259,7 +259,7 @@ msgstr "指令不會修改資料"
 #. Input in "Edit Custom Tool" dialog
 #: zim/gui/customtools.py:700
 msgid "Output should replace current selection"
-msgstr "其匯出將會取代目前所選範圍"
+msgstr "其產出將會取代目前所選範圍"
 
 #. Input in "Edit Custom Tool" dialog
 #: zim/gui/customtools.py:701
@@ -408,7 +408,7 @@ msgstr "線上取得更多範本"
 #. title of step in export dialog
 #: zim/gui/exportdialog.py:312
 msgid "Select the output file or folder"
-msgstr "選擇匯出檔案或資料夾"
+msgstr "選擇輸出檔案或資料夾"
 
 #. Label for option in export dialog
 #: zim/gui/exportdialog.py:318
@@ -423,7 +423,7 @@ msgstr "匯出全部頁面成單一檔案"
 #. Label for folder selection in export dialog
 #: zim/gui/exportdialog.py:323
 msgid "Output folder"
-msgstr "匯出資料夾"
+msgstr "輸出資料夾"
 
 #. Label for setting a name for the index of exported pages
 #: zim/gui/exportdialog.py:325
@@ -433,7 +433,7 @@ msgstr "索引頁面"
 #. Label for file selection in export dialog
 #: zim/gui/exportdialog.py:328
 msgid "Output file"
-msgstr "匯出檔案"
+msgstr "輸出檔案"
 
 #. label in export dialog
 #: zim/gui/exportdialog.py:417
@@ -552,17 +552,13 @@ msgstr "核取方塊(_C)"
 
 #. option for preferences dialog
 #: zim/gui/mainwindow.py:68
-#, fuzzy
-#| msgid "Use font color for dark theme"
 msgid "Prefer dark theme"
-msgstr "暗色主題使用字形顏色"
+msgstr "偏好暗色主題"
 
 #. info text for preferences dialog
 #: zim/gui/mainwindow.py:69
-#, fuzzy
-#| msgid "This option requires restart of the application"
 msgid "This option requires a Gtk theme supporting a dark variant"
-msgstr "這個選項需要重新啟動應用挰式"
+msgstr "這個選項需要 Gtk 主題支援暗色變化"
 
 #. info text for preferences dialog | 
 #. option for preferences dialog
@@ -1092,7 +1088,7 @@ msgstr ""
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:87
 msgid "Preview link destination in overlay"
-msgstr ""
+msgstr "預覽連結目的地於覆疊層中"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:90
@@ -2351,10 +2347,8 @@ msgstr "靠右對齊"
 
 #. label for menu item which opens preferences dialog
 #: zim/gui/widgets.py:2377
-#, fuzzy
-#| msgid "Preferences"
 msgid "Preferences..."
-msgstr "偏好設定"
+msgstr "偏好設定..."
 
 #. Menu item
 #: zim/gui/widgets.py:2813
@@ -2410,28 +2404,28 @@ msgstr "找不到筆記本: %s"
 #. error in export command
 #: zim/main/__init__.py:460
 msgid "Output location needed for export"
-msgstr "需要用於匯出的輸出位置"
+msgstr "輸出位置需要用於匯出"
 
 #. error message for export
 #: zim/main/__init__.py:472
 msgid ""
 "Output folder exists and not empty, specify \"--overwrite\" to force export"
-msgstr "匯出資料夾已經存在且非空白，標示 \"--overwrite\" 可以強制匯出"
+msgstr "輸出資料夾已經存在且非空白，標示 \"--overwrite\" 可以強制匯出"
 
 #. error message for export
 #: zim/main/__init__.py:476
 msgid "Output file exists, specify \"--overwrite\" to force export"
-msgstr "匯出檔案已經存在，標示 \"--overwrite\" 可以強制匯出"
+msgstr "輸出檔案已經存在，標示 \"--overwrite\" 可以強制匯出"
 
 #. error message for export
 #: zim/main/__init__.py:481
 msgid "Need output file to export MHTML"
-msgstr "需要匯出檔案用於匯出 MHTML"
+msgstr "需要輸出檔案用於匯出 MHTML"
 
 #. error message for export
 #: zim/main/__init__.py:515
 msgid "Need output folder to export full notebook"
-msgstr "需要匯出資料夾用於匯出整個筆記本"
+msgstr "需要輸出資料夾用於匯出整個筆記本"
 
 #. Error explanation
 #: zim/newfs/local.py:41
@@ -2543,7 +2537,7 @@ msgstr ""
 #. plugin preference
 #: zim/plugins/arithmetic.py:28
 msgid "Output precision"
-msgstr ""
+msgstr "輸出精準度"
 
 #. menu item
 #: zim/plugins/arithmetic.py:38
@@ -2873,10 +2867,8 @@ msgstr "產生圖表，用 SVG 格式"
 
 #. Plugin preference for diagram editor
 #: zim/plugins/diagrameditor.py:44
-#, fuzzy
-#| msgid "Default"
 msgid "Default text"
-msgstr "預設"
+msgstr "預設文字"
 
 #. menu item
 #: zim/plugins/diagrameditor.py:58
@@ -3013,7 +3005,7 @@ msgstr "GNU R Plot 製圖"
 #. plugin name
 #: zim/plugins/indexed_fts.py:43
 msgid "Indexed Full-Text Search"
-msgstr ""
+msgstr "索引化的全文搜尋"
 
 #. plugin description
 #: zim/plugins/indexed_fts.py:44
@@ -3023,6 +3015,10 @@ msgid ""
 "based on the FTS5 virtual table module of\n"
 "sqlite.\n"
 msgstr ""
+"此外掛程式提供頁面內容的全文索引，\n"
+"用以實現快速全文搜尋。\n"
+"\n"
+"基於 sqlite 的 FTS5 虛擬表模組。\n"
 
 #. error description
 #: zim/plugins/inlinecalculator.py:192
@@ -3243,30 +3239,22 @@ msgstr "總是在新視窗中開啟連結"
 
 #. plugin name
 #: zim/plugins/mermaiddiagrameditor.py:23
-#, fuzzy
-#| msgid "Insert Diagram"
 msgid "Insert Mermaid Diagram"
-msgstr "插入圖表"
+msgstr "插入 Mermaid 圖表"
 
 #. plugin description
 #: zim/plugins/mermaiddiagrameditor.py:24
-#, fuzzy
-#| msgid ""
-#| "This plugin provides a sequence diagram editor for zim based on seqdiag.\n"
-#| "It allows easy editing of sequence diagrams.\n"
 msgid ""
 "This plugin provides a Mermaid diagram editor for zim.\n"
 "It allows easy editing of Mermaid diagrams.\n"
 msgstr ""
-"此外掛程式提供 Zim 使用循序圖編輯器，基於 seqdiag 。\n"
-"可以方便循序圖的編輯工作。\n"
+"此外掛程式提供 Zim 使用 Mermaid 圖表編輯器 。\n"
+"可以方便於 Mermaid 圖表的編輯工作。\n"
 
 #. menu item
 #: zim/plugins/mermaiddiagrameditor.py:56
-#, fuzzy
-#| msgid "Insert Diagram"
 msgid "Mermaid Diagram"
-msgstr "插入圖表"
+msgstr "Mermaid 圖表"
 
 #. plugin name
 #: zim/plugins/osx_menubar.py:74
@@ -3672,18 +3660,14 @@ msgstr "拼字檢查"
 
 #. plugin description
 #: zim/plugins/spell.py:97
-#, fuzzy
-#| msgid ""
-#| "Adds spell checking support using gtkspell.\n"
-#| "\n"
-#| "This is a core plugin shipping with zim.\n"
 msgid ""
 "Adds spell checking support using \n"
 "gtkspellchecker, Gspell, or gtkspell libraries.\n"
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"藉由 gtkspell 提供拼字檢查功能。\n"
+"增加拼字檢查功能支援\n"
+"運用 gtkspellchecker, Gspell, 或 gtkspell 字庫。\n"
 "\n"
 "此為核心外掛程式，隨同 Zim 發行。\n"
 
@@ -3799,7 +3783,7 @@ msgstr "行欄下移"
 #. menu item
 #: zim/plugins/tableeditor.py:465 zim/plugins/tableeditor.py:623
 msgid "Change columns"
-msgstr "修改列欄"
+msgstr "修改欄列"
 
 #. tooltip on mouse hover
 #: zim/plugins/tableeditor.py:467
@@ -3843,12 +3827,12 @@ msgstr "編輯表格"
 #. Description of "Table-Insert" Dialog
 #: zim/plugins/tableeditor.py:874
 msgid "Managing table columns"
-msgstr "管理表格列欄"
+msgstr "管理表格欄列"
 
 #. Initial data for column title in table
 #: zim/plugins/tableeditor.py:904
 msgid "Column 1"
-msgstr "列欄 1"
+msgstr "欄列 1"
 
 #. table header
 #: zim/plugins/tableeditor.py:937
@@ -3867,27 +3851,27 @@ msgstr "對齊"
 #. hoover tooltip
 #: zim/plugins/tableeditor.py:974
 msgid "Add column"
-msgstr "增加列欄"
+msgstr "增加欄列"
 
 #. hoover tooltip
 #: zim/plugins/tableeditor.py:975
 msgid "Remove column"
-msgstr "移除列欄"
+msgstr "移除欄列"
 
 #. hoover tooltip
 #: zim/plugins/tableeditor.py:976
 msgid "Move column ahead"
-msgstr "列欄前移"
+msgstr "欄列前移"
 
 #. hoover tooltip
 #: zim/plugins/tableeditor.py:977
 msgid "Move column backward"
-msgstr "列欄後移"
+msgstr "欄列後移"
 
 #. popup dialog
 #: zim/plugins/tableeditor.py:1061
 msgid "A table needs to have at least one column."
-msgstr "表格必須至少包含一列欄。"
+msgstr "表格必須至少包含一欄列。"
 
 #. plugin name
 #: zim/plugins/tableofcontents.py:92
@@ -4147,7 +4131,7 @@ msgstr "在側邊面板顯示起始日期"
 #. preferences option
 #: zim/plugins/tasklist/__init__.py:57
 msgid "Show page column in the sidepane"
-msgstr "在側邊面板顯示頁面列欄"
+msgstr "在側邊面板顯示頁面欄列"
 
 #. label for plugin preferences dialog
 #: zim/plugins/tasklist/__init__.py:63
@@ -4511,36 +4495,32 @@ msgstr "版本"
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:19
 msgid "Page Path - Notebook Name"
-msgstr ""
+msgstr "頁面路徑 - 筆記本名稱"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:20
 msgid "Notebook Name - Zim"
-msgstr ""
+msgstr "筆記本名稱 - Zim"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:21
 msgid "Page Name — Page Title — Zim"
-msgstr ""
+msgstr "頁面名稱 — 頁面標題 — Zim"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:22
 msgid "Notebook Name: Page Title (Page Source Path)"
-msgstr ""
+msgstr "筆記本名稱: 頁面標題 (頁面來源路徑)"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:23
-#, fuzzy
-#| msgid "Customize..."
 msgid "Custom"
-msgstr "自訂..."
+msgstr "自訂"
 
 #. plugin name
 #: zim/plugins/windowtitleeditor.py:28
-#, fuzzy
-#| msgid "Table Editor"
 msgid "Window Title Editor"
-msgstr "表格編輯器"
+msgstr "視窗標題編輯器"
 
 #. plugin description
 #: zim/plugins/windowtitleeditor.py:29
@@ -4550,28 +4530,30 @@ msgid ""
 "Press \"Configure\" below to choose a preset\n"
 "or to create a custom one.\n"
 msgstr ""
+"此外掛程式允許編輯視窗標題。\n"
+"\n"
+"按下方的〔調設〕來選用預設\n"
+"或是建立自訂項目。\n"
 
 #. window title editor preference option
 #: zim/plugins/windowtitleeditor.py:41
-#, fuzzy
-#| msgid "Template"
 msgid "Title template"
-msgstr "範本"
+msgstr "標題範本"
 
 #. window title editor preference option
 #: zim/plugins/windowtitleeditor.py:45
 msgid "Template string for custom format"
-msgstr ""
+msgstr "範本字串用於自訂格式"
 
 #. window title in case of critical error
 #: zim/plugins/windowtitleeditor.py:98
 msgid "Plugin error - check debug log! - Zim"
-msgstr ""
+msgstr "外掛程式錯誤 - 檢查除錯紀錄! - Zim"
 
 #. plugin name
 #: zim/plugins/zeitgeist-logger.py:33
 msgid "Log events with Zeitgeist"
-msgstr "使用 Zeitgeist 來紀錄事件"
+msgstr "紀錄事件使用 Zeitgeist"
 
 #. plugin description
 #: zim/plugins/zeitgeist-logger.py:34
