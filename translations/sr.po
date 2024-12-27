@@ -8,24 +8,24 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-22 21:26+0100\n"
-"PO-Revision-Date: 2012-10-06 21:09+0000\n"
-"Last-Translator: Иван Старчевић <ivanstar61@gmail.com>\n"
-"Language-Team: Serbian <sr@li.org>\n"
+"PO-Revision-Date: 2024-12-28 19:00+0000\n"
+"Last-Translator: dex girl <saraciric73@gmail.com>\n"
+"Language-Team: Serbian <https://hosted.weblate.org/projects/zim/develop/sr/>"
+"\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10-dev\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:41+0000\n"
-"X-Generator: Launchpad (build bceb5ef013b87ef7aafe0755545ceb689ca7ac60)\n"
 
 #. Error message when external application could not be found, %s is the command
 #: zim/applications.py:133
-#, fuzzy, python-format
-#| msgid "Failed to run application: %s"
+#, python-format
 msgid "Cound not find application: %s"
-msgstr "Покретање програма није успело: %s"
+msgstr "Ne može pronaći aplikaciju:%s"
 
 #. Error message when external application failed, %s is the command
 #: zim/applications.py:150
@@ -47,7 +47,7 @@ msgstr ""
 #: zim/applications.py:436
 #, python-format
 msgid "Failed running: %s"
-msgstr ""
+msgstr "Neuspelo pokretanje:%s"
 
 #. label for default webbrowser | 
 #. label for default application
@@ -58,12 +58,12 @@ msgstr "Подразумевано"
 #. Translate to "calendar:week_start:0" if you want Sunday to be the first day of the week or to "calendar:week_start:1" if you want Monday to be the first day of the week
 #: zim/datetimetz.py:98
 msgid "calendar:week_start:0"
-msgstr ""
+msgstr "calendar:week_start:0"
 
 #. generic error dialog
 #: zim/errors.py:46
 msgid "Looks like you found a bug"
-msgstr ""
+msgstr "Izgleda kao da si pronašao grešku"
 
 #. message for FileUnicodeError (%s is the file name)
 #: zim/fs.py:275 zim/newfs/base.py:66
@@ -87,13 +87,13 @@ msgstr "Детаљи"
 #: zim/fs.py:1171
 #, python-format
 msgid "File is not writable: %s"
-msgstr ""
+msgstr "fajl se ne može pisati:%s"
 
 #. error message
 #: zim/fs.py:1243
 #, python-format
 msgid "File changed on disk: %s"
-msgstr ""
+msgstr "fajl se promenio na disku:%s"
 
 #. option in preferences dialog
 #: zim/gui/applications.py:45
@@ -101,6 +101,8 @@ msgid ""
 "Create missing directories automatically\n"
 "(If disabled you will be prompted)"
 msgstr ""
+"Automatski napravi nedostajuće direktorije\n"
+"(ako je ugašeno bićeš podstaknut)"
 
 #. Heading in a question dialog for creating a folder
 #: zim/gui/applications.py:594
@@ -114,6 +116,8 @@ msgid ""
 "The folder \"%s\" does not yet exist.\n"
 "Do you want to create it now?"
 msgstr ""
+"Folder \"%s\" još uvek ne postoji.\n"
+"Da li želiš da ga napraviš sada?"
 
 #. error when external application fails
 #: zim/gui/applications.py:663 zim/gui/applications.py:737
@@ -138,20 +142,19 @@ msgstr ""
 
 #. Error message when external application could not be run in terminal, %s is the command
 #: zim/gui/applications.py:826
-#, fuzzy, python-format
-#| msgid "Failed to run application: %s"
+#, python-format
 msgid "Cound not find terminal emulator to run application: %s"
-msgstr "Покретање програма није успело: %s"
+msgstr "Neuspeli pronalazak terminalnog emulatora za pokretanje aplikacije:%s"
 
 #. label to customize 'open with' menu
 #: zim/gui/applications.py:1080
 msgid "Customize..."
-msgstr ""
+msgstr "Uređivanje...."
 
 #. message when no applications in "Open With" menu
 #: zim/gui/applications.py:1106
 msgid "No Applications Found"
-msgstr ""
+msgstr "Aplikacija nije pronađena"
 
 #. menu item to open a file with an application, %s is the app name
 #: zim/gui/applications.py:1136
@@ -163,7 +166,7 @@ msgstr "Отвори са „%s“"
 #: zim/gui/applications.py:1145
 #, python-format
 msgid "Configure an application to open \"%s\" links"
-msgstr ""
+msgstr "Konfigurišite aplikaciju da otvorite \"%s\" linkove"
 
 #. Text in the 'custom command' dialog, "%s" will be mimetype like "text/plain"
 #: zim/gui/applications.py:1148
@@ -172,22 +175,24 @@ msgid ""
 "Configure an application to open files\n"
 "of type \"%s\""
 msgstr ""
+"Konfigurišite aplikaciju da otvori fajlove\n"
+"tipa \"%s\""
 
 #. Dialog title
 #: zim/gui/applications.py:1160
 msgid "Configure Applications"
-msgstr ""
+msgstr "Konfigurišite aplikacije"
 
 #. Button for adding a new application to the 'open with' menu | 
 #. Dialog title
 #: zim/gui/applications.py:1174 zim/gui/applications.py:1282
 msgid "Add Application"
-msgstr ""
+msgstr "dodajte aplikaciju"
 
 #. Label for default application handler
 #: zim/gui/applications.py:1222
 msgid "System Default"
-msgstr ""
+msgstr "podrazumevani sistem"
 
 #. Field in 'custom command' dialog | 
 #. Input in "Edit Custom Tool" dialog | 
@@ -215,13 +220,13 @@ msgstr "Наредба"
 #. Field in 'custom command' dialog
 #: zim/gui/applications.py:1288
 msgid "Make default application"
-msgstr ""
+msgstr "napravite podrazumevanu aplikaciju"
 
 #. Error message for new commands in "open with" dialog
 #: zim/gui/applications.py:1305
 #, python-format
 msgid "Could not find executable \"%s\""
-msgstr ""
+msgstr "ne možemo pronaći izvršni \"%s\""
 
 #. Dialog title
 #: zim/gui/customtools.py:533
@@ -262,7 +267,7 @@ msgstr "Команда не мења податке"
 #. Input in "Edit Custom Tool" dialog
 #: zim/gui/customtools.py:700
 msgid "Output should replace current selection"
-msgstr ""
+msgstr "Izlaz treba zameniti trenutni izbor"
 
 #. Input in "Edit Custom Tool" dialog
 #: zim/gui/customtools.py:701
@@ -271,6 +276,7 @@ msgstr "Прикажи у алатној траци"
 
 #. Short help text in "Edit Custom Tool" dialog. The "%" is literal - please include the html formatting
 #: zim/gui/customtools.py:709
+#, fuzzy
 msgid ""
 "The following parameters will be substituted\n"
 "in the command when it is executed:\n"
@@ -285,6 +291,10 @@ msgid ""
 "<b>%T</b> the selected text including wiki formatting\n"
 "</tt>\n"
 msgstr ""
+"Sledeći parametri će biti zamenjeni\n"
+"u komandama kada je pogubljeno\n"
+" <tt>\n"
+"<b>     %\n"
 
 #. dialog title
 #: zim/gui/exportdialog.py:32
@@ -358,7 +368,7 @@ msgstr "Страна"
 #. Input field in export dialog
 #: zim/gui/exportdialog.py:184
 msgid "Include subpages"
-msgstr ""
+msgstr "Uključuje sub stranice"
 
 #. title of step in export dialog
 #: zim/gui/exportdialog.py:211
@@ -395,7 +405,7 @@ msgstr "Пресликај главни документ у УРЛ адресу"
 #. label for button with URL
 #: zim/gui/exportdialog.py:239 zim/gui/templateeditordialog.py:70
 msgid "Get more templates online"
-msgstr ""
+msgstr "Dobij više template onlajn"
 
 #. title of step in export dialog
 #: zim/gui/exportdialog.py:312
@@ -405,12 +415,12 @@ msgstr "Изаберите излазну датотеку или фасцикл
 #. Label for option in export dialog
 #: zim/gui/exportdialog.py:318
 msgid "Export each page to a separate file"
-msgstr ""
+msgstr "Izvezi svaku stranicu u odvojeni fajl"
 
 #. Label for option in export dialog
 #: zim/gui/exportdialog.py:320
 msgid "Export all pages to a single file"
-msgstr ""
+msgstr "izvezi sve stranice u jedan fajl"
 
 #. Label for folder selection in export dialog
 #: zim/gui/exportdialog.py:323
@@ -431,24 +441,24 @@ msgstr "Излазна датотека"
 #: zim/gui/exportdialog.py:417
 #, python-format
 msgid "%(n_error)i errors and %(n_warning)i warnings occurred, see log"
-msgstr ""
+msgstr "%(n_error)ierori i %(n_warning)iupozorenja su se dogodila, vidi log"
 
 #. label in export dialog
 #: zim/gui/exportdialog.py:420
 #, python-format
 msgid "%i errors occurred, see log"
-msgstr ""
+msgstr "%ieror se desio, vidi log"
 
 #. label in export dialog
 #: zim/gui/exportdialog.py:423
 #, python-format
 msgid "%i warnings occurred, see log"
-msgstr ""
+msgstr "%iupozorenje se desilo, vidi log"
 
 #. label in export dialog
 #: zim/gui/exportdialog.py:428
 msgid "Export completed"
-msgstr ""
+msgstr "Izvoz završen"
 
 #. button in export dialog | 
 #. button in e.g. equation editor dialog
@@ -460,28 +470,28 @@ msgstr "Приказ _евиденције"
 #: zim/gui/insertedobjects.py:276
 #, python-format
 msgid "No plugin available to display objects of type: %s"
-msgstr ""
+msgstr "nije dostupan dodatak za prikazivanje objekata tipa:%s"
 
 #. Label for object manager - "%s" is the plugin name
 #: zim/gui/insertedobjects.py:284
 #, python-format
 msgid "Plugin \"%s\" is required to display this object"
-msgstr ""
+msgstr "dodatak \"%s\" je neophodan za prikazivanje ovog objekta"
 
 #. Label for object manager
 #: zim/gui/insertedobjects.py:288
 msgid "Enable plugin"
-msgstr ""
+msgstr "dozvoli dodatak"
 
 #. label for inserted object
 #: zim/gui/insertedobjects.py:321
 msgid "Unkown Object"
-msgstr ""
+msgstr "nepoznati objekat"
 
 #. label for inserted object
 #: zim/gui/insertedobjects.py:362
 msgid "Unkown Image type"
-msgstr ""
+msgstr "nepoznati tip slike"
 
 #. Menu title
 #: zim/gui/mainwindow.py:49
@@ -540,34 +550,34 @@ msgstr "_Помоћ"
 #. Menu title
 #: zim/gui/mainwindow.py:58
 msgid "_Checkbox"
-msgstr ""
+msgstr "_polje za potvrdu"
 
 #. option for preferences dialog
 #: zim/gui/mainwindow.py:68
 msgid "Prefer dark theme"
-msgstr ""
+msgstr "Preferirati tamnu temu"
 
 #. info text for preferences dialog
 #: zim/gui/mainwindow.py:69
 msgid "This option requires a Gtk theme supporting a dark variant"
-msgstr ""
+msgstr "Ova opcija zahteva Gtk temu koja podržava tamnu varijantu"
 
 #. info text for preferences dialog | 
 #. option for preferences dialog
 #: zim/gui/mainwindow.py:70 zim/gui/mainwindow.py:71
 msgid "This option requires restart of the application"
-msgstr ""
+msgstr "Ova opcija zahteva restart aplikacije"
 
 #. option for preferences dialog
 #: zim/gui/mainwindow.py:71
 msgid "Show controls in the window decoration"
-msgstr ""
+msgstr "Prikaži kontrole u prozorskoj dekoraciji"
 
 #. Option in the preferences dialog - %s will map to either <Control><Space> or <Command><Space> key binding
 #: zim/gui/mainwindow.py:73
 #, python-format
 msgid "Use %s to switch to the side pane"
-msgstr ""
+msgstr "Koristi%s da prebaciš na strani pane"
 
 #. Option in the preferences dialog
 #: zim/gui/mainwindow.py:77
@@ -576,10 +586,8 @@ msgstr "Увек користи последњу позицију показив
 
 #. button label for fullscreen window header
 #: zim/gui/mainwindow.py:152 zim/gui/mainwindow.py:273
-#, fuzzy
-#| msgid "_Fullscreen"
 msgid "Leave Fullscreen"
-msgstr "_Цео екран"
+msgstr "Ostavi ceo ekran"
 
 #. Menu item
 #: zim/gui/mainwindow.py:295
@@ -588,32 +596,28 @@ msgstr "_Цео екран"
 
 #. menu item
 #: zim/gui/mainwindow.py:303
-#, fuzzy
-#| msgid "Notebook _Editable"
 msgid "Toggle _Editable"
-msgstr "Уређивање _бележнице"
+msgstr "Preklopiti_uređivo"
 
 #. menu item
 #: zim/gui/mainwindow.py:303
-#, fuzzy
-#| msgid "Notebook _Editable"
 msgid "Toggle editable"
-msgstr "Уређивање _бележнице"
+msgstr "Preklopiti se može urediti"
 
 #. message in toggle editable tooltip
 #: zim/gui/mainwindow.py:332
 msgid "Page is read-only and cannot be edited"
-msgstr ""
+msgstr "Stranica je samo za čitanje i ne može se urediti"
 
 #. Menu item
 #: zim/gui/mainwindow.py:366
 msgid "_Side Panes"
-msgstr ""
+msgstr "_Strani panovi"
 
 #. menu item
 #: zim/gui/mainwindow.py:391
 msgid "Focus Sidepane"
-msgstr ""
+msgstr "Fokusirani panovi sa strane"
 
 #. Menu item | 
 #. Button label
@@ -624,18 +628,12 @@ msgstr "_Затвори"
 #. label for View->Menubar menu item
 #: zim/gui/mainwindow.py:703
 msgid "Menubar"
-msgstr ""
+msgstr "Bar za meni"
 
 #. short question on open-page if file exists
 #: zim/gui/mainwindow.py:822 zim/gui/uiactions.py:494
-#, fuzzy
-#| msgid ""
-#| "This file already exists.\n"
-#| "Do you want to overwrite it?"
 msgid "File exists, do you want to import?"
-msgstr ""
-"Ова датотека већ постоји.\n"
-"Желите да је замените?"
+msgstr "Fajl postoji, da li želite da uvezete?"
 
 #. longer question on open-page if file exists
 #: zim/gui/mainwindow.py:823 zim/gui/uiactions.py:495
