@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-22 21:26+0100\n"
-"PO-Revision-Date: 2024-01-15 11:06+0000\n"
+"PO-Revision-Date: 2024-12-30 11:00+0000\n"
 "Last-Translator: Andreas Klostermaier <andreas.klostermaier@appendx.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/zim/develop/de/>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.10-dev\n"
 "X-Launchpad-Export-Date: 2020-01-01 13:41+0000\n"
 
 #. Error message when external application could not be found, %s is the command
@@ -561,17 +561,13 @@ msgstr "_Ankreuzfeld"
 
 #. option for preferences dialog
 #: zim/gui/mainwindow.py:68
-#, fuzzy
-#| msgid "Use font color for dark theme"
 msgid "Prefer dark theme"
-msgstr "Schriftfarbe für das dunkle Thema verwenden"
+msgstr "Dunkles Thema bevorzugen"
 
 #. info text for preferences dialog
 #: zim/gui/mainwindow.py:69
-#, fuzzy
-#| msgid "This option requires restart of the application"
 msgid "This option requires a Gtk theme supporting a dark variant"
-msgstr "(Neustart des Programms erforderlich)"
+msgstr "Diese Einstellung erfordert ein Gtk-Thema mit dunkler Variante"
 
 #. info text for preferences dialog | 
 #. option for preferences dialog
@@ -1104,7 +1100,7 @@ msgstr ""
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:87
 msgid "Preview link destination in overlay"
-msgstr ""
+msgstr "Vorschau des Link-Ziels in der Einblendung"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:90
@@ -2393,10 +2389,8 @@ msgstr "Rechtsbündig"
 
 #. label for menu item which opens preferences dialog
 #: zim/gui/widgets.py:2377
-#, fuzzy
-#| msgid "Preferences"
 msgid "Preferences..."
-msgstr "Einstellungen"
+msgstr "Einstellungen..."
 
 #. Menu item
 #: zim/gui/widgets.py:2813
@@ -2592,7 +2586,7 @@ msgstr ""
 #. plugin preference
 #: zim/plugins/arithmetic.py:28
 msgid "Output precision"
-msgstr ""
+msgstr "Ausgabe-Genauigkeit"
 
 #. menu item
 #: zim/plugins/arithmetic.py:38
@@ -2926,10 +2920,8 @@ msgstr "Diagramme im SVG-Format erstellen"
 
 #. Plugin preference for diagram editor
 #: zim/plugins/diagrameditor.py:44
-#, fuzzy
-#| msgid "Default"
 msgid "Default text"
-msgstr "Standard"
+msgstr "Standardtext"
 
 #. menu item
 #: zim/plugins/diagrameditor.py:58
@@ -3071,7 +3063,7 @@ msgstr "GNU R Plot"
 #. plugin name
 #: zim/plugins/indexed_fts.py:43
 msgid "Indexed Full-Text Search"
-msgstr ""
+msgstr "Indizierte Volltextsuche"
 
 #. plugin description
 #: zim/plugins/indexed_fts.py:44
@@ -3081,6 +3073,10 @@ msgid ""
 "based on the FTS5 virtual table module of\n"
 "sqlite.\n"
 msgstr ""
+"Diese Erweiterung ermöglicht die Volltext-Indizierung\n"
+"der Seiteninhalte für eine schnelle Volltext-Suche\n"
+"(basierend auf dem FTS5 Virtual Table Modul\n"
+"von SQLite).\n"
 
 #. error description
 #: zim/plugins/inlinecalculator.py:192
@@ -3304,30 +3300,22 @@ msgstr "Verweise immer in einem neuem Fenster öffnen"
 
 #. plugin name
 #: zim/plugins/mermaiddiagrameditor.py:23
-#, fuzzy
-#| msgid "Insert Diagram"
 msgid "Insert Mermaid Diagram"
-msgstr "Diagramm einfügen"
+msgstr "Mermaid-Diagramm einfügen"
 
 #. plugin description
 #: zim/plugins/mermaiddiagrameditor.py:24
-#, fuzzy
-#| msgid ""
-#| "This plugin provides a sequence diagram editor for zim based on seqdiag.\n"
-#| "It allows easy editing of sequence diagrams.\n"
 msgid ""
 "This plugin provides a Mermaid diagram editor for zim.\n"
 "It allows easy editing of Mermaid diagrams.\n"
 msgstr ""
-"Diese Erweiterung stellt einen auf 'seqdiag' basierenden Flußdiagramm-Editor "
-"für Zim zur Verfügung.\n"
+"Diese Erweiterung stellt einen Editor zur einfachen\n"
+"Bearbeitung von Mermaid-Diagramm in Zim zur Verfügung.\n"
 
 #. menu item
 #: zim/plugins/mermaiddiagrameditor.py:56
-#, fuzzy
-#| msgid "Insert Diagram"
 msgid "Mermaid Diagram"
-msgstr "Diagramm einfügen"
+msgstr "Mermaid-Diagramm"
 
 #. plugin name
 #: zim/plugins/osx_menubar.py:74
@@ -3734,19 +3722,15 @@ msgstr "Rechtschreibprüfung"
 
 #. plugin description
 #: zim/plugins/spell.py:97
-#, fuzzy
-#| msgid ""
-#| "Adds spell checking support using gtkspell.\n"
-#| "\n"
-#| "This is a core plugin shipping with zim.\n"
 msgid ""
 "Adds spell checking support using \n"
 "gtkspellchecker, Gspell, or gtkspell libraries.\n"
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"Diese Erweiterung stellt eine automatische Rechtschreibprüfung auf der Basis "
-"von 'gtkspell' zur Verfügung.\n"
+"Diese Erweiterung stellt eine Rechtschreibprüfung\n"
+"auf der Basis von 'gtkspellchecker', 'Gspell' oder\n"
+"'gtkspell' zur Verfügung.\n"
 "\n"
 "Diese Erweiterung gehört zum Lieferumfang von Zim.\n"
 
@@ -4583,36 +4567,32 @@ msgstr "Revision"
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:19
 msgid "Page Path - Notebook Name"
-msgstr ""
+msgstr "Seitenpfad - Notizbuch-Name"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:20
 msgid "Notebook Name - Zim"
-msgstr ""
+msgstr "Notizbuch-Name - Zim"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:21
 msgid "Page Name — Page Title — Zim"
-msgstr ""
+msgstr "Seitenname — Seitentitel — Zim"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:22
 msgid "Notebook Name: Page Title (Page Source Path)"
-msgstr ""
+msgstr "Notizbuch-Name: Seitentitel (Seitenquellpfad)"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:23
-#, fuzzy
-#| msgid "Customize..."
 msgid "Custom"
-msgstr "Anpassen..."
+msgstr "Benutzerdefiniert"
 
 #. plugin name
 #: zim/plugins/windowtitleeditor.py:28
-#, fuzzy
-#| msgid "Table Editor"
 msgid "Window Title Editor"
-msgstr "Tabellenbearbeitung"
+msgstr "Fenstertitel-Editor"
 
 #. plugin description
 #: zim/plugins/windowtitleeditor.py:29
@@ -4622,23 +4602,27 @@ msgid ""
 "Press \"Configure\" below to choose a preset\n"
 "or to create a custom one.\n"
 msgstr ""
+"Diese Erweiterung erlaubt das Bearbeiten\n"
+"des Fenster-Titels.\n"
+"\n"
+"Mit dem \"Konfigurieren\"-Knopf kann aus\n"
+"einer Vorschlagsliste ausgewählt,\n"
+"oder ein eigener Titel erstellt werden.\n"
 
 #. window title editor preference option
 #: zim/plugins/windowtitleeditor.py:41
-#, fuzzy
-#| msgid "Template"
 msgid "Title template"
-msgstr "Vorlage"
+msgstr "Titel-Vorlage"
 
 #. window title editor preference option
 #: zim/plugins/windowtitleeditor.py:45
 msgid "Template string for custom format"
-msgstr ""
+msgstr "Vorlagetext für eigenes Format"
 
 #. window title in case of critical error
 #: zim/plugins/windowtitleeditor.py:98
 msgid "Plugin error - check debug log! - Zim"
-msgstr ""
+msgstr "Fehler in Erweiterung - prüfe Protokoll! - Zim"
 
 #. plugin name
 #: zim/plugins/zeitgeist-logger.py:33
