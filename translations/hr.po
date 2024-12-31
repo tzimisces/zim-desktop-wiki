@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-22 21:26+0100\n"
-"PO-Revision-Date: 2023-09-17 22:09+0000\n"
+"PO-Revision-Date: 2025-01-01 21:00+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: Croatian <https://hosted.weblate.org/projects/zim/develop/hr/"
-">\n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/zim/develop/hr/>"
+"\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.0.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #. Error message when external application could not be found, %s is the command
 #: zim/applications.py:133
@@ -563,17 +563,13 @@ msgstr "Pot_vrdni okvir"
 
 #. option for preferences dialog
 #: zim/gui/mainwindow.py:68
-#, fuzzy
-#| msgid "Use font color for dark theme"
 msgid "Prefer dark theme"
-msgstr "Koristi boju fonta za tamnu temu"
+msgstr "Preferiraj tamnu temu"
 
 #. info text for preferences dialog
 #: zim/gui/mainwindow.py:69
-#, fuzzy
-#| msgid "This option requires restart of the application"
 msgid "This option requires a Gtk theme supporting a dark variant"
-msgstr "Ova opcija zahtijeva ponovno pokretanje programa"
+msgstr "Ova opcija zahtijeva Gtk temu koja podržava tamnu varijantu"
 
 #. info text for preferences dialog | 
 #. option for preferences dialog
@@ -2366,10 +2362,8 @@ msgstr "Desno"
 
 #. label for menu item which opens preferences dialog
 #: zim/gui/widgets.py:2377
-#, fuzzy
-#| msgid "Preferences"
 msgid "Preferences..."
-msgstr "Postavke"
+msgstr "Postavke..."
 
 #. Menu item
 #: zim/gui/widgets.py:2813
@@ -2561,7 +2555,7 @@ msgstr ""
 #. plugin preference
 #: zim/plugins/arithmetic.py:28
 msgid "Output precision"
-msgstr ""
+msgstr "Točnost rezultata"
 
 #. menu item
 #: zim/plugins/arithmetic.py:38
@@ -2897,10 +2891,8 @@ msgstr "Generiraj dijagrame u SVG formatu"
 
 #. Plugin preference for diagram editor
 #: zim/plugins/diagrameditor.py:44
-#, fuzzy
-#| msgid "Default"
 msgid "Default text"
-msgstr "Standardni"
+msgstr "Standardni tekst"
 
 #. menu item
 #: zim/plugins/diagrameditor.py:58
@@ -3037,7 +3029,7 @@ msgstr "GNU R grafikon"
 #. plugin name
 #: zim/plugins/indexed_fts.py:43
 msgid "Indexed Full-Text Search"
-msgstr ""
+msgstr "Indeksirana pretraga cijelog teksta"
 
 #. plugin description
 #: zim/plugins/indexed_fts.py:44
@@ -3268,30 +3260,22 @@ msgstr "Otvori poveznice uvijek u novom prozoru"
 
 #. plugin name
 #: zim/plugins/mermaiddiagrameditor.py:23
-#, fuzzy
-#| msgid "Insert Diagram"
 msgid "Insert Mermaid Diagram"
-msgstr "Umetni dijagram"
+msgstr "Umetni Mermaid dijagram"
 
 #. plugin description
 #: zim/plugins/mermaiddiagrameditor.py:24
-#, fuzzy
-#| msgid ""
-#| "This plugin provides a sequence diagram editor for zim based on seqdiag.\n"
-#| "It allows easy editing of sequence diagrams.\n"
 msgid ""
 "This plugin provides a Mermaid diagram editor for zim.\n"
 "It allows easy editing of Mermaid diagrams.\n"
 msgstr ""
-"Ovaj dodatak pruža uređivač dijagrama slijeda na temelju seqdiag.\n"
-"Omogućuje jednostavno uređivanje dijagrama slijeda.\n"
+"Ovaj dodatak pruža uređivač Mermaid dijagrama na temelju zima.\n"
+"Omogućuje jednostavno uređivanje Mermaid dijagrama.\n"
 
 #. menu item
 #: zim/plugins/mermaiddiagrameditor.py:56
-#, fuzzy
-#| msgid "Insert Diagram"
 msgid "Mermaid Diagram"
-msgstr "Umetni dijagram"
+msgstr "Mermaid dijagram"
 
 #. plugin name
 #: zim/plugins/osx_menubar.py:74
@@ -3697,18 +3681,14 @@ msgstr "Provjera pravopisa"
 
 #. plugin description
 #: zim/plugins/spell.py:97
-#, fuzzy
-#| msgid ""
-#| "Adds spell checking support using gtkspell.\n"
-#| "\n"
-#| "This is a core plugin shipping with zim.\n"
 msgid ""
 "Adds spell checking support using \n"
 "gtkspellchecker, Gspell, or gtkspell libraries.\n"
 "\n"
 "This is a core plugin shipping with zim.\n"
 msgstr ""
-"Dodaje podršku za provjeru pravopisa pomoću gtkspell-a.\n"
+"Dodaje podršku za provjeru pravopisa koristeći\n"
+"gtkspellchecker, Gspell ili gtkspell biblioteke.\n"
 "\n"
 "Ovo je osnovni dodatak koji se isporučuje sa zimom.\n"
 
@@ -4541,36 +4521,32 @@ msgstr "Revizija"
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:19
 msgid "Page Path - Notebook Name"
-msgstr ""
+msgstr "Staza stranice - Ime bilježnice"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:20
 msgid "Notebook Name - Zim"
-msgstr ""
+msgstr "Ime bilježnice - Zim"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:21
 msgid "Page Name — Page Title — Zim"
-msgstr ""
+msgstr "Ime stranice – Naslov stranice – Zim"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:22
 msgid "Notebook Name: Page Title (Page Source Path)"
-msgstr ""
+msgstr "Ime bilježnice: naslov stranice (izvorna staza stranice)"
 
 #. Option for Window Title template
 #: zim/plugins/windowtitleeditor.py:23
-#, fuzzy
-#| msgid "Customize..."
 msgid "Custom"
-msgstr "Prilagodi …"
+msgstr "Prilagođeno"
 
 #. plugin name
 #: zim/plugins/windowtitleeditor.py:28
-#, fuzzy
-#| msgid "Table Editor"
 msgid "Window Title Editor"
-msgstr "Uređivač tablica"
+msgstr "Uređivač naslova prozora"
 
 #. plugin description
 #: zim/plugins/windowtitleeditor.py:29
@@ -4580,23 +4556,25 @@ msgid ""
 "Press \"Configure\" below to choose a preset\n"
 "or to create a custom one.\n"
 msgstr ""
+"Ovaj dodatak omogućuje uređivanje naslova prozora.\n"
+"\n"
+"Pritisni „Konfiguriraj” za biranje postavke\n"
+"ili za stvaranje prilagođenog naslova.\n"
 
 #. window title editor preference option
 #: zim/plugins/windowtitleeditor.py:41
-#, fuzzy
-#| msgid "Template"
 msgid "Title template"
-msgstr "Predložak"
+msgstr "Predložak naslova"
 
 #. window title editor preference option
 #: zim/plugins/windowtitleeditor.py:45
 msgid "Template string for custom format"
-msgstr ""
+msgstr "Tekst predloška za prilagođeni format"
 
 #. window title in case of critical error
 #: zim/plugins/windowtitleeditor.py:98
 msgid "Plugin error - check debug log! - Zim"
-msgstr ""
+msgstr "Greška dodatka - provjeri dnevnik grešaka! - Zim"
 
 #. plugin name
 #: zim/plugins/zeitgeist-logger.py:33
