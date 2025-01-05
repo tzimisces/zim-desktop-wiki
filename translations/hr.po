@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-22 21:26+0100\n"
-"PO-Revision-Date: 2025-01-05 10:26+0000\n"
+"PO-Revision-Date: 2025-01-05 19:31+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/zim/develop/hr/>"
 "\n"
@@ -1101,7 +1101,7 @@ msgstr ""
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:87
 msgid "Preview link destination in overlay"
-msgstr ""
+msgstr "Pregled odredišta poveznice u prekrivajućem sloju"
 
 #. option in preferences dialog
 #: zim/gui/pageview/__init__.py:90
