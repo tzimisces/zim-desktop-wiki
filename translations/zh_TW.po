@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: zim\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-22 21:26+0100\n"
-"PO-Revision-Date: 2024-12-26 06:00+0000\n"
+"PO-Revision-Date: 2025-01-10 01:53+0000\n"
 "Last-Translator: 麋麓 BigELK176 <BigELK176@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/zim/develop/zh_Hant/>\n"
@@ -689,12 +689,12 @@ msgstr "下層(_C)"
 #. Menu item
 #: zim/gui/mainwindow.py:961
 msgid "_Previous in Index"
-msgstr "索引中的前一項(_P)"
+msgstr "索引上一項(_P)"
 
 #. Menu item
 #: zim/gui/mainwindow.py:970
 msgid "_Next in Index"
-msgstr "索引中的下一項(_N)"
+msgstr "索引下一項(_N)"
 
 #. Menu item
 #: zim/gui/mainwindow.py:979
