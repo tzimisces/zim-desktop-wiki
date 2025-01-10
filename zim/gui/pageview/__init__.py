@@ -2073,8 +2073,10 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 	@action(_('Find Ne_xt'), accelerator='<Primary>G', alt_accelerator='F3') # T: Menu item
 	def find_next(self):
 		'''Menu action to skip to next match'''
-		self.find_bar.show()
-		self.find_bar.find_next()
+		if not self.find_bar.get_visible():
+			self.find_bar.show() # Show will already trigger find on next occurence
+		else:
+			self.find_bar.find_next()
 
 	@action(_('Find Pre_vious'), accelerator='<Primary><shift>G', alt_accelerator='<shift>F3') # T: Menu item
 	def find_previous(self):
