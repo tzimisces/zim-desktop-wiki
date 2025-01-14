@@ -94,11 +94,30 @@ sqlite.
 
 		# All keywords passed to this functions are content-related so
 		# we don't need to check the term.keyword property.
-		# Beware: FTS5 supports a complex search syntax, including "*"
-		# expansion, but we cannot use this for counting the occurences.
-		# Instead, we use the GLOB operator for counting occurences,
-		# which also understands "*" expansion but might otherwise
-		# provide different results.
+
+		# Beware: FTS5 only supports "*" expansion at the end of a word
+		# while we want to support it in the beginning and the middle as well
+		# We can emulate the globbing behavior by constructing an equivalent
+		# query containing all tokens that match the expansion
+		if "*" in term.string:
+			# We need to find all tokens that match the search
+			query_token_result = db.execute(
+				"SELECT DISTINCT term FROM pages_ftsv WHERE term GLOB ?;",
+				(term.string.lower(),)
+			).fetchall()
+			# Unfortunately, we also need to do escaping ourselves
+			query_token_list = [
+				'"' + row["term"].replace('"', '""') + '"'
+				for row in query_token_result
+			]
+			query_string = ' OR '.join(query_token_list)
+
+		else:
+			query_string = term.string.lower()
+
+		# We use the GLOB operator for counting occurences,
+		# which also understands "*" expansion so we don't need the full list
+		# of tokens
 		query_results = db.execute(
 			"SELECT p.name AS name, count(v.offset) as score "
 			"FROM pages_fts(?) as f "
@@ -107,7 +126,7 @@ sqlite.
 			"JOIN pages_ftsv AS v ON f.rowid = v.doc "
 			"WHERE v.term GLOB ? "
 			"GROUP BY p.name;",
-			(term.string, term.string.lower())
+			(query_string, term.string.lower())
 		).fetchall()
 
 		myscores = {}
