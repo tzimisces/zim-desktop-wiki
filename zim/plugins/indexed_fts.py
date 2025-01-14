@@ -149,23 +149,35 @@ class FTSIndexer(IndexerBase):
 	the FTS index up-to-date.
 	'''
 	PLUGIN_NAME = "IndexedFTS"
-	PLUGIN_DB_FORMAT = "0.1"
+	PLUGIN_DB_FORMAT = "0.2"
+	_TABLE_DROP_STATEMENTS = """
+		DROP TABLE IF EXISTS pages_fts;
+		DROP TABLE IF EXISTS pages_ftsv;
+		DROP TABLE IF EXISTS keys_pages_fts;
+	"""
 
 	__signals__ = {}
 
 	@classmethod
 	def teardown(cls, db):
-		db.execute("DROP TABLE IF EXISTS pages_fts;")
-		db.execute("DROP TABLE IF EXISTS keys_pages_fts;")
+		db.executescript(cls._TABLE_DROP_STATEMENTS)
 		db.execute("DELETE FROM zim_index WHERE key = ?;", (cls.PLUGIN_NAME,))
 
 	def __init__(self, db, pages_indexer):
 		IndexerBase.__init__(self, db)
 		self.db = db
+
+		# Perform a version check first! We require our specific DB format
+		current_format = self.db.execute("SELECT value FROM zim_index WHERE key = ?;",
+			(self.PLUGIN_NAME,)
+		).fetchone()
+		if current_format is not None and current_format["value"] != self.PLUGIN_DB_FORMAT:
+			self.db.executescript(self._TABLE_DROP_STATEMENTS)
+
 		self.db.executescript('''
 			CREATE VIRTUAL TABLE IF NOT EXISTS pages_fts USING fts5(
 				page_content,
-				tokenize = 'unicode61 remove_diacritics 2',
+				tokenize = 'unicode61 remove_diacritics 0',
 				content = '',
 				contentless_delete = 1
 			);
