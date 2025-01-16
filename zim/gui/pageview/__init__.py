@@ -1189,42 +1189,42 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 			buffer.insert_at_cursor(''.join(text))
 
 	def do_mark_set(self, buffer, iter, mark):
-		'''
+		'''Update state after cursor position changes
 		@emits link-caret-enter
 		@emits link-caret-leave
 		'''
-
-		# Update menu items relative to cursor position
-		if self.readonly or mark.get_name() != 'insert':
+		if mark.get_name() != 'insert':
 			return
 
 		# Set sensitivity of various menu options
-		line = iter.get_line()
-		bullet = buffer.get_bullet(line)
-		if bullet and bullet in CHECKBOXES:
-			self.actiongroup.get_action('uncheck_checkbox').set_sensitive(True)
-			self.actiongroup.get_action('toggle_checkbox').set_sensitive(True)
-			self.actiongroup.get_action('xtoggle_checkbox').set_sensitive(True)
-			self.actiongroup.get_action('migrate_checkbox').set_sensitive(True)
-			self.actiongroup.get_action('transmigrate_checkbox').set_sensitive(True)
-		else:
-			self.actiongroup.get_action('uncheck_checkbox').set_sensitive(False)
-			self.actiongroup.get_action('toggle_checkbox').set_sensitive(False)
-			self.actiongroup.get_action('xtoggle_checkbox').set_sensitive(False)
-			self.actiongroup.get_action('migrate_checkbox').set_sensitive(False)
-			self.actiongroup.get_action('transmigrate_checkbox').set_sensitive(False)
+		if not self.readonly:
+			line = iter.get_line()
+			bullet = buffer.get_bullet(line)
 
-		if buffer.get_link_tag(iter):
-			self.actiongroup.get_action('remove_link').set_sensitive(True)
-			self.actiongroup.get_action('edit_object').set_sensitive(True)
-		elif buffer.get_image_data(iter):
-			self.actiongroup.get_action('remove_link').set_sensitive(False)
-			self.actiongroup.get_action('edit_object').set_sensitive(True)
-		else:
-			self.actiongroup.get_action('edit_object').set_sensitive(False)
-			self.actiongroup.get_action('remove_link').set_sensitive(False)
+			if bullet and bullet in CHECKBOXES:
+				self.actiongroup.get_action('uncheck_checkbox').set_sensitive(True)
+				self.actiongroup.get_action('toggle_checkbox').set_sensitive(True)
+				self.actiongroup.get_action('xtoggle_checkbox').set_sensitive(True)
+				self.actiongroup.get_action('migrate_checkbox').set_sensitive(True)
+				self.actiongroup.get_action('transmigrate_checkbox').set_sensitive(True)
+			else:
+				self.actiongroup.get_action('uncheck_checkbox').set_sensitive(False)
+				self.actiongroup.get_action('toggle_checkbox').set_sensitive(False)
+				self.actiongroup.get_action('xtoggle_checkbox').set_sensitive(False)
+				self.actiongroup.get_action('migrate_checkbox').set_sensitive(False)
+				self.actiongroup.get_action('transmigrate_checkbox').set_sensitive(False)
 
-		self.actiongroup.get_action('move_text').set_sensitive(buffer.get_has_selection())
+			if buffer.get_link_tag(iter):
+				self.actiongroup.get_action('remove_link').set_sensitive(True)
+				self.actiongroup.get_action('edit_object').set_sensitive(True)
+			elif buffer.get_image_data(iter):
+				self.actiongroup.get_action('remove_link').set_sensitive(False)
+				self.actiongroup.get_action('edit_object').set_sensitive(True)
+			else:
+				self.actiongroup.get_action('edit_object').set_sensitive(False)
+				self.actiongroup.get_action('remove_link').set_sensitive(False)
+
+			self.actiongroup.get_action('move_text').set_sensitive(buffer.get_has_selection())
 
 		# Emit signal if passing through a link
 		link = buffer.get_link_data(iter)
