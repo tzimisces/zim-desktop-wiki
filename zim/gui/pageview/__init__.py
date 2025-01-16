@@ -558,10 +558,14 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 	@ivar preferences: a L{ConfigDict} with preferences
 
 	@signal: C{modified-changed ()}: emitted when the page is edited
-	@signal: C{textstyle-changed (style)}:
-	Emitted when textstyle at the cursor changes, gets the list of text styles or None.
-	@signal: C{activate-link (link, hints)}: emitted when a link is opened,
-	stops emission after the first handler returns C{True}
+	@signal: C{textstyle-changed (style)}: emitted when textstyle at the cursor changes, gets the list of text styles or None.
+	@signal: C{activate-link (link, hints)}: emitted when a link is opened, stops emission after the first handler returns C{True}
+	@signal: C{textbuffer-changed (TextBuffer, TextBuffer}: emitted when during page change the L{TextBuffer} is changed,
+	Arguments provided are old and new TextBuffer. Main use is to disconnect and connect signals.
+	@signal: C{page-changed (Page)}: emitted when page is changed
+	@signal: C{link-caret-enter (link)}: emitted when cursor enters a link region
+	@signal: C{link-caret-leave (link)}: emitted when cursor leaves a link region
+	@signal: C{readonly-changed (bool)}: readonly property change
 
 	@todo: document preferences supported by PageView
 	@todo: document extra keybindings implemented in this widget
@@ -572,6 +576,7 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 	__gsignals__ = {
 		'modified-changed': (GObject.SignalFlags.RUN_LAST, None, ()),
 		'textstyle-changed': (GObject.SignalFlags.RUN_LAST, None, (object,)),
+		'textbuffer-changed': (GObject.SignalFlags.RUN_LAST, None, (object, object)),
 		'page-changed': (GObject.SignalFlags.RUN_LAST, None, (object,)),
 		'link-caret-enter': (GObject.SignalFlags.RUN_LAST, None, (object,)),
 		'link-caret-leave': (GObject.SignalFlags.RUN_LAST, None, (object,)),
@@ -911,6 +916,8 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 		If cursor is C{None} the cursor is set at the start of the page
 		for existing pages or to the end of the template when the page
 		does not yet exist.
+
+		@emits: textbuffer-changed
 		'''
 		if self.page is None:
 			# first run - bootstrap HACK
@@ -958,6 +965,7 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 			self.set_sensitive(True)
 			self._update_readonly()
 
+			self.emit('textbuffer-changed', prev_buffer, buffer)
 			self.emit('page-changed', self.page)
 
 	def _create_textbuffer(self, parsetree=None):
@@ -1409,7 +1417,7 @@ class PageView(GSignalEmitterMixin, Gtk.VBox):
 		item = Gtk.MenuItem.new_with_mnemonic(_('Copy _link to this location')) # T: menu item to copy link to achor location in page
 		anchor = buffer.get_anchor_for_location(iter)
 		if anchor:
-			heading_text = buffer.get_heading_text(iter) # can be None if not a heading
+			lvl, heading_text = buffer.get_heading(iter.get_line()) # can be None if not a heading
 			item.connect('activate', _copy_link_to_anchor, anchor, heading_text)
 		else:
 			item.set_sensitive(False)
