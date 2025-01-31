@@ -291,10 +291,6 @@ msgid ""
 "<b>%T</b> the selected text including wiki formatting\n"
 "</tt>\n"
 msgstr ""
-"Sledeći parametri će biti zamenjeni\n"
-"u komandama kada je pogubljeno\n"
-" <tt>\n"
-"<b>     %\n"
 
 #. dialog title
 #: zim/gui/exportdialog.py:32
